@@ -14,8 +14,38 @@
   }
 } */
 
+@font-face {
+  font-family: "branding";
+  src: url("/nesco-web/public/Font/Branding\ Black.otf") format("opentype");
+}
+@font-face {
+  font-family: "branding-itaic";
+  src: url("/nesco-web/public/Font/Branding\ Black\ Italic.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "branding-bold-itaic";
+  src: url("/nesco-web/public/Font/Branding\ Bold\ Italic.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "branding-bold";
+  src: url("/nesco-web/public/Font/Branding\ Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "branding-light";
+  src: url("/nesco-web/public/Font/Branding\ Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "branding-light-italic";
+  src: url("/nesco-web/public/Font/Branding\ Light\ Italic.otf")
+    format("opentype");
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif, "branding", "branding-bold",
+    "branding-light", "branding-light-italic", "branding-bold-italic",
+    "branding-italic";
 }

@@ -6,7 +6,7 @@ import { HiOutlineDownload } from "react-icons/hi";
 function News() {
   const newsData = [
     {
-      backgroundcolor: "#C2B2AB",
+      backgroundcolor: "#f0cebf",
       color: "#654E45",
       svgImage: AwardImage,
       title: "Awards and Recognitions",
@@ -15,7 +15,7 @@ function News() {
       arrowColor: "#5C301E",
     },
     {
-      backgroundcolor: "#A6B8C6",
+      backgroundcolor: "#caecff",
       color: "#58667D",
       svgImage: AwardImage,
       title: "Technology Transfer Meet",
@@ -24,7 +24,7 @@ function News() {
       arrowColor: "#2F356E",
     },
     {
-      backgroundcolor: "#C6B6C4",
+      backgroundcolor: "#f6e4f6",
       color: "#75556F",
       svgImage: AwardImage,
       title: "Exhibitions",
@@ -36,7 +36,7 @@ function News() {
       backgroundcolor: "#9EC1BE", // Custom background for the 3rd card
       color: "#327062", // Custom color
       svgImage: AwardImage,
-      title: <span className="text-[#4B5862]">BSE</span>,
+      title: <span className="text-primary">BSE</span>,
       title2: <span className="text-[#445F53]">NSE</span>,
       description: "997.70",
       description1: "41.45(4.33%)",
@@ -50,7 +50,7 @@ function News() {
       arrowColor: "#C2B2AB", // Custom arrow color
     },
     {
-      backgroundcolor: "#BEBBAC",
+      backgroundcolor: "#edead4",
       color: "#68674D",
       svgImage: AwardImage,
       title: "Annual Report",
@@ -58,7 +58,7 @@ function News() {
       downloadColor: "#585429",
     },
     {
-      backgroundcolor: "#9EB2B8",
+      backgroundcolor: "#c8dee6",
       color: "#4D6873",
       svgImage: AwardImage,
       title: "Introducing",
@@ -94,7 +94,7 @@ function News() {
                     </div>
                     <div className="flex flex-col my-5 px-10 z-10 items-center">
                       <p
-                        className="text-xl font-semibold mb-4 flex justify-between w-full"
+                        className="text-2xl font-semibold mb-4 flex justify-between w-full"
                         style={{ color: data.color }}
                       >
                         <span>{data.title}</span>
@@ -178,16 +178,14 @@ function News() {
                       className="w-16 h-16 mb-4"
                     />
                   </div>
-                  <div className="flex flex-col mt-5 w-[60%]">
+                  <div className="flex flex-col mt-5 w-[60%] justify-between h-full  pb-5">
                     <p
-                      className="text-xl font-semibold mb-4"
+                      className="text-2xl font-semibold mb-4"
                       style={{ color: data.color }}
                     >
                       {data.title}
                     </p>
-                    <p className="text-sm" style={{ color: data.color }}>
-                      {data.description}
-                    </p>
+                    <p className="text-sm">{data.description}</p>
                     <div className="flex w-full mt-10">
                       <button
                         className="w-[40px] h-[40px] rounded-full flex justify-center items-center"

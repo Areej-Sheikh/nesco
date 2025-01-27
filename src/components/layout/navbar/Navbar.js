@@ -25,7 +25,7 @@ function Navbar() {
     <nav className="bg-[#403092] py-8 md:px-16 px-8 flex items-center justify-between relative w-full z-[999]">
       {/* Logo */}
       <div>
-        <span className="text-white lg:text-4xl text-3xl font-extrabold">
+        <span className="text-white lg:text-4xl text-3xl font-extrabold font-branding-light">
           {logo ? logo.title : "nesco"}
         </span>
       </div>
@@ -59,7 +59,7 @@ function Navbar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 w-64 h-full bg-[#403092] p-8 transition-transform transform ${
+        className={`fixed top-0 right-0 w-64 h-full bg-[#403092] p-8 transition-transform transform  ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         } lg:hidden`}
       >

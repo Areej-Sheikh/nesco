@@ -7,7 +7,7 @@ function Goal() {
       <div className="lg:w-[60%] w-[80%] flex flex-col items-center justify-center z-10">
         <div className=" text-primary">
           <p className="text-center md:text-3xl text-2xl font-bold leading-[3rem] mt-6">
-            One goal. 8 decades
+            One goal. 8 decades.
           </p>
           <p className="md:text-3xl text-2xl border-b-2 border-b-primary pb-3 leading-[3rem] font-medium text-center">
             Infinite possibilities
