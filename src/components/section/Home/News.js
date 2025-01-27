@@ -33,7 +33,7 @@ function News() {
       arrowColor: "#612659",
     },
     {
-      backgroundcolor: "#9EC1BE", // Custom background for the 3rd card
+      backgroundcolor: "#C9F2EC", // Custom background for the 3rd card
       color: "#327062", // Custom color
       svgImage: AwardImage,
       title: <span className="text-primary">BSE</span>,
