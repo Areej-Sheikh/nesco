@@ -112,7 +112,7 @@ function Banner({ SliderData }) {
                     </div>
                     <img
                       src={data.image.src}
-                      className=" mx-auto w-full h-full z-0"
+                      className=" mx-auto w-full h-full z-0 object-cover"
                     />
                   </div>
                 ))
