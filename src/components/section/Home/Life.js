@@ -52,9 +52,7 @@ function Life() {
                 y="20%"
                 text-anchor="middle"
                 fill="white"
-                font-size="16"
-                font-family="Arial, sans-serif"
-                font-weight="bold"
+                className=" text-[16px] font-bold "
               >
                 INDIA
               </text>

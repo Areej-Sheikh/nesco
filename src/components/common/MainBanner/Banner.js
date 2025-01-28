@@ -73,7 +73,7 @@ function Banner({ SliderData }) {
         </button> */}
 
         {/* Slider */}
-        <div className="flex justify-center w-full">
+        <div className="flex justify-center w-full overflow-hidden h-[86vh]">
           <Slider
             ref={sliderRef}
             {...settings}
@@ -96,7 +96,7 @@ function Banner({ SliderData }) {
               ? SliderData.map((data, index) => (
                   <div
                     key={index}
-                    className="bg-black text-white flex justify-center items-center text-2xl h-[80vh] mb-10 relative"
+                    className="bg-black text-white flex justify-center items-center text-2xl h-[80vh] mb-10 relative "
                   >
                     {/* <div className="z-20 absolute bottom-14 lg:left-36 md:left-28 left-16">
                       <p className="text-primary md:text-[4rem] text-[3rem] leading-[4rem] font-bold">
