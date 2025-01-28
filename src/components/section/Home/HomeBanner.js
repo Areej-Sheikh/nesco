@@ -52,7 +52,7 @@ function HomeBanner() {
   ];
 
   return (
-    <div>
+    <div className="w-full">
       <Banner SliderData={SliderData} />
     </div>
   );
