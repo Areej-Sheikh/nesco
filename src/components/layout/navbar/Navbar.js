@@ -65,7 +65,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`py-6 md:px-16 px-8 flex items-center justify-between lg:w-[99%] w-full z-[900] fixed transition-all duration-300 overflow-hidden ${
+      className={`py-6 md:px-16 px-8 flex items-center justify-between w-full z-[900] fixed transition-all duration-300 overflow-hidden ${
         isScrolled ? "bg-primary shadow-lg" : "bg-transparent"
       }`}
     >
