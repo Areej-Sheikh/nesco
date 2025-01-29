@@ -11,7 +11,7 @@ import "./mainHome.css";
 
 function MainHome() {
   useEffect(() => {
-    const container = document.querySelector(".container");
+    const container = document.querySelector(".container1");
     let isScrolling = false;
 
     const smoothScrollTo = (targetY, duration = 1000) => {
