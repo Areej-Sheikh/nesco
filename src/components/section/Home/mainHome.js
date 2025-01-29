@@ -75,7 +75,7 @@ function MainHome() {
 
   return (
     <Pagewrapper>
-      <div className="container">
+      <div className="container1">
         <div className="section">
           <HomeBanner />
         </div>
