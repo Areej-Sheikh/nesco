@@ -1,53 +1,37 @@
 import Banner from "@/components/common/MainBanner/Banner";
 import React from "react";
-import BannerImage from "@/assests/mainBanner/image.png";
-import BannerImage1 from "@/assests/mainBanner/image1.png";
-import BannerImage3 from "@/assests/mainBanner/image3.png";
-import BannerImage4 from "@/assests/mainBanner/image4.png";
-import BannerImage5 from "@/assests/mainBanner/image5.png";
+import BannerImage from "@/assests/mainBanner/image.jpg";
+import BannerImage1 from "@/assests/mainBanner/image11.png";
+import BannerImage3 from "@/assests/mainBanner/image3.jpg";
+import BannerImage4 from "@/assests/mainBanner/image4.jpg";
+import BannerImage5 from "@/assests/mainBanner/image5.jpg";
 
 function HomeBanner() {
   // slider data
   const SliderData = [
     {
       image: BannerImage,
-      title: "Believe",
-      subtitle1: "The possibilities",
-      subtitle2: "are endless",
-      description1: "Welcome to",
-      description2: "Nesco",
+      description: "We bring extraordinary flavours to your table.",
     },
     {
       image: BannerImage1,
-      title: "Believe",
-      subtitle1: "The possibilities",
-      subtitle2: "are endless",
-      description1: "Welcome to",
-      description2: "Nesco",
+      description:
+        "Curating extravagant and breathtaking experiences from concept to execution",
     },
     {
       image: BannerImage3,
-      title: "Believe",
-      subtitle1: "The possibilities",
-      subtitle2: "are endless",
-      description1: "Welcome to",
-      description2: "Nesco",
+      description:
+        "A premier venue that hosts a diverse array of events, trade shows, conferences and exhibitons.",
     },
     {
       image: BannerImage4,
-      title: "Believe",
-      subtitle1: "The possibilities",
-      subtitle2: "are endless",
-      description1: "Welcome to",
-      description2: "Nesco",
+      description:
+        "manufactures abrasives & shot blasting machine for industries like automotive and aerospace since 1975",
     },
     {
       image: BannerImage5,
-      title: "Believe",
-      subtitle1: "The possibilities",
-      subtitle2: "are endless",
-      description1: "Welcome to",
-      description2: "Nesco",
+      description:
+        "Renowned for leasing premium office spaces tailored to the needs of IT compaines.",
     },
   ];
 

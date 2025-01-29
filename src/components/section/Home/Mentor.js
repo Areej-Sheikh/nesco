@@ -1,10 +1,18 @@
 import React from "react";
 import MentorImage from "@/assests/Home/Mentor.png";
+import backgroundImage from "@/assests/Home/N.png";
 
 function Mentor() {
   return (
-    <div className="bg-[#D2EFFF] flex flex-col items-center py-10  lg:pt-28">
-      <div className="md:w-[60%] flex flex-col items-center">
+    <div className="bg-[#D2EFFF] flex flex-col items-center py-10  lg:pt-28 relative w-full h-full overflow-hidden">
+      <div className=" w-full h-full z-0">
+        <img
+          src={backgroundImage.src}
+          alt="background image"
+          className=" object-cover absolute  md:w-[900px] right-0 lg:-bottom-[30%] md:-bottom-[10%] bottom-[20%]"
+        />
+      </div>
+      <div className="md:w-[60%] flex flex-col items-center z-10 relative">
         <p className="lg:text-3xl text-xl text-primary">
           A note from the Founding
         </p>
@@ -12,7 +20,7 @@ function Mentor() {
           Director and Mentor
         </p>
       </div>
-      <div className="lg:w-[60%] w-[80%] flex flex-col items-center md:text-lg mt-10">
+      <div className="lg:w-[60%] w-[80%] flex flex-col items-center md:text-lg mt-10  z-10 relative">
         <p>
           In the last eight decades, Nesco has come a long way. We see our
           present success as only the start to newer and bolder initiatives.

@@ -1,5 +1,5 @@
 import React from "react";
-import ServiceImage from "@/assests/Home/service.jpeg";
+import ServiceImage from "@/assests/Home/girl.jpg";
 
 function Service() {
   return (
@@ -9,16 +9,16 @@ function Service() {
           <img
             src={ServiceImage.src}
             alt="service image"
-            className="w-full h-full scale-125 absolute lg:left-20 md:left-16 object-cover top-14"
+            className="w-full h-full object-cover"
           />
           {/* opacity */}
-          <div
+          {/* <div
             className="absolute w-full h-full -z-0 top-0 left-0"
             style={{
               background:
                 "radial-gradient(circle, rgba(0,0,0,0) 10%, rgba(209,238,254,0.9) 60%)",
             }}
-          ></div>
+          ></div> */}
         </div>
         <div className="md:w-[50%] z-[1] flex flex-col gap-5 py-10 md:px-10 px-5">
           <p className="text-primary md:text-3xl text-2xl font-bold mt-10">

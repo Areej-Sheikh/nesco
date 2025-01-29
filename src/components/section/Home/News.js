@@ -1,5 +1,10 @@
 import React from "react";
-import AwardImage from "@/assests/Home/newsSvg/award.png";
+import Image1 from "@/assests/newsSvg/f1.jpg";
+import Image2 from "@/assests/newsSvg/f2.jpg";
+import Image3 from "@/assests/newsSvg/f3.jpg";
+import Image4 from "@/assests/newsSvg/f4.jpg";
+import Image5 from "@/assests/newsSvg/f5.jpg";
+import Image6 from "@/assests/newsSvg/f6.jpg";
 import { FaArrowRight } from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
 
@@ -8,7 +13,7 @@ function News() {
     {
       backgroundcolor: "#f0cebf",
       color: "#654E45",
-      svgImage: AwardImage,
+      svgImage: Image1,
       title: "Awards and Recognitions",
       description:
         "We believe in raising the bar of Excellence at every step. Here’s a testimony of our efforts.",
@@ -17,7 +22,7 @@ function News() {
     {
       backgroundcolor: "#caecff",
       color: "#58667D",
-      svgImage: AwardImage,
+      svgImage: Image2,
       title: "Technology Transfer Meet",
       description:
         "Tech Connect Global-the Official Technology Trading Event between India and Korea organised by NESCO Ltd and WEVIO Global Inc in...",
@@ -26,7 +31,7 @@ function News() {
     {
       backgroundcolor: "#f6e4f6",
       color: "#75556F",
-      svgImage: AwardImage,
+      svgImage: Image3,
       title: "Exhibitions",
       description:
         "Nesco's upcoming hall is to be ready by 2019 July. The proposed hall will be pillarless with all the modern facilities at a size of 1.5 lakh sq ft.",
@@ -35,7 +40,7 @@ function News() {
     {
       backgroundcolor: "#C9F2EC", // Custom background for the 3rd card
       color: "#327062", // Custom color
-      svgImage: AwardImage,
+      svgImage: Image4,
       title: <span className="text-primary">BSE</span>,
       title2: <span className="text-[#445F53]">NSE</span>,
       description: "997.70",
@@ -52,7 +57,7 @@ function News() {
     {
       backgroundcolor: "#edead4",
       color: "#68674D",
-      svgImage: AwardImage,
+      svgImage: Image5,
       title: "Annual Report",
       description: "2023-24",
       downloadColor: "#585429",
@@ -60,7 +65,7 @@ function News() {
     {
       backgroundcolor: "#c8dee6",
       color: "#4D6873",
-      svgImage: AwardImage,
+      svgImage: Image6,
       title: "Introducing",
       description:
         "Nesco Foods will soon be opening two swanky new lounge bars that let patrons sample the best of the world's F&B in an ambiance of luxury and style.",
@@ -81,18 +86,15 @@ function News() {
             if (index === 3) {
               return (
                 <div key={index} className="">
-                  <div
-                    className="h-full p-5 shadow-lg gap-5 relative overflow-hidden"
-                    style={{ backgroundColor: data.backgroundcolor }}
-                  >
-                    <div className="absolute right-0 scale-[4] top-[60%] -translate-y-1/2 flex">
-                      {/* <img
+                  <div className="h-full p-5 shadow-lg gap-5 relative overflow-hidden">
+                    <div className="absolute  top-0 left-0 w-full h-full z-0">
+                      <img
                         src={data.svgImage.src}
                         alt="award"
-                        className="w-16 h-16 mb-4"
-                      /> */}
+                        className="w-full h-full z-0"
+                      />
                     </div>
-                    <div className="flex flex-col my-5 px-10 z-10 items-center">
+                    <div className="flex flex-col my-5 px-10 z-10 items-center relative">
                       <p
                         className="text-2xl font-semibold mb-4 flex justify-between w-full"
                         style={{ color: data.color }}
@@ -125,14 +127,14 @@ function News() {
                     className=" p-5 shadow-lg gap-5 relative overflow-hidden h-full"
                     style={{ backgroundColor: data.backgroundcolor }}
                   >
-                    <div className="absolute right-0 scale-[4] top-[60%] -translate-y-1/2">
+                    <div className="absolute  top-0 left-0 w-full h-full z-0">
                       <img
                         src={data.svgImage.src}
                         alt="award"
-                        className="w-16 h-16 mb-4"
+                        className="w-full h-full z-0"
                       />
                     </div>
-                    <div className="flex flex-col mt-5 w-[60%] h-full justify-between pb-5">
+                    <div className="flex flex-col mt-5 w-[60%] h-full justify-between pb-5 z-10 relative">
                       <div>
                         <p
                           className="text-3xl font-semibold mb-2"
@@ -171,14 +173,14 @@ function News() {
                   className=" p-5 shadow-lg gap-5 relative overflow-hidden h-full"
                   style={{ backgroundColor: data.backgroundcolor }}
                 >
-                  <div className="absolute right-0 scale-[4] top-[60%] -translate-y-1/2">
+                  <div className="absolute  top-0 left-0 w-full h-full z-0">
                     <img
                       src={data.svgImage.src}
                       alt="award"
-                      className="w-16 h-16 mb-4"
+                      className="w-full h-full z-0"
                     />
                   </div>
-                  <div className="flex flex-col mt-5 w-[60%] justify-between h-full  pb-5">
+                  <div className="flex flex-col mt-5 w-[60%] justify-between h-full z-10 relative pb-5">
                     <p
                       className="text-2xl font-semibold mb-4"
                       style={{ color: data.color }}
