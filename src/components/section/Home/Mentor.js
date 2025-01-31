@@ -4,7 +4,7 @@ import backgroundImage from "@/assests/Home/N.png";
 
 function Mentor() {
   return (
-    <div className="bg-[#D2EFFF] flex flex-col items-center justify-center relative w-full lg:h-[100vh] overflow-hidden ">
+    <div className="bg-[#D2EFFF] flex flex-col items-center justify-center relative w-full lg:h-[100vh] overflow-hidden pt-8 md:pt-0">
       <div className="z-10 relative flex flex-col items-center justify-center w-full h-full my-20">
         <div className="text-center">
           <p className="lg:text-3xl text-xl text-primary">
@@ -43,11 +43,11 @@ function Mentor() {
           </div>
         </div>
       </div>
-      <div className="w-full h-full z-0 absolute">
+      <div className="w-full h-full z-0 absolute flex lg:items-center lg:justify-end justify-center sm:items-end items-center right-0 mt-36">
         <img
           src={backgroundImage.src}
           alt="background image"
-          className="object-cover absolute lg:w-[70%] w-full right-0 lg:-top-[10%] top-[50%] sm:top-[20%] "
+          className="object-cover md:w-[70%]  sm:h-full w-full h-[50%]"
         />
       </div>
     </div>

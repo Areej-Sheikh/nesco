@@ -3,11 +3,15 @@ import background from "@/assests/Home/N-1.png";
 
 function Life() {
   return (
-    <div className="flex lg:px-[7rem] px-5 md:px-16 justify-between items-center w-full bg-[#002172] relative lg:pt-16 overflow-hidden h-[100vh]">
-      <div className="flex flex-col lg:w-[40%]  gap-7 py-20 z-10">
-        <p className="text-3xl font-bold text-secondary ">Life at Nesco</p>
-        <p className="text-white text-3xl">An inspired culture of progress</p>
-        <p className="text-white text-justify md:w-[70%]">
+    <div className="flex lg:px-[7rem] px-5 md:px-16 justify-between items-center w-full bg-[#002172] relative pt-16 overflow-hidden h-[100vh]">
+      <div className="flex flex-col lg:w-[40%]  md:gap-7 gap-10 py-20 z-10">
+        <p className="text-3xl font-bold text-secondary text-center md:text-left">
+          Life at Nesco
+        </p>
+        <p className="text-white text-3xl  text-center md:text-left">
+          An inspired culture of progress
+        </p>
+        <p className="text-white text-justify md:w-[70%] md:text-base text-lg">
           At Nesco, we foster an inspired culture of{" "}
           <span className="font-bold">
             {" "}

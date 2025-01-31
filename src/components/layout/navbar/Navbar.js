@@ -109,7 +109,10 @@ function Navbar() {
 
         {/* Search bar */}
         <div className="h-[30px] w-[200px] xl:w-[250px] relative">
-          <input type="text" className="w-full h-full rounded-full" />
+          <input
+            type="text"
+            className="w-full h-full rounded-full pl-6 pr-12"
+          />
           <span className="inline-block absolute top-1/2 -translate-y-1/2 right-5">
             <FaSearch />
           </span>

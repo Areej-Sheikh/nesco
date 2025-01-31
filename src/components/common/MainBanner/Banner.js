@@ -15,7 +15,7 @@ function Banner({ SliderData }) {
   const PrevArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute left-4 top-[60%] transform -translate-y-1/2 bg-primary text-white p-3 rounded-full z-10"
+      className="absolute left-4 top-[60%] transform -translate-y-1/2 bg-primary opacity-80 text-white p-3 rounded-full z-10"
     >
       <FaAngleLeft size={24} />
     </button>
@@ -24,7 +24,7 @@ function Banner({ SliderData }) {
   const NextArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute right-4 top-[60%] transform -translate-y-1/2 bg-primary text-white p-3 rounded-full z-10"
+      className="absolute right-4 top-[60%] transform -translate-y-1/2 bg-primary opacity-80 text-white p-3 rounded-full z-10"
     >
       <FaAngleRight size={24} />
     </button>
@@ -50,7 +50,7 @@ function Banner({ SliderData }) {
   };
 
   return (
-    <div className="w-full mb-16 h-[100vh] banner-section relative">
+    <div className="w-full  h-[100vh] banner-section relative">
       <div className="relative">
         <div className="flex justify-center w-full overflow-hidden h-[100vh]">
           <Slider ref={sliderRef} {...settings} className="w-full h-[80vh]">
