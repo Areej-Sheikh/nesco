@@ -30,7 +30,9 @@ function Service() {
             to education, infrastructure & medical facilities in rural areas.
           </p>
           <div className="mt-8">
-            <button className="px-8 py-2 bg-primary text-white">Explore</button>
+            <button className="px-8 py-2 bg-primary border border-black text-white">
+              Explore
+            </button>
           </div>
         </div>
       </div>

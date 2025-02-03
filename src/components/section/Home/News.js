@@ -21,7 +21,7 @@ function News() {
     },
     {
       backgroundcolor: "#caecff",
-      color: "#58667D",
+      color: "#403092",
       svgImage: Image2,
       title: "Technology Transfer Meet",
       description:
@@ -64,7 +64,7 @@ function News() {
     },
     {
       backgroundcolor: "#c8dee6",
-      color: "#4D6873",
+      color: "#18565A",
       svgImage: Image6,
       title: "Introducing",
       description:
@@ -75,9 +75,7 @@ function News() {
 
   return (
     <div className="w-full flex flex-col items-center py-10 pt-28">
-      <p className="text-primary font-bold pb-3 text-3xl">
-        In the news
-      </p>
+      <p className="text-primary font-bold pb-3 text-3xl">In the news</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 lg:gap-16 gap-10 lg:px-[7rem] px-5 md:px-10 mt-16">
         {newsData &&

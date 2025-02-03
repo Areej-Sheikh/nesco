@@ -15,7 +15,11 @@ function Goal() {
         </div>
         <div className="mt-10 flex justify-center flex-col items-center">
           <div>
-            <img src={GoalImage.src} alt="Goal image" className="" />
+            <img
+              src={GoalImage.src}
+              alt="Goal image"
+              className="border border-blue-800"
+            />
           </div>
           <p className="mt-8 md:text-2xl text-xl font-bold text-center">
             In 1939, we set out on our goal to make India
@@ -24,7 +28,7 @@ function Goal() {
             stand out on the world map.
           </p>
 
-          <p className="text-justify mt-8 md:text-lg">
+          <p className="text-center  mt-8 md:text-lg">
             From designing and manufacturing engineering solutions, the Nesco
             Group has diversified into multiple industries including
             Exhibitions, Real Estate, Hospitality, Events and Entertainment. Our
