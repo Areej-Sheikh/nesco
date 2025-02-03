@@ -133,7 +133,7 @@ function News() {
 
             if (index === 4) {
               return (
-                <div>
+                <div key={index}>
                   <div
                     className=" p-5 shadow-lg gap-5 relative overflow-hidden md:h-full h-[292px]"
                     style={{ backgroundColor: data.backgroundcolor }}

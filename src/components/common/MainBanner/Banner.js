@@ -6,11 +6,14 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 // Import Slick CSS
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
 
-function Banner({ SliderData }) {
+function Banner({ SliderData, onSlideChange }) {
   const sliderRef = React.useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    onSlideChange(activeIndex);
+  }, [activeIndex, onSlideChange]);
 
   // Custom arrow components
   const PrevArrow = ({ onClick }) => (
@@ -77,7 +80,7 @@ function Banner({ SliderData }) {
                           className="object-cover md:scale-50 scale-[.6]"
                         />
                       </div>
-                      <div className="absolute z-20 md:top-[55%] font-branding-medium top-[57%] transform -translate-y-1/2 md:w-[47%] w-[60%] md:translate-x-[58%] translate-x-[36%] text-center md:text-[1.8rem] leading-[2.1rem] text-lg">
+                      <div className="absolute z-20 md:top-[55%] font-branding-medium top-[57%] transform -translate-y-1/2 md:w-[47%] w-[60%] md:translate-x-[58%] translate-x-[36%] text-center md:text-[1.8rem] leading-[2rem] text-lg">
                         {data.description}
                       </div>
 
@@ -96,7 +99,10 @@ function Banner({ SliderData }) {
                 />
 
                 {index === 0 && (
-                  <div className="text-black font-poppins absolute bottom-40 left-48">
+                  <div
+                    id="slider-0"
+                    className="text-black font-poppins absolute bottom-40 left-48"
+                  >
                     <h1
                       //  className="text-6xl text-blue-900 font-[600]"
                       className="lg:text-[4.5rem] text-2xl font-bold text-primary pb-3 mt-4"
