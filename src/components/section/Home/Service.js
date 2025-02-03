@@ -24,14 +24,14 @@ function Service() {
           {/* <p className="text-primary md:text-4xl text-3xl font-bold mt-10"> */}
 
           <p
-            className="lg:text-[3.3rem] text-2xl font-bold text-primary mt-10 tracking-wide leading-[3.5rem]"
+            className="lg:text-[3.2rem] text-2xl font-bold text-primary mt-10 tracking-wide leading-[3.5rem]"
             style={{ fontFamily: "BrandingSemibold" }}
           >
             In service of a better & brighter tomorrow
           </p>
 
           {/* <p className="text-lg lg:text-xl text-justify"> */}
-          <p className="text-justify text-[1.6rem] text-justify font-branding-medium leading-[2rem]">
+          <p className="text-justify md:w-[90%] text-[1.47rem] text-justify font-branding-medium leading-[2rem]">
             For us, social responsibility is all about creating positive impact
             in the lives of the hopeful by working tirelessly to improve access
             to education, infrastructure & medical facilities in rural areas.

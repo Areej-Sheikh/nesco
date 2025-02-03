@@ -23,7 +23,7 @@ function Mentor() {
           </p>
         </div>
         <div className="lg:w-[70%] w-[80%] flex flex-col items-center md:text-lg mt-10">
-          <p className="text-justify text-[1.6rem]  font-branding-medium leading-[2.2rem]">
+          <p className="text-justify text-[1.6rem] font-branding-medium leading-[2.2rem]">
             In the last eight decades, Nesco has come a long way. We see our
             present success as only the start to newer and bolder initiatives.
             This is an affirmation that as we continue to grow, we add to the
@@ -41,11 +41,11 @@ function Mentor() {
                 - Late Shri. Sumant J. Patel.
               </p>
             </div>
-            <div className="lg:w-[50%] flex lg:justify-end justify-center mt-10 lg:mt-0">
+            <div className="lg:w-[55%] flex lg:justify-end justify-center mt-10 lg:mt-[-40px]">
               <img
                 src={MentorImage.src}
                 alt="Mentor image"
-                className="h-[300px]"
+                className="h-[350px]"
               />
             </div>
           </div>
