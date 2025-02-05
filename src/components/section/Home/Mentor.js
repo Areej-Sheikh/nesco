@@ -5,27 +5,44 @@ import Image from "next/image";
 
 function Mentor() {
   return (
-    <div className="bg-[#D2EFFF] flex flex-col items-center justify-center relative w-full lg:h-[100vh] overflow-hidden pt-8 md:pt-0">
-      <div className="z-10 relative w-[81%] flex flex-col items-center justify-center mx-auto h-full my-20">
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+    <div className="bg-[#a6c8d8] flex flex-col items-center justify-center relative w-full lg:h-[100vh] overflow-hidden pt-8 md:pt-0">
+      {/* Background Image */}
+      <div className="w-full h-full z-0 absolute flex lg:items-center lg:justify-start justify-center sm:items-start items-center left-0 mt-36">
+        <div className="relative w-full h-full">
+          <Image
+            src={backgroundImage}
+            alt="background image"
+            layout="fill"
+            objectFit="contain"
+            objectPosition="left"
+            className="md:w-[70%] sm:h-full w-full h-[50%]"
+          />
+          {/* <div className="absolute inset-0 bg-[#889ea9] opacity-50 mix-blend-multiply"></div> */}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="z-10 relative w-[81%] flex flex-col items-center justify-center mx-auto h-full">
+        <div className="grid md:grid-cols-2 items-start">
+          {/* Text Content */}
           <div className="">
             <h2
               style={{ fontFamily: "BrandingSemibold" }}
-              className=" text-3xl md:text-5xl text-indigo-700"
+              className="text-3xl md:text-5xl text-indigo-700"
             >
               A note from the Founding
             </h2>
             <h3 className="font-branding-medium text-3xl mt-2 md:text-4xl text-indigo-700">
               Director and Mentor
             </h3>
-            <div className="space-y-4 text-gray-700 mt-8">
-              <p className="text-[20px] font-branding-medium leading-7">
+            <div className="space-y-4 mt-7 text-gray-700">
+              <p className="text-[21px] font-branding-medium leading-7">
                 In the last eight decades, Nesco has come a long way. We see our
                 present success as only the start to newer and bolder
                 initiatives. This is an affirmation that as we continue to grow,
                 we add to the growth of our country.
               </p>
-              <p className="text-[20px] font-branding-medium leading-7">
+              <p className="text-[21px] font-branding-medium leading-7">
                 Our teams are motivated to set new benchmarks across industries
                 through perseverance and innovation. The world we live in is
                 rapidly evolving and at Nesco we are prepared to meet every
@@ -33,11 +50,14 @@ function Mentor() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-end">
-            <div className="">
+
+          {/* Mentor Image and Name */}
+          <div className="flex flex-col items-center">
+            <div className="w-full max-w-[500px]">
               <Image
                 src={MentorImage}
-                width={350}
+                alt="Mentor"
+                width={550}
                 height={400}
                 className="w-full h-auto"
               />
@@ -52,13 +72,6 @@ function Mentor() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-full h-full z-0 absolute flex lg:items-center lg:justify-end justify-center sm:items-end items-center right-0 mt-36">
-        <img
-          src={backgroundImage.src}
-          alt="background image"
-          className="object-cover md:w-[70%] sm:h-full w-full h-[50%]"
-        />
       </div>
     </div>
   );
