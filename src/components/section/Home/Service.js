@@ -31,12 +31,11 @@ function Service() {
           </p>
 
           {/* <p className="text-lg lg:text-xl text-justify"> */}
-          <p className="text-justify md:w-[90%] text-[1.47rem] text-justify font-branding-medium leading-[2rem]">
+          <p className="text-justify md:w-[90%] text-[1.47rem] font-branding-medium leading-[2rem]">
             For us, social responsibility is all about creating positive impact
             in the lives of the hopeful by working tirelessly to improve access
             to education, infrastructure & medical facilities in rural areas.
           </p>
-          z
           <div className="mt-8">
             <button className="px-8 py-2 bg-primary border border-black text-[1.4rem] uppercase font-branding-semibold text-white">
               Explore

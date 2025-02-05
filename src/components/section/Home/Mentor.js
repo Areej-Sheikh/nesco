@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function Mentor() {
   return (
-    <div className="bg-[#a6c8d8] flex flex-col items-center justify-center relative w-full lg:h-[100vh] overflow-hidden pt-8 md:pt-0">
+    <div className="bg-[#a6c8d8] flex flex-col items-center justify-center relative w-full h-auto overflow-hidden pt-8 md:pt-0">
       {/* Background Image */}
       <div className="w-full h-full z-0 absolute flex lg:items-center lg:justify-start justify-center sm:items-start items-center left-0 mt-36">
         <div className="relative w-full h-full">
@@ -22,7 +22,7 @@ function Mentor() {
       </div>
 
       {/* Content */}
-      <div className="z-10 relative w-[81%] flex flex-col items-center justify-center mx-auto h-full">
+      <div className="z-10 relative w-[81%] flex flex-col items-center justify-center mx-auto mt-24 mb-10 h-full">
         <div className="grid md:grid-cols-2 items-start">
           {/* Text Content */}
           <div className="">
