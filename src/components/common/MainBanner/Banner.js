@@ -16,18 +16,18 @@ function Banner({ SliderData }) {
   const PrevArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute left-4 top-[60%] transform -translate-y-1/2 bg-primary opacity-80 text-white p-3 rounded-full z-10"
+      className="absolute left-16 top-[60%] transform -translate-y-1/2 text-white p-3 rounded-full z-10"
     >
-      <FaAngleLeft size={24} />
+      <FaAngleLeft size={40} />
     </button>
   );
 
   const NextArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute right-4 top-[60%] transform -translate-y-1/2 bg-primary opacity-80 text-white p-3 rounded-full z-10"
+      className="absolute right-16 top-[60%] transform -translate-y-1/2 text-white p-3 rounded-full z-10"
     >
-      <FaAngleRight size={24} />
+      <FaAngleRight size={40} />
     </button>
   );
 
@@ -77,8 +77,23 @@ function Banner({ SliderData }) {
                           className="object-cover md:scale-50 scale-[.6]"
                         />
                       </div>
-                      <div className="absolute z-20 md:top-[55%] top-[57%] transform -translate-y-1/2 md:w-[47%] w-[60%] md:translate-x-[58%] translate-x-[36%] text-center md:text-2xl text-lg">
-                        {data.description}
+                      <div className="absolute z-10 w-full h-full flex items-center justify-end overflow-hidden">
+                        <div className="relative w-full h-full">
+                          {/* Description */}
+                          <div
+                            className={`absolute z-20 ${
+                              index === 5
+                                ? "md:top-[48%] md:w-[47%]"
+                                : index === 3
+                                ? "md:top-[49%] md:w-[50%]"
+                                : index === 4
+                                ? "md:top-[47%] md:w-[47%]"
+                                : "md:top-[47%] md:w-[47%]"
+                            } top-[57%] left-[27%] w-[60%] text-center md:text-2xl text-lg`}
+                          >
+                            {data.description}
+                          </div>
+                        </div>
                       </div>
 
                       <img

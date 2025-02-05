@@ -25,6 +25,20 @@ function HomeBanner() {
       description: "We bring extraordinary flavours to your table.",
     },
     {
+      image: BannerImage3,
+      description:
+        "A premier venue that hosts a diverse array of events, trade shows, conferences and exhibitons.",
+      hexaImage: hexaImage3,
+      hexaLogo: hexaLogo3,
+    },
+    {
+      image: BannerImage5,
+      description:
+        "Renowned for leasing premium office spaces tailored to the needs of IT compaines.",
+      hexaImage: hexaImage5,
+      hexaLogo: hexaLogo5,
+    },
+    {
       image: BannerImage,
       description: "We bring extraordinary flavours to your table.",
       hexaImage: hexaImage1,
@@ -38,26 +52,13 @@ function HomeBanner() {
       hexaImage: hexaImage2,
       hexaLogo: hexaLogo2,
     },
-    {
-      image: BannerImage3,
-      description:
-        "A premier venue that hosts a diverse array of events, trade shows, conferences and exhibitons.",
-      hexaImage: hexaImage3,
-      hexaLogo: hexaLogo3,
-    },
+
     {
       image: BannerImage4,
       description:
         "manufactures abrasives & shot blasting machine for industries like automotive and aerospace since 1975",
       hexaImage: hexaImage4,
       hexaLogo: hexaLogo4,
-    },
-    {
-      image: BannerImage5,
-      description:
-        "Renowned for leasing premium office spaces tailored to the needs of IT compaines.",
-      hexaImage: hexaImage5,
-      hexaLogo: hexaLogo5,
     },
   ];
 

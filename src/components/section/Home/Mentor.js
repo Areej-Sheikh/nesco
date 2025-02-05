@@ -1,44 +1,51 @@
 import React from "react";
 import MentorImage from "@/assests/Home/Mentor.png";
 import backgroundImage from "@/assests/Home/N.png";
+import Image from "next/image";
 
 function Mentor() {
   return (
     <div className="bg-[#D2EFFF] flex flex-col items-center justify-center relative w-full lg:h-[100vh] overflow-hidden pt-8 md:pt-0">
-      <div className="z-10 relative flex flex-col items-center justify-center w-full h-full my-20">
-        <div className="text-center">
-          <p className="lg:text-3xl text-xl text-primary">
-            A note from the Founding
-          </p>
-          <p className="lg:text-3xl text-2xl font-bold text-primary pb-3 mt-2">
-            Director and Mentor
-          </p>
-        </div>
-        <div className="lg:w-[55%] w-[80%] flex flex-col items-center md:text-lg mt-10">
-          <p className="text-justify">
-            In the last eight decades, Nesco has come a long way. We see our
-            present success as only the start to newer and bolder initiatives.
-            This is an affirmation that as we continue to grow, we add to the
-            growth of our country.
-          </p>
-          <div className="lg:flex mt-10 h-full w-full">
-            <div className="lg:w-[70%] flex flex-col justify-between gap-10 lg:gap-0 md:text-lg">
-              <p className="text-justify">
+      <div className="z-10 relative w-[81%] flex flex-col items-center justify-center mx-auto h-full my-20">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div className="">
+            <h2 className="font-semibold text-3xl md:text-4xl text-indigo-700">
+              A note from the Founding
+            </h2>
+            <h3 className="font-medium text-3xl mt-2 md:text-4xl text-indigo-700">
+              Director and Mentor
+            </h3>
+            <div className="space-y-4 text-gray-700 mt-8">
+              <p className="text-[19px]">
+                In the last eight decades, Nesco has come a long way. We see our
+                present success as only the start to newer and bolder
+                initiatives. This is an affirmation that as we continue to grow,
+                we add to the growth of our country.
+              </p>
+              <p className="text-[19px]">
                 Our teams are motivated to set new benchmarks across industries
                 through perseverance and innovation. The world we live in is
                 rapidly evolving and at Nesco we are prepared to meet every
                 challenge head on.
               </p>
-              <p className="font-bold text-primary">
-                -Late Shri. Sumant J. Patel.
-              </p>
             </div>
-            <div className="lg:w-[40%] flex lg:justify-end justify-center mt-10 lg:mt-0">
-              <img
-                src={MentorImage.src}
-                alt="Mentor image"
-                className="h-[240px]"
+          </div>
+          <div className="flex flex-col items-end">
+            <div className="">
+              <Image
+                src={MentorImage}
+                width={350}
+                height={400}
+                className="w-full h-auto"
               />
+            </div>
+            <div className="text-center mt-4">
+              <h3 className="text-2xl font-semibold text-indigo-700">
+                Sumant J. Patel
+              </h3>
+              <p className="text-gray-600 mt-1">
+                (15th August 1935 – 17th November 2021)
+              </p>
             </div>
           </div>
         </div>
