@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function Goal() {
   return (
-    <section className="w-full bg-white">
-      <div className="grid md:grid-cols-2 gap-8 py-14 items-center w-[81%] mx-auto ">
-        <div className="relative h-[400px] md:h-[500px]">
+    <section className="w-full h-screen bg-gray-200">
+      <div className="grid md:grid-cols-2 gap-8 pt-24 items-center w-[81%] mx-auto ">
+        <div className="relative h-[400px] md:h-[600px]">
           <Image
             src={GoalImage}
             alt="Illustration of a person with a flag standing on a light bulb"
@@ -32,7 +32,7 @@ export default function Goal() {
               In 1939, we set out on our goal to make India stand out on the
               world map.
             </h2>
-            <p className="text-gray-700 text-lg text-justify font-branding-medium tracking-wider leading-relaxed">
+            <p className="text-gray-700 text-[19px] text-justify font-branding-medium tracking-wider leading-relaxed">
               From designing and manufacturing engineering solutions, the Nesco
               Group has diversified into multiple industries including
               Exhibitions, Real Estate, Hospitality, Events and Entertainment.

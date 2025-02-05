@@ -19,13 +19,13 @@ function Mentor() {
               Director and Mentor
             </h3>
             <div className="space-y-4 text-gray-700 mt-8">
-              <p className="text-[19px] font-branding-medium">
+              <p className="text-[20px] font-branding-medium leading-7">
                 In the last eight decades, Nesco has come a long way. We see our
                 present success as only the start to newer and bolder
                 initiatives. This is an affirmation that as we continue to grow,
                 we add to the growth of our country.
               </p>
-              <p className="text-[19px] font-branding-medium">
+              <p className="text-[20px] font-branding-medium leading-7">
                 Our teams are motivated to set new benchmarks across industries
                 through perseverance and innovation. The world we live in is
                 rapidly evolving and at Nesco we are prepared to meet every

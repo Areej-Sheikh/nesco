@@ -19,7 +19,7 @@ function Banner({ SliderData, onSlideChange }) {
   const PrevArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute left-4 top-[60%] transform -translate-y-1/2 text-white p-3 rounded-full z-10"
+      className="absolute left-4 top-[60%] transform -translate-y-1/2 text-gray-200 p-3 rounded-full z-10"
     >
       <FaAngleLeft size={40} />
     </button>
@@ -28,7 +28,7 @@ function Banner({ SliderData, onSlideChange }) {
   const NextArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute right-4 top-[60%] transform -translate-y-1/2 text-white p-3 rounded-full z-10"
+      className="absolute right-4 top-[60%] transform -translate-y-1/2 text-gray-200 p-3 rounded-full z-10"
     >
       <FaAngleRight size={40} />
     </button>
