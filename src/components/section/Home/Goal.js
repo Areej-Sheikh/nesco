@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function Goal() {
   return (
-    <section className="w-full h-screen bg-gray-200">
-      <div className="grid md:grid-cols-2 gap-8 pt-24 items-center w-[81%] mx-auto ">
-        <div className="relative h-[400px] md:h-[600px]">
+    <section className="w-full lg:h-screen h-full bg-gray-200 pb-10 md:pb-0 flex flex-col justify-center">
+      <div className="grid md:grid-cols-2 justify-between gap-10 pt-24 items-center w-[90%] mx-auto ">
+        <div className="relative h-[400px] md:h-[650px]">
           <Image
             src={GoalImage}
             alt="Illustration of a person with a flag standing on a light bulb"

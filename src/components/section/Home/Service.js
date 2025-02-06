@@ -20,24 +20,24 @@ function Service() {
             }}
           ></div> */}
         </div>
-        <div className="xl:w-[65%] lg:w-[60%] md:w-[70%] z-[1] flex flex-col gap-5 py-10 lg:px-20 md:px-10 px-5 ">
+        <div className="xl:w-[65%] md:w-[70%] z-[1] flex flex-col gap-5 py-10 xl:px-20 md:px-10 px-5 h-full">
           {/* <p className="text-primary md:text-4xl text-3xl font-bold mt-10"> */}
 
           <p
-            className="lg:text-[3.2rem] text-2xl font-bold text-primary mt-10 tracking-wide leading-[3.5rem]"
+            className="xl:text-[3.2rem] lg:text-[3rem] text-[2rem] text-2xl font-bold text-primary xl:mt-10 tracking-wide lg:leading-[3.5rem] leading-[2.5rem]"
             style={{ fontFamily: "BrandingSemibold" }}
           >
             In service of a better & brighter tomorrow
           </p>
 
           {/* <p className="text-lg lg:text-xl text-justify"> */}
-          <p className="text-justify md:w-[90%] text-[1.47rem] font-branding-medium leading-[2rem]">
+          <p className="text-justify md:w-[90%] lg:text-[1.47rem] text-[1.2rem] font-branding-medium leading-[2rem]">
             For us, social responsibility is all about creating positive impact
             in the lives of the hopeful by working tirelessly to improve access
             to education, infrastructure & medical facilities in rural areas.
           </p>
           <div className="mt-8">
-            <button className="px-8 py-2 bg-primary border border-black text-[1.4rem] uppercase font-branding-semibold text-white">
+            <button className="px-8 py-2 bg-primary border border-black lg:text-[1.4rem] uppercase font-branding-semibold text-white">
               Explore
             </button>
           </div>

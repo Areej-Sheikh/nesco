@@ -78,15 +78,15 @@ function Navbar({ activeSlide }) {
 
   const getTextColor = () => {
     if (activeSlide === 0) {
-      return "text-black";
+      return "text-black border-black";
     }
     if (isHeaderWhite) {
-      return "text-white";
+      return "text-white border-white";
     }
     if (isScrolled) {
-      return "text-black";
+      return "text-black  border-black";
     }
-    return "text-white";
+    return "text-white  border-white";
   };
 
   const getLogoColorWork = () => {
@@ -115,7 +115,7 @@ function Navbar({ activeSlide }) {
         <Link href={logo.link}>
           <span className="overflow-hidden absolute inline-block w-[180px] h-[60px] top-1/2 -translate-y-1/2">
             <Image
-              src={!isScrolled ? Nescologo : Nescologo2}
+              src={!isScrolled || isHeaderWhite ? Nescologo : Nescologo2}
               alt="Nesco Logo"
               className={`w-full h-full ${getLogoColorWork()}`}
             />
@@ -129,7 +129,7 @@ function Navbar({ activeSlide }) {
           {NavData.map((data, index) => (
             <li
               key={index}
-              className={`${getTextColor()} border-r border-white font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5`}
+              className={`${getTextColor()} border-r font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5`}
             >
               <Link
                 href={data.route}
@@ -158,7 +158,7 @@ function Navbar({ activeSlide }) {
 
       {/* Hamburger Icon */}
       <div className="xl:hidden flex items-center z-10" onClick={toggleSidebar}>
-        <FaBars className="text-white text-3xl" />
+        <FaBars className={`${getTextColor()} text-3xl`} />
       </div>
 
       {/* Sidebar */}

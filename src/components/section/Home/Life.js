@@ -45,7 +45,7 @@ function Life() {
         <img
           src={background.src}
           alt="background"
-          className=" absolute z-0 right-[-7rem] xl:w-[75%] lg:w-[650px] xl:-top-[8%] lg:top-[8%]"
+          className=" absolute z-0 right-[-7rem] xl:w-[72%] lg:w-[650px] xl:-top-[8%] lg:top-[8%]"
         />
         <div className="absolute hidden md:block z-0 bottom-16 right-12 w-[140px]">
           <div
