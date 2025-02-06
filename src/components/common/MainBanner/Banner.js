@@ -77,7 +77,7 @@ function Banner({ SliderData }) {
                           className="object-cover md:scale-50 scale-[.6]"
                         />
                       </div>
-                      <div className="absolute z-20 md:top-[55%] top-[57%] transform -translate-y-1/2 md:w-[48%] w-[60%] md:translate-x-[55%] translate-x-[36%] text-center md:text-2xl text-lg">
+                      <div className="absolute z-20 md:top-[55%] top-[57%] transform -translate-y-1/2 md:w-[46%] w-[60%] md:translate-x-[60%] translate-x-[36%] text-center md:text-2xl text-lg">
                         {data.description}
                       </div>
 

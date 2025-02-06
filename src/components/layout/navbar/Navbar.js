@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 import Nescologo from "@/assests/Home/nescoLogo1.png";
+import Nescologo2 from "@/assests/Home/nescoLogo2.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -70,7 +71,7 @@ function Navbar() {
   return (
     <nav
       className={`py-6 md:px-14 px-8 flex items-center justify-between w-full z-[900] fixed transition-all duration-300 overflow-hidden ${
-        isScrolled ? "bg-primary shadow-lg" : "bg-transparent"
+        isScrolled ? " shadow-lg text-black" : "bg-transparent"
       }`}
     >
       {!isScrolled && (
@@ -88,7 +89,7 @@ function Navbar() {
         <Link href={logo.link}>
           <span className="overflow-hidden absolute inline-block w-[180px] h-[60px] top-1/2 -translate-y-1/2">
             <Image
-              src={logo.imagePath}
+              src={!isScrolled ? Nescologo : Nescologo2}
               alt="Nesco Logo"
               className="w-full h-full"
             />
@@ -102,7 +103,11 @@ function Navbar() {
           {NavData.map((data, index) => (
             <li
               key={index}
-              className={`text-white border-r border-white last:border-none xl:px-6 lg:px-5 flex justify-center w-full whitespace-nowrap`}
+              className={`${
+                isScrolled
+                  ? " text-black border-black"
+                  : "text-white border-white"
+              } border-r  last:border-none xl:px-6 lg:px-5 flex justify-center w-full whitespace-nowrap`}
             >
               <button
                 className={`${
