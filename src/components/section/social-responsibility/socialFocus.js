@@ -1,0 +1,58 @@
+import React from "react";
+import InternshipLogo from "@/assests/careers/internship.png";
+import GraduatesLogo from "@/assests/careers/graduates.png";
+import ProfessionalLogo from "@/assests/careers/professional.png";
+import Image from "next/image";
+
+function SocialFocus() {
+  const careerCard = [
+    {
+      image: InternshipLogo,
+      title: "Education",
+    },
+    {
+      image: GraduatesLogo,
+      title: "Infrastrucutre",
+    },
+    {
+      image: ProfessionalLogo,
+      title: "Healthcare",
+    },
+  ];
+
+  return (
+    <section className="w-full flex justify-center flex-col items-center py-20  font-branding-medium bg-[#EDEDED] relative ">
+      <div className="absolute w-full bottom-0 left-0 bg-primary h-[30%]"></div>
+      <div className="relative z-10 flex flex-col items-center w-[85%] md:gap-10 gap-4">
+        <h2
+          style={{ fontFamily: "BrandingSemibold" }}
+          className="text-[#1e3a8a] text-2xl md:text-4xl lg:text-5xl font-BrandingSemibold font-bold"
+        >
+          Focus Areas
+        </h2>
+
+        <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-6 lg:gap-0 w-full mt-5 justify-center items-center">
+          {careerCard.map((data, index) => (
+            <div
+              key={index}
+              className="flex flex-col justify-center items-center"
+            >
+              <div className="md:w-[70%] w-[60%] p-3 border-2 border-gray-300">
+                <Image
+                  src={data.image}
+                  alt={data.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="mt-5 text-center text-xl xl:text-white text-black">
+                {data.title}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default SocialFocus;

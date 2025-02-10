@@ -64,7 +64,8 @@ function Banner({ SliderData, onSlideChange }) {
       <div className="relative">
         <div className="flex justify-center w-full overflow-hidden h-[100vh] relative">
           {SliderData.length === 1 ? (
-            <div className="w-full flex justify-center items-center text-2xl h-[100vh] relative transition-all duration-700">
+            <div className="w-full flex justify-center items-center text-2xl h-[100vh] relative">
+              {SliderData[0].data}
               <img
                 src={SliderData[0].image.src}
                 alt="banner image"
