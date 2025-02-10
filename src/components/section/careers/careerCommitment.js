@@ -4,8 +4,8 @@ import Image from "next/image";
 
 function CareerCommitment() {
   return (
-    <section className="w-full lg:h-screen h-full pb-10 md:pb-0 flex flex-col justify-center">
-      <div className="grid md:grid-cols-2 justify-between gap-10 pt-24 xl:items-start items-center w-[80%] mx-auto ">
+    <section className="w-full lg:h-screen h-full pb-10 flex flex-col justify-center">
+      <div className="grid md:grid-cols-2 justify-between gap-10 pt-24 xl:items-start items-center w-[80%] mx-auto">
         <div className="">
           <div className="">
             <h2
@@ -22,7 +22,7 @@ function CareerCommitment() {
               extends to our employees as well, where we provide meaningful work
               and foster personal growth.
             </p>
-            <p className="md:text-xl text-justify font-branding-medium tracking-wider leading-relaxed pt-8">
+            <p className="md:text-xl text-justify font-branding-medium tracking-wider leading-relaxed md:pt-8">
               Inspired by our founder, J.V. Patel, who established scholarships
               for the children of factory workers, we prioritize social
               responsibility and encourage a sense of purpose in every team

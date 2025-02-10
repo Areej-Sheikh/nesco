@@ -190,7 +190,7 @@ function Navbar({ activeSlide }) {
         <ul className="flex flex-col gap-6">
           {NavData.map((data, index) => (
             <li key={index} className="text-white text-xl">
-              {data.title}
+              <Link href={data.route}>{data.title}</Link>
             </li>
           ))}
         </ul>

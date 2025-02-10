@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function CareerCulture() {
   return (
-    <section className=" w-full lg:h-screen h-full bg-secondary pb-10 md:pb-0 flex flex-col justify-center">
+    <section className=" w-full lg:h-screen h-full bg-secondary pb-10 flex flex-col justify-center">
       <div className="grid md:grid-cols-2 justify-between gap-10 pt-24 xl:items-start items-center w-[80%] mx-auto ">
         <div className="relative h-[300px] md:h-[550px]">
           <Image
@@ -31,7 +31,7 @@ function CareerCulture() {
               extends to our employees as well, where we provide meaningful work
               and foster personal growth.
             </p>
-            <p className="md:text-xl text-justify font-branding-medium tracking-wider leading-relaxed pt-8">
+            <p className="md:text-xl text-justify font-branding-medium tracking-wider leading-relaxed lg:pt-8">
               Inspired by our founder, J.V. Patel, who established scholarships
               for the children of factory workers, we prioritize social
               responsibility and encourage a sense of purpose in every team
