@@ -38,8 +38,8 @@ const page = () => {
     <div className="financials">
       <Navbar />
 
-      <div className="relative w-full">
-        <div className="imgContainer bg-slate-400">
+      <div className="relative w-auto h-auto bg-cyan-300">
+        <div className="imgContainer">
           <img
             src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="financials"
@@ -63,7 +63,7 @@ const page = () => {
       </div>
 
       <div className="resultsSection mx-auto mt-12 mb-10 w-full px-4">
-        <div className="outContainer  sm:w-[95%] md:w-[90%] h-fit grid grid-cols-4 gap-[10px] mx-auto ">
+        <div className="outContainer  sm:w-[95%] md:w-[90%] h-fit grid grid-cols-4 gap-[10px] mx-auto overflow-hidden">
           <div className="absolute justify-center w-full px-4 ">
             <div className="relative w-fit max-w-xs sm:max-w-sm md:max-w-lg text-gray-500">
               <input
@@ -121,7 +121,7 @@ const page = () => {
             )}
           </div>
 
-          <div className="tableContainer w-auto p-3 col-span-3 m-6 ">
+          <div className="tableContainer w-auto p-3 col-span-3 m-6 overflow-hidden ">
             <table className="table-auto border-separate text-left w-full h-full  ">
               <thead>
                 <tr>
@@ -129,7 +129,7 @@ const page = () => {
                     Title
                   </th>
                   {/* <th className="title bg-violet-700 text-gray-200 shadow-sm pl-2  ">
-                    Title
+                    Title 
                   </th> */}
                 </tr>
               </thead>
