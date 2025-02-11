@@ -1,6 +1,6 @@
 import SlidedownCard from "@/components/common/slidedownCard/SlidedownCard";
 import React from "react";
-import WorldImage from "@/assests/contact/World.png";
+import WorldImage from "@/assests/contact/33.png";
 import Image from "next/image";
 
 function Contact() {

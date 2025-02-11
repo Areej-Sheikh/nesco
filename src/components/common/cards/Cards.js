@@ -11,8 +11,13 @@ function Cards({ CardData }) {
             key={index}
             className="pb-5 pt-12 px-12 border-2 border-gray-500"
           >
-            <div className="flex flex-col gap-2">
-              <Image src={data.image} alt="Mentor" className="" />
+            <div className="flex flex-col gap-2 w-full h-full">
+              <Image
+                src={data.image}
+                alt="Mentor"
+                className="h-[70%] w-full object-cover filter grayscale contrast-125"
+              />
+
               <p className="flex justify-between">
                 <span className="font-branding-bold text-lg">{data.name}</span>
                 <span className="flex items-center">

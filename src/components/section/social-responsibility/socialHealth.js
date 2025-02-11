@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "@/assests/leadership/image.png";
+import bannerImage from "@/assests/social/31.png";
 import SocialBanner1 from "@/components/common/SocialBanner/SocialBanner";
 
 function SocialHealth() {
@@ -15,9 +15,9 @@ function SocialHealth() {
   ];
 
   return (
-    <div className="w-full">
+    <section className="w-full">
       <SocialBanner1 SliderData={SliderData} title={title} />
-    </div>
+    </section>
   );
 }
 

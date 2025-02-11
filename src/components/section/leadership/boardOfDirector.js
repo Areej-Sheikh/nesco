@@ -1,23 +1,28 @@
 import Cards from "@/components/common/cards/Cards";
 import React from "react";
-import MentorImage from "@/assests/Home/Mentor.png";
+import MentorImage from "@/assests/leadership/6.png";
+import MentorImage2 from "@/assests/leadership/7.png";
+import MentorImage3 from "@/assests/leadership/9.png";
+import MentorImage4 from "@/assests/leadership/16.png";
+import MentorImage5 from "@/assests/leadership/27.png";
+import MentorImage6 from "@/assests/leadership/28.png";
 
 function BoardOfDirector() {
   const CardData = [
     {
-      image: MentorImage,
+      image: MentorImage2,
       name: "Krishna S. Patel",
       position: "Chairman and Managing Director",
       link: "",
     },
     {
-      image: MentorImage,
+      image: MentorImage6,
       name: "Mrs. Sudha S. Patel",
       position: "Non Executive Non Independent Director",
       link: "",
     },
     {
-      image: MentorImage,
+      image: MentorImage3,
       name: "Ms. Amrita Verma Chowdhury",
       position: "Independent Director",
       link: "",
@@ -29,13 +34,13 @@ function BoardOfDirector() {
       link: "",
     },
     {
-      image: MentorImage,
+      image: MentorImage4,
       name: "Dr. Ramakrishnan Ramamurthi",
       position: "Independent Director",
       link: "",
     },
     {
-      image: MentorImage,
+      image: MentorImage5,
       name: "Mr. Arun L. Todarwal",
       position: "Independent Director",
       link: "",

@@ -1,5 +1,5 @@
 import React from "react";
-import chessImage from "@/assests/leadership/chess.png";
+import chessImage from "@/assests/leadership/24.png";
 import Image from "next/image";
 function believe() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-import InternshipLogo from "@/assests/careers/internship.png";
-import GraduatesLogo from "@/assests/careers/graduates.png";
-import ProfessionalLogo from "@/assests/careers/professional.png";
+import InternshipLogo from "@/assests/social/39.png";
+import GraduatesLogo from "@/assests/social/11.png";
+import ProfessionalLogo from "@/assests/social/38.png";
 import Image from "next/image";
 
 function SocialFocus() {
@@ -41,7 +41,7 @@ function SocialFocus() {
                 <Image
                   src={data.image}
                   alt={data.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-[15rem] object-cover"
                 />
               </div>
               <p className="mt-5 text-center text-xl xl:text-white text-black">

@@ -1,6 +1,8 @@
 import Cards from "@/components/common/cards/Cards";
 import React from "react";
-import MentorImage from "@/assests/Home/Mentor.png";
+import MentorImage from "@/assests/leadership/7.png";
+import MentorImage2 from "@/assests/leadership/26.png";
+import MentorImage3 from "@/assests/leadership/3.png";
 
 function VisionaryLeader() {
   const CardData = [
@@ -11,13 +13,13 @@ function VisionaryLeader() {
       link: "",
     },
     {
-      image: MentorImage,
+      image: MentorImage2,
       name: "Dipesh R. Singhania",
       position: "Chief Financial Officer",
       link: "",
     },
     {
-      image: MentorImage,
+      image: MentorImage3,
       name: "Dr. Ashish J. Pinto",
       position: "Chief Human Resources Officer",
       link: "",

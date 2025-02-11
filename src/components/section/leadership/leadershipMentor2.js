@@ -1,5 +1,5 @@
 import React from "react";
-import MentorImage from "@/assests/Home/Mentor.png";
+import MentorImage from "@/assests/leadership/29.png";
 import Image from "next/image";
 
 function LeadershipMentor2() {

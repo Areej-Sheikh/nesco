@@ -1,5 +1,5 @@
 import React from "react";
-import chessImage from "@/assests/leadership/chess.png";
+import chessImage from "@/assests/social/42.png";
 import Image from "next/image";
 function SocialCSR() {
   const buttonData = [

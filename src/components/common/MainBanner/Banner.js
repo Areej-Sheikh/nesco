@@ -7,7 +7,7 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function Banner({ SliderData, onSlideChange }) {
+function Banner({ SliderData, onSlideChange, filter }) {
   const sliderRef = React.useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -64,12 +64,13 @@ function Banner({ SliderData, onSlideChange }) {
       <div className="relative">
         <div className="flex justify-center w-full overflow-hidden h-[100vh] relative">
           {SliderData.length === 1 ? (
-            <div className="w-full flex justify-center items-center text-2xl h-[100vh] relative">
+            <div className="w-full flex justify-center items-center text-2xl h-[100vh] relative ">
               {SliderData[0].data}
+              <div className="w-full h-full absolute bg-black opacity-30 z-10"></div>
               <img
                 src={SliderData[0].image.src}
                 alt="banner image"
-                className="mx-auto w-full h-full object-cover"
+                className={`mx-auto w-full h-full object-cover ${filter}`}
               />
             </div>
           ) : (
