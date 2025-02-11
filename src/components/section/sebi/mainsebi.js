@@ -6,15 +6,10 @@ import sebiImage from "@/assests/sebi/image.png";
 import SebiDetails from "./sebiDetails";
 
 function Mainsebi() {
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  const handleSlideChange = () => {
-    setActiveSlide(1);
-  };
   return (
     <>
       <div className="">
-        <Navbar activeSlide={activeSlide} />
+        <Navbar />
       </div>
       <div className="">
         <Image
