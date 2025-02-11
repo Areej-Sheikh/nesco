@@ -98,7 +98,7 @@ function Shares() {
   };
 
   return (
-    <section className="py-10 font-branding-medium">
+    <section className="pt-20 pb-10 font-branding-medium">
       <div>
         <h2 className="text-5xl font-branding-bold text-primary text-center mb-10">
           Shares

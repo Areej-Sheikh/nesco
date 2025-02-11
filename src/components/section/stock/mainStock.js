@@ -3,15 +3,16 @@ import StockBanner from "./stockBanner";
 import Shares from "./shares";
 import Chart1 from "./Chart1";
 import Quote from "./Quote";
+import Pagewrapper from "@/components/layout/pagewrapper";
 
 function MainStock() {
   return (
-    <section>
+    <Pagewrapper>
       <StockBanner />
       <Shares />
       <Chart1 />
       <Quote />
-    </section>
+    </Pagewrapper>
   );
 }
 

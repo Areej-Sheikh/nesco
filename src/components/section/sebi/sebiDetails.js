@@ -121,26 +121,30 @@ function SebiDetails() {
       <div className="lg:w-[60%] w-[80%]">
         {data.map((element, index) => (
           <div key={index} className="mb-3">
-            <div className="border-2 border-gray-300 p-4 font-bold flex justify-between mb-0">
+            <div
+              className="border-2 border-gray-300 p-4 font-bold flex justify-between mb-0"
+              onClick={() => handleToggle(index)}
+            >
               <p className="text-gray-600 text-xs ">{element.title}</p>
               <a className="text-md text-blue-800 cursor-pointer">
                 <IoAdd
                   className={`font-bold transition-transform duration-300 ${
                     openIndex === index ? "rotate-45" : "rotate-0"
                   }`}
-                  onClick={() => handleToggle(index)}
                 />
               </a>
             </div>
             <div>
               <div
-                className={`border-2 border-gray-300 p-4 font-bold transition-all duration-300 ease-in-out origin-top ${
+                className={`font-bold transition-all duration-700 ease-in-out overflow-hidden transform ${
                   openIndex === index
-                    ? "relative opacity-100 visible scale-y-100"
-                    : "absolute opacity-0 invisible scale-y-0"
+                    ? "opacity-100 max-h-[200px]"
+                    : "opacity-0 max-h-0"
                 }`}
               >
-                <p className="text-gray-500 text-sm ">{element.description}</p>
+                <p className="text-gray-500 text-sm p-4 border-2 border-gray-300">
+                  {element.description}
+                </p>
               </div>
             </div>
           </div>

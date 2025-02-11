@@ -1,22 +1,34 @@
 "use client";
-import Navbar from "@/components/layout/navbar/Navbar";
-import React, { useState } from "react";
-import Image from "next/image";
-import sebiImage from "@/assests/sebi/image.png";
+
 import SebiDetails from "./sebiDetails";
+import Pagewrapper from "@/components/layout/pagewrapper";
+import ScrollSnip from "@/components/layout/scrollSnipEffect/scrollSnip";
+import SebiBanner from "./sebiBanner";
 
 function Mainsebi() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  // const [activeSlide, setActiveSlide] = useState(0);
 
-  const handleSlideChange = () => {
-    setActiveSlide(1);
-  };
+  // const handleSlideChange = () => {
+  //   setActiveSlide(1);
+
+  const Children = [
+    {
+      comp: <SebiBanner />,
+      classCss: "",
+    },
+    {
+      comp: (
+        <div className="mt-14 flex flex-wrap justify-center items-center mb-32">
+          <SebiDetails />
+        </div>
+      ),
+      classCss: "",
+    },
+  ];
+
   return (
-    <>
-      <div className="">
-        <Navbar activeSlide={activeSlide} />
-      </div>
-      <div className="">
+    <Pagewrapper>
+      {/* <div className="">
         <Image
           src={sebiImage}
           alt="Sebi Image"
@@ -25,8 +37,9 @@ function Mainsebi() {
       </div>
       <div className="mt-14 flex flex-wrap justify-center items-center mb-32">
         <SebiDetails />
-      </div>
-    </>
+      </div> */}
+      <ScrollSnip Children={Children} />
+    </Pagewrapper>
   );
 }
 
