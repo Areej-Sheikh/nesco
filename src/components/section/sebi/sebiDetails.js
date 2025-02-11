@@ -1,0 +1,153 @@
+import React, { useState } from "react";
+import { IoAdd } from "react-icons/io5";
+
+function SebiDetails() {
+  const data = [
+    {
+      title: "BUSINESS OF THE COMPANY",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title:
+        "TERMS AND CONDITIONS OF APPOINTMENT OF INDEPENDENT DIRECTORS OF THE COMPANY",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "COMPOSITION OF VARIOUS COMMITTEES OF THE BOARD OF DIRECTORS",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "POLICIES & CODES",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "POLICIES ON BRSR",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title:
+        "CRITERIA OF MAKING PAYMENTS TO NON-EXECUTIVE DIRECTORS OF THE COMPANY",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "DETAILS OF DIRECTORS FAMILIARISATION PROGRAMMES OF THE COMPANY",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title:
+        "E-MAIL ADDRESS AND CONTACT DETAILS OF DESIGNATED OFFICIALS FOR GRIEVANCE REDRESSAL/ASSISTING AND HANDLING INVESTOR GREYANCESA FOR DETERMING MATERIALITY OF EVENTS",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "NOTICES OF BOARD AND SHAREHOLDERS MEETINGS",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "QUARTERLY/ANNUAL FINANCIAL RESULTS OF THE COMPANY",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "ANNUAL REPORTS OF THE COMPANY",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "MEMORANDUM AND ARTICLES OF ASSOCIATION",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "BUSINESS RESPONSIBILITY AND SUSTAINABILITY REPORT",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "SHAREHOLDING PATTERN OF THE COMPANY",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "CORPORATE GOVERNANCE REPORTS",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "INVESTOR GRIEVANCES REPORTS",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title:
+        "NEWSPAPER ADVERTISEMENTS PURSUANT TO REGULATION 47(1) OF SEN (LOOR) REGULATIONS, 2015",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "FINANCIAL STATEMENTS OF SUBSIDIARY OF THE COMPANY",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title: "SECRETARIAL COMPLIANCE REPORT",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+    {
+      title:
+        "DISCLOSURES UNDER REGULATION 30(8) OF SEBI (LODR) REGARLATIONS, 2015",
+      description:
+        "In Informatics, dummy data is benign information that does not contain any useful data, but serves to reserve space where real data is nominally present. Dummy data can be used as a placeholder for both testing and operational purposes. For testing, dummy data can also be used as stubs or pad to avoid software testing issues by ensuring that all variables and data fields are occupied. In operational use, dummy data may be transmitted for OPSEC purposes.",
+    },
+  ];
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    setOpenIndex(index === openIndex ? null : index);
+  };
+
+  return (
+    <>
+      <div className="lg:w-[60%] w-[80%]">
+        {data.map((element, index) => (
+          <div key={index} className="mb-3">
+            <div className="border-2 border-gray-300 p-4 font-bold flex justify-between mb-0">
+              <p className="text-gray-600 text-xs ">{element.title}</p>
+              <a className="text-md text-blue-800 cursor-pointer">
+                <IoAdd
+                  className={`font-bold transition-transform duration-300 ${
+                    openIndex === index ? "rotate-45" : "rotate-0"
+                  }`}
+                  onClick={() => handleToggle(index)}
+                />
+              </a>
+            </div>
+            <div>
+              <div
+                className={`border-2 border-gray-300 p-4 font-bold transition-all duration-300 ease-in-out origin-top ${
+                  openIndex === index
+                    ? "relative opacity-100 visible scale-y-100"
+                    : "absolute opacity-0 invisible scale-y-0"
+                }`}
+              >
+                <p className="text-gray-500 text-sm ">{element.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+export default SebiDetails;
