@@ -1,27 +1,18 @@
 import React from "react";
-import StockBanner from "./stockBanner";
-import Shares from "./shares";
-import Chart1 from "./Chart1";
-import Quote from "./Quote";
+
 import Pagewrapper from "@/components/layout/pagewrapper";
 import ScrollSnip from "@/components/layout/scrollSnipEffect/scrollSnip";
+import FinancialsBanner from "./financialsBanner";
+import FinancialResult from "./financialResult";
 
-function MainStock() {
+function MainFinancials() {
   const Children = [
     {
-      comp: <StockBanner />,
+      comp: <FinancialsBanner />,
       classCss: "",
     },
     {
-      comp: <Shares />,
-      classCss: "",
-    },
-    {
-      comp: <Chart1 />,
-      classCss: "",
-    },
-    {
-      comp: <Quote />,
+      comp: <FinancialResult />,
       classCss: "",
     },
   ];
@@ -32,4 +23,4 @@ function MainStock() {
   );
 }
 
-export default MainStock;
+export default MainFinancials;

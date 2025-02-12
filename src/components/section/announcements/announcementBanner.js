@@ -1,0 +1,37 @@
+"use client";
+import Banner from "@/components/common/MainBanner/Banner";
+import React, { useState } from "react";
+import bannerImage from "@/assests/announcement/images.png";
+import Navbar from "@/components/layout/navbar/Navbar";
+function AnnouncementBanner() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const handleSlideChange = () => {
+    setActiveSlide(1);
+  };
+
+  const SliderData = [
+    {
+      image: bannerImage,
+      data: (
+        <div className="absolute md:right-20 px-10 z-20">
+          <div className="innerContainer text-center">
+            <p className="text-white text-4xl lg:text-5xl font-branding-medium">
+              Announcements
+            </p>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <div className="w-full">
+      <Navbar activeSlide={activeSlide} />
+      {/* <Banner SliderData={SliderData}  onSlideChange={handleSlideChange} /> */}
+      <Banner SliderData={SliderData} onSlideChange={handleSlideChange} />
+    </div>
+  );
+}
+
+export default AnnouncementBanner;

@@ -1,15 +1,15 @@
 "use client";
-import Navbar from "@/components/layout/navbar/Navbar";
 import React, { useState } from "react";
+import { IoSearch } from "react-icons/io5";
 
-const page = () => {
+function AnnouncementFilter() {
   const [visibleCheckboxes, setVisibleCheckboxes] = useState(5);
   const [visibleRows, setVisibleRows] = useState(5);
   const [selectedYears, setSelectedYears] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
   const allYears = Array.from({ length: 10 }, (_, i) => {
-    const startYear = 2015 + i;
+    const startYear = 2025 - i;
     const endYear = startYear + 1;
     return `${startYear}-${endYear.toString().slice(-2)}`;
   });
@@ -35,66 +35,25 @@ const page = () => {
       item.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
   return (
-    <div className="financials">
-      <Navbar />
-
-      <div className="relative w-full">
-        <div className="imgContainer bg-slate-400">
-          <img
-            src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="financials"
-            className="w-full object-cover h-auto"
-          />
-        </div>
-
-        <div
-          className="sideBox  absolute top-1/2 right-[5%] 
-      transform -translate-y-1/2  
-      w-[90%] sm:w-[80%] md:w-[50%] lg:w-[35%]
-      py-6 px-4 opacity-90 flex justify-center items-center 
-      "
-        >
-          <div className="innerContainer text-center">
-            <p className="text-white  sm:text-xl md:text-4xl lg:text-5xl font-branding-medium">
-              Announcements
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="resultsSection mx-auto mt-12 mb-10 w-full px-4">
-        <div className="outContainer  sm:w-[95%] md:w-[90%] h-fit grid grid-cols-4 gap-[10px] mx-auto ">
-          <div className="absolute justify-center w-full px-4 ">
-            <div className="relative w-fit max-w-xs sm:max-w-sm md:max-w-lg text-gray-500">
+    <div>
+      <div className="flex justify-center">
+        <div className=" my-12 px-4 flex md:flex-row flex-col justify-between lg:w-[80%] md:w-[90%]">
+          <div className="md:w-[30%] p-4 py-6 mt-2 sm:ml-3 md:ml-4 mb-2 flex flex-col">
+            <div className="relative text-gray-500 flex justify-center items-center">
               <input
                 type="text"
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="sm:w-24 md:w-32 lg:w-48  px-2 py-1 pl-8 border-b  border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-2 py-1 pl-8 border-b  border-gray-300 "
               />
-              <svg
-                className="absolute left-2 top-2 w-5 h-5 text-gray-500"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-4.35-4.35M9 17a8 8 0 100-16 8 8 0 000 16z"
-                />
-              </svg>
+              <button className="absolute left-2  w-5 h-5 text-gray-500 ">
+                <IoSearch className="w-full h-full" />
+              </button>
             </div>
-          </div>
-          <div className="checkContainer w-full p-4 py-6 mt-2 sm:ml-3 md:ml-4 mb-2 flex flex-col">
-            <p className=" w-fit mt-2 font-branding-medium text-gray-500">
-              Filters
-            </p>
-            <p className="mt-2 mb-2 w-fit font-branding-medium text-gray-500">
-              Filters
+            <p className=" mt-2 font-branding-medium text-gray-500">Filters</p>
+            <p className="mt-2 mb-2 font-branding-medium text-gray-500">
+              Select All
             </p>
 
             {allYears.slice(0, visibleCheckboxes).map((year, index) => (
@@ -111,53 +70,67 @@ const page = () => {
               </div>
             ))}
 
-            {visibleCheckboxes < allYears.length && (
+            {visibleCheckboxes < allYears.length ? (
               <button
                 className="mt-2 text-gray-500 hover:underline  w-fit p-1  "
                 onClick={() => setVisibleCheckboxes(visibleCheckboxes + 5)}
               >
                 Show More Filters
               </button>
+            ) : (
+              <button
+                className="mt-2 text-gray-500 hover:underline  w-fit p-1  "
+                onClick={() => setVisibleCheckboxes(5)}
+              >
+                Show Less Filters
+              </button>
             )}
           </div>
 
-          <div className="tableContainer w-auto p-3 col-span-3 m-6 ">
-            <table className="table-auto border-separate text-left w-full h-full  ">
+          <div className=" md:w-[70%] p-3 col-span-3 ">
+            <table className="table-auto border-separate text-left w-full ">
               <thead>
                 <tr>
-                  <th className="title bg-violet-700 text-gray-200 shadow-sm pl-8  ">
+                  <th className=" bg-violet-700 text-gray-200 shadow-sm pl-8 py-3 ">
                     Title
                   </th>
                   {/* <th className="title bg-violet-700 text-gray-200 shadow-sm pl-2  ">
-                    Title
-                  </th> */}
+              Title
+            </th> */}
                 </tr>
               </thead>
               <tbody>
                 {filteredData.slice(0, visibleRows).map((row, index) => (
                   <tr key={index}>
-                    <td className="border-collapse border-spacing-0 shadow-sm pl-3 font-branding-medium text-gray-500">
+                    <td className="shadow-md pl-3 font-branding-medium text-gray-500">
                       {/* {row.year} &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;  {row.title} */}
-                      <div className="flex justify-between text-left mx-4 md:pr-[8%]">
-                        <span className="w-fit">{row.year}</span>
-                        <span className="w-fit ">{row.title}</span>
+                      <div className="flex justify-between mx-4 md:pr-[8%] my-3">
+                        <span className="">{row.year}</span>
+                        <span className=" ">{row.title}</span>
                       </div>
                     </td>
 
                     {/* <td className="border-collapse border-spacing-0 shadow-sm pl-3 font-branding-medium text-gray-500">
-                      {row.title}
-                    </td> */}
+                {row.title}
+              </td> */}
                   </tr>
                 ))}
               </tbody>
             </table>
 
-            {visibleRows < 10 && (
+            {visibleRows < 10 ? (
               <button
                 className="mt-2 text-gray-500 hover: underline w-fit p-1"
                 onClick={() => setVisibleRows(visibleRows + 5)}
               >
                 Show More Rows
+              </button>
+            ) : (
+              <button
+                className="mt-2 text-gray-500 hover: underline w-fit p-1"
+                onClick={() => setVisibleRows(5)}
+              >
+                Show Less Rows
               </button>
             )}
           </div>
@@ -165,6 +138,6 @@ const page = () => {
       </div>
     </div>
   );
-};
+}
 
-export default page;
+export default AnnouncementFilter;

@@ -27,7 +27,7 @@ function VisionaryLeader() {
   ];
 
   return (
-    <section className="py-16 bg-[#E6F5FC] xl:h-screen">
+    <section className="py-16 bg-[#E6F5FC]">
       <h3 className="text-center text-4xl font-branding-bold">
         Our Visionary Leaders
       </h3>
