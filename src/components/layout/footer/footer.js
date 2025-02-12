@@ -21,7 +21,7 @@ function Footer() {
         },
         {
           title: "Leadership",
-          link: "",
+          link: "/leadership",
         },
         {
           title: "Sustainability",
@@ -69,11 +69,11 @@ function Footer() {
         },
         {
           title: "Social Responsibility ",
-          link: "",
+          link: "/social-responsibility",
         },
         {
           title: "Announcements ",
-          link: "",
+          link: "/announcements",
         },
         {
           title:
@@ -82,11 +82,11 @@ function Footer() {
         },
         {
           title: "Stock Information ",
-          link: "",
+          link: "/stock",
         },
         {
           title: "Shareholder Services ",
-          link: "",
+          link: "shareholders",
         },
       ],
     },
