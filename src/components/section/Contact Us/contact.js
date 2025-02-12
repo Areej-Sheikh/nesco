@@ -64,7 +64,7 @@ function Contact() {
 
   return (
     <div className="bg-[#0A2B72] h-auto py-28 flex flex-col justify-between items-center relative overflow-hidden">
-      <div className="absolute z-0 w-full h-full mt-10">
+      <div className="absolute z-0 w-full h-full lg:top-0 md:top-[20%] top-[25%]">
         <Image
           src={WorldImage}
           alt="World Image"

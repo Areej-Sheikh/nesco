@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
+import Footer from "../footer/footer";
 
 function ScrollSnip({ Children }) {
   useEffect(() => {
@@ -111,6 +112,7 @@ function ScrollSnip({ Children }) {
           {data.comp}
         </div>
       ))}
+      <Footer />
     </div>
   );
 }

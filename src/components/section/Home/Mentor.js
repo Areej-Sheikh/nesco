@@ -7,8 +7,8 @@ function Mentor() {
   return (
     <section className="bg-[#cbe0e7] flex flex-col items-center justify-center relative w-full xl:h-auto h-full overflow-hidden pt-8 md:pt-0">
       {/* Content */}
-      <div className="z-20 relative w-[81%] flex flex-col items-center justify-center mx-auto mt-20 mb-10 md:h-screen">
-        <div className="grid md:grid-cols-2 items-start gap-5 lg:gap-0">
+      <div className="z-20 relative w-[85%] flex flex-col items-center justify-center mx-auto mt-20 mb-10 md:h-screen">
+        <div className="grid md:grid-cols-2 items-start gap-5 lg:gap-10">
           {/* Text Content */}
           <div className="relative w-full h-full">
             <div className="z-10 relative">
