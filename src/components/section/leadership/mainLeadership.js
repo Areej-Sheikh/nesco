@@ -22,11 +22,11 @@ function MainLeadership() {
     },
     {
       comp: <LeadershipMentor />,
-      classCss: "",
+      classCss: "section",
     },
     {
       comp: <LeadershipMentor2 />,
-      classCss: "",
+      classCss: "section",
     },
     {
       comp: <BoardOfDirector />,

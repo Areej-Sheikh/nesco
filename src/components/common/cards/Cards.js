@@ -5,7 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 function Cards({ CardData }) {
   return (
     <div className="w-full  py-10 flex justify-center">
-      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 md:w-[85%] w-[90%]">
+      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-[90%]">
         {CardData.map((data, index) => (
           <div
             key={index}

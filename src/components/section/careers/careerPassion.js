@@ -3,7 +3,7 @@ import React from "react";
 function CareerPassion() {
   return (
     <section className=" flex flex-col justify-center items-center py-20">
-      <div className="w-[80%] font-branding-medium text-justify">
+      <div className="w-[90%] font-branding-medium text-justify">
         <h1 className=" md:text-5xl text-2xl mb-5 text-center text-primary ">
           Where Passion Meets Purpose
         </h1>

@@ -43,11 +43,11 @@ function ShareCorner() {
 
   return (
     <div className="flex flex-col items-center h-[80vh] my-10">
-      <p className="font-branding-semibold text-4xl sm:text-3xl text-blue-800 my-6 justify-center text-center">
+      <p className="font-branding-semibold text-4xl sm:text-3xl text-blue-800 my-6 justify-center text-center w-[90%]">
         Shareholder's Corner
       </p>
 
-      <div className="my-6  overflow-y-auto mb-10 lg:w-[80%] md:w-[85%] w-[90%]">
+      <div className="my-6  overflow-y-auto mb-10 w-[90%]">
         <table className="table-auto h-full text-left w-full p-8 overflow-auto">
           <tbody>
             {ShareCornerData.map((data, index) => (

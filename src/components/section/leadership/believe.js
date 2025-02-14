@@ -4,7 +4,7 @@ import Image from "next/image";
 function believe() {
   return (
     <section className="w-full relative flex flex-col items-center py-10">
-      <div className=" pt-16 items-center lg:w-[80%] md:w-[85%] mx-auto ">
+      <div className=" pt-16 items-center w-[90%] mx-auto ">
         <div className=" text-primary flex justify-center items-center">
           <p
             style={{ fontFamily: "BrandingSemibold" }}
@@ -13,17 +13,17 @@ function believe() {
             We believe in people & people believe in us.
           </p>
         </div>
-        <div className="mt-10 flex md:flex-row flex-col justify-between xl:items-start items-center w-full">
-          <div className="relative h-[500px] md:w-[50%] w-[90%]">
+        <div className="mt-10 flex md:flex-row flex-col justify-between xl:items-start items-center w-full overflow-hidden">
+          <div className="relative h-[500px] md:w-[50%] w-full">
             <Image
               src={chessImage}
               alt="Chess Image"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full xl:-ml-10 xl:-mt-10"
               priority
             />
           </div>
 
-          <div className="text-justify md:w-[45%] w-[90%] md:mt-0 mt-10 flex flex-col gap-5 text-2xl font-poppins">
+          <div className="text-justify xl:w-[50%] md:w-[45%] w-full md:mt-0 mt-10 flex flex-col gap-5 text-2xl font-poppins">
             <p>
               Leadership at Nesco is more than just man-agement, it is a
               principle. Our founder, J. V. Patel was a first-generation

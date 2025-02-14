@@ -118,7 +118,7 @@ function SebiDetails() {
 
   return (
     <>
-      <div className="lg:w-[60%] w-[80%]">
+      <div className="lg:w-[60%] w-[90%]">
         {data.map((element, index) => (
           <div key={index} className="mb-3">
             <div

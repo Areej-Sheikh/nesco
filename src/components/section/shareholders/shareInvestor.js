@@ -74,12 +74,12 @@ function ShareInvestor() {
     },
   ];
   return (
-    <>
-      <div className=" py-8 px-4">
+    <div className="flex flex-col justify-center items-center">
+      <div className=" py-8 w-[90%]">
         <p className="font-branding-semibold text-4xl sm:text-3xl text-blue-800 m-auto my-6 justify-center text-center">
           Investor Contacts
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 mx-12 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 ">
           {contacts.map((data, index) => (
             <div
               className="bg-white p-4 justify-between flex flex-col w-full "
@@ -97,7 +97,7 @@ function ShareInvestor() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -5,25 +5,29 @@ import Image from "next/image";
 function LeadershipMentor2() {
   return (
     <section className="header_white bg-secondary flex justify-center items-center pb-20 xl:pb-0 xl:pt-20 pt-[10rem] xl:h-screen ">
-      <div className="grid lg:grid-cols-2 md:w-[70%] w-[90%] xl:justify-center justify-between xl:gap-0 gap-10 items-center lg:items-start">
-        <div className="flex flex-col h-full items-center justify-center">
-          <div className="w-full max-w-[450px]">
-            <Image
-              src={MentorImage}
-              alt="Mentor"
-              width={550}
-              height={400}
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="text-center mt-4">
-            <h3 className="text-2xl font-branding-medium ">Krishna S. Patel</h3>
-            <p className=" mt-1 font-branding-medium">
-              Chairman & Managing Director
-            </p>
+      <div className="grid lg:grid-cols-2 w-[90%] xl:justify-center justify-between xl:gap-0 gap-10 items-center lg:items-start">
+        <div className="flex flex-col h-full xl:items-start items-center justify-center">
+          <div className="">
+            <div className="w-full max-w-[550px]">
+              <Image
+                src={MentorImage}
+                alt="Mentor"
+                width={550}
+                height={400}
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="text-center mt-4">
+              <h3 className="text-2xl font-branding-medium ">
+                Krishna S. Patel
+              </h3>
+              <p className=" mt-1 font-branding-medium">
+                Chairman & Managing Director
+              </p>
+            </div>
           </div>
         </div>
-        <div>
+        <div className="">
           <p className="text-[21px] font-branding-medium leading-7 text-justify">
             A dynamic people's leader, Krishna Patel is adept at spot-ting and
             implementing future trends in any industry even as he hones in on

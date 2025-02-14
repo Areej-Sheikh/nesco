@@ -1,14 +1,82 @@
 "use client";
 import React, { useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
+import { IoSearch } from "react-icons/io5";
 
 function FinancialResult() {
-  const visibleCheckboxes = 10;
-  const [selectedYears, setSelectedYears] = useState([]);
+  const tableData = [
+    {
+      year: "2024-2025",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2023-2024",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2022-2023",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2021-2022",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2020-2021",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2019-2020",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2018-2019",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2017-2018",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2016-2017",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2015-2016",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2014-2015",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2013-2014",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2012-2013",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2011-2012",
+      description: "Financials Statements of Subsidiaries",
+    },
+    {
+      year: "2010-2011",
+      description: "Financials Statements of Subsidiaries",
+    },
+  ];
 
-  const allYears = Array.from({ length: 10 }, (_, i) => {
-    const startYear = 2025 - i;
+  const [visibleCheckboxes, setVisibleCheckboxes] = useState(10);
+  const [visibleRows, setVisibleRows] = useState(10);
+  const totalRows = tableData.length;
+  const [selectedYears, setSelectedYears] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const allYears = Array.from({ length: 12 }, (_, i) => {
+    const startYear = 2024 - i;
     const endYear = startYear + 1;
-    return `${startYear}-${endYear.toString().slice(-2)}`;
+    return `${startYear}-${endYear.toString()}`;
   });
 
   const handleYearChange = (year) => {
@@ -19,6 +87,14 @@ function FinancialResult() {
     );
   };
 
+  const filteredData = tableData
+    .filter((item) =>
+      selectedYears.length > 0 ? selectedYears.includes(item.year) : true
+    )
+    .filter((item) =>
+      item.description.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
   // const financialData = Array.from({ length: 10 }, (_, i) => ({
   //   year: allYears[i],
   //   title: `Financial Statements of Subsidiaries ${allYears[i]}`,
@@ -26,9 +102,9 @@ function FinancialResult() {
 
   return (
     <div>
-      <div className="flex justify-center  mt-16 mb-10">
-        <div className="flex items-end flex-col border-2 md:w-[80%] w-[90%] lg:px-12 px-6">
-          <div className="w-full flex md:flex-row flex-col justify-between items-center z-50 gap-6 lg:w-[80%] transform md:-translate-y-1/2">
+      <div className="flex justify-center mt-16 mb-10 header_purple">
+        <div className="flex items-end flex-col border-2 w-[90%] lg:px-12 px-5">
+          <div className="w-full flex md:flex-row flex-col justify-between items-center z-50 gap-6 lg:w-[70%] transform md:-translate-y-1/2">
             <div className=" bg-blue-600 px-4  py-2 text-center font-branding-semibold text-xl text-white">
               Financial Results
             </div>
@@ -37,47 +113,69 @@ function FinancialResult() {
               Annual Reports
             </div>
 
-            <div className=" bg-purple-700 px-4  py-2 text-center font-branding-semibold text-xl text-white">
+            <div className=" bg-purple-500 px-4  py-2 text-center font-branding-semibold text-xl text-white">
               Subsidiary Accounts
             </div>
           </div>
 
-          <div className=" my-12 flex md:flex-row flex-col justify-between w-full">
-            <div className=" p-4 py-6 flex flex-col items-center md:items-start lg:w-[20%] md:w-[30%] gap-2">
-              <p className="text-xl">FILTERS</p>
-              <p className="mt-2 mb-2 ">Select All</p>
-              {/* {Array(15)
-                .fill("Default Checkbox")
-                .map((label, index) => (
-                  <div
-                    className="flex items-center mb-2 font-branding-medium"
-                    key={index}
-                  >
-                    <input
-                      type="checkbox"
-                      className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
-                    />
-                    <label className="ml-2 text-sm font-medium text-gray-500">
-                      {label}
-                    </label>
-                  </div>
-                ))} */}
-              <div className="mt-2 mb-2">
-                {allYears.slice(0, visibleCheckboxes).map((year, index) => (
-                  <div key={index} className="my-1">
-                    <label className="flex items-center gap-2 text-gray-500">
-                      <input
-                        type="checkbox"
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
-                        checked={selectedYears.includes(year)}
-                        onChange={() => handleYearChange(year)}
-                      />
-                      {year}
-                    </label>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-2 mb-2">
+          <div className=" my-12 flex md:flex-row flex-col justify-between w-[98%] md:w-full">
+            <div className="md:w-[30%]  py-6 mt-2 mb-2 flex flex-col">
+              {/* <div className="relative md:pr-20 text-gray-500 flex justify-center items-center">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="w-full px-2 py-1 pl-8 border-b  border-gray-300 "
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <button className="absolute left-2  w-5 h-5 text-gray-500 ">
+                  <IoSearch className="w-full h-full" />
+                </button>
+              </div> */}
+              <p className=" mt-2 font-branding-medium text-gray-500">
+                Filters
+              </p>
+              <p className="mt-2 mb-2 font-branding-medium text-gray-500">
+                Select All
+              </p>
+
+              {allYears.slice(0, visibleCheckboxes).map((year, index) => (
+                <div key={index} className="flex items-center mb-2">
+                  <input
+                    type="checkbox"
+                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
+                    checked={selectedYears.includes(year)}
+                    onChange={() => handleYearChange(year)}
+                  />
+                  <label className="ml-2 text-sm font-medium text-gray-500">
+                    {year}
+                  </label>
+                </div>
+              ))}
+
+              {visibleCheckboxes < allYears.length ? (
+                <button
+                  className="mt-2 text-gray-500 hover:underline w-fit p-1 flex justify-center items-center gap-3"
+                  onClick={() => setVisibleCheckboxes(visibleCheckboxes + 5)}
+                >
+                  Show More{" "}
+                  <span className="w-4 h-4 rounded-full border-2 flex justify-center items-center">
+                    <span className="inline-block w-2 h-2 rounded-full bg-gray-600 "></span>
+                  </span>
+                </button>
+              ) : (
+                <button
+                  className="mt-2 text-gray-500 hover:underline w-fit p-1 flex justify-center items-center gap-3"
+                  onClick={() => setVisibleCheckboxes(10)}
+                >
+                  Show Less{" "}
+                  <span className="w-4 h-4 rounded-full border-2 flex justify-center items-center">
+                    <span className="inline-block w-2 h-2 rounded-full bg-gray-600 "></span>
+                  </span>
+                </button>
+              )}
+
+              <div className="mt-5 mb-2">
                 <p className="mb-2 ">QUARTER</p>
                 <div className="flex flex-col gap-1">
                   {Array.from({ length: 4 }).map((_, index) => (
@@ -95,8 +193,9 @@ function FinancialResult() {
                 </div>
               </div>
             </div>
-            <div className="md:w-[80%] col-span-3 h-full">
-              <table className="table-auto border-separate text-left w-full">
+
+            <div className=" md:w-[70%] py-3 col-span-3 ">
+              <table className="table-auto border-separate text-left w-full ">
                 <thead>
                   <tr>
                     <th className=" bg-violet-700 text-gray-200 shadow-sm pl-8 py-3 ">
@@ -105,17 +204,54 @@ function FinancialResult() {
                   </tr>
                 </thead>
                 <tbody>
-                  {Array(10)
-                    .fill("Financial Statements of Subsidiaries 2023-24")
-                    .map((row, index) => (
-                      <tr key={index}>
-                        <td className="shadow-md font-branding-medium text-gray-500 py-3 px-8">
-                          {row}
-                        </td>
-                      </tr>
-                    ))}
+                  {/* {filteredData.slice(0, visibleRows).map((row, index) => (
+                           <tr key={index}>
+                             <td className="shadow-md pl-3 font-branding-medium text-gray-500">
+                               <div className="flex justify-between mx-4 md:pr-[8%] my-3">
+                                 <span className="">{row.year}</span>
+                                 <span className=" ">{row.title}</span>
+                               </div>
+                             </td>
+                           </tr>
+                         ))} */}
+                  {filteredData.slice(0, visibleRows).map((data, index) => (
+                    <tr key={index}>
+                      <td className="shadow-md pl-3 font-branding-medium text-gray-500 text-base">
+                        <div className="flex gap-10 my-3">
+                          <p className="px-4">
+                            {data.description} -{" "}
+                            {data.year.slice(0, 5) + +data.year.slice(7)}
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
+
+              <div className="w-full justify-center items-center flex mt-10">
+                {visibleRows < filteredData.length ? (
+                  <button
+                    className="mt-2 px-6 py-2 rounded-full text-purple-700 border-2 border-purple-700 flex justify-center items-center gap-3"
+                    onClick={() => setVisibleRows((prev) => prev + 5)}
+                  >
+                    Load More{" "}
+                    <span className="">
+                      <FaArrowRight className="rotate-90" />
+                    </span>
+                  </button>
+                ) : (
+                  <button
+                    className="mt-2 px-6 py-2 rounded-full text-purple-700 border-2 border-purple-700 flex justify-center items-center gap-3"
+                    onClick={() => setVisibleRows(10)}
+                  >
+                    Load Less{" "}
+                    <span className="">
+                      <FaArrowRight className="-rotate-90" />
+                    </span>
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>

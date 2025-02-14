@@ -98,8 +98,8 @@ function Shares() {
   };
 
   return (
-    <section className="pt-20 pb-10 font-branding-medium">
-      <div>
+    <section className="pt-20 pb-10 font-branding-medium flex justify-center items-center flex-col">
+      <div className="w-full">
         <h2 className="text-5xl font-branding-bold text-primary text-center mb-10">
           Shares
         </h2>
@@ -124,7 +124,7 @@ function Shares() {
               </button>
             </div>
           </div>
-          <div className=" md:w-[70%] w-[90%] mt-10">
+          <div className=" md:w-[70%] w-[90%] mt-10 ">
             {select === "bse" ? (
               <div className="flex flex-col gap-10">
                 <MainTable tableData={BseData} pagination={false} />

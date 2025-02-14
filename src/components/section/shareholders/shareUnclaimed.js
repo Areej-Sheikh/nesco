@@ -3,23 +3,23 @@ import { FaArrowDown } from "react-icons/fa";
 
 function ShareUnclaimed() {
   return (
-    <div className="dividendDiv bg-gray-300 p-4 ">
-      <div className="w-full flex flex-col items-center">
-        <p className="font-branding-semibold text-4xl sm:text-3xl text-blue-800 m-auto my-6 justify-center text-center lg:w-[80%] md:w-[85%]">
+    <div className="dividendDiv bg-gray-300 flex justify-center items-center flex-col gap-5 md:gap-10 py-10">
+      <div className="flex flex-col items-center w-[90%]">
+        <p className="font-branding-semibold text-4xl sm:text-3xl text-blue-800 my-6 justify-center text-center">
           Unclaimed Dividends
         </p>
 
-        <p className="justify-center text-justify w-auto text-2xl sm:text-xl px-12 font-branding-medium lg:w-[80%] md:w-[85%]">
+        <p className="justify-center text-justify text-2xl sm:text-xl font-branding-medium">
           Pursuant to Sections 124(5) of the Companies Act, 2013, read with
-          rules framed thereunder, the Company is required to transfer the
+          rules framed there under, the Company is required to transfer the
           amount of dividend remained unpaid/unclaimed for a period of seven
           years from the date of transfer to the Investor Education and
           Protection Fund (IEPF).
         </p>
       </div>
-      <div className="tableDiv m-6 sm:m-4 px-2 py-4">
+      <div className="tableDiv w-[90%]">
         <div className="overflow-x-auto">
-          <table className="table-auto min-w-max border-separate bg-white m-auto text-center border border-gray-300">
+          <table className="table-auto border-separate bg-white m-auto text-center border border-gray-300">
             <thead>
               <tr>
                 <th className="bg-blue-800 text-gray-200 px-4 py-2 text-sm sm:text-xs">
@@ -75,10 +75,12 @@ function ShareUnclaimed() {
                   <td className="px-4 py-2 text-sm sm:text-xs">
                     {data.dueDate}
                   </td>
-                  <td className="px-4 py-2">
-                    <button className="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-700">
-                      <FaArrowDown />
-                    </button>
+                  <td className="px-4 py-2 flex justify-center items-center">
+                    <div className=" flex justify-center items-center w-10 h-10 mt-3 bg-blue-500">
+                      <button className=" bg-white text-blue-500 p-2 rounded-full ">
+                        <FaArrowDown />
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}

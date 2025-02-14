@@ -22,7 +22,7 @@ function CareerJoin() {
 
   return (
     <section className="header_purple w-full flex justify-center flex-col items-center py-20 pt-24  font-branding-medium">
-      <div className="relative z-10 flex flex-col items-center w-[85%] md:gap-10 gap-4">
+      <div className="relative z-10 flex flex-col items-center w-[90%] md:gap-10 gap-4">
         <h2
           style={{ fontFamily: "BrandingSemibold" }}
           className="text-[#1e3a8a] text-2xl md:text-5xl lg:text-6xl font-BrandingSemibold font-bold"

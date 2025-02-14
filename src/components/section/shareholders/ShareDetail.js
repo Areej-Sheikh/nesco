@@ -5,13 +5,13 @@ import image from "@/assests/shareHolder/49.png";
 
 function ShareDetail() {
   return (
-    <div className="relative  flex justify-center items-center px-6 py-8 ">
+    <div className="relative flex justify-center items-center py-8 ">
       {/* Background Div */}
       <div className="absolute inset-0 bg-white h-3/4"></div>
       <div className="absolute inset-0 bg-blue-200 h-1/4 top-[75%] "></div>
 
       {/* Content */}
-      <div className="relative flex flex-col md:flex-row gap-6 justify-evenly">
+      <div className="relative flex flex-col md:flex-row gap-6 justify-evenly w-[90%]">
         {/* Card 1 */}
         <div className="border border-gray-300 shadow-lg p-6 lg:w-[30%] w-full">
           <div className="bg-indigo-900 flex-col items-center flex py-2">
@@ -26,9 +26,11 @@ function ShareDetail() {
                 Pursuant to section 124(6) of the Companies Act.
               </p>
               <div className="w-full flex justify-end">
-                <button className="mt-3 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-700">
-                  <FaArrowDown />
-                </button>
+                <div className="bg-white flex justify-center items-center w-10 h-10 mt-3">
+                  <button className=" bg-blue-500 text-white p-2 rounded-full hover:bg-blue-700">
+                    <FaArrowDown />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -48,9 +50,11 @@ function ShareDetail() {
                 Pursuant to section 124(6) of the Companies Act.
               </p>
               <div className="w-full flex justify-end">
-                <button className="mt-3 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-700">
-                  <FaArrowDown />
-                </button>
+                <div className="bg-white flex justify-center items-center w-10 h-10 mt-3">
+                  <button className=" bg-blue-500 text-white p-2 rounded-full hover:bg-blue-700">
+                    <FaArrowDown className="-rotate-90" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
