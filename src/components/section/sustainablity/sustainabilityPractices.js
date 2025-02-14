@@ -11,97 +11,67 @@ import practicesIcon5 from "@/assests/sustainability/47.png";
 import practicesIcon6 from "@/assests/sustainability/44.png";
 
 function SustainabilityPractices() {
+  const cardData = [
+    {
+      image: practicesIcon1,
+      title: "Energy and Greenhouse Gas Emissions",
+      link: "",
+    },
+    {
+      image: practicesIcon2,
+      title: "Energy and Greenhouse Gas Emissions",
+      link: "",
+    },
+    {
+      image: practicesIcon3,
+      title: "Energy and Greenhouse Gas Emissions",
+      link: "",
+    },
+    {
+      image: practicesIcon4,
+      title: "Energy and Greenhouse Gas Emissions",
+      link: "",
+    },
+    {
+      image: practicesIcon5,
+      title: "Energy and Greenhouse Gas Emissions",
+      link: "",
+    },
+    {
+      image: practicesIcon6,
+      title: "Energy and Greenhouse Gas Emissions",
+      link: "",
+    },
+  ];
+
   return (
-    <>
-      <div className="my-12 text-center relative">
+    <div className="flex flex-col justify-center items-center">
+      <div className="my-12 text-center relative w-[90%]">
         <div className="mb-14">
           <h1 className="text-3xl font-bold"> Integrated Sustainability </h1>
           <h1 className="text-3xl font-bold">
             Practices for a Resilient Future
           </h1>
         </div>
-        <div className="flex flex-wrap justify-evenly xl:px-72 md:px-20 px-12 gap-16">
-          <div>
-            <div className="border-2 border-[#81e1aa] relative">
-              <Image
-                className="h-64 w-64 py-12 px-12"
-                src={practicesIcon1}
-                alt="practicesIcon1"
-              />
-              <FaArrowRight className="text-4xl text-white bg-[#63c88f] rounded-full p-1 absolute -bottom-4 -right-4 z-20" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {cardData.map((data, index) => (
+            <div className="flex flex-col justify-center items-center">
+              <div className="border-2 border-[#81e1aa] relative z-10">
+                <Image
+                  className="h-64 w-64 py-12 px-12"
+                  src={data.image}
+                  alt={data.title}
+                />
+                <FaArrowRight className="text-4xl text-white bg-[#63c88f] rounded-full p-1 absolute -bottom-4 -right-4 z-20" />
+              </div>
+              <p className="text-xl font-bold text-gray-800 w-60 mt-5">
+                {data.title}
+              </p>
             </div>
-            <p className="text-xl font-bold text-gray-800 w-60 mt-5">
-              Energy and Greenhouse Gas Emissions
-            </p>
-          </div>
-          <div>
-            <div className="border-2 border-[#81e1aa] relative z-10">
-              <Image
-                className="h-64 w-64 py-12 px-12"
-                src={practicesIcon2}
-                alt="practicesIcon2"
-              />
-              <FaArrowRight className="text-4xl text-white bg-[#63c88f] rounded-full p-1 absolute -bottom-4 -right-4 z-20" />
-            </div>
-            <p className="text-xl font-bold text-gray-800 w-60 mt-5">
-              Energy and Greenhouse Gas Emissions
-            </p>
-          </div>
-          <div>
-            <div className="border-2 border-[#81e1aa] relative z-10">
-              <Image
-                className="h-64 w-64 py-12 px-12"
-                src={practicesIcon3}
-                alt="practicesIcon1"
-              />
-              <FaArrowRight className="text-4xl text-white bg-[#63c88f] rounded-full p-1 absolute -bottom-4 -right-4 z-20" />
-            </div>
-            <p className="text-xl font-bold text-gray-800 w-60 mt-5">
-              Energy and Greenhouse Gas Emissions
-            </p>
-          </div>
-          <div>
-            <div className="border-2 border-[#81e1aa] relative z-10">
-              <Image
-                className="h-64 w-64 py-12 px-12"
-                src={practicesIcon4}
-                alt="practicesIcon1"
-              />
-              <FaArrowRight className="text-4xl text-white bg-[#63c88f] rounded-full p-1 absolute -bottom-4 -right-4 z-20" />
-            </div>
-            <p className="text-xl font-bold text-gray-800 w-60 mt-5">
-              Energy and Greenhouse Gas Emissions
-            </p>
-          </div>
-          <div>
-            <div className="border-2 border-[#81e1aa] relative z-10">
-              <Image
-                className="h-64 w-64 py-12 px-12"
-                src={practicesIcon5}
-                alt="practicesIcon1"
-              />
-              <FaArrowRight className="text-4xl text-white bg-[#63c88f] rounded-full p-1 absolute -bottom-4 -right-4 z-20" />
-            </div>
-            <p className="text-xl font-bold text-gray-800 w-60 mt-5">
-              Energy and Greenhouse Gas Emissions
-            </p>
-          </div>
-          <div>
-            <div className="border-2 border-[#81e1aa] relative z-10">
-              <Image
-                className="h-64 w-64 py-12 px-12"
-                src={practicesIcon6}
-                alt="practicesIcon1"
-              />
-              <FaArrowRight className="text-4xl text-white bg-[#63c88f] rounded-full p-1 absolute -bottom-4 -right-4 z-20" />
-            </div>
-            <p className="text-xl font-bold text-gray-800 w-60 mt-5">
-              Energy and Greenhouse Gas Emissions
-            </p>
-          </div>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

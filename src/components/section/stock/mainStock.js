@@ -18,11 +18,11 @@ function MainStock() {
     },
     {
       comp: <Chart1 />,
-      classCss: "",
+      classCss: "header_purple",
     },
     {
       comp: <Quote />,
-      classCss: "",
+      classCss: "header_purple",
     },
   ];
   return (

@@ -80,7 +80,7 @@ function Navbar({ activeSlide }) {
           }
         });
 
-        setActivePurpleSection(isAnyPurpleActive ? entries[0].target : null);
+        setActivePurpleSection(isAnyPurpleActive && entries[0].target);
       },
       { threshold: 0.1, rootMargin: "0px 0px 150px 0px" }
     );

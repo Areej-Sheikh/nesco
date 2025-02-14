@@ -2,8 +2,8 @@ import React from "react";
 
 function SustainabilityGovernance() {
   return (
-    <div className="flex justify-center">
-      <div className="text-center w-[80%]">
+    <div className="flex justify-center mt-20">
+      <div className="text-center w-[90%]">
         <h1 className="text-3xl font-bold text-[#39c2ab] mb-8">
           ESG Governance Structure
         </h1>
@@ -98,7 +98,7 @@ function SustainabilityGovernance() {
           </div> */}
         </div>
         <div>
-          <button className="bg-green-700 text-white p-3 mb-14 text-sm static">
+          <button className="bg-green-700 text-white p-3 mb-20 text-sm static">
             {" "}
             Refer to Section Policies on BRSR
           </button>

@@ -5,8 +5,8 @@ import materiality from "@/assests/sustainability/materiality.png";
 
 function SustainabilityTerms() {
   return (
-    <>
-      <div className="my-20 lg:mx-32 md:mx-10 mx-6  text-center">
+    <div className="flex justify-center items-center flex-col ">
+      <div className="my-20 text-center w-[90%]">
         <div className="text-right md:mr-24">
           <h1 className="text-3xl font-bold px-5 py-3 bg-[#c2ddf7] text-gray-900 inline-block text-center ">
             {" "}
@@ -51,7 +51,7 @@ function SustainabilityTerms() {
         </div>
       </div>
 
-      <div className="my-20 lg:mx-32 md:mx-10 mx-6 text-center">
+      <div className="my-20 text-center w-[90%]">
         <div className="text-left ">
           <h1 className="text-3xl font-bold px-5 py-3 bg-[#bfe9e2] text-gray-900 inline-block text-center ">
             {" "}
@@ -90,7 +90,7 @@ function SustainabilityTerms() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
