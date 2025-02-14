@@ -1,10 +1,10 @@
 "use client";
 import Banner from "@/components/common/MainBanner/Banner";
 import React, { useState } from "react";
-import bannerImage from "@/assests/about/18.png";
+import bannerImage from "@/assests/Overview/18.png";
 // import sebiImage from "@/assests/sebi/image.png";
 import Navbar from "@/components/layout/navbar/Navbar";
-function AboutBanner() {
+function OverviewBanner() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const handleSlideChange = () => {
@@ -46,4 +46,4 @@ function AboutBanner() {
   );
 }
 
-export default AboutBanner;
+export default OverviewBanner;

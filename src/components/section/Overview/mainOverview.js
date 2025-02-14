@@ -1,20 +1,20 @@
 import React from "react";
-// import "./about.css";
+// import "./Overview.css";
 import Navbar from "@/components/layout/navbar/Navbar";
 import ScrollSnip from "@/components/layout/scrollSnipEffect/scrollSnip";
 import Pagewrapper from "@/components/layout/pagewrapper";
-import AboutBanner from "./aboutBanner";
-import AboutEvolve from "./aboutEvolve";
+import OverviewEvolve from "./OverviewEvolve";
+import OverviewBanner from "./OverviewBanner";
 
-const MainAbout = () => {
+const MainOverview = () => {
   const Children = [
     {
-      comp: <AboutBanner />,
-      classCss: "",
+      comp: <OverviewBanner />,
+      classCss: "section",
     },
     {
-      comp: <AboutEvolve />,
-      classCss: "",
+      comp: <OverviewEvolve />,
+      classCss: "section",
     },
   ];
 
@@ -25,7 +25,7 @@ const MainAbout = () => {
   );
 };
 
-export default MainAbout;
+export default MainOverview;
 
 // <div className="about">
 //   <Navbar />

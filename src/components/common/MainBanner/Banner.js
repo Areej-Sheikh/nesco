@@ -70,7 +70,7 @@ function Banner({ SliderData, onSlideChange, filter }) {
               <img
                 src={SliderData[0].image.src}
                 alt="banner image"
-                className={`mx-auto w-full h-full object-cover ${filter}`}
+                className={`w-full h-full object-cover ${filter}`}
               />
             </div>
           ) : (
@@ -99,13 +99,13 @@ function Banner({ SliderData, onSlideChange, filter }) {
                             <div
                               className={`absolute z-20 ${
                                 index === 5
-                                  ? "md:top-[48%] md:w-[47%]"
+                                  ? "md:top-[48%] lg:top-[48%] md:w-[47%] top-[40%] md:left-[27%] left-[18%]"
                                   : index === 3
-                                  ? "md:top-[49%] md:w-[50%]"
+                                  ? "md:top-[49%] lg:top-[49%] md:w-[50%]"
                                   : index === 4
-                                  ? "md:top-[47%] md:w-[47%]"
-                                  : "md:top-[47%] md:w-[47%]"
-                              } top-[57%] left-[27%] w-[60%] text-center md:text-2xl text-lg`}
+                                  ? "md:top-[47%] lg:top-[47%] md:w-[47%]"
+                                  : "md:top-[47%] lg:top-[47%] md:w-[47%] "
+                              } lg:top-[57%] top-[45%] md:left-[27%] left-[22%] w-[60%] text-center md:text-2xl text-lg`}
                             >
                               {data.description}
                             </div>
@@ -129,28 +129,28 @@ function Banner({ SliderData, onSlideChange, filter }) {
                   {index === 0 && (
                     <div
                       id="slider-0"
-                      className="text-black font-poppins absolute bottom-40 left-48"
+                      className="text-black font-poppins absolute bottom-40 md:left-48 left-16"
                     >
                       <h1
-                        className="lg:text-[4.5rem] text-2xl font-bold text-primary pb-3 mt-4"
+                        className="lg:text-[4.5rem] text-5xl font-bold text-primary md:pb-3 mt-4"
                         style={{ fontFamily: "BrandingSemibold" }}
                       >
                         Believe.
                       </h1>
                       <h2
-                        className="md:text-[2.2rem] text-xl mt-4 font-bold my-4"
+                        className="md:text-[2.2rem] text-2xl mt-4 font-bold my-4"
                         style={{ fontFamily: "BrandingSemibold" }}
                       >
                         The possibilities
                       </h2>
                       <h3
-                        className="md:text-[2.2rem] text-xl mt-4 font-bold my-4"
+                        className="md:text-[2.2rem] text-2xl mt-4 font-bold my-4"
                         style={{ fontFamily: "BrandingSemibold" }}
                       >
                         are endless
                       </h3>
                       <p
-                        className="md:text-[1.4rem] text-xl mt-4 font-bold my-4"
+                        className="md:text-[1.4rem] text-2xl mt-4 font-bold my-4"
                         style={{ fontFamily: "BrandingSemibold" }}
                       >
                         Welcome to{" "}

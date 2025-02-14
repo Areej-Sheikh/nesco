@@ -1,10 +1,10 @@
 import React from "react";
 
-function AboutEvolve() {
+function OverviewEvolve() {
   return (
-    <div className="flex justify-center py-10 xl:h-screen">
-      <div className="flex flex-col md:flex-row justify-between w-[80%]">
-        <div className=" lg:w-[40%] h-full flex items-center">
+    <div className="flex justify-center py-10 xl:h-screen header_purple">
+      <div className="flex flex-col md:flex-row justify-between w-[90%]">
+        <div className=" lg:w-[45%] h-full flex items-center">
           <p className="text-blue-800 text-3xl md:text-6xl  font-branding-semibold w-full text-center md:text-left">
             Businesses
             <br /> evolve,so do <br /> mindsets. Only <br />
@@ -12,7 +12,7 @@ function AboutEvolve() {
           </p>
         </div>
 
-        <div className="flex md:w-[50%] mt-10">
+        <div className="flex md:w-[50%] mt-10 items-center">
           <p className="text-gray-700 text-base md:text-2xl font-branding-medium p-4 ">
             With business verticals as varied as exhibitions, events,
             hospitality, MICE, and realty, our steady expansion <br />
@@ -36,4 +36,4 @@ function AboutEvolve() {
   );
 }
 
-export default AboutEvolve;
+export default OverviewEvolve;

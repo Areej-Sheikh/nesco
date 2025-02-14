@@ -26,19 +26,19 @@ function MainCareers() {
     },
     {
       comp: <CareerCommitment />,
-      classCss: "",
+      classCss: "section",
     },
     {
       comp: <CareerTeam />,
-      classCss: "",
+      classCss: "section",
     },
     {
       comp: <CareerVoice />,
-      classCss: "",
+      classCss: "section",
     },
     {
       comp: <CareerJoin />,
-      classCss: "",
+      classCss: "section",
     },
   ];
 

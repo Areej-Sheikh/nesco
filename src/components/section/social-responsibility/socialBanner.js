@@ -14,7 +14,7 @@ function SocialBanner() {
     {
       image: bannerImage,
       data: (
-        <div className="absolute top-[70%] right-0 px-20 py-6 bg-[#21409A] bg-opacity-50 text-white z-20">
+        <div className="absolute md:top-[70%] top-[60%] right-0 px-20 py-6 bg-[#21409A] bg-opacity-50 text-white z-20">
           <p>A smile can speak volumes.</p>
           <p>It can also brighten up the future.</p>
         </div>

@@ -67,8 +67,8 @@ function SocialBanner1({ SliderData, title }) {
           {SliderData.length === 1 ? (
             <div className="bg-black text-white flex w-full justify-center items-center text-2xl h-[100vh] relative transition-all duration-700">
               <div className="absolute w-full h-full flex flex-col justify-center items-center font-branding-medium">
-                <p className="text-3xl ">{SliderData[0].title1}</p>
-                <p className="text-3xl ">{SliderData[0].title2}</p>
+                <p className="text-3xl text-center">{SliderData[0].title1}</p>
+                <p className="text-3xl text-center">{SliderData[0].title2}</p>
                 <button className="border border-white px-6 py-3 text-white mt-8">
                   <Link href={SliderData[0].link}>Read More</Link>
                 </button>
@@ -87,8 +87,8 @@ function SocialBanner1({ SliderData, title }) {
                   className="bg-black text-white flex justify-center items-center text-2xl h-[100vh] relative transition-all duration-700"
                 >
                   <div className="absolute w-full h-full flex flex-col justify-center items-center font-branding-medium">
-                    <p className="text-3xl ">{data.title1}</p>
-                    <p className="text-3xl ">{data.title2}</p>
+                    <p className="text-3xl text-center">{data.title1}</p>
+                    <p className="text-3xl text-center">{data.title2}</p>
                     <button className="border border-white px-6 py-3 text-white mt-8">
                       <Link href={data.link}>Read More</Link>
                     </button>
