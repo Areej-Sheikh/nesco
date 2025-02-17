@@ -28,21 +28,19 @@ function MainLeadership() {
       comp: <LeadershipMentor2 />,
       classCss: "section",
     },
-    // {
-    //   comp: <BoardOfDirector />,
-    //   classCss: "",
-    // },
-    // {
-    //   comp: <VisionaryLeader />,
-    //   classCss: "",
-    // },
+    {
+      comp: <BoardOfDirector />,
+      classCss: "",
+    },
+    {
+      comp: <VisionaryLeader />,
+      classCss: "",
+    },
   ];
 
   return (
     <Pagewrapper>
       <ScrollSnip Children={Children} />
-      <BoardOfDirector />
-      <VisionaryLeader />
     </Pagewrapper>
   );
 }

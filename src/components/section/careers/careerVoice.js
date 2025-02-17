@@ -2,7 +2,7 @@ import React from "react";
 // import SampleVideo from "@/assests/careers/sample.mp4";
 function CareerVoice() {
   return (
-    <section className="w-full relative overflow-hidden">
+    <section className="header_color_black w-full relative overflow-hidden">
       <div className="w-full absolute bottom-0 left-0 bg-secondary h-[30%] z-0"></div>
 
       <div className="relative z-10 flex flex-col items-center md:pt-28 pt-10 lg:gap-0 gap-10">

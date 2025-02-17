@@ -9,11 +9,11 @@ function MainFinancials() {
   const Children = [
     {
       comp: <FinancialsBanner />,
-      classCss: "",
+      classCss: "section",
     },
     {
       comp: <FinancialResult />,
-      classCss: "",
+      classCss: "section",
     },
   ];
   return (

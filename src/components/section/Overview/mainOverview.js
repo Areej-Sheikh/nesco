@@ -14,7 +14,7 @@ const MainOverview = () => {
     },
     {
       comp: <OverviewEvolve />,
-      classCss: "",
+      classCss: "section",
     },
   ];
 

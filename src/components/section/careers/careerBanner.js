@@ -29,7 +29,7 @@ function CareerBanner() {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full section">
       <Navbar activeSlide={activeSlide} />
       {/* <Banner SliderData={SliderData}  onSlideChange={handleSlideChange} /> */}
       <Banner SliderData={SliderData} onSlideChange={handleSlideChange} />

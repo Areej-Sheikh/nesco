@@ -14,7 +14,7 @@ function Mainsebi() {
   const Children = [
     {
       comp: <SebiBanner />,
-      classCss: "",
+      classCss: "section",
     },
     {
       comp: (

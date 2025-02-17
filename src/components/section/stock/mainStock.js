@@ -12,25 +12,22 @@ function MainStock() {
       comp: <StockBanner />,
       classCss: "",
     },
-    // {
-    //   comp: <Shares />,
-    //   classCss: "",
-    // },
-    // {
-    //   comp: <Chart1 />,
-    //   classCss: "header_purple",
-    // },
-    // {
-    //   comp: <Quote />,
-    //   classCss: "header_purple",
-    // },
+    {
+      comp: <Shares />,
+      classCss: "",
+    },
+    {
+      comp: <Chart1 />,
+      classCss: "header_purple",
+    },
+    {
+      comp: <Quote />,
+      classCss: "header_purple",
+    },
   ];
   return (
     <Pagewrapper>
       <ScrollSnip Children={Children} />
-      <Shares />
-      <Chart1 />
-      <Quote />
     </Pagewrapper>
   );
 }

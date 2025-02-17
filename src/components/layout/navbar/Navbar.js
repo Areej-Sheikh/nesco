@@ -82,6 +82,7 @@ function Navbar({ activeSlide }) {
       trigger: ".footer_section",
       start: "top bottom",
       end: "bottom center",
+      // markers: true,
       onEnter: () => setIsFooter(true),
       onLeave: () => setIsFooter(false),
       onEnterBack: () => setIsFooter(true),
@@ -105,7 +106,7 @@ function Navbar({ activeSlide }) {
 
     // Purple Sections
     const blackTextSections = document.querySelectorAll(".header_color_black");
-    purpleSections.forEach((section) => {
+    blackTextSections.forEach((section) => {
       ScrollTrigger.create({
         trigger: section,
         start: "top center",
