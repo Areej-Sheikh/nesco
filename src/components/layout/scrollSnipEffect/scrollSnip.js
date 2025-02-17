@@ -115,9 +115,9 @@ function ScrollSnip({ Children }) {
         </div>
       ))}
       {/* Footer (not part of scroll-snapping) */}
-      <div className="">
+      {/* <div className="">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }

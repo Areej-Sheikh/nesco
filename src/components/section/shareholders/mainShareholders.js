@@ -17,29 +17,33 @@ function MainShareholder() {
   const Children = [
     {
       comp: <ShareBanner />,
-      classCss: "",
+      classCss: "section",
     },
-    {
-      comp: <ShareInvestor />,
-      classCss: "",
-    },
-    {
-      comp: <ShareCorner />,
-      classCss: "",
-    },
-    {
-      comp: <ShareUnclaimed />,
-      classCss: "",
-    },
-    {
-      comp: <ShareDetail />,
-      classCss: "",
-    },
+    // {
+    //   comp: <ShareInvestor />,
+    //   classCss: "section",
+    // },
+    // {
+    //   comp: <ShareCorner />,
+    //   classCss: "",
+    // },
+    // {
+    //   comp: <ShareUnclaimed />,
+    //   classCss: "",
+    // },
+    // {
+    //   comp: <ShareDetail />,
+    //   classCss: "",
+    // },
   ];
 
   return (
     <Pagewrapper>
       <ScrollSnip Children={Children} />
+      <ShareInvestor />
+      <ShareCorner />
+      <ShareUnclaimed />
+      <ShareDetail />
     </Pagewrapper>
   );
 }

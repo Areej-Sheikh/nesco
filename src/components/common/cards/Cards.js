@@ -7,18 +7,15 @@ function Cards({ CardData }) {
     <div className="w-full  py-10 flex justify-center">
       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-[90%]">
         {CardData.map((data, index) => (
-          <div
-            key={index}
-            className="pb-5 pt-12 px-12 border-2 border-gray-500"
-          >
+          <div key={index} className=" py-10 px-10 border-2 border-gray-500">
             <div className="flex flex-col gap-2 w-full h-full">
               <Image
                 src={data.image}
                 alt="Mentor"
-                className="h-[70%] w-full object-cover filter grayscale contrast-125"
+                className="h-full w-full object-cover filter grayscale contrast-125"
               />
 
-              <p className="flex justify-between">
+              <p className="flex justify-between mt-3">
                 <span className="font-branding-bold text-lg">{data.name}</span>
                 <span className="flex items-center">
                   <button className="text-primary text-2xl">

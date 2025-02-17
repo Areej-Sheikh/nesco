@@ -1,12 +1,12 @@
 import React from "react";
-import MentorImage from "@/assests/Home/Mentor.png";
+import MentorImage from "@/assests/Home/SirImage.png";
 import Image from "next/image";
 
 function LeadershipMentor() {
   return (
     <section className="header_white bg-primary text-white flex justify-center items-center pb-20 xl:pb-0 xl:pt-20 pt-[10rem] xl:h-screen ">
-      <div className="grid lg:grid-cols-2 w-[90%] xl:justify-center justify-between xl:gap-0 gap-10 items-center lg:items-start">
-        <div>
+      <div className="flex flex-col lg:flex-row w-[90%] xl:justify-center justify-between gap-10 items-center lg:items-start">
+        <div className="lg:w-[60%]">
           <p className="text-[21px] font-branding-medium leading-7 text-justify">
             A fearless pioneer, Sumant Patel's crystal-clear vision had been
             instrumental in shaping the Nesco Group. A mechanical engineer from
@@ -24,15 +24,15 @@ function LeadershipMentor() {
             ventures he was passionate about.
           </p>
         </div>
-        <div className="flex flex-col h-full lg:items-end items-center justify-center">
+        <div className="flex flex-col h-full lg:items-end items-center justify-center lg:w-[40%]">
           <div>
-            <div className="w-full max-w-[450px]">
+            <div className="w-full max-w-[650px]">
               <Image
                 src={MentorImage}
                 alt="Mentor"
                 width={550}
-                height={400}
-                className="w-full h-auto"
+                height={300}
+                className=""
               />
             </div>
             <div className="text-center mt-4">

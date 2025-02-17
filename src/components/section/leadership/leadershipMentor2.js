@@ -5,16 +5,16 @@ import Image from "next/image";
 function LeadershipMentor2() {
   return (
     <section className="header_white bg-secondary flex justify-center items-center pb-20 xl:pb-0 xl:pt-20 pt-[10rem] xl:h-screen ">
-      <div className="grid lg:grid-cols-2 w-[90%] xl:justify-center justify-between xl:gap-0 gap-10 items-center lg:items-start">
-        <div className="flex flex-col h-full xl:items-start items-center justify-center">
-          <div className="">
-            <div className="w-full max-w-[550px]">
+      <div className="flex flex-col lg:flex-row w-[90%] xl:justify-center justify-between gap-10 items-center lg:items-start">
+        <div className="flex flex-col h-full lg:items-end items-center justify-center lg:w-[40%]">
+          <div>
+            <div className="w-full max-w-[650px]">
               <Image
                 src={MentorImage}
                 alt="Mentor"
                 width={550}
                 height={400}
-                className="w-full h-auto"
+                className=""
               />
             </div>
             <div className="text-center mt-4">
@@ -27,7 +27,7 @@ function LeadershipMentor2() {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="lg:w-[60%]">
           <p className="text-[21px] font-branding-medium leading-7 text-justify">
             A dynamic people's leader, Krishna Patel is adept at spot-ting and
             implementing future trends in any industry even as he hones in on
