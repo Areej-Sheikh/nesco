@@ -7,73 +7,73 @@ function AnnouncementFilter() {
   const tableData = [
     {
       year: "2024-2025",
-      date: "Jan 23, 2025",
+      date: "Jan 23 2025",
       description:
         "Disclosure under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015-Sale of 100% stake in M Entertainments Private Limited ",
     },
     {
       year: "2024-2025",
-      date: "Jan 17, 2025",
+      date: "Jan 17 2025",
       description:
         "Disclosure under Flegulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015-Update on acquisition of 100% equity stake of Reliance New Energy Battery Limited ",
     },
     {
       year: "2024-2025",
-      date: "Jan 17, 2025 ",
+      date: "Jan 17 2025 ",
       description:
         "Audio/video recording and transcript of the presentation made to analysts on the Unaudited Financial Results (Consolidated and Standalone) for the quarter and nine months ended December 31, 2024 ",
     },
     {
       year: "2024-2025",
-      date: "Jan 16, 2025 ",
+      date: "Jan 16 2025 ",
       description:
         "Integrated Filing (Financial) for the quarter and nine months ended December 31, 2024 ",
     },
     {
       year: "2024-2025",
-      date: "Jan 16, 2025 ",
+      date: "Jan 16 2025 ",
       description:
         "Disclosure under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015-Acquisition of 100% equity stake of Lakadia B Power Transmission Limited ",
     },
     {
       year: "2024-2025",
-      date: "Jan 10, 2025 ",
+      date: "Jan 10 2025 ",
       description:
         "Disclosure under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015-Acquisition of 100% equity stake of Reliance New Energy Battery Limited ",
     },
     {
       year: "2024-2025",
-      date: "Jan 16, 2025",
+      date: "Jan 16 2025",
       description:
         "Presentation on the Unaudited Financial Results (Consolidated and Standalone) for the quarter and nine months ended December 31, 2024 ",
     },
     {
       year: "2024-2025",
-      date: "Jan 16, 2025",
+      date: "Jan 16 2025",
       description:
         "Media Release - Consolidated and Standalone Unaudited Financial Results for the quarter and nine months ended December 31, 2024 ",
     },
     {
       year: "2024-2025",
-      date: "Jan 16, 2025 ",
+      date: "Jan 16 2025 ",
       description:
         "Consolidated and Standalone Unaudited Financial Results for the quarter and nine months ended December 31, 2024 ",
     },
     {
       year: "2024-2025",
-      date: "Dec 31, 2024 ",
+      date: "Dec 31 2024 ",
       description:
         "Conversion of compulsorily convertible preference shares held by the Company in Viacom 18 Media Private Limited ",
     },
     {
       year: "2024-2025",
-      date: "Dec 31, 2024 ",
+      date: "Dec 31 2024 ",
       description:
         "Conversion of compulsorily convertible preference shares held by the Company in Viacom 18 Media Private Limited ",
     },
     {
       year: "2023-2024",
-      date: "Dec 31, 2024 ",
+      date: "Dec 31 2024 ",
       description:
         "Conversion of compulsorily convertible preference shares held by the Company in Viacom 18 Media Private Limited ",
     },
@@ -109,7 +109,7 @@ function AnnouncementFilter() {
 
   return (
     <div>
-      <div className="flex justify-center header_purple">
+      <div className="flex justify-center header_purple lg:mt-10">
         <div className=" my-12 flex md:flex-row flex-col justify-between w-[90%]">
           <div className="md:w-[30%]  py-6 mt-2 mb-2 flex flex-col">
             <div className="relative md:pr-20 text-gray-500 flex justify-center items-center">

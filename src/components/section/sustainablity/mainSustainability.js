@@ -11,43 +11,48 @@ import SustainabilityImage from "./sustainabilityImage";
 import Pagewrapper from "@/components/layout/pagewrapper";
 import ScrollSnip from "@/components/layout/scrollSnipEffect/scrollSnip";
 import SustainabilityBanner from "./sustainabilityBanner";
+import SustainablityStrategy from "./sustainablityStrategy";
 function MainSustainability() {
   const Children = [
     {
       comp: <SustainabilityBanner />,
-      classCss: "",
+      classCss: "section",
     },
     {
       comp: <SustainabilityFeatures />,
-      classCss: "",
+      classCss: "section header_purple",
     },
     {
       comp: <SustainablityText />,
-      classCss: "",
+      classCss: "section header_purple",
     },
     {
       comp: <SustainabilityTerms />,
-      classCss: "",
+      classCss: "header_purple",
+    },
+    {
+      comp: <SustainablityStrategy />,
+      classCss: "header_purple",
     },
     {
       comp: <SustainabilityIssues />,
-      classCss: "",
+      classCss: "header_purple",
     },
     {
       comp: <SustainabilityGovernance />,
-      classCss: "",
+      classCss: "header_purple",
     },
     {
       comp: <SustainabilityPerformance />,
-      classCss: "",
+      classCss: "header_purple",
     },
     {
       comp: <SustainabilityPractices />,
-      classCss: "",
+      classCss: "header_purple",
     },
     {
       comp: <SustainabilityImage />,
-      classCss: "",
+      classCss: "header_purple",
     },
   ];
 

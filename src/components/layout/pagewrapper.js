@@ -2,11 +2,10 @@ import React from "react";
 import Navbar from "./navbar/Navbar";
 import Footer from "./footer/footer";
 
-function Pagewrapper({ children }) {
+function Pagewrapper({ children, activeSlide }) {
   return (
     <div>
-      <Navbar />
-
+      <Navbar activeSlide={activeSlide} />
       {children}
     </div>
   );

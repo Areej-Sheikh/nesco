@@ -145,7 +145,7 @@ function News() {
                         className="w-full h-full z-0 object-cover"
                       />
                     </div>
-                    <div className="flex flex-col mt-5 w-[60%] justify-between h-full z-10 relative pb-2">
+                    <div className="flex flex-col mt-5 w-[60%] justify-between h-full z-10 relative ">
                       <div>
                         <p
                           className="text-[2rem] leading-[2.2rem] mb-2"
@@ -165,7 +165,7 @@ function News() {
                         </p>
                       </div>
 
-                      <div className="flex w-full ">
+                      <div className="flex w-full pb-2">
                         <button
                           className="w-[40px] h-[40px] rounded-full flex justify-center items-center"
                           style={{
@@ -200,7 +200,7 @@ function News() {
                       className="w-full h-full z-0 object-cover"
                     />
                   </div>
-                  <div className="flex flex-col mt-2 w-[70%] md:w-[100%] justify-between h-full z-10 relative pb-2">
+                  <div className="flex flex-col mt-2 w-[70%] md:w-[100%] justify-between h-full z-10 relative">
                     <p
                       className="text-[2rem] leading-[2.2rem] mb-2"
                       style={{
@@ -212,7 +212,7 @@ function News() {
                     </p>
                     <p
                       // className="text-sm"
-                      className="text-left w-full text-[1.2rem] font-branding-medium leading-[1.6rem]"
+                      className="text-left w-full text-[1.2rem] font-branding-medium leading-[1.6rem] pb-2"
                     >
                       {data.description}
                     </p>

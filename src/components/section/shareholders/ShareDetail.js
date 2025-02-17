@@ -13,7 +13,7 @@ function ShareDetail() {
       {/* Content */}
       <div className="relative flex flex-col md:flex-row gap-6 justify-evenly w-[90%]">
         {/* Card 1 */}
-        <div className="border border-gray-300 shadow-lg p-6 lg:w-[30%] w-full">
+        <div className="border border-gray-300 shadow-lg p-6 lg:w-[30%] w-full bg-white">
           <div className="bg-indigo-900 flex-col items-center flex py-2">
             <div className="w-[50%] h-[50%]">
               <Image src={image} alt="image" className="w-full h-full" />
@@ -37,7 +37,7 @@ function ShareDetail() {
         </div>
 
         {/* Card 2 */}
-        <div className="border border-gray-300 shadow-lg p-6 lg:w-[30%] w-full">
+        <div className="border border-gray-300 shadow-lg p-6 lg:w-[30%] w-full bg-white">
           <div className="bg-indigo-900 flex-col items-center flex py-2">
             <div className="w-[50%] h-[50%]">
               <Image src={image} alt="image" className="w-full h-full" />

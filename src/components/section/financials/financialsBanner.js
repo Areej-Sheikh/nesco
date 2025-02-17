@@ -1,7 +1,7 @@
 "use client";
 import Banner from "@/components/common/MainBanner/Banner";
 import React, { useState } from "react";
-import bannerImage from "@/assests/financials/image.jpeg";
+import bannerImage from "@/assests/financials/image.jpg";
 import Navbar from "@/components/layout/navbar/Navbar";
 function FinancialsBanner() {
   const [activeSlide, setActiveSlide] = useState(0);

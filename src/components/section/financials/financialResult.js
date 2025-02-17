@@ -38,42 +38,30 @@ function FinancialResult() {
       description: "Financials Statements of Subsidiaries",
     },
     {
-      year: "2016-2017",
+      year: "2017-2018",
       description: "Financials Statements of Subsidiaries",
     },
     {
-      year: "2015-2016",
+      year: "2017-2018",
       description: "Financials Statements of Subsidiaries",
     },
     {
-      year: "2014-2015",
+      year: "2017-2018",
       description: "Financials Statements of Subsidiaries",
     },
     {
-      year: "2013-2014",
-      description: "Financials Statements of Subsidiaries",
-    },
-    {
-      year: "2012-2013",
-      description: "Financials Statements of Subsidiaries",
-    },
-    {
-      year: "2011-2012",
-      description: "Financials Statements of Subsidiaries",
-    },
-    {
-      year: "2010-2011",
+      year: "2017-2018",
       description: "Financials Statements of Subsidiaries",
     },
   ];
 
-  const [visibleCheckboxes, setVisibleCheckboxes] = useState(10);
+  const [visibleCheckboxes, setVisibleCheckboxes] = useState(8);
   const [visibleRows, setVisibleRows] = useState(10);
   const totalRows = tableData.length;
   const [selectedYears, setSelectedYears] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const allYears = Array.from({ length: 12 }, (_, i) => {
+  const allYears = Array.from({ length: 8 }, (_, i) => {
     const startYear = 2024 - i;
     const endYear = startYear + 1;
     return `${startYear}-${endYear.toString()}`;
@@ -102,7 +90,7 @@ function FinancialResult() {
 
   return (
     <div>
-      <div className="flex justify-center mt-16 mb-10 header_purple">
+      <div className="flex justify-center mt-16 lg:mt-28 mb-10 header_purple ">
         <div className="flex items-end flex-col border-2 w-[90%] lg:px-12 px-5">
           <div className="w-full flex md:flex-row flex-col justify-between items-center z-50 gap-6 lg:w-[70%] transform md:-translate-y-1/2">
             <div className=" bg-blue-600 px-4  py-2 text-center font-branding-semibold text-xl text-white">
@@ -153,7 +141,7 @@ function FinancialResult() {
                 </div>
               ))}
 
-              {visibleCheckboxes < allYears.length ? (
+              {/* {visibleCheckboxes < allYears.length ? (
                 <button
                   className="mt-2 text-gray-500 hover:underline w-fit p-1 flex justify-center items-center gap-3"
                   onClick={() => setVisibleCheckboxes(visibleCheckboxes + 5)}
@@ -173,7 +161,7 @@ function FinancialResult() {
                     <span className="inline-block w-2 h-2 rounded-full bg-gray-600 "></span>
                   </span>
                 </button>
-              )}
+              )} */}
 
               <div className="mt-5 mb-2">
                 <p className="mb-2 ">QUARTER</p>
@@ -233,7 +221,7 @@ function FinancialResult() {
                 {visibleRows < filteredData.length ? (
                   <button
                     className="mt-2 px-6 py-2 rounded-full text-purple-700 border-2 border-purple-700 flex justify-center items-center gap-3"
-                    onClick={() => setVisibleRows((prev) => prev + 5)}
+                    onClick={() => setVisibleRows((prev) => prev + 3)}
                   >
                     Load More{" "}
                     <span className="">

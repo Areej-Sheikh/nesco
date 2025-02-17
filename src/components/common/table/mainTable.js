@@ -2,46 +2,46 @@ import React from "react";
 import { Table } from "antd";
 import { createStyles } from "antd-style";
 
-const useStyle = createStyles(({ css, token }) => {
-  const { antCls } = token;
-  return {
-    customTable: css`
-      ${antCls}-table {
-        ${antCls}-table-container {
-          ${antCls}-table-body,
-          ${antCls}-table-content {
-            scrollbar-width: thin;
-            scrollbar-color: #eaeaea transparent;
-            scrollbar-gutter: stable;
+const MainTable = ({ tableData, pagination, textColor, ClassCss }) => {
+  const useStyle = createStyles(({ css, token }) => {
+    const { antCls } = token;
+    return {
+      customTable: css`
+        ${antCls}-table {
+          ${antCls}-table-container {
+            ${antCls}-table-body,
+            ${antCls}-table-content {
+              scrollbar-width: thin;
+              scrollbar-color: #eaeaea transparent;
+              scrollbar-gutter: stable;
+            }
           }
         }
-      }
 
-      /* Custom Table Header */
-      .ant-table-thead > tr > th {
-        background-color: #403092;
-        color: white;
-        font-weight: bold;
-      }
+        /* Custom Table Header */
+        .ant-table-thead > tr > th {
+          background-color: #403092;
+          color: white;
+          font-weight: bold;
+        }
 
-      .ant-table {
-        font-family: "BrandingMedium", sans-serif !important;
-        letter-spacing: 0.2px;
-      }
+        .ant-table {
+          font-family: "BrandingMedium", sans-serif !important;
+          letter-spacing: 0.2px;
+        }
 
-      .ant-table-thead > tr > th {
-        text-align: center !important;
-      }
+        .ant-table-thead > tr > th {
+          text-align: center !important;
+        }
 
-      .ant-table-tbody > tr {
-        text-align: center !important;
-        color: #403092;
-      }
-    `,
-  };
-});
-
-const MainTable = ({ tableData, pagination }) => {
+        .ant-table-tbody > tr {
+          text-align: center !important;
+          color: ${textColor ? textColor : "#403092"};
+          ${ClassCss};
+        }
+      `,
+    };
+  });
   const { styles } = useStyle();
   if (!tableData || Object.keys(tableData).length === 0) return null;
 

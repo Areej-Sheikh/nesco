@@ -41,6 +41,46 @@ function Quote() {
         noOfTrades: "15527",
         tradedQuantity: "412707",
       },
+      {
+        date: "31-01-2025",
+        openPrice: "₹1,257.40",
+        highPrice: "₹1,266.00",
+        lowPrice: "₹1,249.50",
+        closePrice: "₹1,264.90",
+        tradedValue: "51.99",
+        noOfTrades: "15527",
+        tradedQuantity: "412707",
+      },
+      {
+        date: "31-01-2025",
+        openPrice: "₹1,257.40",
+        highPrice: "₹1,266.00",
+        lowPrice: "₹1,249.50",
+        closePrice: "₹1,264.90",
+        tradedValue: "51.99",
+        noOfTrades: "15527",
+        tradedQuantity: "412707",
+      },
+      {
+        date: "31-01-2025",
+        openPrice: "₹1,257.40",
+        highPrice: "₹1,266.00",
+        lowPrice: "₹1,249.50",
+        closePrice: "₹1,264.90",
+        tradedValue: "51.99",
+        noOfTrades: "15527",
+        tradedQuantity: "412707",
+      },
+      {
+        date: "31-01-2025",
+        openPrice: "₹1,257.40",
+        highPrice: "₹1,266.00",
+        lowPrice: "₹1,249.50",
+        closePrice: "₹1,264.90",
+        tradedValue: "51.99",
+        noOfTrades: "15527",
+        tradedQuantity: "412707",
+      },
       // Add more rows as needed
     ],
   };
@@ -56,7 +96,7 @@ function Quote() {
   const years = Array.from({ length: 20 }, (_, i) => 2020 + i);
 
   return (
-    <div className=" flex flex-col justify-center items-center py-10 font-branding-medium">
+    <div className=" flex flex-col justify-center items-center py-10 font-branding-medium mt-0 lg:mt-10">
       <h2 className="text-5xl font-branding-bold text-primary text-center mb-10">
         Historical Stock Quote
       </h2>
@@ -179,7 +219,12 @@ function Quote() {
           </span>
         </p>
         <div>
-          <MainTable tableData={BseData} pagination={true} />
+          <MainTable
+            tableData={BseData}
+            pagination={true}
+            textColor="#8999B8"
+            ClassCss="font-size: 18px"
+          />
         </div>
         <div className="w-full font-branding-medium">
           <p>^Traded Value Rs. in Crores.</p>

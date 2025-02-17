@@ -1,27 +1,27 @@
 import React from "react";
-import MentorImage from "@/assests/Home/Mentor.png";
-import backgroundImage from "@/assests/Home/N.png";
+import MentorImage from "@/assests/Home/SirImage.png";
+import backgroundImage from "@/assests/Home/N2.png";
 import Image from "next/image";
 
 function Mentor() {
   return (
     <section className="bg-[#cbe0e7] flex flex-col items-center justify-center relative w-full xl:h-auto h-full overflow-hidden pt-8 md:pt-0 pb-10">
       {/* Content */}
-      <div className="z-20 relative w-[90%] flex flex-col items-center justify-center mx-auto mt-20 mb-10 md:h-screen goal-section1">
-        <div className="flex md:flex-row flex-col items-start gap-5">
+      <div className="z-20 relative w-[90%] flex flex-col items-center justify-center mx-auto mt-12 mb-10 md:h-screen goal-section1">
+        <div className="flex md:flex-row flex-col items-start md:gap-20 gap-10">
           {/* Text Content */}
           <div className="relative md:w-[60%] h-full">
             <div className="z-10 relative">
               <h2
                 style={{ fontFamily: "BrandingSemibold" }}
-                className="text-3xl md:text-5xl text-primary"
+                className="text-3xl md:text-6xl text-primary"
               >
                 A note from the Founding
               </h2>
-              <h3 className="font-branding-medium text-3xl mt-2 md:text-4xl text-primary">
+              <h3 className="font-branding-medium text-3xl mt-2 md:text-5xl text-primary">
                 Director and Mentor
               </h3>
-              <div className="space-y-4 mt-7 text-gray-700">
+              <div className="space-y-4 mt-7 text-gray-700 text-justify">
                 <p className="lg:text-3xl text-2xl font-branding-medium leading-9">
                   In the last eight decades, Nesco has come a long way. We see
                   our present success as only the start to newer and bolder
@@ -43,7 +43,7 @@ function Mentor() {
                   src={backgroundImage}
                   alt="background image"
                   objectFit="cover"
-                  className="w-full xl:scale-[1] lg:scale-[1.5] md:scale-[1.7] scale-[1.5]"
+                  className="w-full xl:scale-[1] lg:scale-[1.7] md:scale-[1.7] scale-[1.5]"
                 />
               </div>
             </div>
@@ -52,11 +52,11 @@ function Mentor() {
           {/* Mentor Image and Name */}
           <div className="flex flex-col md:w-[40%] w-full h-full md:items-end items-center justify-center z-10 relative">
             <div className="w-full">
-              <div className="w-full max-w-[500px]">
+              <div className="w-full max-w-[600px]">
                 <Image
                   src={MentorImage}
                   alt="Mentor"
-                  width={550}
+                  width={600}
                   height={400}
                   className="w-full h-auto"
                 />

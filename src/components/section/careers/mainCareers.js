@@ -18,27 +18,27 @@ function MainCareers() {
     },
     {
       comp: <CareerPassion />,
-      classCss: "section",
+      classCss: "section header_purple mt-0 lg:mt-10",
     },
     {
       comp: <CareerCulture />,
-      classCss: "section",
+      classCss: "section header_purple mt-0 lg:mt-10",
     },
     {
       comp: <CareerCommitment />,
-      classCss: "section",
+      classCss: "section header_purple mt-0 lg:mt-10",
     },
     {
       comp: <CareerTeam />,
-      classCss: "section",
+      classCss: "section header_purple mt-0 lg:mt-10",
     },
     {
       comp: <CareerVoice />,
-      classCss: "section",
+      classCss: "section header_purple mt-0 lg:mt-10",
     },
     {
       comp: <CareerJoin />,
-      classCss: "section",
+      classCss: "section header_purple mt-0 lg:mt-10",
     },
   ];
 

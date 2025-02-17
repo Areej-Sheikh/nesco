@@ -6,6 +6,8 @@ import Nescologo from "@/assests/Home/nescoLogo1.png";
 import Nescologo2 from "@/assests/Home/nescoLogo2.png";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Navbar({ activeSlide }) {
   const NavData = [
@@ -25,6 +27,7 @@ function Navbar({ activeSlide }) {
   );
   const [activePurpleSection, setActivePurpleSection] = useState(null); // Track active purple section
   const [isFooter, setIsFooter] = useState(false);
+  const [textBlack, setTextBlack] = useState(null);
 
   const logo = {
     imagePath: Nescologo,
@@ -50,64 +53,83 @@ function Navbar({ activeSlide }) {
   };
 
   useEffect(() => {
-    const banner = document.querySelector(".banner-section");
-    const headerWhiteSection = document.querySelector(".header_white");
-    const footerSection = document.querySelector(".footer_section");
+    gsap.registerPlugin(ScrollTrigger);
 
-    const mainObserver = new IntersectionObserver(
-      ([entry]) => {
-        setIsScrolled(!entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
+    // Banner Section
+    ScrollTrigger.create({
+      trigger: ".banner-section",
+      start: "top top",
+      end: "bottom top",
+      onEnter: () => setIsScrolled(false),
+      onLeave: () => setIsScrolled(true),
+      onEnterBack: () => setIsScrolled(false),
+      onLeaveBack: () => setIsScrolled(true),
+    });
 
-    const headerObserver = new IntersectionObserver(
-      ([entry]) => {
-        setIsHeaderWhite(entry.isIntersecting);
-      },
-      { threshold: 0.5, rootMargin: "0px 0px 150px 0px" }
-    );
+    // Header White Section
+    ScrollTrigger.create({
+      trigger: ".header_white",
+      start: "top center",
+      end: "bottom center",
+      onEnter: () => setIsHeaderWhite(true),
+      onLeave: () => setIsHeaderWhite(false),
+      onEnterBack: () => setIsHeaderWhite(true),
+      onLeaveBack: () => setIsHeaderWhite(false),
+    });
 
-    // Observe all sections with the class "header_purple"
+    // Footer Section
+    ScrollTrigger.create({
+      trigger: ".footer_section",
+      start: "top bottom",
+      end: "bottom center",
+      onEnter: () => setIsFooter(true),
+      onLeave: () => setIsFooter(false),
+      onEnterBack: () => setIsFooter(true),
+      onLeaveBack: () => setIsFooter(false),
+    });
+
+    // Purple Sections
     const purpleSections = document.querySelectorAll(".header_purple");
-    const purpleObserver = new IntersectionObserver(
-      (entries) => {
-        let isAnyPurpleActive = false;
+    purpleSections.forEach((section) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
 
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            isAnyPurpleActive = true;
-          }
-        });
+        onEnter: () => setActivePurpleSection(section),
+        onLeave: () => setActivePurpleSection(null),
+        onEnterBack: () => setActivePurpleSection(section),
+        onLeaveBack: () => setActivePurpleSection(null),
+      });
+    });
 
-        setActivePurpleSection(isAnyPurpleActive && entries[0].target);
-      },
-      { threshold: 0.1, rootMargin: "0px 0px 150px 0px" }
-    );
+    // Purple Sections
+    const blackTextSections = document.querySelectorAll(".header_color_black");
+    purpleSections.forEach((section) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
 
-    const FooterObserver = new IntersectionObserver(
-      ([entry]) => {
-        setIsFooter(entry.isIntersecting); // Update isPurple based on intersection
-      },
-      { threshold: 0.9, rootMargin: "0px 0px 150px 0px" } // Adjust rootMargin to detect footer earlier
-    );
+        onEnter: () => setTextBlack(section),
+        onLeave: () => setTextBlack(null),
+        onEnterBack: () => setTextBlack(section),
+        onLeaveBack: () => setTextBlack(null),
+      });
+    });
 
-    if (banner) mainObserver.observe(banner);
-    if (footerSection) FooterObserver.observe(footerSection);
-    if (headerWhiteSection) headerObserver.observe(headerWhiteSection);
-    purpleSections.forEach((section) => purpleObserver.observe(section));
-
+    // Cleanup
     return () => {
-      if (banner) mainObserver.unobserve(banner);
-      if (headerWhiteSection) headerObserver.unobserve(headerWhiteSection);
-      if (footerSection) FooterObserver.unobserve(footerSection);
-      purpleSections.forEach((section) => purpleObserver.unobserve(section));
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
   const getTextColor = () => {
     if (activePurpleSection) {
       return "text-white border-white"; // Apply white text for purple header
+    }
+    if (textBlack) {
+      return "text-black border-black";
     }
     if (isFooter) {
       return "text-white border-white"; // Apply white text for purple header
@@ -127,6 +149,9 @@ function Navbar({ activeSlide }) {
   const getLogoColorWork = () => {
     if (activePurpleSection) {
       return "filter brightness-1"; // Apply brightness for purple header
+    }
+    if (textBlack) {
+      return "filter brightness-0";
     }
     if (isFooter) {
       return "filter brightness-1"; // Apply brightness for purple header

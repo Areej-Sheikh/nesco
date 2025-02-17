@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function CareerCommitment() {
   return (
-    <section className="w-full lg:h-screen h-full pb-10 flex flex-col justify-center">
+    <section className="header_color_black w-full lg:h-screen h-full pb-10 flex flex-col justify-center">
       <div className="grid md:grid-cols-2 justify-between gap-10 pt-24 xl:items-start items-center w-[90%] mx-auto">
         <div className="">
           <div className="">

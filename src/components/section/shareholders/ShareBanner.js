@@ -15,7 +15,7 @@ function ShareBanner() {
     {
       image: bannerImage,
       data: (
-        <div className="absolute bg-blue-400 md:right-0 py-6 px-20 z-20">
+        <div className="absolute bg-blue-800 bg-opacity-50 md:right-0 py-6 px-20 z-20">
           <div className="innerContainer text-center">
             <p className="text-white sm:text-xl md:text-4xl lg:text-6xl font-branding-semibold">
               Shareholders

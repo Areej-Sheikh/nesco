@@ -18,7 +18,7 @@ function Mainsebi() {
     },
     {
       comp: (
-        <div className="mt-14 flex flex-wrap justify-center items-center mb-32">
+        <div className="mt-14 flex flex-wrap justify-center items-center mb-20">
           <SebiDetails />
         </div>
       ),
