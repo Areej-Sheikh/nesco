@@ -2,6 +2,9 @@ import Navbar from "@/components/layout/navbar/Navbar";
 import React from "react";
 import Image from "next/image";
 import top from "@/assests/history/top.png";
+import mid from "@/assests/history/mid.png";
+import historyOne from "@/assests/history/historyOne.png";
+import historyTwo from "@/assests/history/historyTwo.png";
 
 const page = () => {
   const years = [
@@ -29,14 +32,13 @@ const page = () => {
             className="w-full h-auto"
           />
           <div
-            className="sideContentDiv   bg-sky-500 text-justify p-8 
-                absolute bottom-[0%] right-6 w-[90%] sm:w-[40%] md:w-[50%] lg:w-[60%] 
+            className="sideContentDiv rounded-lg  bg-sky-500 text-justify p-8 
+                absolute bottom-[0%] right-5 w-[90%] sm:w-[40%] md:w-[50%] lg:w-[60%] 
                  z-50 transition-all ease-in-out duration-300 hover:-translate-y-1 hover:bg-gray-600"
           >
             <p className="lg:text-6xl sm:text-2xl font-branding-medium p-2 text-white text-left">
-              Every journey begins with a single step.
-              
-              Introducing the man behind the legacy.
+              Every journey begins with a single step. Introducing the man
+              behind the legacy.
             </p>
             <br></br>
             <br></br>
@@ -61,24 +63,64 @@ const page = () => {
           </div>
         </div>
 
-        <div className="bottomContentDiv w-fit  text-gray-500 bottom-1 p-4  transition-all ease-in-out duration-300
-          hover:translate-y-1 m-auto ">
-          <p className="text-4xl font-branding-semibold text-center p-2">
-            ‘Your right is in action, never to its fruits, let not the fruits of
-            action be your motive.’{" "}
-          </p>
-          <p className="text-md font-branding-semibold text-center p-2">
-            The Bhagavad Gita, Chapter it, verse 47. A verse that was Shri. J.V.
-            Patel's guiding statement in life.
-          </p>
+        <div
+          className="bottomContentDiv w-fit  text-gray-500 bottom-1 p-4 pt-6  transition-all ease-in-out duration-300
+          hover:translate-y-1 m-auto mt-6 flex flex-col md:flex-row  relative "
+        >
+          <div className="imgDiv w-fit justify-left z-50 ">
+            <Image
+              src={historyOne}
+              alt="Mid Image"
+              width={300}
+              height={200}
+              className=" h-fit  rounded-lg m-4  "
+            />
+          </div>
+          <div className="textDiv flex flex-col  m-2 items-center justify-center">
+            <p className=" md:text-2xl lg:text-4xl font-branding-semibold text-center p-2">
+              ‘Your right is in action, never to its fruits, let not the fruits
+              of action be your motive.’{" "}
+            </p>
+            <p className="text-md font-branding-semibold text-center p-2">
+              The Bhagavad Gita, Chapter it, verse 47. A verse that was Shri.
+              J.V. Patel's guiding statement in life.
+            </p>
+          </div>
         </div>
 
-        {/* <div className="1939Div bg-green-300 flex flex-col-1  w-auto p-2 m-2 mb-3">
-          hello
+        <div className="1939Div mt-[5%] relative p-4  h-fit flex flex-col md:flex-row justify-evenly border-2 border-dotted m-4 shadow-md rounded-lg transition-all ease-in-out duration-300
+          hover:translate-y-1  ">
+          <div className="contentDiv  p-4 m-2 flex flex-col  text-center relative  ">
+            <p className="text-md md:text-2xl  text-gray-400 w-96 text-center  h-fit p-3 font-branding-semibold">
+              The founder, Shri. J.V. Patel manifests <br></br> his vision as
+              the Standard Engineering Company (SEC).
+            </p>
+
+            <div className="imgDiv   h-fit w-auto flex m-4  justify-center ">
+              <Image
+                src={historyTwo}
+                alt="Mid Image"
+                width={300}
+                height={200}
+                className=" h-fit  rounded-lg m-4  "
+              />
+            </div>
+
+            <div className="yearDiv text-center text-8xl h-fit w-auto p-2">
+              <p className="text-gray-500"> 1939</p>
+            </div>
+          </div>
+
+          <div className="imgDiv flex w-[61%] ">
+            <Image
+              src={mid}
+              alt="Mid Image"
+              width={800}
+              height={300}
+              className=" h-auto w-auto rounded-lg m-4   "
+            />
+          </div>
         </div>
-        <div className="1956Div bg-green-300 flex flex-col-1  w-auto p-2 m-2 mb-3">
-          hello
-        </div> */}
       </div>
     </div>
   );
