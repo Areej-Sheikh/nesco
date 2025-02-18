@@ -37,26 +37,10 @@ function FinancialResult() {
       year: "2017-2018",
       description: "Financials Statements of Subsidiaries",
     },
-    {
-      year: "2017-2018",
-      description: "Financials Statements of Subsidiaries",
-    },
-    {
-      year: "2017-2018",
-      description: "Financials Statements of Subsidiaries",
-    },
-    {
-      year: "2017-2018",
-      description: "Financials Statements of Subsidiaries",
-    },
-    {
-      year: "2017-2018",
-      description: "Financials Statements of Subsidiaries",
-    },
   ];
 
   const [visibleCheckboxes, setVisibleCheckboxes] = useState(8);
-  const [visibleRows, setVisibleRows] = useState(10);
+  const [visibleRows, setVisibleRows] = useState(5);
   const totalRows = tableData.length;
   const [selectedYears, setSelectedYears] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -93,15 +77,15 @@ function FinancialResult() {
       <div className="flex justify-center mt-16 lg:mt-28 mb-10 header_purple goal-section1">
         <div className="flex items-end flex-col border-2 w-[90%] lg:px-12 px-5">
           <div className="w-full flex md:flex-row flex-col justify-between items-center z-50 gap-6 lg:w-[70%] transform md:-translate-y-1/2">
-            <div className=" bg-blue-600 px-4  py-2 text-center font-branding-semibold text-2xl text-white">
+            <div className=" bg-blue-600 px-4  py-2 text-center font-branding-medium text-2xl text-white">
               Financial Results
             </div>
 
-            <div className=" bg-cyan-500 px-4  py-2 text-center font-branding-semibold text-2xl text-white">
+            <div className=" bg-cyan-500 px-4  py-2 text-center font-branding-medium text-2xl text-white">
               Annual Reports
             </div>
 
-            <div className=" bg-purple-500 px-4  py-2 text-center font-branding-semibold text-2xl text-white">
+            <div className=" bg-purple-500 px-4  py-2 text-center font-branding-medium text-2xl text-white">
               Subsidiary Accounts
             </div>
           </div>
@@ -186,7 +170,7 @@ function FinancialResult() {
               <table className="table-auto border-separate text-left w-full ">
                 <thead>
                   <tr>
-                    <th className=" bg-violet-700 text-gray-200 shadow-sm pl-8 py-3 text-3xl">
+                    <th className=" bg-[#21409A] text-gray-200 shadow-sm pl-8 py-3 text-3xl">
                       Title
                     </th>
                   </tr>
@@ -231,7 +215,7 @@ function FinancialResult() {
                 ) : (
                   <button
                     className="mt-2 px-6 py-2 rounded-full text-gray-500 border-2 border-gray-500 flex justify-center items-center gap-3"
-                    onClick={() => setVisibleRows(10)}
+                    onClick={() => setVisibleRows(5)}
                   >
                     Load Less{" "}
                     <span className="">

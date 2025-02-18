@@ -16,7 +16,7 @@ function FinancialsBanner() {
       data: (
         <div className="absolute z-20 md:top-[30%] left-[10%]">
           <div className="innerContainer text-center">
-            <p className="text-green-300 md:text-6xl text-5xl font-branding-medium  text-left ">
+            <p className="text-[#E1FB80] md:text-6xl text-5xl font-branding-medium  text-left ">
               Our numbers
             </p>
 
