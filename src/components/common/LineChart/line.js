@@ -9,6 +9,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  Filler,
 } from "chart.js";
 import { Line, Bar } from "react-chartjs-2";
 
@@ -20,7 +21,8 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 );
 
 export default function LineChart({ GraphData }) {
@@ -58,6 +60,56 @@ export default function LineChart({ GraphData }) {
       title: { display: false },
     },
   };
+  const data = {
+    labels: [
+      "09:24",
+      "09:34",
+      "09:44",
+      "09:54",
+      "10:04",
+      "10:14",
+      "10:24",
+      "10:34",
+      "10:44",
+    ],
+    datasets: [
+      {
+        label: "U5KZ4", // Label for the dataset
+        data: [10, 20, 30, 40, 50, 60, 70, 80, 90], // Replace with your actual data
+        borderColor: "rgba(75, 192, 192, 1)", // Line color
+        backgroundColor: "rgba(75, 192, 192, 0.2)", // Fill color
+        fill: "origin", // Fill from the origin (y = 0)
+      },
+    ],
+  };
+
+  const options1 = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top", // Position of the legend
+      },
+      title: {
+        display: true,
+        text: "U5KZ4 Area Chart", // Chart title
+      },
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: "Time", // X-axis label
+        },
+      },
+      y: {
+        beginAtZero: true, // Start Y-axis from 0
+        title: {
+          display: true,
+          text: "Value", // Y-axis label
+        },
+      },
+    },
+  };
 
   return (
     <div className="pb-10 bg-white shadow-md rounded-lg  flex flex-col justify-center">
@@ -78,6 +130,11 @@ export default function LineChart({ GraphData }) {
       <div className="md:mt-20  w-full ">
         <p className="ml-20 text-2xl text-primary">Volume</p>
         <Bar data={barData} options={options} />
+      </div>
+
+      <div className="md:mt-20  w-full ">
+        {/* <p className="ml-20 text-2xl text-primary">Volume</p> */}
+        <Line data={data} options={options1} />
       </div>
     </div>
   );
