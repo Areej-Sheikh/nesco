@@ -72,15 +72,15 @@ function Chart1() {
   return (
     <div className="goal-section1 pb-10 py-20 bg-white shadow-md rounded-lg  flex justify-center">
       <div className="flex flex-col w-[90%] items-center">
-        <h1 className="text-5xl font-branding-bold text-primary text-center mb-10">
+        <h1 className="text-5xl font-branding-semibold text-primary text-center mb-10">
           Stock Chart
         </h1>
-        <div className="flex w-full border-b-2 border-b-primary mb-5">
+        <div className="flex w-full border-b-2 border-b-[#433DC5] mb-5">
           <button
             onClick={() => setSelect("nse")}
             className={
               select === "nse"
-                ? "font-branding-bold text-white bg-primary py-2 px-6 rounded-t-lg"
+                ? "font-branding-bold text-white bg-[#433DC5] py-2 px-6 rounded-t-lg"
                 : "font-branding-medium py-2 px-6"
             }
             aria-pressed={select === "nse"}
@@ -99,7 +99,7 @@ function Chart1() {
             BSE
           </button>
         </div>
-        <div className="flex space-x-4 mb-4 bg-primary py-4 px-10 w-full overflow-x-auto">
+        <div className="flex space-x-4 mb-4 bg-primary py-4 px-10 w-full overflow-x-auto font-branding-semibold">
           {[
             "Today",
             "1 Month",

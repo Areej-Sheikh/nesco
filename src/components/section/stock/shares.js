@@ -99,13 +99,15 @@ function Shares() {
 
   return (
     <section className="header_purple goal-section1 pt-20 pb-10 font-branding-medium flex justify-center items-center flex-col">
-      <h2 className="text-5xl font-branding-bold text-primary text-center my-8">
+      <h2 className="text-6xl font-branding-semibold text-primary text-center my-8">
         Shares
       </h2>
       <div className="w-full flex justify-center items-center flex-col bg-secondary">
         <div className=" flex flex-col items-center justify-center py-5 w-[90%]">
           <div className="flex justify-between w-full items-center">
-            <span className="text-3xl text-primary">Stock Quote</span>
+            <span className="text-3xl text-primary font-branding-semibold">
+              Stock Quote
+            </span>
             <div className="flex gap-2 text-xl">
               <button
                 onClick={() => setSelect("nse")}

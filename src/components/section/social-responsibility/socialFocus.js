@@ -1,6 +1,6 @@
 import React from "react";
-import InternshipLogo from "@/assests/social/39.png";
-import GraduatesLogo from "@/assests/social/11.png";
+import InternshipLogo from "@/assests/social/39.jpg";
+import GraduatesLogo from "@/assests/social/11.jpg";
 import ProfessionalLogo from "@/assests/social/38.png";
 import Image from "next/image";
 

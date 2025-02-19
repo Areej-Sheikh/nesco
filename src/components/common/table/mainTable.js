@@ -20,13 +20,13 @@ const MainTable = ({ tableData, pagination, textColor, ClassCss }) => {
 
         /* Custom Table Header */
         .ant-table-thead > tr > th {
-          background-color: #403092;
+          background-color: #272ad9;
           color: white;
           font-weight: bold;
         }
 
         .ant-table {
-          font-family: "BrandingMedium", sans-serif !important;
+          font-family: "BrandingSemiBold", sans-serif !important;
           letter-spacing: 0.2px;
         }
 
@@ -36,7 +36,7 @@ const MainTable = ({ tableData, pagination, textColor, ClassCss }) => {
 
         .ant-table-tbody > tr {
           text-align: center !important;
-          color: ${textColor ? textColor : "#403092"};
+          color: ${textColor ? textColor : "#272AD9"};
           ${ClassCss};
         }
       `,

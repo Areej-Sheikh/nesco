@@ -76,7 +76,11 @@ function Banner({ SliderData, onSlideChange, filter, heightClassName }) {
               className={`w-full flex justify-center items-center text-2xl h-[100vh] relative `}
             >
               {SliderData[0].data}
-              <div className="w-full h-full absolute bg-black opacity-30 z-10"></div>
+              {SliderData[0].isOpacity ? (
+                ""
+              ) : (
+                <div className="w-full h-full absolute bg-black opacity-30 z-10"></div>
+              )}
               <img
                 src={SliderData[0].image.src}
                 alt="banner image"
