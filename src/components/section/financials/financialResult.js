@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
+import "./buttonAnimation.css";
 
 function FinancialResult() {
   const FinancialtableData = [
@@ -90,20 +91,26 @@ function FinancialResult() {
       <div className="flex justify-center mt-16 lg:mt-28 mb-10 header_purple goal-section1">
         <div className="flex items-end flex-col border-2 w-[90%] lg:px-12 px-5">
           <div className="w-full flex md:flex-row flex-col justify-between items-center z-50 gap-6 lg:w-[70%] transform md:-translate-y-1/2">
-            <div className=" bg-blue-600 px-4  py-2 text-center font-branding-medium text-2xl text-white">
-              <button className="" onClick={() => setClick("financials")}>
+            <div className=" bg-blue-600 text-center font-branding-medium text-2xl text-white">
+              <button
+                className="animation1"
+                onClick={() => setClick("financials")}
+              >
                 Financial Results
               </button>
             </div>
 
-            <div className=" bg-cyan-500 px-4  py-2 text-center font-branding-medium text-2xl text-white">
-              <button className="" onClick={() => setClick("annual")}>
+            <div className=" bg-cyan-500  text-center font-branding-medium text-2xl text-white">
+              <button className="animation1" onClick={() => setClick("annual")}>
                 Annual Reports
               </button>
             </div>
 
-            <div className=" bg-purple-500 px-4  py-2 text-center font-branding-medium text-2xl text-white">
-              <button className="" onClick={() => setClick("subsidiary")}>
+            <div className=" bg-purple-500 text-center font-branding-medium text-2xl text-white">
+              <button
+                className="animation1"
+                onClick={() => setClick("subsidiary")}
+              >
                 Subsidiary Accounts
               </button>
             </div>

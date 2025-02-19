@@ -24,6 +24,7 @@ ChartJS.register(
   Legend,
   Filler
 );
+import { MdOutlineFileDownload } from "react-icons/md";
 
 export default function LineChart({ GraphData }) {
   const { stockPrices, volumes, labels } = GraphData;
@@ -34,7 +35,7 @@ export default function LineChart({ GraphData }) {
       {
         label: "RIL - Value",
         data: stockPrices,
-        borderColor: "blue",
+        borderColor: "#433DC5",
         backgroundColor: "transparent",
         pointRadius: 2,
         pointHoverRadius: 4,
@@ -48,7 +49,7 @@ export default function LineChart({ GraphData }) {
       {
         label: "Volume",
         data: volumes,
-        backgroundColor: "blue",
+        backgroundColor: "#433DC5",
       },
     ],
   };
@@ -74,10 +75,9 @@ export default function LineChart({ GraphData }) {
     ],
     datasets: [
       {
-        label: "U5KZ4", // Label for the dataset
-        data: [10, 20, 30, 40, 50, 60, 70, 80, 90], // Replace with your actual data
-        borderColor: "rgba(75, 192, 192, 1)", // Line color
-        backgroundColor: "rgba(75, 192, 192, 0.2)", // Fill color
+        data: [20, 22, 10, 7, 5, 5, 6, 5, 14], // Replace with your actual data
+        borderColor: "#433DC5", // Line color
+        backgroundColor: "#433DC5", // Fill color
         fill: "origin", // Fill from the origin (y = 0)
       },
     ],
@@ -86,26 +86,24 @@ export default function LineChart({ GraphData }) {
   const options1 = {
     responsive: true,
     plugins: {
-      legend: {
-        position: "top", // Position of the legend
-      },
+      legend: false,
       title: {
-        display: true,
-        text: "U5KZ4 Area Chart", // Chart title
+        display: false,
+        // text: "U5KZ4 Area Chart", // Chart title
       },
     },
     scales: {
       x: {
         title: {
           display: true,
-          text: "Time", // X-axis label
+          // text: "Time", // X-axis label
         },
       },
       y: {
         beginAtZero: true, // Start Y-axis from 0
         title: {
           display: true,
-          text: "Value", // Y-axis label
+          // text: "Value", // Y-axis label
         },
       },
     },
@@ -118,7 +116,13 @@ export default function LineChart({ GraphData }) {
       {/* Line Chart */}
       <div className="mb-6  w-full">
         <p className=" text-2xl">03/02/2025</p>
-        <p className="ml-20 my-2 text-2xl">RIL - Value</p>
+        <p className="ml-20 mr-10 my-2 text-2xl flex justify-between">
+          <span>RIL - Value</span>
+          <span className="text-3xl inline-block w-13">
+            {" "}
+            <MdOutlineFileDownload />{" "}
+          </span>
+        </p>
         <Line
           data={lineData}
           options={options}
@@ -128,7 +132,9 @@ export default function LineChart({ GraphData }) {
 
       {/* Bar Chart */}
       <div className="md:mt-20  w-full ">
-        <p className="ml-20 text-2xl text-primary">Volume</p>
+        <p className="ml-20 text-2xl text-[#433DC5] font-branding-semibold">
+          Volume
+        </p>
         <Bar data={barData} options={options} />
       </div>
 

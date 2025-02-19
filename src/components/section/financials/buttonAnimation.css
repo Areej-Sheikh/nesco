@@ -1,0 +1,25 @@
+.animation1 {
+  position: relative;
+  overflow: hidden; /* Ensures the pseudo-element doesn't overflow the button */
+  padding: 10px 20px; /* Adjust padding as needed */
+  color: white; /* Button text color */
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.animation1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0; /* Start with 0 width */
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3); /* Animation color */
+  transition: width 1s ease; /* Animation duration and timing */
+  z-index: 1;
+}
+
+.animation1:hover::before {
+  width: 100%; /* Expand to full width on hover */
+}

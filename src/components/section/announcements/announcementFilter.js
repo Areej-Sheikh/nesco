@@ -7,80 +7,68 @@ function AnnouncementFilter() {
   const tableData = [
     {
       year: "2024-2025",
-      date: "Jan 23 2025",
+      date: "23 Jan 2025",
       description:
         "Disclosure under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015-Sale of 100% stake in M Entertainments Private Limited ",
     },
     {
       year: "2024-2025",
-      date: "Jan 17 2025",
+      date: "17 Jan 2025",
       description:
         "Disclosure under Flegulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015-Update on acquisition of 100% equity stake of Reliance New Energy Battery Limited ",
     },
     {
       year: "2024-2025",
-      date: "Jan 17 2025 ",
+      date: "17 Jan 2025 ",
       description:
         "Audio/video recording and transcript of the presentation made to analysts on the Unaudited Financial Results (Consolidated and Standalone) for the quarter and nine months ended December 31, 2024 ",
     },
     {
       year: "2024-2025",
-      date: "Jan 16 2025 ",
+      date: "16 Jan 2025 ",
       description:
         "Integrated Filing (Financial) for the quarter and nine months ended December 31, 2024 ",
     },
     {
       year: "2024-2025",
-      date: "Jan 16 2025 ",
+      date: "16 Jan 2025 ",
       description:
         "Disclosure under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015-Acquisition of 100% equity stake of Lakadia B Power Transmission Limited ",
     },
     {
       year: "2024-2025",
-      date: "Jan 10 2025 ",
+      date: "10 Jan 2025 ",
       description:
         "Disclosure under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015-Acquisition of 100% equity stake of Reliance New Energy Battery Limited ",
     },
     {
       year: "2024-2025",
-      date: "Jan 16 2025",
+      date: "16 Jan 2025",
       description:
         "Presentation on the Unaudited Financial Results (Consolidated and Standalone) for the quarter and nine months ended December 31, 2024 ",
     },
     {
       year: "2024-2025",
-      date: "Jan 16 2025",
+      date: "16 Jan 2025",
       description:
         "Media Release - Consolidated and Standalone Unaudited Financial Results for the quarter and nine months ended December 31, 2024 ",
     },
     {
       year: "2024-2025",
-      date: "Jan 16 2025 ",
+      date: "16 Jan 2025 ",
       description:
         "Consolidated and Standalone Unaudited Financial Results for the quarter and nine months ended December 31, 2024 ",
     },
     {
       year: "2024-2025",
-      date: "Dec 31 2024 ",
-      description:
-        "Conversion of compulsorily convertible preference shares held by the Company in Viacom 18 Media Private Limited ",
-    },
-    {
-      year: "2024-2025",
-      date: "Dec 31 2024 ",
-      description:
-        "Conversion of compulsorily convertible preference shares held by the Company in Viacom 18 Media Private Limited ",
-    },
-    {
-      year: "2023-2024",
-      date: "Dec 31 2024 ",
+      date: "31 Dec 2024 ",
       description:
         "Conversion of compulsorily convertible preference shares held by the Company in Viacom 18 Media Private Limited ",
     },
   ];
 
   const [visibleCheckboxes, setVisibleCheckboxes] = useState(8);
-  const [visibleRows, setVisibleRows] = useState(10);
+  const [visibleRows, setVisibleRows] = useState(8);
   const totalRows = tableData.length;
   const [selectedYears, setSelectedYears] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -217,7 +205,7 @@ function AnnouncementFilter() {
               ) : (
                 <button
                   className="mt-2 px-6 py-2 rounded-full text-gray-500 border-2 border-gray-500 flex justify-center items-center gap-3"
-                  onClick={() => setVisibleRows(10)}
+                  onClick={() => setVisibleRows(8)}
                 >
                   Load Less{" "}
                   <span className="">

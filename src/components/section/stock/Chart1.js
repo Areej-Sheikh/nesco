@@ -3,10 +3,10 @@ import LineChart from "@/components/common/LineChart/line";
 import React, { useState } from "react";
 
 function Chart1() {
-  const [select, setSelect] = useState("bse");
+  const [select, setSelect] = useState("nse");
   const [selectMonth, setSelectMonth] = useState("Today");
 
-  const BseGraphData = {
+  const NseGraphData = {
     labels: [
       "09:24",
       "09:29",
@@ -37,7 +37,7 @@ function Chart1() {
       140000, 160000, 150000, 170000, 160000, 170000, 190000, 200000,
     ],
   };
-  const NseGraphData = {
+  const BseGraphData = {
     labels: [
       "09:24",
       "09:29",
@@ -99,7 +99,7 @@ function Chart1() {
             BSE
           </button>
         </div>
-        <div className="flex space-x-4 mb-4 bg-primary py-4 px-10 w-full overflow-x-auto font-branding-semibold">
+        <div className="flex space-x-4 mb-4 bg-[#433DC5] py-4 px-10 w-full overflow-x-auto font-branding-semibold">
           {[
             "Today",
             "1 Month",

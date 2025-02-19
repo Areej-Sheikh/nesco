@@ -13,7 +13,7 @@ function Contact() {
         city: "Goregaon (East) Mumbai 400063",
         phone1: "7045029812",
         contact: "contact@bombayexhibitioncenter.in",
-        phone2: "02266450123",
+        phone2: "022 6645 0123",
       },
     },
     {
@@ -24,7 +24,7 @@ function Contact() {
         city: "Goregaon (East) Mumbai 400063",
         phone1: "7045029812",
         contact: "contact@bombayexhibitioncenter.in",
-        phone2: "02266450123",
+        phone2: "022 6645 0123",
       },
     },
     {
@@ -35,7 +35,7 @@ function Contact() {
         city: "Goregaon (East) Mumbai 400063",
         phone1: "7045029812",
         contact: "contact@bombayexhibitioncenter.in",
-        phone2: "02266450123",
+        phone2: "022 6645 0123",
       },
     },
     {
@@ -46,7 +46,7 @@ function Contact() {
         city: "Goregaon (East) Mumbai 400063",
         phone1: "7045029812",
         contact: "contact@bombayexhibitioncenter.in",
-        phone2: "02266450123",
+        phone2: "022 6645 0123",
       },
     },
     {
@@ -57,7 +57,7 @@ function Contact() {
         city: "Goregaon (East) Mumbai 400063",
         phone1: "7045029812",
         contact: "contact@bombayexhibitioncenter.in",
-        phone2: "02266450123",
+        phone2: "022 6645 0123",
       },
     },
   ];
