@@ -5,6 +5,11 @@ import top from "@/assests/history/top.png";
 import mid from "@/assests/history/mid.png";
 import historyOne from "@/assests/history/historyOne.png";
 import historyTwo from "@/assests/history/historyTwo.png";
+import historyThree from "@/assests/history/historyThree.png";
+import historyFour from "@/assests/history/historyFour.png";
+import historyFive from "@/assests/history/historyFive.png";
+import historySix from "@/assests/history/historySix.png";
+import { IoEllipseOutline } from "react-icons/io5";
 
 const page = () => {
   const years = [
@@ -88,8 +93,10 @@ const page = () => {
           </div>
         </div>
 
-        <div className="1939Div mt-[5%] relative p-4  h-fit flex flex-col md:flex-row justify-evenly border-2 border-dotted m-4 shadow-md rounded-lg transition-all ease-in-out duration-300
-          hover:translate-y-1  ">
+        <div
+          className="1939Div mt-[3%] relative p-4   h-fit flex flex-col md:flex-row justify-evenly  m-4  rounded-lg transition-all ease-in-out duration-300
+          hover:translate-y-1  "
+        >
           <div className="contentDiv  p-4 m-2 flex flex-col  text-center relative  ">
             <p className="text-md md:text-2xl  text-gray-400 w-96 text-center  h-fit p-3 font-branding-semibold">
               The founder, Shri. J.V. Patel manifests <br></br> his vision as
@@ -118,6 +125,146 @@ const page = () => {
               width={800}
               height={300}
               className=" h-auto w-auto rounded-lg m-4   "
+            />
+          </div>
+        </div>
+
+        <div
+          className="1952Div mt-[3%] w-fit relative p-4   h-fit flex flex-col md:flex-row justify-center items-center m-4 rounded-lg transition-all ease-in-out duration-300
+          hover:translate-y-1  "
+        >
+          <div className="contentDiv  p-8 m-2  flex flex-col  text-center relative  h-fit ">
+            <p className="bg-blue-700 m-2 p-2 text-2xl text-white font-poppins rounded-md">
+              Empress Iron Works Ltd/ Acme Mfg Co
+            </p>
+            <p className="bg-blue-700 m-2 p-2 text-2xl text-white font-poppins rounded-md">
+              LTd / Khandelwal Udyog Ltd/ Glass
+            </p>
+            <p className="bg-blue-700 m-2 p-2 text-2xl text-white font-poppins rounded-md">
+              Lined Equipment Co Ltd/ Indian Furnace
+            </p>
+            <p className="bg-blue-700 m-2 p-2 text-2xl text-white font-poppins rounded-md">
+              Co Ltd / Ceramics Mfg Co/ Mapara
+            </p>
+            <p className="bg-blue-700 m-2 p-2 text-2xl text-white font-poppins rounded-md">
+              Parekh Ltd/ Electric Instruments Mfg
+            </p>
+            <p className="bg-blue-700 m-2 p-2 text-2xl text-white font-poppins rounded-md">
+              Co Ltd / Agro Precision Co Ltd/ Millars
+            </p>
+            <p className="bg-blue-700 m-2 p-2 text-2xl text-white font-poppins rounded-md">
+              Construction Machinery Ltd
+            </p>
+          </div>
+
+          <div className="iconDiv ml-auto flex items-center justify-center  relative  w-fit">
+            <IoEllipseOutline size={600} color="cyan" strokeWidth={1} />
+            <span className="absolute text-blue-600 text-xl text-center  w-fit">
+              <p className="text-8xl">1952</p>
+              <p className="w-72 p-4">
+                By this time, SEC was taking over & reviving the fortunes of
+                several struggling companies to build an engineering powerhouse.
+              </p>
+            </span>
+          </div>
+        </div>
+
+        <div
+          className="1956Div mt-[3%] w-full  relative p-4 items-center  h-fit flex flex-col md:flex-row   m-4  rounded-lg transition-all ease-in-out duration-300
+          hover:translate-y-1 gap-10 "
+        >
+          <div className="iconDiv ml-auto flex items-center justify-center  relative h-fit w-fit mt-4 m-6">
+            <Image
+              src={historyThree}
+              alt="Top Image"
+              width={350}
+              height={350}
+              className="w-auto h-auto"
+            />
+          </div>
+
+          <div className="contentDiv  p-8 m-2 justify-evenly flex flex-col relative bg-blue-900 h-fit w-full  ">
+            <p className="text-6xl text-left ml-2 p-2 text-white">
+              New Standard Engineering <br></br> Company Ltd
+            </p>
+            <div className="content flex flex-row relative top-4 w-fit m-2 p-2 gap-2 bg-white rounded-md">
+              <div className="div1  flex p-2 items-center">
+                <p className="text-4xl text-gray-400">1956</p>
+              </div>
+              <div className="div2  flex p-2 text-xl text-cyan-800 ">
+                <p>
+                  The acquisition of Burjorji Pestonji & Son <br></br>{" "}
+                  re-christens the company as the New Standard Engineering.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="year1957Div mt-[3%] w-full relative p-4 items-center h-fit flex flex-col md:flex-row-reverse m-4 rounded-lg transition-all  ease-in-out duration-300 hover:translate-y-1 ">
+          <div className="iconDiv h-fit w-fit mt-4 m-6 flex-1 relative">
+            <Image
+              src={historyFour}
+              alt="Top Image"
+              width={1000}
+              height={500}
+              className="h-auto"
+              priority
+            />
+            <div className="year absolute  z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-row w-fit m-2">
+              <p className="text-[100px] text-white font-branding-bold  ">19</p>
+              <p className="text-[100px] text-cyan-400 font-branding-bold  ">
+                57
+              </p>
+            </div>
+          </div>
+
+          <div className="contentDiv flex-1 flex flex-col  justify-center items-center relative h-fit p-2">
+            <div className="rightContent  text-left w-fit p-4 ">
+              <p className="text-right text-gray-600  sm:text-lg md:text-xl lg:text-xl leading-relaxed max-w-xs">
+                New Standard Engineering collaborates with B&S Massey Ltd to
+                become the first manufacturer in India for forging hammers &
+                presses.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="year1958 mt-16 flex flex-col gap-2 relative items-center justify-center w-fit m-auto ">
+          <div className="topDiv  flex relative items-center justify-center m-4 border-b-2 border-cyan-300 w-full">
+            <p className="text-[80px] text-cyan-400">1958</p>
+          </div>
+          <div className="bottomDiv  m-4 flex ">
+            <p className="sm:text-lg md:text-xl lg:text-xl leading-relaxed max-w-xs text-center text-gray-400">
+              The Company launches its public issue, which is quickly
+              oversubscribed.
+            </p>
+          </div>
+        </div>
+
+        <div className=" year1960 relative mt-16 flex flex-col md:flex-row items-center bg-red-200 p-6 rounded-lg overflow-hidden ml-[5%]">
+          <div className="bg-[#001F9C] text-white flex-1 p-6 relative w-full md:w-[40%] h-full">
+            <h2 className="text-5xl font-bold text-blue-300">1960</h2>
+            <Image
+              src={historyFive}
+              alt="Icon"
+              width={580}
+              height={280}
+              className="mt-4"
+            />
+            <p className="mt-4 text-lg leading-relaxed max-w-sm">
+              Sumant Patel founds the Gujarat Machinery Manufacturers Ltd, which
+              later becomes GMM Pfaudler Ltd.
+            </p>
+          </div>
+
+          <div className="absolute md:relative md:w-[60%] top-16 md:top-10 right-2 z-10">
+            <Image
+              src={historySix}
+              alt="Historic Event"
+              width={600}
+              height={500}
+              className=""
             />
           </div>
         </div>
