@@ -10,7 +10,7 @@ function Mentor() {
       <div className="z-20 relative w-[90%] flex flex-col items-center justify-center mx-auto mt-12 mb-10 md:h-screen goal-section1">
         <div className="flex md:flex-row flex-col items-start md:gap-20 gap-10">
           {/* Text Content */}
-          <div className="relative md:w-[60%] h-full">
+          <div className="relative md:w-[55%] h-full">
             <div className="z-10 relative">
               <h2
                 style={{ fontFamily: "BrandingSemibold" }}
@@ -50,19 +50,19 @@ function Mentor() {
           </div>
 
           {/* Mentor Image and Name */}
-          <div className="flex flex-col md:w-[40%] w-full h-full md:items-end items-center justify-center z-10 relative">
+          <div className="flex flex-col md:w-[45%] w-full h-full md:items-end items-center justify-center z-10 relative">
             <div className="w-full">
-              <div className="w-full max-w-[600px]">
+              <div className="w-full max-w-[650px]">
                 <Image
                   src={MentorImage}
                   alt="Mentor"
-                  width={600}
+                  width={650}
                   height={400}
                   className="w-full h-auto"
                 />
               </div>
               <div className="text-center mt-4">
-                <h3 className="text-2xl font-branding-medium text-primary">
+                <h3 className="text-2xl font-branding-semibold text-primary">
                   Sumant J. Patel
                 </h3>
                 <p className="mt-1 font-branding-medium">
