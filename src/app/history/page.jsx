@@ -93,7 +93,7 @@ const page = () => {
           </div>
         </div>
 
-        <div
+        {/* <div
           className="1939Div mt-[3%] relative p-4   h-fit flex flex-col md:flex-row justify-evenly  m-4  rounded-lg transition-all ease-in-out duration-300
           hover:translate-y-1  "
         >
@@ -113,8 +113,11 @@ const page = () => {
               />
             </div>
 
-            <div className="yearDiv text-center text-8xl h-fit w-auto p-2">
-              <p className="text-gray-500"> 1939</p>
+            <div className="year absolute  z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-row w-fit m-2">
+              <p className="text-[100px] text-white font-branding-bold  ">19</p>
+              <p className="text-[100px] text-cyan-400 font-branding-bold  ">
+                57
+              </p>
             </div>
           </div>
 
@@ -127,11 +130,46 @@ const page = () => {
               className=" h-auto w-auto rounded-lg m-4   "
             />
           </div>
+        </div> */}
+        <div className="year1939Div mt-[3%] w-full relative p-4 items-center h-fit flex flex-col md:flex-row-reverse m-4 rounded-lg transition-all  ease-in-out duration-300 hover:translate-y-1 ">
+          <div className="iconDiv h-fit w-fit mt-4 m-6 flex-1 relative">
+            <Image
+              src={mid}
+              alt="Top Image"
+              width={1000}
+              height={500}
+              className="h-auto"
+              priority
+            />
+            <div className="year absolute  z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-row w-fit m-2">
+              <p className="text-[100px] text-white font-branding-bold  ">19</p>
+              <p className="text-[100px] text-cyan-400 font-branding-bold  ">
+                39
+              </p>
+            </div>
+          </div>
+
+          <div className="year1939Div flex-1 flex flex-col  justify-center items-center relative h-fit p-2 ">
+            <div className="rightContent  text-left w-fit p-4 ">
+              <Image
+                src={historyTwo}
+                alt="Top Image"
+                width={300}
+                height={300}
+                className="h-auto"
+                priority
+              />
+              <p className="text-left text-gray-600 mt-6 sm:text-lg md:text-xl lg:text-xl leading-relaxed max-w-xs">
+                The founder, Shri. J.V. Patel manifests his vision as the
+                Standard Engineering Company (SEC).
+              </p>
+            </div>
+          </div>
         </div>
 
         <div
-          className="1952Div mt-[3%] w-fit relative p-4   h-fit flex flex-col md:flex-row justify-center items-center m-4 rounded-lg transition-all ease-in-out duration-300
-          hover:translate-y-1  "
+          className="1952Div mt-[3%] w-fit relative p-4   h-fit flex flex-col md:flex-row justify-center items-center  rounded-lg transition-all ease-in-out duration-300
+          hover:translate-y-1 m-auto  "
         >
           <div className="contentDiv  p-8 m-2  flex flex-col  text-center relative  h-fit ">
             <p className="bg-blue-700 m-2 p-2 text-2xl text-white font-poppins rounded-md">
@@ -242,7 +280,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className=" year1960 relative mt-16 flex flex-col md:flex-row items-center bg-red-200 p-6 rounded-lg overflow-hidden ml-[5%]">
+        <div className=" year1960 relative mt-16 flex flex-col md:flex-row items-center  p-6 rounded-lg overflow-hidden ml-[5%]">
           <div className="bg-[#001F9C] text-white flex-1 p-6 relative w-full md:w-[40%] h-full">
             <h2 className="text-5xl font-bold text-blue-300">1960</h2>
             <Image
