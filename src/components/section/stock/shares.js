@@ -6,7 +6,7 @@ import React, { useState } from "react";
 function Shares() {
   const [select, setSelect] = useState("bse");
 
-  const BseData = {
+  const NseData = {
     title: "CURRENCY",
     dataIndex: "currency",
     header: [
@@ -27,7 +27,7 @@ function Shares() {
       },
     ],
   };
-  const BseData2 = {
+  const NseData2 = {
     title: "TODAY'S OPEN",
     dataIndex: "todayOpen",
     header: [
@@ -48,7 +48,7 @@ function Shares() {
       },
     ],
   };
-  const NseData = {
+  const BseData = {
     title: "CURRENCY",
     dataIndex: "currency",
     header: [
@@ -69,7 +69,7 @@ function Shares() {
       },
     ],
   };
-  const NseData2 = {
+  const BseData2 = {
     title: "TODAY'S OPEN",
     dataIndex: "todayOpen",
     titleColData: "₹ 1,251.00",

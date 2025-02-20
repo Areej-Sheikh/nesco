@@ -118,7 +118,7 @@ function SebiDetails() {
 
   return (
     <div className=" flex justify-center">
-      <div className="goal-section1 lg:w-[60%] w-[90%] header_purple lg:mt-16 mt-0">
+      <div className="goal-section1 lg:w-[60%] w-[90%] header_purple mt-0">
         {data.map((element, index) => (
           <div key={index} className="mb-3">
             <div

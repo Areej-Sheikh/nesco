@@ -95,6 +95,14 @@ function AnnouncementFilter() {
       item.description.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
+  const handleSelectAll = () => {
+    if (selectedYears.length === allYears.length) {
+      setSelectedYears([]);
+    } else {
+      setSelectedYears(allYears);
+    }
+  };
+
   return (
     <div>
       <div className="flex justify-center header_purple lg:mt-10 goal-section1">
@@ -115,9 +123,18 @@ function AnnouncementFilter() {
             <p className=" mt-2 font-branding-medium text-gray-500 text-2xl">
               FILTERS
             </p>
-            <p className="mt-4 mb-2 font-branding-medium text-gray-500">
+            <button
+              className="mt-4 mb-2 font-branding-medium text-gray-500 text-left"
+              onClick={handleSelectAll}
+            >
+              {/* <input
+                  type="checkbox"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
+                  checked={selectedYears.length === allYears.length}
+                  onChange={handleSelectAll}
+                /> */}
               Select All
-            </p>
+            </button>
 
             {allYears.slice(0, visibleCheckboxes).map((year, index) => (
               <div key={index} className="flex items-center mb-2 ">
@@ -160,7 +177,7 @@ function AnnouncementFilter() {
             <table className="table-auto border-separate text-left w-full ">
               <thead>
                 <tr>
-                  <th className=" bg-violet-700 text-gray-200 shadow-sm pl-8 py-3 text-3xl ">
+                  <th className="bg-primary text-gray-200 shadow-sm pl-8 py-3 text-3xl ">
                     Title
                   </th>
                 </tr>

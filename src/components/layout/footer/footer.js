@@ -4,6 +4,7 @@ import React from "react";
 import { FaLinkedin } from "react-icons/fa6";
 import InstagramIcon from "@/assests/footer/i1.png";
 import LinkdeinIcon from "@/assests/footer/f2.png";
+import ContactIcon from "@/assests/footer/p1.png";
 
 function Footer() {
   const FooterData = [
@@ -127,14 +128,14 @@ function Footer() {
       title: "Life At Nesco",
       link: "",
     },
-    {
-      title: "Contact",
-      link: "/contact-us",
-    },
+    // {
+    //   title: "Contact",
+    //   link: "/contact-us",
+    // },
   ];
 
   return (
-    <div className="footer_section bg-[#081422] text-white flex justify-center font-branding-medium md:py-20 py-10 z-50 relative ">
+    <div className="footer_section bg-[#081422] text-white flex justify-center font-branding-medium py-10 z-50 relative ">
       <div className="w-[90%] xl:flex">
         <div className="md:flex justify-between xl:w-[83%] w-full md:gap-6 xl:gap-0">
           {FooterData.map((data, index) => (
@@ -158,7 +159,7 @@ function Footer() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col gap-5 xl:w-[17%] xl:items-start xl:mt-0 mt-10 items-center font-branding-semibold">
+        <div className="flex flex-col gap-5 xl:w-[17%] xl:items-start xl:mt-0 mt-10 items-center justify-between font-branding-semibold">
           {FooterData2.map((data, index) => (
             <p
               className="text-[#246F8E] text-4xl xl:text-end text-center"
@@ -167,7 +168,16 @@ function Footer() {
               <Link href={data.link}> {data.title}</Link>
             </p>
           ))}
-          <div className="flex w-full gap-16">
+          <div className="flex w-full justify-between">
+            <div className="relative">
+              <Link href="/contact-us">
+                <Image
+                  src={ContactIcon}
+                  alt="Linkdein Icon"
+                  className="w-12 h-12 object-contain"
+                />
+              </Link>
+            </div>
             <div className="relative">
               <Image
                 src={LinkdeinIcon}

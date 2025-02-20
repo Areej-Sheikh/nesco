@@ -111,21 +111,21 @@ function ShareInvestor() {
         <p className="font-branding-semibold text-4xl sm:text-5xl text-blue-800 m-auto my-6 text-center">
           Investor Contacts
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-0">
           {contacts.map((data, index) => (
             <div
-              className="bg-white p-4 justify-between flex flex-col w-full"
+              className="bg-white p-3 justify-between flex flex-col w-full"
               key={index}
             >
               <div className="w-full h-full bg-gray-200">
                 {data.title && (
-                  <h3 className="md:text-2xl text-xl px-5 py-3 xl:py-2 xl:h-[130px] bg-blue-200 text-blue-900 font-branding-semibold flex items-center">
+                  <h3 className="md:text-2xl text-xl px-5 py-3 xl:py-2 xl:h-[145px] bg-blue-200 text-blue-900 font-branding-semibold flex items-center">
                     {data.title}
                   </h3>
                 )}
                 {(data.title1 || data.title2 || data.addressTitle) && (
                   <div
-                    className={`pt-5 pb-10 px-3 text-md md:text-xl lg:text-2xl font-branding-medium text-black flex flex-col ${
+                    className={`pt-5 pb-10 pl-3 text-md md:text-xl lg:text-2xl font-branding-medium text-black flex flex-col ${
                       data.title1 || data.title2 || data.addressTitle
                         ? "gap-6 "
                         : ""
@@ -143,13 +143,17 @@ function ShareInvestor() {
                             {data.title2}
                           </p>
                         )}
-                        {data.post1 && <p className="text-md">{data.post1}</p>}
+                        {data.post1 && (
+                          <p className="text-sm md:text-md lg:text-xl">
+                            {data.post1}
+                          </p>
+                        )}
                       </div>
                     )}
                     {(data.addressTitle || data.address) && (
-                      <div>
+                      <div className="text-md md:text-xl lg:text-xl">
                         {data.addressTitle && (
-                          <p className="font-branding-semibold">
+                          <p className="font-branding-semibold text-md md:text-xl lg:text-2xl">
                             {data.addressTitle}
                           </p>
                         )}
@@ -165,7 +169,7 @@ function ShareInvestor() {
                         <h3 className=" text-md md:text-xl lg:text-2xl font-branding-semibold flex items-center">
                           {d.name}
                         </h3>
-                        <div className=" text-md md:text-xl lg:text-2xl font-branding-medium text-black flex flex-col">
+                        <div className=" text-md md:text-xl lg:text-xl font-branding-medium text-black flex flex-col">
                           {d.post2 && (
                             <p className="text-sm md:text-md lg:text-xl">
                               {d.post2}

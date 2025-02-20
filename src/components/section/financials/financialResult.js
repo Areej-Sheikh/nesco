@@ -91,26 +91,38 @@ function FinancialResult() {
       <div className="flex justify-center mt-16 lg:mt-28 mb-10 header_purple goal-section1">
         <div className="flex items-end flex-col border-2 w-[90%] lg:px-12 px-5">
           <div className="w-full flex md:flex-row flex-col justify-between items-center z-50 gap-6 lg:w-[70%] transform md:-translate-y-1/2">
-            <div className=" bg-blue-600 text-center font-branding-medium text-2xl text-white">
-              <button
-                className="animation1"
-                onClick={() => setClick("financials")}
-              >
+            <div
+              className={`${
+                click === "financials"
+                  ? "bg-white text-blue-600 border-blue-600"
+                  : "bg-blue-600 text-white"
+              } hover:text-blue-600 hover:bg-white hover:border-blue-600 border-2 px-4 transition-all duration-300 py-2 text-center font-branding-medium text-2xl`}
+            >
+              <button className="" onClick={() => setClick("financials")}>
                 Financial Results
               </button>
             </div>
 
-            <div className=" bg-cyan-500  text-center font-branding-medium text-2xl text-white">
-              <button className="animation1" onClick={() => setClick("annual")}>
+            <div
+              className={`${
+                click === "annual"
+                  ? "bg-white text-cyan-500 border-cyan-500"
+                  : "bg-cyan-500 text-white"
+              } hover:text-cyan-500 hover:bg-white hover:border-cyan-500 border-2 px-4 transition-all duration-300  py-2 text-center font-branding-medium text-2xl`}
+            >
+              <button className="" onClick={() => setClick("annual")}>
                 Annual Reports
               </button>
             </div>
 
-            <div className=" bg-purple-500 text-center font-branding-medium text-2xl text-white">
-              <button
-                className="animation1"
-                onClick={() => setClick("subsidiary")}
-              >
+            <div
+              className={`${
+                click === "subsidiary"
+                  ? "bg-white text-purple-500 border-purple-500"
+                  : "bg-purple-500 text-white"
+              } hover:text-purple-500 hover:bg-white hover:border-purple-500 border-2 px-4 transition-all duration-300 py-2 text-center font-branding-medium text-2xl`}
+            >
+              <button className="" onClick={() => setClick("subsidiary")}>
                 Subsidiary Accounts
               </button>
             </div>
@@ -182,23 +194,25 @@ function FinancialResult() {
                 </button>
               )} */}
 
-              <div className="mt-5 mb-2">
-                <p className="mb-2 text-xl">QUARTER</p>
-                <div className="flex flex-col gap-1">
-                  {Array.from({ length: 4 }).map((_, index) => (
-                    <label
-                      key={index}
-                      className="flex items-center gap-2 text-gray-500 text-base md:text-xl"
-                    >
-                      <input
-                        type="checkbox"
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
-                      />
-                      Q{index + 1}
-                    </label>
-                  ))}
+              {click === "financials" && (
+                <div className="mt-5 mb-2">
+                  <p className="mb-2 text-xl text-gray-500 ">QUARTER</p>
+                  <div className="flex flex-col gap-1">
+                    {Array.from({ length: 4 }).map((_, index) => (
+                      <label
+                        key={index}
+                        className="flex items-center gap-2 text-gray-500 text-base md:text-xl"
+                      >
+                        <input
+                          type="checkbox"
+                          className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
+                        />
+                        Q{index + 1}
+                      </label>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             <div className=" md:w-[70%] py-3 col-span-3 ">

@@ -9,8 +9,12 @@ function SustainabilityFeatures() {
     <div className="goal-section1 flex justify-center mb-14 mt-28 lg:mt-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-between text-center w-[90%] gap-10">
         <div className="flex flex-col items-center relative">
-          <div className="absolute md:w-[70px] w-[60px] h-[60px] bg-[#eeeed4] left-0 transform -translate-y-1/2 top-5 md:-translate-x-[30%]">
-            <Image src={Icon1} alt="icon1" className="w-full h-full" />
+          <div className="absolute md:w-[70px] w-[60px] h-[60px] p-2 bg-[#eeeed4] left-0 transform -translate-y-1/2 top-5 md:-translate-x-[30%]">
+            <Image
+              src={Icon1}
+              alt="icon1"
+              className="w-full h-full object-contain"
+            />
           </div>
           <p className="mb-8 bg-[#eeeed4] py-2 md:px-6 md:text-lg font-bold text-gray-800 w-full pl-10">
             Fostering Stakeholder Trust
@@ -25,8 +29,12 @@ function SustainabilityFeatures() {
           </p>
         </div>
         <div className="flex flex-col items-center relative">
-          <div className="absolute md:w-[70px] w-[60px] h-[60px] bg-[#bfe9e2] left-0 transform -translate-y-1/2 top-5 md:-translate-x-[30%]">
-            <Image src={Icon2} alt="icon1" className="w-full h-full" />
+          <div className="absolute md:w-[70px] w-[60px] h-[60px] p-2 bg-[#bfe9e2] left-0 transform -translate-y-1/2 top-5 md:-translate-x-[30%]">
+            <Image
+              src={Icon2}
+              alt="icon1"
+              className="w-full h-full object-contain"
+            />
           </div>
           <p className="mb-8 bg-[#bfe9e2] py-2 md:px-4 md:text-lg font-bold text-gray-800 w-full xl:pl-[3.2rem] pl-10">
             Driving Continuous Improvement
@@ -41,8 +49,12 @@ function SustainabilityFeatures() {
           </p>
         </div>
         <div className="flex flex-col items-center relative">
-          <div className="absolute md:w-[70px] w-[60px] h-[60px] bg-[#f1d2ef] left-0 transform -translate-y-1/2 top-5 md:-translate-x-[30%]">
-            <Image src={Icon3} alt="icon1" className="w-full h-full" />
+          <div className="absolute md:w-[70px] w-[60px] h-[60px] p-2 bg-[#f1d2ef] left-0 transform -translate-y-1/2 top-5 md:-translate-x-[30%]">
+            <Image
+              src={Icon3}
+              alt="icon1"
+              className="w-full h-full object-contain"
+            />
           </div>
           <p className="mb-8 bg-[#f1d2ef] py-2 md:px-6 md:text-lg font-bold text-gray-800 w-full pl-10 ">
             {" "}

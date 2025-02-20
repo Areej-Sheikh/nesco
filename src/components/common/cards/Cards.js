@@ -12,11 +12,11 @@ function Cards({ CardData }) {
               <Image
                 src={data.image}
                 alt="Mentor"
-                className="h-full w-full object-cover filter grayscale contrast-125"
+                className="h-full w-full object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-300"
               />
 
               <p className="flex justify-between mt-3">
-                <span className="font-branding-bold text-lg">{data.name}</span>
+                <span className="font-branding-bold text-xl">{data.name}</span>
                 <span className="flex items-center">
                   <button className="text-primary text-2xl">
                     <FaArrowRightLong />

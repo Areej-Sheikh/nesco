@@ -30,7 +30,11 @@ function SebiBanner() {
     <div className="w-full">
       <Navbar activeSlide={activeSlide} />
       {/* <Banner SliderData={SliderData}  onSlideChange={handleSlideChange} /> */}
-      <Banner SliderData={SliderData} onSlideChange={handleSlideChange} />
+      <Banner
+        SliderData={SliderData}
+        onSlideChange={handleSlideChange}
+        heightClassName="h-[80vh] "
+      />
     </div>
   );
 }

@@ -1,9 +1,14 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
-import image from "@/assests/shareHolder/49.png";
+import image from "@/assests/shareHolder/48.png";
+import imageBlue from "@/assests/shareHolder/48blue.png";
+import image2 from "@/assests/shareHolder/50.png";
+import imageBlue2 from "@/assests/shareHolder/50blue.png";
 
 function ShareDetail() {
+  const [enter, setEnter] = useState(null);
+
   return (
     <div className="goal-section1 relative flex justify-center items-center py-20 ">
       {/* Background Div */}
@@ -13,12 +18,28 @@ function ShareDetail() {
       {/* Content */}
       <div className="relative flex flex-col md:flex-row gap-6 justify-evenly w-[90%]">
         {/* Card 1 */}
-        <div className="border border-black shadow-lg p-6 lg:w-[30%] w-full bg-white">
-          <div className="bg-indigo-900 flex-col items-center flex py-2">
-            <div className="w-[50%] h-[50%]">
-              <Image src={image} alt="image" className="w-full h-full" />
+        <div className="border border-black shadow-lg p-6 xl:w-[30%] w-full bg-white">
+          <div
+            className="bg-primary hover:bg-white hover:text-primary transition-all duration-300 text-white  flex-col items-center flex py-2"
+            onMouseEnter={() => setEnter("card1")}
+            onMouseLeave={() => setEnter(null)}
+          >
+            <div className="max-w-[7rem] mt-5">
+              {enter === "card1" ? (
+                <Image
+                  src={imageBlue}
+                  alt="image"
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <Image
+                  src={image}
+                  alt="image"
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
-            <div className=" text-white p-6 flex flex-col">
+            <div className="  p-6 flex flex-col">
               <h2 className="md:text-3xl text-2xl text-center font-bold">
                 Details of shares transferred to IEPF
               </h2>
@@ -26,8 +47,8 @@ function ShareDetail() {
                 Pursuant to section 124(6) of the Companies Act.
               </p>
               <div className="w-full flex justify-end">
-                <div className="bg-white flex justify-center items-center w-10 h-10 mt-3">
-                  <button className=" bg-blue-900 text-white p-2 rounded-full">
+                <div className="flex justify-center items-center w-10 h-10 mt-3">
+                  <button className=" bg-blue-500 text-white p-2 rounded-full hover:bg-blue-700">
                     <FaArrowDown />
                   </button>
                 </div>
@@ -37,18 +58,34 @@ function ShareDetail() {
         </div>
 
         {/* Card 2 */}
-        <div className="border border-black shadow-lg p-6 lg:w-[30%] w-full bg-white">
-          <div className="bg-indigo-900 flex-col h-full items-center justify-between flex py-2">
-            <div className="w-[50%]">
-              <Image src={image} alt="image" className="w-full h-full" />
+        <div className="border border-black shadow-lg p-6 xl:w-[30%] w-full bg-white">
+          <div
+            className="bg-primary hover:bg-white hover:text-primary transition-all duration-300 text-white h-full flex-col items-center justify-between flex py-2"
+            onMouseEnter={() => setEnter("card2")}
+            onMouseLeave={() => setEnter(null)}
+          >
+            <div className="xl:w-[10rem] md:w-[12rem] sm:w-[11rem] w-[11.3rem] mt-5">
+              {enter === "card2" ? (
+                <Image
+                  src={imageBlue2}
+                  alt="image"
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <Image
+                  src={image2}
+                  alt="image"
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
-            <div className=" text-white p-6 flex flex-col">
+            <div className=" p-6 flex flex-col">
               <h2 className="md:text-3xl text-2xl text-center font-bold px-5 pb-5 xl:pb-0">
                 Application to claim unpaid dividend and shares
               </h2>
               <div className="w-full flex justify-end">
-                <div className="bg-white flex justify-center items-center w-10 h-10 mt-3">
-                  <button className=" bg-blue-900 text-white p-2 rounded-full">
+                <div className=" flex justify-center items-center w-10 h-10 mt-3">
+                  <button className=" bg-blue-500 text-white p-2 rounded-full hover:bg-blue-700">
                     <FaArrowDown className="-rotate-90" />
                   </button>
                 </div>
