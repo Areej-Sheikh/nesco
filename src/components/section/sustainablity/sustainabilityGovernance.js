@@ -1,4 +1,8 @@
 import React from "react";
+import Icon1 from "@/assests/sustainability/icon1.png";
+import Icon2 from "@/assests/sustainability/icon2.png";
+import Icon3 from "@/assests/sustainability/icon3.png";
+import Image from "next/image";
 
 function SustainabilityGovernance() {
   return (
@@ -21,12 +25,19 @@ function SustainabilityGovernance() {
         </p>
         <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 mb-14 gap-20">
           <div className=" relative">
-            <div className="py-8 bg-[#85c667] w-full px-2 rounded-full transform -translate-y-1/2 absolute">
+            <div className="py-8 bg-[#9ACC5B] w-full px-2 rounded-full transform -translate-y-1/2 absolute overflow-hidden">
               <p className="text-2xl text-white">Environment</p>
               <div className="absolute transform -translate-y-1/2 top-1/2 w-20 h-20  rounded-full flex justify-center items-center border-2 border-white">
-                <div className="w-16 h-16 rounded-full flex justify-center items-center text-5xl text-[#85c667] bg-white font-branding-bold">
+                <div className="w-16 h-16 rounded-full flex justify-center items-center text-5xl text-[#9ACC5B] bg-white font-branding-bold">
                   E
                 </div>
+              </div>
+              <div className="absolute transform -translate-y-1/2 top-1/2 w-30 xl:px-4 px-2 bg-[#8BBC53] h-32 right-0 flex justify-center items-center ">
+                <Image
+                  src={Icon1}
+                  alt="icon1"
+                  className="w-20 h-20 object-cover"
+                />
               </div>
             </div>
             <div className="w-full h-full  px-8">
@@ -43,12 +54,19 @@ function SustainabilityGovernance() {
             </div>
           </div>
           <div className=" relative ">
-            <div className="py-8 bg-[#69bbef] w-full px-2 rounded-full transform -translate-y-1/2 absolute">
+            <div className="py-8 bg-[#69bbef] w-full px-2 rounded-full transform -translate-y-1/2 absolute overflow-hidden">
               <p className="text-2xl text-white">Social</p>
               <div className="absolute transform -translate-y-1/2 top-1/2 w-20 h-20  rounded-full flex justify-center items-center border-2 border-white">
                 <div className="w-16 h-16 rounded-full flex justify-center items-center text-5xl text-[#69bbef] bg-white font-branding-bold">
                   S
                 </div>
+              </div>
+              <div className="absolute transform -translate-y-1/2 top-1/2 w-30 xl:px-4 px-2 bg-[#4BA7D0] h-32 right-0 flex justify-center items-center ">
+                <Image
+                  src={Icon3}
+                  alt="icon3"
+                  className="w-20 h-20 object-cover"
+                />
               </div>
             </div>
             <div className="w-full h-full  px-8">
@@ -65,12 +83,19 @@ function SustainabilityGovernance() {
             </div>
           </div>
           <div className=" relative">
-            <div className="py-8 bg-[#48cfde] w-full px-2 rounded-full transform -translate-y-1/2 absolute">
+            <div className="py-8 bg-[#3F89B0] w-full px-2 rounded-full transform -translate-y-1/2 absolute overflow-hidden">
               <p className="text-2xl text-white">Governance</p>
               <div className="absolute transform -translate-y-1/2 top-1/2 w-20 h-20  rounded-full flex justify-center items-center border-2 border-white">
-                <div className="w-16 h-16 rounded-full flex justify-center items-center text-5xl text-[#48cfde] bg-white font-branding-bold">
+                <div className="w-16 h-16 rounded-full flex justify-center items-center text-5xl text-[#3F89B0] bg-white font-branding-bold">
                   G
                 </div>
+              </div>
+              <div className="absolute transform -translate-y-1/2 top-1/2 w-30 xl:px-4 px-2 bg-[#347A9E] h-32 right-0 flex justify-center items-center ">
+                <Image
+                  src={Icon2}
+                  alt="icon2"
+                  className="w-20 h-20 object-cover"
+                />
               </div>
             </div>
             <div className="w-full h-full  px-8">
