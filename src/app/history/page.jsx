@@ -9,6 +9,9 @@ import historyThree from "@/assests/history/historyThree.png";
 import historyFour from "@/assests/history/historyFour.png";
 import historyFive from "@/assests/history/historyFive.png";
 import historySix from "@/assests/history/historySix.png";
+import historyEight from "@/assests/history/historyEight.png";
+import historyNine from "@/assests/history/historyNine.png";
+import historySeven from "@/assests/history/historySeven.jpg";
 import { IoEllipseOutline } from "react-icons/io5";
 
 const page = () => {
@@ -304,6 +307,86 @@ const page = () => {
               height={500}
               className=""
             />
+          </div>
+        </div>
+
+        <div className="year1962 flex flex-col relative md:flex-row  mt-[15%] p-auto ">
+          <div className="imgDiv  w-fit flex relative z-10 left-[5%]">
+            <Image
+              src={historySeven}
+              alt="Mid Image"
+              width={700}
+              height={500}
+              className=" m-auto  "
+            />
+          </div>
+          <div className="rightDiv bg-[#001F9C] sm:w-[50%] md:w-[50%] lg:w-[20%] flex relative right-[9%] lg:top-[30vh] md:top-[10vh] flex-grow ">
+            <div className="yearDiv  flex flex-col relative w-auto sm:left-[40%] md:left-[40%] lg:left-[60%] text-right h-fit sm:top-10 md:top-10 lg:top-1/3 p-6 ">
+              <p className="sm:text-6xl md:text-6xl lg:text-8xl p-2 text-white font-branding-bold">
+                1962
+              </p>
+            </div>
+
+            <div className="bottomContent flex  relative   sm:h-fit md:h-fit lg:h-[30%] sm:top-[55%] md:top-[35%] lg:top-[70%] right-10 text-right  ">
+              <p className=" sm:text-md md:text-md lg:text-xl text-cyan-500">
+                The New Standard Engineering Company is known to have the
+                largest foundry in the private sector, making specialised
+                castings for the company's forging equipment product line.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="year1964 flex flex-col relative md:flex-row  mt-[25%] p-auto ">
+          <div className="contentDiv flex  relative bg-cyan-400 h-auto m-2 left-[5%] w-[50%] ">
+            <div className="yearDiv flex flex-col relative  h-fit sm:top-1/2 md:top-[80%] lg:top-1/3 sm:left-3 md:left-[10%] lg:left-[5%]  ">
+              <p className="sm:text-2xl md:text-6xl lg:text-8xl text-blue-800 font-branding-bold">
+                1964
+              </p>
+            </div>
+
+            <div className="textDiv relative flex m-2 p-2  w-fit h-fit sm:top-10 md:top-10 lg:top-[60%] sm:right-12 md:right-1/3  lg:right-[20%]">
+              <p className="sm:text-md md:text-lg lg:text-2xl text-white">
+                Indabrator is born, on the basis<br></br> of a joint venture
+                signed with Wheelabrator Corporation, USA<br></br> for the
+                manufacturing of shot-blasting equipment in India.
+              </p>
+            </div>
+          </div>
+
+          <div className="imgDiv  w-fit flex relative z-10 top-[6vh] right-[5%] ">
+            <Image
+              src={historyEight}
+              alt="Mid Image"
+              width={700}
+              height={400}
+              className=" m-auto h-auto  "
+            />
+          </div>
+        </div>
+
+        <div className="year1966 flex flex-col relative md:flex-row  mt-[15%] p-auto ">
+          <div className="imgDiv  w-fit flex relative z-10 left-[5%]">
+            <Image
+              src={historyNine}
+              alt="Mid Image"
+              width={700}
+              height={500}
+              className=" m-auto  "
+            />
+          </div>
+          <div className="rightDiv bg-cyan-500 sm:w-[50%] md:w-[50%] lg:w-[5%]  flex  relative right-[9%] lg:top-[30vh] md:top-[10vh] flex-grow z-20 gap-0 ">
+            <div className="yearDiv  flex flex-col relative w-auto sm:left-[10%] md:left-[6%] lg:left-[4%] text-left h-fit sm:top-10 md:top-10 lg:top-1/3 p-6 ">
+              <p className="sm:text-6xl md:text-6xl lg:text-8xl p-2 text-blue-800 font-branding-bold">
+                1966
+              </p>
+            </div>
+
+            <div className="bottomContent flex  relative sm:h-fit md:h-fit lg:h-[20%] sm:top-[55%] md:top-[37%] lg:top-[70%] sm:right-1/2 md:right-[40%] lg:right-1/4 text-left  p-2 ">
+              <p className=" sm:text-md md:text-md lg:text-2xl text-white">
+              The New Standard Engineering Company builds India's first antenna for space communication, strengthening its decade-long association with the Department of Atomic Energy.
+              </p>
+            </div>
           </div>
         </div>
       </div>
