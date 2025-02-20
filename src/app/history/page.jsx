@@ -11,7 +11,11 @@ import historyFive from "@/assests/history/historyFive.png";
 import historySix from "@/assests/history/historySix.png";
 import historyEight from "@/assests/history/historyEight.png";
 import historyNine from "@/assests/history/historyNine.png";
+import historyTen from "@/assests/history/historyTen.png";
+import historyEleven from "@/assests/history/historyEleven.png";
+import nescoLogo from "@/assests/history/nescoLogo.png";
 import historySeven from "@/assests/history/historySeven.jpg";
+import historyXII from "@/assests/history/historyXII.jpg";
 import { IoEllipseOutline } from "react-icons/io5";
 
 const page = () => {
@@ -96,44 +100,6 @@ const page = () => {
           </div>
         </div>
 
-        {/* <div
-          className="1939Div mt-[3%] relative p-4   h-fit flex flex-col md:flex-row justify-evenly  m-4  rounded-lg transition-all ease-in-out duration-300
-          hover:translate-y-1  "
-        >
-          <div className="contentDiv  p-4 m-2 flex flex-col  text-center relative  ">
-            <p className="text-md md:text-2xl  text-gray-400 w-96 text-center  h-fit p-3 font-branding-semibold">
-              The founder, Shri. J.V. Patel manifests <br></br> his vision as
-              the Standard Engineering Company (SEC).
-            </p>
-
-            <div className="imgDiv   h-fit w-auto flex m-4  justify-center ">
-              <Image
-                src={historyTwo}
-                alt="Mid Image"
-                width={300}
-                height={200}
-                className=" h-fit  rounded-lg m-4  "
-              />
-            </div>
-
-            <div className="year absolute  z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-row w-fit m-2">
-              <p className="text-[100px] text-white font-branding-bold  ">19</p>
-              <p className="text-[100px] text-cyan-400 font-branding-bold  ">
-                57
-              </p>
-            </div>
-          </div>
-
-          <div className="imgDiv flex w-[61%] ">
-            <Image
-              src={mid}
-              alt="Mid Image"
-              width={800}
-              height={300}
-              className=" h-auto w-auto rounded-lg m-4   "
-            />
-          </div>
-        </div> */}
         <div className="year1939Div mt-[3%] w-full relative p-4 items-center h-fit flex flex-col md:flex-row-reverse m-4 rounded-lg transition-all  ease-in-out duration-300 hover:translate-y-1 ">
           <div className="iconDiv h-fit w-fit mt-4 m-6 flex-1 relative">
             <Image
@@ -384,8 +350,85 @@ const page = () => {
 
             <div className="bottomContent flex  relative sm:h-fit md:h-fit lg:h-[20%] sm:top-[55%] md:top-[37%] lg:top-[70%] sm:right-1/2 md:right-[40%] lg:right-1/4 text-left  p-2 ">
               <p className=" sm:text-md md:text-md lg:text-2xl text-white">
-              The New Standard Engineering Company builds India's first antenna for space communication, strengthening its decade-long association with the Department of Atomic Energy.
+                The New Standard Engineering Company builds India's first
+                antenna for space communication, strengthening its decade-long
+                association with the Department of Atomic Energy.
               </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="year1986 relative w-full flex justify-center items-center py-10 mt-[25%]">
+          <div className="absolute top-0 left-[5%] w-[80%] h-[20vh] md:h-[25vh] lg:h-[50vh] bg-blue-900 z-0 "></div>
+
+          <div className="relative z-10 w-[90%] md:w-[70%]">
+            <Image
+              src={historyTen}
+              alt="Historical Image"
+              width={900}
+              height={500}
+              className="w-full h-auto object-cover"
+            />
+
+            <div className="absolute top-1/3 right-[10%] bg-white p-6 shadow-lg w-[50%] md:w-[35%]">
+              <p className="text-gray-700 text-3xl font-semibold">1986</p>
+              <p className="text-gray-600 mt-2">
+                New Standard Engineering diversifies into realty and the Group
+                welcomes a new sector.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="year1992crelative flex flex-col  mt-[5%]">
+          <div className="imgDiv flex relative z-10 top-10 left-1/3 ">
+            <Image
+              src={historyXII}
+              alt="Historical Image"
+              width={800}
+              height={500}
+              className=" w-full md:w-[60%] lg:w-[50%] h-auto object-cover relative z-10"
+            />
+          </div>
+          <div className="contentDiv bg-blue-900  flex flex-col relative sm:w-[30%] md:w-[60%] lg:w-[40%] sm:bottom-[10vh] md:bottom-[15vh] lg:bottom-[20vh]  sm:left-[5%] md:left-[5%] lg:left-[10%] gap-2 p-4  ">
+            <div className="yearDiv flex relative w-fit h-fit mt-48 bottom-6 ">
+              <p className="text-8xl text-blue-500">1992</p>
+            </div>
+            <div className="iconDiv flex relative w-fit">
+              <Image
+                src={historyEleven}
+                alt="Historical Image"
+                width={300}
+                height={200}
+                className="  object-cover"
+              />
+            </div>
+            <div className="text relative flex  mt-2 text-white">
+              <p className="text-xl">
+                The 200,000 square feet Bombay Exhibition Center<br></br>{" "}
+                develops into the largest center<br></br> for exhibitions in the
+                private sector in India.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="year2001 flex flex-col relative mt-[5%] bg-gray-200 justify-center  ">
+          <div className="imgDiv flex relative md:left-[3%] lg:left-[10%]">
+          <Image
+              src={nescoLogo}
+              alt="Historical Image"
+              width={600}
+              height={300}
+              className=" md:w-[50%] lg:w-[30%] h-auto object-cover relative"
+            />
+          </div>
+          <div className="contentDiv flex flex-col sm:left-[40%] md:left-[55%] bg-yellow-100 w-fit relative p-2 bottom-[20vh]">
+            <div className="yearDiv flex relative">
+              <p>2001</p>
+            </div>
+            <div className="textDiv flex relative">
+              <p>The Company rebrands <br></br> itself as Nesco Limited <br></br> in light of further diversification <br></br> and business verticals.</p>
             </div>
           </div>
         </div>
