@@ -138,7 +138,7 @@ export default function LineChart({ GraphData }) {
         <Bar data={barData} options={options} />
       </div>
 
-      <div className="md:mt-20  w-full ">
+      <div className="md:mt-20 w-full h-full ">
         {/* <p className="ml-20 text-2xl text-primary">Volume</p> */}
         <Line data={data} options={options1} />
       </div>

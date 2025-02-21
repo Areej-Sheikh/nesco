@@ -17,12 +17,12 @@ function ShareBanner() {
     {
       image: bannerImage,
       data: (
-        <div className="absolute bg-blue-800 bg-opacity-50 md:right-0 py-6 px-20 z-20">
-          <div className="innerContainer text-center">
-            <p className="text-white sm:text-xl md:text-4xl lg:text-6xl font-branding-semibold">
+        <div className="absolute md:left-0 md:bottom-20 py-6 px-20 z-20">
+          <div className="innerContainer flex flex-col gap-3">
+            <p className="text-white sm:text-xl md:text-4xl lg:text-6xl font-branding-medium">
               Shareholders
             </p>
-            <p className="text-white sm:text-xl md:text-4xl lg:text-6xl font-branding-semibold">
+            <p className="sm:text-xl md:text-4xl lg:text-6xl font-branding-medium text-[#45B7E2]">
               Services
             </p>
           </div>

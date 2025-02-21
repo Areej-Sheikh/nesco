@@ -72,7 +72,7 @@ function Chart1() {
   return (
     <div className="goal-section1 pb-10 py-20 bg-white shadow-md rounded-lg  flex justify-center">
       <div className="flex flex-col w-[90%] items-center">
-        <h1 className="text-5xl font-branding-semibold text-primary text-center mb-10">
+        <h1 className="text-6xl font-branding-semibold text-[#2C4AA0] text-center mb-10">
           Stock Chart
         </h1>
         <div className="flex w-full border-b-2 border-b-[#433DC5] mb-5">

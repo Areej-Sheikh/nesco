@@ -82,7 +82,7 @@ function Shares() {
     ],
     rows: [
       {
-        todayOpen: "₹ 1,251.000000",
+        todayOpen: "₹ 1,251.00",
         previousClose: "₹ 1,264.60",
         intradayHigh: "₹ 1,253.95",
         intradayLow: "₹ 1,237.55",
@@ -105,7 +105,7 @@ function Shares() {
       <div className="w-full flex justify-center items-center flex-col bg-secondary">
         <div className=" flex flex-col items-center justify-center py-5 w-[90%]">
           <div className="flex justify-between w-full items-center">
-            <span className="text-3xl text-primary font-branding-semibold">
+            <span className="text-3xl text-[#21409A] font-branding-semibold">
               Stock Quote
             </span>
             <div className="flex gap-2 text-xl">
@@ -116,7 +116,7 @@ function Shares() {
               >
                 NSE
               </button>
-              |
+              <span className="text-[#21409A] font-branding-bold"> |</span>
               <button
                 onClick={() => setSelect("bse")}
                 className={select === "bse" ? "font-branding-bold" : ""}

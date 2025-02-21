@@ -2,7 +2,13 @@ import React from "react";
 import { Table } from "antd";
 import { createStyles } from "antd-style";
 
-const MainTable = ({ tableData, pagination, textColor, ClassCss }) => {
+const MainTable = ({
+  tableData,
+  pagination,
+  textColor,
+  ClassCss,
+  ClassCss1,
+}) => {
   const useStyle = createStyles(({ css, token }) => {
     const { antCls } = token;
     return {
@@ -22,22 +28,31 @@ const MainTable = ({ tableData, pagination, textColor, ClassCss }) => {
         .ant-table-thead > tr > th {
           background-color: #272ad9;
           color: white;
-          font-weight: bold;
+          font-weight: 400;
+          background-color: #272ad9 !important;
+          border: none !important;
+          ${ClassCss1};
         }
 
         .ant-table {
-          font-family: "BrandingSemiBold", sans-serif !important;
+          font-family: poppins !important;
           letter-spacing: 0.2px;
         }
 
         .ant-table-thead > tr > th {
           text-align: center !important;
+          border-radius: 0px !important;
         }
 
         .ant-table-tbody > tr {
           text-align: center !important;
-          color: ${textColor ? textColor : "#272AD9"};
+          color: ${textColor ? textColor : "#5455B6"};
           ${ClassCss};
+          font-weight: 500;
+        }
+
+        .ant-table-thead > tr > th::before {
+          display: none !important;
         }
       `,
     };

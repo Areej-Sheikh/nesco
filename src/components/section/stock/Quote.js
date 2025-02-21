@@ -97,17 +97,18 @@ function Quote() {
 
   return (
     <div className="goal-section1 flex flex-col justify-center items-center py-10 font-branding-medium mt-0 lg:mt-10">
-      <h2 className="text-5xl font-branding-semibold text-primary text-center mb-10">
+      <h2 className="text-6xl font-branding-semibold text-primary text-center mb-10">
         Historical Stock Quote
       </h2>
       <div className=" flex justify-center  w-[90%]  ">
-        <div className="flex lg:flex-row flex-col gap-20 justify-center items-center bg-secondary p-4 w-[70%]">
+        <div className="flex lg:flex-row flex-col gap-20 justify-center items-center bg-[#B8DFFC] p-4 w-[80%]">
           {/* Exchange Selector */}
           <div className="flex flex-col gap-2">
-            <p>Exchange: </p>
+            <p className="text-[#3460C6] font-branding-semibold">Exchange: </p>
             <select
               value={exchange}
               onChange={(e) => setExchange(e.target.value)}
+              className="w-20 h-10 text-center text-[#857E7E]"
             >
               <option value="BSE">BSE</option>
               <option value="NSE">NSE</option>
@@ -116,13 +117,16 @@ function Quote() {
 
           {/* Start Date Selector */}
           <div className="flex flex-col gap-2">
-            <p>Start Date: </p>
+            <p className="text-[#3460C6] font-branding-semibold">
+              Start Date:{" "}
+            </p>
             <div className="flex gap-3">
               <select
                 value={startDate.day}
                 onChange={(e) =>
                   setStartDate({ ...startDate, day: Number(e.target.value) })
                 }
+                className="w-20 h-10 text-center text-[#857E7E]"
               >
                 {days.map((d) => (
                   <option key={d} value={d}>
@@ -135,6 +139,7 @@ function Quote() {
                 onChange={(e) =>
                   setStartDate({ ...startDate, month: Number(e.target.value) })
                 }
+                className="w-20 h-10 text-center text-[#857E7E]"
               >
                 {months.map((m) => (
                   <option key={m} value={m}>
@@ -147,6 +152,7 @@ function Quote() {
                 onChange={(e) =>
                   setStartDate({ ...startDate, year: Number(e.target.value) })
                 }
+                className="w-20 h-10 text-center text-[#857E7E]"
               >
                 {years.map((y) => (
                   <option key={y} value={y}>
@@ -159,13 +165,14 @@ function Quote() {
 
           {/* End Date Selector */}
           <div className="flex flex-col gap-2">
-            <p>End Date: </p>
+            <p className="text-[#3460C6] font-branding-semibold">End Date: </p>
             <div className="flex gap-3">
               <select
                 value={endDate.day}
                 onChange={(e) =>
                   setEndDate({ ...endDate, day: Number(e.target.value) })
                 }
+                className="w-20 h-10 text-center text-[#857E7E]"
               >
                 {days.map((d) => (
                   <option key={d} value={d}>
@@ -178,6 +185,7 @@ function Quote() {
                 onChange={(e) =>
                   setEndDate({ ...endDate, month: Number(e.target.value) })
                 }
+                className="w-20 h-10 text-center text-[#857E7E]"
               >
                 {months.map((m) => (
                   <option key={m} value={m}>
@@ -190,6 +198,7 @@ function Quote() {
                 onChange={(e) =>
                   setEndDate({ ...endDate, year: Number(e.target.value) })
                 }
+                className="w-20 h-10 text-center text-[#857E7E]"
               >
                 {years.map((y) => (
                   <option key={y} value={y}>
@@ -211,7 +220,7 @@ function Quote() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-[90%] gap-4 mt-16 font-branding-semibold">
+      <div className="flex flex-col w-[90%] gap-4 mt-16 font-branding-semibold text-gray-500">
         <p>
           <span> Exchange : {exchange}</span> |
           <span>
@@ -224,8 +233,9 @@ function Quote() {
           <MainTable
             tableData={BseData}
             pagination={true}
-            textColor="#8999B8"
-            ClassCss="font-size: 18px"
+            textColor="#4b5563"
+            ClassCss="font-size: 14px"
+            ClassCss1="font-size:16px"
           />
         </div>
         <div className="w-full font-branding-medium">
