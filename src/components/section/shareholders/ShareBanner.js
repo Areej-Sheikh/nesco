@@ -11,6 +11,8 @@ function ShareBanner() {
     setActiveSlide(1);
   };
 
+  const filter = "filter grayscale contrast-125";
+
   const SliderData = [
     {
       image: bannerImage,
@@ -33,7 +35,11 @@ function ShareBanner() {
     <div className="w-full">
       <Navbar activeSlide={activeSlide} />
       {/* <Banner SliderData={SliderData}  onSlideChange={handleSlideChange} /> */}
-      <Banner SliderData={SliderData} onSlideChange={handleSlideChange} />
+      <Banner
+        SliderData={SliderData}
+        onSlideChange={handleSlideChange}
+        filter={filter}
+      />
     </div>
   );
 }

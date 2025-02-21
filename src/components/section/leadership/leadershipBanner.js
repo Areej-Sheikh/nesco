@@ -1,7 +1,7 @@
 "use client";
 import Banner from "@/components/common/MainBanner/Banner";
 import React, { useState } from "react";
-import bannerImage from "@/assests/leadership/image.png";
+import bannerImage from "@/assests/leadership/LeaderBanner.jpg";
 import Navbar from "@/components/layout/navbar/Navbar";
 function LeadershipBanner() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -13,6 +13,22 @@ function LeadershipBanner() {
   const SliderData = [
     {
       image: bannerImage,
+      data: (
+        <div className="absolute md:right-20 text-center text-white z-20 xl:w-[40%] lg:w-[50%] flex flex-col gap-5 px-3">
+          <p className="md:text-7xl text-6xl">
+            कर्मण्येवाधिकारस्ते मा फलेषु कदाचन{" "}
+          </p>
+          <p>The Bhagavad Gita, Chapter II, Verse 47 </p>
+          <p className="text-3xl mt-5">
+            Your right is in action, never to its fruits, A verse that was
+            <span className="md:text-4xl text-3xl font-branding-semibold">
+              {" "}
+              Jethabhai V. Patel's
+            </span>{" "}
+            guiding principle in life.
+          </p>
+        </div>
+      ),
     },
   ];
 
