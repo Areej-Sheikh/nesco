@@ -4,6 +4,12 @@ import React, { useState } from "react";
 import bannerImage from "@/assests/leadership/LeaderBanner.jpg";
 import Navbar from "@/components/layout/navbar/Navbar";
 import featherImage from "@/assests/leadership/feather.png";
+import LeaderBanner from "@/assests/leadership/Leadership.jpg";
+import LeaderBanner1 from "@/assests/leadership/Leadership_1.jpg";
+import LeaderBanner2 from "@/assests/leadership/Leadership_2.jpg";
+import LeaderBanner3 from "@/assests/leadership/Leadership_3.jpg";
+import LeaderBanner4 from "@/assests/leadership/Leadership_4.jpg";
+import LeaderBanner5 from "@/assests/leadership/Leadership_5.jpg";
 import Image from "next/image";
 
 function LeadershipBanner() {
@@ -39,6 +45,30 @@ function LeadershipBanner() {
           </p>
         </div>
       ),
+    },
+    {
+      image: LeaderBanner,
+      data: <div></div>,
+    },
+    {
+      image: LeaderBanner1,
+      data: <div></div>,
+    },
+    {
+      image: LeaderBanner2,
+      data: <div></div>,
+    },
+    {
+      image: LeaderBanner3,
+      data: <div></div>,
+    },
+    {
+      image: LeaderBanner4,
+      data: <div></div>,
+    },
+    {
+      image: LeaderBanner5,
+      data: <div></div>,
     },
   ];
 

@@ -6,11 +6,11 @@ import Image from "next/image";
 function SustainabilityIssues() {
   return (
     <div className="goal-section1 flex flex-col justify-center items-center bg-[#b6d6ef]">
-      <div className=" mb-10 w-[90%] md:py-28 py-12  text-center">
+      <div className=" mb-10 w-[90%] md:py-28 py-12  text-center flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-10">Material ESG Issues</h1>
-        <table className=" border-2 border-gray-400 lg:text-[21px] md:text-lg sm:text-xs text-[12px] text-left">
+        <table className=" border-2 border-gray-400 text-xl text-left">
           <thead>
-            <tr className="bg-violet-900 text-[#b6d6ef] md:text-[22px] md:text-lg sm:text-md text-center">
+            <tr className="bg-violet-900 text-[#b6d6ef] text-2xl text-center py-2">
               <th scope="col" className="w-[15%] h-[20%]"></th>
               <th scope="col" className="py-1 px-2">
                 Environmental
@@ -69,7 +69,7 @@ function SustainabilityIssues() {
                 </ul>
               </td>
               <td className=" border-2 border-gray-400 p-3">
-                <ul className="list-disc md:pl-5 list-inside">
+                <ul className="list-disc list-inside">
                   <li className="md:pb-3">Human Rights</li>
                   <li> Compliance</li>
                 </ul>

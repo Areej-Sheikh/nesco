@@ -14,12 +14,12 @@ function SustainabilityPerformance() {
               alt="Sustainability Performance"
               className="w-[95%] border-2 border-gray-400 mb-10"
             />
-            <button className="bg-[#f2a0ed] px-3 p-2 text-sm">
+            <button className="bg-[#f2a0ed] px-3 p-2 md:text-xl text-xl ">
               Business Responsibility and Sustainability Report
             </button>
           </div>
           <div className="basis-[40%]">
-            <h1 className="text-[#c051b8] text-3xl font-bold md:mb-16 mb-8 md:mt-0 mt-8">
+            <h1 className="text-[#c051b8] text-3xl font-branding-semibold font-bold md:mb-16 mb-8 md:mt-0 mt-8">
               ESG Performance
             </h1>
             <p className="xl:text-[21px] lg:text-[17px] text-[16px] text-justify">
