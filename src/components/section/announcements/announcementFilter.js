@@ -37,12 +37,6 @@ function AnnouncementFilter() {
     },
     {
       year: "2024-2025",
-      date: "10 Jan 2025 ",
-      description:
-        "Disclosure under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015-Acquisition of 100% equity stake of Reliance New Energy Battery Limited ",
-    },
-    {
-      year: "2024-2025",
       date: "16 Jan 2025",
       description:
         "Presentation on the Unaudited Financial Results (Consolidated and Standalone) for the quarter and nine months ended December 31, 2024 ",
@@ -59,6 +53,13 @@ function AnnouncementFilter() {
       description:
         "Consolidated and Standalone Unaudited Financial Results for the quarter and nine months ended December 31, 2024 ",
     },
+    {
+      year: "2024-2025",
+      date: "10 Jan 2025 ",
+      description:
+        "Disclosure under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015-Acquisition of 100% equity stake of Reliance New Energy Battery Limited ",
+    },
+
     {
       year: "2024-2025",
       date: "31 Dec 2024 ",
