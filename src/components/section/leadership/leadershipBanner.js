@@ -24,9 +24,9 @@ function LeadershipBanner() {
       image: bannerImage,
       data: (
         <div className="absolute md:right-20 text-center text-white z-20 xl:w-[40%] lg:w-[50%] flex flex-col gap-5 px-3">
-          <p className="md:text-7xl text-6xl relative">
+          <p className="md:text-7xl text-6xl relative font-branding-bold md:leading-[5.4rem] mx-10">
             कर्मण्येवाधिकारस्ते मा फलेषु कदाचन{" "}
-            <div className="absolute -top-[3rem] transform -translate-y-1/2 -left-5">
+            <div className="absolute -top-[2.5rem] transform -translate-y-1/2 -left-5">
               <Image
                 src={featherImage}
                 alt="Peacock feather"
@@ -36,40 +36,44 @@ function LeadershipBanner() {
           </p>
           <p>The Bhagavad Gita, Chapter II, Verse 47 </p>
           <p className="text-3xl mt-5">
-            Your right is in action, never to its fruits, A verse that was
-            <span className="md:text-4xl text-3xl font-branding-semibold">
+            Your right is in action, never to its fruits,
+            <p>
               {" "}
-              Jethabhai V. Patel's
-            </span>{" "}
-            guiding principle in life.
+              A verse that was
+              <span className="md:text-4xl text-3xl font-branding-semibold">
+                {" "}
+                Jethabhai V. Patel's
+              </span>{" "}
+              guiding principle in life.
+            </p>
           </p>
         </div>
       ),
     },
-    {
-      image: LeaderBanner,
-      data: <div></div>,
-    },
-    {
-      image: LeaderBanner1,
-      data: <div></div>,
-    },
-    {
-      image: LeaderBanner2,
-      data: <div></div>,
-    },
-    {
-      image: LeaderBanner3,
-      data: <div></div>,
-    },
-    {
-      image: LeaderBanner4,
-      data: <div></div>,
-    },
-    {
-      image: LeaderBanner5,
-      data: <div></div>,
-    },
+    // {
+    //   image: LeaderBanner,
+    //   data: <div></div>,
+    // },
+    // {
+    //   image: LeaderBanner1,
+    //   data: <div></div>,
+    // },
+    // {
+    //   image: LeaderBanner2,
+    //   data: <div></div>,
+    // },
+    // {
+    //   image: LeaderBanner3,
+    //   data: <div></div>,
+    // },
+    // {
+    //   image: LeaderBanner4,
+    //   data: <div></div>,
+    // },
+    // {
+    //   image: LeaderBanner5,
+    //   data: <div></div>,
+    // },
   ];
 
   return (
