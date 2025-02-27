@@ -1,14 +1,14 @@
 "use client";
-import React from "react";
+import {React,useState} from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import historyFive from "@/assests/history/historyFive.png";
 import historySix from "@/assests/history/historySix.png";
 
-const Year1960 = () => {
-  const [year1960InView, setYear1960InView] = React.useState(false);
 
+const Year1960 = () => {
+  const [year1960InView, setYear1960InView] = useState(false);
   const { ref: year1960Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -18,67 +18,78 @@ const Year1960 = () => {
   return (
     <motion.div
       ref={year1960Observer}
-      className="year1960 relative mt-16 flex flex-col sm:flex-row items-center p-6 w-full max-w-screen-lg mx-auto"
-      data-year="1960"
+      className="year1960 mt-[4vh] flex flex-col sm:flex-col p-6"
       initial={{ opacity: 0, x: 50 }}
       animate={year1960InView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
       whileHover={{ scale: 1.02, y: -5 }}
     >
-      {/* Left Section */}
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={year1960InView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.7, delay: 0.3 }}
-        className="bg-[#001F9C] text-white flex-1 p-6 relative w-full sm:w-[60%] h-full"
-      >
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={year1960InView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-300"
-        >
-          1960
-        </motion.h2>
+      <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4">
+        {/* Left Content */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, x: -50 }}
           animate={year1960InView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="leftDiv flex flex-col sm:w-full md:w-[50%] lg:w-[50%] relative "
+        >
+          <div className="contentDiv flex flex-col relative gap-4 bg-sky-900 p-12 sm:left-0 md:left-[15%] lg:left-[20%]">
+            {/* Year Heading */}
+            <motion.p
+              initial={{ opacity: 0, y: -20 }}
+              animate={year1960InView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className=" h-fit w-fit relative sm:text-6xl md:text-7xl lg:text-8xl text-cyan-500 left-2 sm:left-0 top-2 sm:top-0 m-2"
+            >
+              1960
+            </motion.p>
+
+            {/* Icon Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={year1960InView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.7, delay: 0.6 }}
+              className="iconDiv relative  flex w-full sm:w-[70%] md:w-[70%] lg:w-[80%] top-1 sm:left-0 left-4"
+            >
+              <Image
+                src={historyFive}
+                alt="Icon"
+                width={780}
+                height={280}
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
+
+            {/* Description Text */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={year1960InView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.7 }}
+              className="bottomText flex relative sm:w-full md:w-[60%] left-0 sm:left-0  p-2"
+            >
+              <p className="text-sm sm:text-lg md:text-lg lg:text-xl text-white font-poppins">
+                Sumant Patel founds the Gujarat Machinery Manufacturers Ltd,
+                which later becomes GMM Pfaudler Ltd.
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Right Image */}
+        <motion.div
+          className="imgDiv flex relative z-20 sm:mt-6 md:top-[10vh] lg:top-[15vh] right-0 flex-col sm:w-full md:w-[50%] lg:w-[50%] "
+          initial={{ opacity: 0, x: 50 }}
+          animate={year1960InView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.9 }}
         >
           <Image
-            src={historyFive}
-            alt="Icon"
-            width={580}
-            height={280}
-            className="mt-4 w-full h-auto"
+            src={historySix}
+            alt="Historic Event"
+            width={700}
+            height={500}
+            className="w-full h-auto object-cover"
           />
         </motion.div>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={year1960InView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="mt-4 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-xs sm:max-w-md lg:max-w-lg text-center sm:text-left"
-        >
-          Sumant Patel founds the Gujarat Machinery Manufacturers Ltd, which
-          later becomes GMM Pfaudler Ltd.
-        </motion.p>
-      </motion.div>
-
-      {/* Right Section - Image */}
-      <motion.div
-        className="w-full sm:w-[60%] sm:relative sm:top-10 sm:right-2 sm:mt-6 z-0"  // Remove absolute positioning for small screens
-        initial={{ opacity: 0, x: 50 }}
-        animate={year1960InView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.8, delay: 0.9 }}
-      >
-        <Image
-          src={historySix}
-          alt="Historic Event"
-          width={600}
-          height={500}
-          className="w-full h-auto object-cover relative"
-        />
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
