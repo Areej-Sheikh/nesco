@@ -1,14 +1,13 @@
 // components/historyYears/Year2016.js
 "use client";
-import React from "react";
+import { React, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import historyXIV from "@/assests/history/historyXIV.png";
 
 const Year2016 = () => {
-  const [year2016InView, setYear2016InView] = React.useState(false);
-
+  const [year2016InView, setYear2016InView] = useState(false);
   const { ref: year2016Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -18,57 +17,65 @@ const Year2016 = () => {
   return (
     <motion.div
       ref={year2016Observer}
-      initial={{ opacity: 0, y: 50 }}
+      className="year2016 md:mt-[10vh] lg:mt-[25vh] flex flex-col sm:flex-col p-6"
+      initial={{ opacity: 0, x: 50 }}
       animate={year2016InView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="year2016 flex flex-col relative"
+      whileHover={{ scale: 1.02, y: -5 }}
       data-year="2016"
     >
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={year2016InView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.8 }}
-        className="imgDiv flex relative left-[8%] z-10 lg:bottom-[10vh]"
-      >
-        <Image
-          src={historyXIV}
-          alt="Historical Image"
-          width={700}
-          height={500}
-          className="md:w-[50%] lg:w-[50%] h-auto object-cover relative"
-        />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={year2016InView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.7, delay: 0.3 }}
-        className="contentDiv flex relative bg-sky-500 md:w-[45%] lg:w-[35%] left-1/2 text-left md:bottom-[50vh] lg:bottom-[80vh] md:h-[60vh] lg:h-[80vh]"
-      >
+      <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4">
+        {/* Left Content */}
+
+        {/* Right Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          className="imgDiv flex relative z-20 sm:mt-6  md:left-[6vh] lg:left-[15vh] flex-col sm:w-full md:w-[80%] lg:w-[50%] "
+          initial={{ opacity: 0, x: 50 }}
           animate={year2016InView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="yearDiv flex relative md:left-[25%] lg:left-[30%] md:top-1/4 lg:top-1/3 h-fit"
+          transition={{ duration: 0.8, delay: 0.9 }}
         >
-          <p className="md:text-6xl lg:text-8xl text-white font-branding-bold">
-            2016
-          </p>
+          <Image
+            src={historyXIV}
+            alt="Historic Event"
+            width={700}
+            height={500}
+            className="w-full h-auto object-cover"
+          />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, x: -50 }}
           animate={year2016InView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="textDiv flex relative w-fit h-fit md:top-[25vh] lg:top-[50vh] right-6"
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="leftDiv flex flex-col sm:w-full md:w-[50%] lg:w-[50%] relative "
         >
-          <p className="md:text-lg lg:text-xl text-white">
-            The beginning of<br></br> Nesco Foods. Mumbai gains one<br></br>{" "}
-            of the largest and most hygienic food<br></br> production
-            centers in the non-flight<br></br> category, serving<br></br>{" "}
-            50,000 meals per<br></br> day.
-          </p>
+          <div className="contentDiv flex flex-col relative gap-4 bg-cyan-400 p-12 sm:left-0 md:left-[15%] lg:left-[0%]  lg:h-[60vh] lg:top-[35vh]">
+            {/* Year Heading */}
+            <motion.p
+              initial={{ opacity: 0, y: -20 }}
+              animate={year2016InView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className=" h-fit w-fit relative text-6xl md:text-7xl lg:text-9xl font-branding-bold text-white left-2 sm:left-0 lg:left-[30%] top-2 sm:top-0 lg:top-[10vh] m-2"
+            >
+              2016
+            </motion.p>
+
+            {/* Description Text */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={year2016InView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.7 }}
+              className="bottomText flex relative sm:w-full  md:w-full lg:w-[70%]  sm:left-0 lg:left-[30%] lg:top-[15vh] p-2"
+            >
+              <p className="text-sm sm:text-lg md:text-lg lg:text-xl text-white font-poppins">
+                The beginning of Nesco Foods. Mumbai gains one<br></br> of the
+                largest and most hygienic food<br></br> production centers in
+                the non-flight category, serving 50,000 meals per day.
+              </p>
+            </motion.div>
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };

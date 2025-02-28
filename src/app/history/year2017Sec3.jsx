@@ -3,31 +3,31 @@ import { React, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import historyXIII from "@/assests/history/historyXIII.jpg";
+import XVII from "@/assests/history/XVII.png";
 
-const Year2013 = () => {
-  const [year2013InView, setYear2013InView] = useState(false);
-  const { ref: year2013Observer } = useInView({
+const Year2017Sec3 = () => {
+  const [Year2017Sec3InView, setYear2017Sec3InView] = useState(false);
+  const { ref: Year2017Sec3Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
-    onChange: (inView) => setYear2013InView(inView),
+    onChange: (inView) => setYear2017Sec3InView(inView),
   });
 
   return (
     <motion.div
-      ref={year2013Observer}
-      className="year2013 sm:mt-[2vh] md:mt-[5vh] lg:mt-[14vh] flex flex-col sm:flex-col p-6"
+      ref={Year2017Sec3Observer}
+      className="Year2017Sec3 sm:mt-[2vh] md:mt-[5vh] lg:mt-[14vh] flex flex-col sm:flex-col p-6"
       initial={{ opacity: 0, x: 50 }}
-      animate={year2013InView ? { opacity: 1, x: 0 } : {}}
+      animate={Year2017Sec3InView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
       whileHover={{ scale: 1.02, y: -5 }}
-      data-year="2013"
+      data-year="2017"
     >
       <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
-          animate={year2013InView ? { opacity: 1, x: 0 } : {}}
+          animate={Year2017Sec3InView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3 }}
           className="leftDiv flex flex-col sm:w-full md:w-[50%] lg:w-[50%] lg:top-[40vh]  relative "
         >
@@ -35,23 +35,23 @@ const Year2013 = () => {
             {/* Year Heading */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
-              animate={year2013InView ? { opacity: 1, y: 0 } : {}}
+              animate={Year2017Sec3InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className=" h-fit w-fit relative text-6xl md:text-8xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[15vh] m-2"
+              className=" h-fit w-fit relative text-6xl md:text-8xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[20vh] m-2"
             >
-              2013
+              2017
             </motion.p>
 
             {/* Description Text */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={year2013InView ? { opacity: 1, y: 0 } : {}}
+              animate={Year2017Sec3InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="bottomText flex relative sm:w-full md:w-[70%]  lg:top-[15vh] left-0 sm:left-0  p-2"
+              className="bottomText flex relative sm:w-full md:w-[70%]  lg:top-[20vh] left-0 sm:left-0  p-2"
             >
               <p className="text-sm sm:text-lg md:text-lg lg:text-xl text-white font-poppins">
-                Launched Nesco IT Park, Tower 03 (6.6 lakh sq. ft. area licensed
-                to Marquee MNC clients)
+                Added a premium lounge/bar “Dress Circle” towards the end of the
+                year in Nesco Centre.
               </p>
             </motion.div>
           </div>
@@ -61,11 +61,11 @@ const Year2013 = () => {
         <motion.div
           className="imgDiv flex relative z-20 sm:mt-6 md:top-[10vh]  right-0 flex-col sm:w-full md:w-[50%] lg:w-[50%] "
           initial={{ opacity: 0, x: 50 }}
-          animate={year2013InView ? { opacity: 1, x: 0 } : {}}
+          animate={Year2017Sec3InView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
           <Image
-            src={historyXIII}
+            src={XVII}
             alt="Historic Event"
             width={700}
             height={500}
@@ -77,4 +77,4 @@ const Year2013 = () => {
   );
 };
 
-export default Year2013;
+export default Year2017Sec3;

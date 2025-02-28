@@ -24,6 +24,10 @@ import Year2016 from "./year2016";
 import Year2017 from "./year2017";
 import Year2019 from "./year2019";
 import Year2023 from "./year2023";
+import Year2017Sec2 from "./year2017Sec2";
+import Year2017Sec3 from "./year2017Sec3";
+import Year2023Sec2 from "./year2023Sec2";
+import Year2023Sec3 from "./year2023Sec3";
 
 
 const Timeline = ({ years }) => {
@@ -236,9 +240,19 @@ const page = () => {
 
         <Year2017 />
 
+        <Year2017Sec2/>
+
+        <Year2017Sec3/>
+
         <Year2019 />
 
+        
+
         <Year2023 />
+
+        <Year2023Sec2/>
+
+        <Year2023Sec3/>
 
        
       </div>
