@@ -29,7 +29,6 @@ import Year2017Sec3 from "./year2017Sec3";
 import Year2023Sec2 from "./year2023Sec2";
 import Year2023Sec3 from "./year2023Sec3";
 
-
 const Timeline = ({ years }) => {
   const [activeYear, setActiveYear] = useState(years[0]);
 
@@ -53,18 +52,20 @@ const Timeline = ({ years }) => {
   }, []);
 
   return (
-    <div className="sideProgress flex flex-col items-center 
+    <div
+      className="sideProgress flex flex-col items-center 
       fixed top-[10%] right-2 md:left-auto md:right-auto md:w-auto 
       lg:w-[13%] p-4 rounded-lg z-50 
-      hidden md:flex">
-      
+      hidden md:flex"
+    >
       <ul className="relative pl-4">
         {years.map((year, index) => (
           <li key={index} className="relative flex items-center space-x-2 mb-4">
             <motion.span
               className="w-3 h-3 rounded-full relative z-10"
               animate={{
-                backgroundColor: year.toString() === activeYear ? "#3B82F6" : "#6B7280",
+                backgroundColor:
+                  year.toString() === activeYear ? "#3B82F6" : "#6B7280",
                 scale: year.toString() === activeYear ? 1.5 : 1,
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -93,8 +94,6 @@ const Timeline = ({ years }) => {
     </div>
   );
 };
-
-
 
 const page = () => {
   const years = [
@@ -245,21 +244,17 @@ const page = () => {
 
         <Year2017 />
 
-        <Year2017Sec2/>
+        <Year2017Sec2 />
 
-        <Year2017Sec3/>
+        <Year2017Sec3 />
 
         <Year2019 />
 
-        
-
         <Year2023 />
 
-        <Year2023Sec2/>
+        <Year2023Sec2 />
 
-        <Year2023Sec3/>
-
-       
+        <Year2023Sec3 />
       </div>
     </div>
   );
