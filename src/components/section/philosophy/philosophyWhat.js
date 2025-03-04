@@ -77,21 +77,21 @@ function PhilosophyWhat() {
   return (
     <div
       ref={sectionRef}
-      className="header_color_black w-full h-screen relative overflow-hidden flex justify-center items-center"
+      className="w-full md:h-screen relative flex justify-center items-center py-20"
     >
-      <div className="w-full h-full flex justify-start items-center">
+      <div className="w-full h-full flex md:flex-row flex-col justify-start items-center gap-10 md:gap-0">
         <div
-          className="w-[70%] h-1/2 flex flex-col overflow-hidden z-0 relative"
+          className="xl:w-[70%] md:w-[80%] sm:w-[50%] md:h-1/2 h-[12rem] flex flex-col z-0 relative"
           ref={textContainerRef}
         >
           {text[currentText].split(".").map((word, index) => (
             <p
               key={index}
-              className={`text-8xl font-branding-semibold text-[#0F0D9F] text-right leading-[5rem] uppercase ${
-                index === 1 ? "pr-10" : ""
-              } ${index === 2 ? "pr-20" : ""} ${index === 3 ? "pr-32" : ""} ${
-                index === 5 ? "pr-40" : ""
-              }`}
+              className={`xl:text-8xl lg:text-6xl md:text-5xl text-3xl font-branding-semibold text-[#0F0D9F] text-right md:leading-[5rem] leading-[3rem] uppercase ${
+                index === 1 ? "md:pr-10 pr-5" : ""
+              } ${index === 2 ? "md:pr-20 pr-10" : ""} ${
+                index === 3 ? "md:pr-32 pr-16" : ""
+              } ${index === 5 ? "md:pr-40 pr-24" : ""}`}
             >
               <Typewriter
                 options={{
@@ -104,10 +104,10 @@ function PhilosophyWhat() {
             </p>
           ))}
         </div>
-        <div className="w-[30%] h-1/2 flex items-end z-20 relative bg-white">
+        <div className="xl:w-[30%] md:w-[20%] w-full h-1/2 flex md:items-end justify-center z-20 relative bg-white">
           <p
             ref={headerRef}
-            className="text-6xl text-[#00B6F1] font-branding-semibold -ml-20 -mb-10"
+            className="xl:text-6xl lg:text-5xl md:text-4xl text-2xl text-[#00B6F1] font-branding-semibold xl:-ml-20 xl:-mb-10"
           >
             What We
             <br /> Do Is Believe

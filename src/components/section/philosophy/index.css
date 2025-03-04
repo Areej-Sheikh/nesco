@@ -12,7 +12,7 @@
 }
 
 .letterAnimation {
-  content: " ";
+  /* content: " "; */
   animation: letter1 2s infinite alternate;
   width: 600px;
   height: 600px;

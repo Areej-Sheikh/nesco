@@ -110,8 +110,8 @@ function PhilosophyBelieve() {
                   <span className="lg:mx-10 mx-3 relative opacity-0">E</span>
                 </p>
               </div>
-              <div className="text-left xl:h-full xl:w-[25%] w-full">
-                <p className="z-30 text-[#01aeec] w-60 relative xl:top-[58%] text-xl content2">
+              <div className="text-left xl:h-full xl:w-[25%] w-full xl:block flex justify-center">
+                <p className="z-30 text-[#01aeec] xl:w-60 sm:w-1/2 w-[90%] relative xl:top-[58%] my-10 text-xl content2">
                   A whole universe stands waiting to be explored. And yet it may
                   remain undiscovered, unless you believe in taking the first
                   step!

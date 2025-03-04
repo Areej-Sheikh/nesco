@@ -85,15 +85,15 @@ function PhilosophyValue() {
   ];
 
   return (
-    <div className="header_color_black flex justify-center items-center w-full flex-col mt-24">
+    <div className="flex justify-center items-center w-full flex-col mt-24">
       <h2 className="text-5xl font-branding-semibold text-[#0E0E80]">
         Our Values
       </h2>
-      <div className="flex w-[80%] justify-center mt-10">
-        <div className="w-1/2">
+      <div className="flex md:flex-row flex-col lg:w-[80%] w-[90%] justify-center mt-10">
+        <div className="md:w-1/2">
           {leftData.map((data, index) => (
             <div
-              className="text-right my-28 px-4 opacity-0"
+              className="md:text-right md:my-28 my-8 px-4 opacity-0"
               key={index}
               ref={(el) => (leftRefs.current[index] = el)}
             >
@@ -104,10 +104,10 @@ function PhilosophyValue() {
             </div>
           ))}
         </div>
-        <div className="w-1/2 -mt-28">
+        <div className="md:w-1/2 md:-mt-28">
           {rightData.map((data, index) => (
             <div
-              className="text-left my-28 px-4 opacity-0"
+              className="md:text-left md:my-28 my-8 px-4 opacity-0"
               key={index}
               ref={(el) => (rightRefs.current[index] = el)}
             >

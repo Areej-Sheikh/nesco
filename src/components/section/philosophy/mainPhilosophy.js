@@ -15,19 +15,19 @@ function MainPhilosophy() {
     },
     {
       comp: <PhilosophyForUs />,
-      classCss: "",
+      classCss: "header_purple",
     },
     {
       comp: <PhilosophyWhat />,
-      classCss: "",
+      classCss: "header_purple",
     },
     {
       comp: <PhilosophyVision />,
-      classCss: "",
+      classCss: "header_purple",
     },
     {
       comp: <PhilosophyValue />,
-      classCss: "",
+      classCss: "header_purple",
     },
   ];
 
