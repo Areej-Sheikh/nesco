@@ -16,7 +16,7 @@ const Year2023 = () => {
   return (
     <motion.div
       ref={Year2023Observer}
-      className="Year2023 mt-[14vh] flex flex-col sm:flex-col p-6 "
+      className="Year2023 mt-[14vh] flex flex-col sm:flex-col p-6 md:mr-4  "
       initial={{ opacity: 0, x: 50 }}
       animate={Year2023InView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -25,7 +25,7 @@ const Year2023 = () => {
     >
       <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4">
         <motion.div
-          className="imgDiv flex relative md:left-[15vh] lg:left-[15vh] z-20 sm:mt-6  right-0 flex-col sm:w-full md:w-[60%] lg:w-[50%] "
+          className="imgDiv flex relative md:left-[14vh] lg:left-[15vh] z-20 sm:mt-6  right-0 flex-col sm:w-full md:w-[60%] lg:w-[50%] "
           initial={{ opacity: 0, x: 50 }}
           animate={Year2023InView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.9 }}
@@ -51,7 +51,7 @@ const Year2023 = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={Year2023InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className=" h-fit w-fit relative text-6xl md:text-8xl font-branding-bold lg:text-9xl text-white  sm:left-0 md:left-1/4 lg:left-1/2  sm:top-0 lg:top-[20vh]  m-2"
+              className=" h-fit w-fit relative text-6xl md:text-8xl font-branding-bold lg:text-9xl text-white  sm:left-0 md:left-[5vh] lg:left-1/2  sm:top-0 lg:top-[20vh]  m-2"
             >
               2023
               <motion.div

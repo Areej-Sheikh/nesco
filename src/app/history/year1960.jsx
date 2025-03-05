@@ -24,7 +24,7 @@ const Year1960 = () => {
       whileHover={{ scale: 1.02, y: -5 }}
       data-year="1960"
     >
-      <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4 ">
+      <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4 md:left-6 ">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -32,7 +32,7 @@ const Year1960 = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="leftDiv flex flex-col sm:w-full md:w-[50%] lg:w-[50%] relative "
         >
-          <div className="contentDiv flex flex-col relative gap-4 bg-sky-900 p-12 sm:left-0 md:left-[15%] lg:left-[20%] transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
+          <div className="contentDiv flex flex-col relative gap-4 bg-[#001F9C] p-12 sm:left-0 md:left-[15%] lg:left-[20%] transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
             {/* Year Heading */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}

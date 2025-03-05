@@ -25,7 +25,7 @@ const Year2023Sec2 = () => {
       whileHover={{ scale: 1.02, y: -5 }}
       data-year="2023"
     >
-      <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4">
+      <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4 md:ml-4">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -39,7 +39,7 @@ const Year2023Sec2 = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={Year2023Sec2InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className=" h-fit w-fit relative text-6xl md:text-8xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[20vh] m-2"
+              className=" h-fit w-fit relative text-6xl md:text-7xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[20vh] m-2"
             >
               2023
               <motion.div

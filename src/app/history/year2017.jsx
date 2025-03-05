@@ -18,7 +18,7 @@ const Year2017 = () => {
   return (
     <motion.div
       ref={year2017Observer}
-      className="year2017 sm:mt-[2vh] md:mt-[5vh] lg:mt-[14vh] flex flex-col sm:flex-col p-6"
+      className="year2017 sm:mt-[2vh] md:mt-[5vh] lg:mt-[14vh] flex flex-col sm:flex-col p-6 md:ml-4"
       initial={{ opacity: 0, x: 50 }}
       animate={year2017InView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -39,7 +39,7 @@ const Year2017 = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={year2017InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className=" h-fit w-fit relative text-6xl md:text-8xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[15vh] m-2"
+              className=" h-fit w-fit relative text-6xl md:text-7xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[15vh] m-2"
             >
               2017
               <motion.div
