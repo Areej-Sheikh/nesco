@@ -29,15 +29,15 @@ function believe() {
             <div className="text-justify xl:w-[50%] lg:w-[45%] w-full md:mt-0 mt-10 flex flex-col gap-5 md:text-2xl text-xl font-poppins z-10">
               <p className="leading-10">
                 Leadership at Nesco is more than just man-agement, it is a
-                principle. Our founder, J. V. Patelwas a first-generation
+                principle. Our founder, J. V. Patel was a first-generation
                 industrialist in in dependent, India anda peerless entrepreneur.
                 He carved a niche for himself in the industrial and business
                 realm by dint of technical know-how, meticulousness, diligence
                 and leadership. The investiture of his beliefs in our teams is
                 what takes us forward as a company. Across our diverse
                 industries, our capabilities at Nesco are expanding. As
-                businesses grow. the focus of our leadership grows on converting
-                the credo of Bellieve into action,
+                businesses grow, the focus of our leadership grows on converting
+                the credo of Bellieve into action.
               </p>
             </div>
           </div>

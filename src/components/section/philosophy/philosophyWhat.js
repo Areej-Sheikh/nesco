@@ -87,7 +87,7 @@ function PhilosophyWhat() {
           {text[currentText].split(".").map((word, index) => (
             <p
               key={index}
-              className={`xl:text-8xl lg:text-6xl md:text-5xl text-3xl font-branding-semibold text-[#0F0D9F] text-right md:leading-[5rem] leading-[3rem] uppercase ${
+              className={`xl:text-8xl lg:text-6xl md:text-5xl text-3xl font-branding-bold text-[#0F0D9F] text-right md:leading-[5rem] leading-[3rem] uppercase ${
                 index === 1 ? "md:pr-10 pr-5" : ""
               } ${index === 2 ? "md:pr-20 pr-10" : ""} ${
                 index === 3 ? "md:pr-32 pr-16" : ""
@@ -107,7 +107,7 @@ function PhilosophyWhat() {
         <div className="xl:w-[30%] md:w-[20%] w-full h-1/2 flex md:items-end justify-center z-20 relative bg-white">
           <p
             ref={headerRef}
-            className="xl:text-6xl lg:text-5xl md:text-4xl text-2xl text-[#00B6F1] font-branding-semibold xl:-ml-20 xl:-mb-10"
+            className="xl:text-6xl lg:text-5xl md:text-4xl text-2xl text-[#00B6F1] font-branding-semibold xl:-ml-40 xl:-mb-10"
           >
             What We
             <br /> Do Is Believe

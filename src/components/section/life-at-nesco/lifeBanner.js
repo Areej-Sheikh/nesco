@@ -19,9 +19,10 @@ function LifeBanner() {
           <p>recognised</p>
           <p>and valued.</p>
           <p className="text-blue-500 text-6xl">Believe</p>
-          <p className="text-xl md:w-[60%] mt-10">
-            At Nesco, we see ourselves as a family and we are all about giving
-            our employees the breadth to expand and explore.
+          <p className="text-xl md:w-[100%] mt-10">
+            At Nesco, we see ourselves as a family and we are
+            <br /> all about giving our employees the breadth to expand and
+            explore.
           </p>
         </div>
       ),
