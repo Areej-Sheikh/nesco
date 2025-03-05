@@ -31,7 +31,7 @@ const Year1939 = () => {
           alt="Top Image"
           width={1000}
           height={500}
-          className="w-full md:w-[90%] lg:w-[95%] h-auto object-cover"
+          className="w-full md:w-[90%] lg:w-full h-auto object-cover"
           priority
         />
         <div className="year absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-row">

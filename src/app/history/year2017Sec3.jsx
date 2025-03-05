@@ -37,7 +37,7 @@ const Year2017Sec3 = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={Year2017Sec3InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className=" h-fit w-fit relative text-6xl md:text-8xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[20vh] m-2"
+              className=" h-fit w-fit relative text-6xl md:text-7xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[20vh] m-2"
             >
               2017
               <motion.div
