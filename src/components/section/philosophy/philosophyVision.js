@@ -95,7 +95,7 @@ function PhilosophyVision() {
       </div>
       <div className="flex md:flex-row flex-col xl:w-[60%] lg:w-[70%] md:w-[80%] w-[90%] gap-10">
         <div className="py-5 md:w-1/2">
-          <div className="flex flex-col gap-0 relative -mt-24">
+          <div className="flex flex-col gap-0 relative -mt-24 xl:w-[60%] lg:w-[70%] md:w-[80%] w-[90%]">
             <Image
               src={PhilosophyVtp}
               className="side absolute w-[70%] md:w-full"
@@ -125,8 +125,8 @@ function PhilosophyVision() {
             </p>
           </div>
         </div>
-        <div className="py-5 md:w-1/2 md:mt-[35%]">
-          <div className="flex flex-col gap-0 relative items-center">
+        <div className="py-5 md:w-1/2 md:mt-[35%] md:flex justify-center flex-col items-center">
+          <div className="flex flex-col gap-0 relative items-center xl:w-[60%] lg:w-[70%] md:w-[80%] w-[90%]">
             <Image
               src={PhilosophyMtp}
               className="side1 absolute w-[80%] md:w-full"
@@ -137,7 +137,7 @@ function PhilosophyVision() {
               className="w-[80%] md:w-full"
               alt="Mission Bottom"
             />
-            <div className="lg:text-5xl text-3xl absolute top-28 md:-ml-[90%] sm:-ml-[60%] -ml-[70%] font-branding-bold text-[#0E0E80] text-right overflow-hidden">
+            <div className="lg:text-5xl text-3xl absolute top-28 xl:-ml-[140%] md:-ml-[90%] sm:-ml-[60%] -ml-[70%] font-branding-bold text-[#0E0E80] text-right overflow-hidden">
               <div className="slide2">
                 Our
                 <br /> Mission

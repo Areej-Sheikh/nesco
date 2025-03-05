@@ -101,7 +101,7 @@ function Quote() {
         Historical Stock Quote
       </h2>
       <div className=" flex justify-center  w-[90%]  ">
-        <div className="flex lg:flex-row flex-col gap-20 justify-center items-center bg-[#B8DFFC] p-4 w-[80%]">
+        <div className="flex lg:flex-row flex-col gap-10 justify-center items-center bg-[#B8DFFC] p-4 w-[70%]">
           {/* Exchange Selector */}
           <div className="flex flex-col gap-2">
             <p className="text-[#3460C6] font-branding-semibold">Exchange: </p>

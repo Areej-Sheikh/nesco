@@ -207,7 +207,7 @@ function PhilosophyForUs() {
             </div>
             {/* {getletter()} */}
           </div>
-          <div className="text-white xl:w-[27rem] lg:w-[20rem] w-[90%] xl:right-[7%] right-10 flex flex-col gap-10 xl:top-[35%] top-[30%] text-base lg:absolute py-10 lg:py-0 -mt-20 lg:mt-0 s13">
+          <div className="text-white xl:w-[27rem] lg:w-[20rem] w-[90%] xl:right-[7%] right-10 flex flex-col gap-10 xl:top-[35%] top-[30%] text-base lg:absolute py-10 lg:py-0 -mt-20 lg:-mt-5 s13 lg:text-lg">
             <p>
               The notion of 'Believe' is what inspired our founder, the
               respected Shri. J. V. Patel, to establish Nesco. His simple belief

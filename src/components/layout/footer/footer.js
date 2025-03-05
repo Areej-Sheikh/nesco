@@ -18,11 +18,11 @@ function Footer() {
         },
         {
           title: "Philosophy",
-          link: "",
+          link: "/philosophy",
         },
         {
           title: "History",
-          link: "",
+          link: "/history",
         },
         {
           title: "Leadership",
