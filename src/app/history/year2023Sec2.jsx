@@ -25,7 +25,7 @@ const Year2023Sec2 = () => {
       whileHover={{ scale: 1.02, y: -5 }}
       data-year="2023"
     >
-      <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4">
+      <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4 md:ml-4">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}

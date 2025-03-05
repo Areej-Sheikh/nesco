@@ -17,13 +17,13 @@ const Year1956 = () => {
   return (
     <motion.div
       ref={year1956Observer}
-      className="1956Div mt-[3%] w-full max-w-[1200px] mx-auto relative p-4 items-center h-fit flex flex-col md:flex-row m-4 transition-all ease-in-out duration-300 hover:translate-y-1 gap-10 ml-auto"
+      className="1956Div mt-[3%] w-full max-w-[1200px] mx-auto relative p-4 items-center h-fit flex flex-col md:flex-row m-4 transition-all ease-in-out duration-300 hover:translate-y-1 gap-10 ml-auto md:left-6"
       data-year="1956"
       initial={{ opacity: 0, y: 50 }}
       animate={year1956InView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1 }}
     >
-      <div className="iconDiv flex items-center justify-center relative w-full sm:w-1/2 lg:w-1/3 mt-4 md:m-6">
+      <div className="iconDiv flex items-center justify-center relative w-full sm:w-1/2 lg:w-1/3 mt-4 md:m-6 md:ml-14">
         <Image
           src={historyThree}
           alt="Top Image"

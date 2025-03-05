@@ -15,7 +15,7 @@ const Year1958 = () => {
   return (
     <motion.div
       ref={year1958Observer}
-      className="year1958 mt-16 flex flex-col gap-4 relative items-center justify-center w-full max-w-4xl m-auto"
+      className="year1958 mt-16 flex flex-col gap-4 relative items-center justify-center w-full max-w-4xl m-auto md:w-[80%] md:left-10 "
       data-year="1958"
       initial={{ opacity: 0, y: 50 }}
       animate={year1958InView ? { opacity: 1, y: 0 } : {}}
