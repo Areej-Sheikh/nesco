@@ -27,7 +27,7 @@ const Year2023Sec3 = () => {
     >
       <div className="container flex flex-col sm:flex-col md:flex-row lg:flex-row relative m-auto mt-4 mb-4  p-4">
         <motion.div
-          className="imgDiv flex relative md:left-[15vh] lg:left-[15vh] z-20 sm:mt-6  right-0 flex-col sm:w-full md:w-[60%] lg:w-[50%] "
+          className="imgDiv flex relative md:left-[14vh] lg:left-[15vh] z-20 sm:mt-6  right-0 flex-col sm:w-full md:w-[60%] lg:w-[50%] "
           initial={{ opacity: 0, x: 50 }}
           animate={Year2023Sec3InView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.9 }}
@@ -47,13 +47,13 @@ const Year2023Sec3 = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="leftDiv flex flex-col sm:w-full md:w-[50%] lg:w-[50%] relative "
         >
-          <div className="contentDiv flex flex-col relative gap-10 bg-cyan-400 md:top-[10vh] lg:top-[25vh] p-12 sm:left-0 md:left-[15%] lg:left-[0vh] lg:h-[60vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
+          <div className="contentDiv flex flex-col relative gap-10  bg-cyan-400 md:top-[10vh] lg:top-[25vh] p-12 sm:left-0 md:left-[15%] lg:left-[0vh] lg:h-[60vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
             {/* Year Heading */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
               animate={Year2023Sec3InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="h-fit w-fit relative text-6xl  md:text-8xl font-branding-bold lg:text-9xl text-white sm:left-0 md:left-1/4 lg:left-1/2 sm:top-0 lg:top-[10vh] m-2"
+              className="h-fit w-fit  relative text-6xl  md:text-8xl font-branding-bold lg:text-9xl text-white sm:left-0 md:left-[5vh] lg:left-1/2 sm:top-0 lg:top-[10vh] m-2"
             >
               2023
               {/* Horizontal Line */}
