@@ -187,7 +187,10 @@ function Navbar({ activeSlide }) {
     if (isFooter) {
       return "text-white border-white"; // Apply white text for purple header
     }
-    if (activeSlide === 0) {
+    if (isOpen) {
+      return "text-white border-white";
+    }
+    if (activeSlide === 0 && isOpen === null) {
       return "text-black border-black";
     }
     if (isHeaderWhite) {
@@ -196,6 +199,7 @@ function Navbar({ activeSlide }) {
     if (isScrolled) {
       return "text-black border-black";
     }
+
     return "text-white border-white";
   };
 
@@ -218,8 +222,11 @@ function Navbar({ activeSlide }) {
     if (isFooter) {
       return Nescologo2; // Apply brightness for purple header
     }
-    if (activeSlide === 0) {
+    if (activeSlide === 0 && isOpen === null) {
       return Nescologo;
+    }
+    if (isOpen) {
+      return Nescologo2;
     }
     if (isHeaderWhite) {
       return Nescologo2;
@@ -336,7 +343,7 @@ function Navbar({ activeSlide }) {
             if (index === isOpen && data.subMenu.length > 0) {
               return (
                 <div
-                  className="absolute navbarAnimation top-0 pt-20 left-0 w-full  bg-black bg-opacity-90 z-40 hidden lg:flex"
+                  className={`absolute navbarAnimation top-0 pt-20 left-0 w-full  bg-black bg-opacity-90 z-40 hidden lg:flex`}
                   onMouseEnter={handleMouseEnter1}
                   onMouseLeave={handleMouseLeave1}
                 >

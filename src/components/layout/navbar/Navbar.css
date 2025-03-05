@@ -26,16 +26,16 @@
 }
 
 .navbarAnimation {
-  animation: close 2s ease-out 0.5;
+  animation: close 1.5s ease-out 1;
   transition: all 1s;
 }
 @keyframes close {
   0% {
-    top: -400%;
+    top: -200%;
     opacity: 0;
   }
   100% {
-    top: 200%;
+    top: 0%;
     opacity: 1;
   }
 }
