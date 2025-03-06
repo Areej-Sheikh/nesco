@@ -190,6 +190,9 @@ function Navbar({ activeSlide }) {
     if (isOpen) {
       return "text-white border-white";
     }
+    if (isOpen === 0) {
+      return "text-white border-white";
+    }
     if (activeSlide === 0 && isOpen === null) {
       return "text-black border-black";
     }
@@ -226,6 +229,9 @@ function Navbar({ activeSlide }) {
       return Nescologo;
     }
     if (isOpen) {
+      return Nescologo2;
+    }
+    if (isOpen === 0) {
       return Nescologo2;
     }
     if (isHeaderWhite) {
