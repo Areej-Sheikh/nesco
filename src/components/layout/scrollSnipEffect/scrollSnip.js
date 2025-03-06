@@ -45,7 +45,7 @@ function ScrollSnip({ Children }) {
         end: "bottom top", // End when the bottom of the section hits the top of the viewport
         snap: {
           snapTo: 1, // Snap to the closest section
-          duration: { min: 0.2, max: 0.6 }, // Smooth snapping duration
+          duration: { min: 0.1, max: 0.3 }, // Smooth snapping duration
           ease: "power1.inOut", // Easing function
         },
         // markers: true, // Debugging markers (can be removed in production)
@@ -93,7 +93,7 @@ function ScrollSnip({ Children }) {
             end: "bottom top",
             snap: {
               snapTo: 1,
-              duration: { min: 0.2, max: 0.6 },
+              duration: { min: 0.1, max: 0.3 },
               ease: "power1.inOut",
             },
           });
