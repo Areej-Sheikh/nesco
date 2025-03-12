@@ -139,7 +139,10 @@ function Footer() {
       <div className="w-[90%] xl:flex">
         <div className="md:flex justify-between xl:w-[83%] w-full md:gap-6 xl:gap-0">
           {FooterData.map((data, index) => (
-            <div className="lg:max-w-[28%] md:max-w-[25%] mt-10 md:mt-0 text-left">
+            <div
+              key={index}
+              className="lg:max-w-[28%] md:max-w-[25%] mt-10 md:mt-0 text-left"
+            >
               <Link
                 href={data.titleLink}
                 className="text-[#246F8E] text-2xl lg:px-5 font-branding-semibold"
@@ -147,8 +150,9 @@ function Footer() {
                 {data.title}
               </Link>
               <div className="mt-6 flex flex-col gap-3 text-left">
-                {data.category.map((d, h) => (
+                {data?.category?.map((d, h) => (
                   <Link
+                    key={"key" + h}
                     href={d.link}
                     className="text-lg text-white font-branding-medium transition-all lg:mx-5"
                   >

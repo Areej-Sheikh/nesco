@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 import MentorImage from "@/assests/Home/SirImage.png";
 import backgroundImage from "@/assests/Home/N-2.png";
@@ -7,22 +7,29 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Mentor() {
-
-  useEffect(()=>{
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo('.backgroundAnimation' , {
-      width:0
-    }, {width:"100%", duration:4,
-      scrollTrigger: {
-        trigger: '.sectionReveal',
-        start: 'top 80%',
-        end: 'bottom top',
-        once: true,
+    gsap.fromTo(
+      ".backgroundAnimation",
+      {
+        width: 0,
+      },
+      {
+        width: "100%",
+        duration: 4,
+        scrollTrigger: {
+          trigger: ".sectionReveal",
+          start: "top 80%",
+          end: "bottom top",
+          once: true,
+        },
       }
-    })
+    );
     return () => {
-      gsap.kill();
+      if (gsap?.kill) {
+        gsap?.kill();
+      }
     };
   }, []);
   return (
