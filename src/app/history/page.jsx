@@ -134,10 +134,10 @@ const page = () => {
       <div className="historyDiv header_purple max-w-full flex flex-col overflow-x-hidden overflow-y-hidden">
         <Timeline years={years} isFooterVisible={isFooterVisible} />
 
-        <div className="rightSectionContainer w-fit h-fit my-[11%] m-2  lg:ml-[15%]">
+        <div className="rightSectionContainer w-fit h-fit m-2  lg:ml-[15%]">
           <div
             ref={upperObserver}
-            className="upperDiv w-fit md:w-[87%] flex flex-col p-5 mb-3 relative h-auto md:left-2 lg:left-[2%] ml-auto"
+            className="upperDiv w-fit md:w-[87%] flex flex-col relative md:left-2 lg:left-[2%] ml-auto"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -190,7 +190,7 @@ const page = () => {
 
           <div ref={bottomObserver}>
             <motion.div
-              className="bottomContentDiv w-fit md:w-[75%] lg:bottom-[20vh] ml-auto text-gray-500 p-4 pt-6 transition-all ease-in-out duration-300 hover:-translate-y-1 mt-6 flex flex-col md:flex-row relative"
+              className="bottomContentDiv w-fit md:w-[75%] lg:bottom-[10vh] ml-auto text-gray-500 p-4 pt-6 transition-all ease-in-out duration-300 hover:-translate-y-1 mt-6 flex flex-col md:flex-row relative"
               initial={{ opacity: 0, y: 50 }}
               animate={bottomInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.5 }}
