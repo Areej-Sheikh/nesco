@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -8,12 +8,30 @@ import historyTwo from "@/assests/history/historyTwo.png";
 
 const Year1939 = () => {
   const [year1939InView, setYear1939InView] = React.useState(false);
+  const [count, setCount] = useState(1000);
 
   const { ref: year1939Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
     onChange: (inView) => setYear1939InView(inView),
   });
+
+  useEffect(() => {
+    if (year1939InView) {
+      const interval = setInterval(() => {
+        setCount((prevCount) => {
+          const nextCount = prevCount + 5;
+          if (nextCount >= 1939) {
+            clearInterval(interval);
+            return 1939; // Stop exactly at 1939
+          }
+          return nextCount;
+        });
+      }, 5); // Fast interval for smooth counting
+
+      return () => clearInterval(interval);
+    }
+  }, [year1939InView]);
 
   return (
     <motion.div
@@ -35,8 +53,11 @@ const Year1939 = () => {
           priority
         />
         <div className="year absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-row">
-          <p className="text-[60px] md:text-[100px] text-white font-branding-bold">19</p>
-          <p className="text-[60px] md:text-[100px] text-cyan-400 font-branding-bold">39</p>
+        <motion.p
+            className="text-[60px] md:text-[100px] text-white font-branding-bold"
+          >
+            {count}
+          </motion.p>
         </div>
       </div>
 

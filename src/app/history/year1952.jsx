@@ -1,17 +1,36 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import { IoEllipseOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Year1952 = () => {
-  const [year1952InView, setYear1952InView] = React.useState(false);
+  const [year1952InView, setYear1952InView] = useState(false);
+  const [count, setCount] = useState(1000);
 
   const { ref: year1952Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
     onChange: (inView) => setYear1952InView(inView),
   });
+
+  useEffect(() => {
+    if (year1952InView) {
+      const interval = setInterval(() => {
+        setCount((prevCount) => {
+          const nextCount = prevCount + 5;
+          if (nextCount >= 1952) {
+            clearInterval(interval);
+            return 1952; // Stop exactly at 1952
+          }
+          return nextCount;
+        });
+      }, 10); // Fast counting interval
+
+      return () => clearInterval(interval);
+    }
+  }, [year1952InView]);
 
   return (
     <motion.div
@@ -67,7 +86,7 @@ const Year1952 = () => {
             animate={year1952InView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.2, delay: 0.6 }}
           >
-            1952
+            {count}
           </motion.p>
           <motion.p
             className="w-48 sm:w-56 md:w-72 lg:w-80 xl:w-96 p-2 sm:p-4 text-sm sm:text-base md:text-lg lg:text-xl"

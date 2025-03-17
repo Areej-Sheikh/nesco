@@ -120,7 +120,7 @@ function Navbar({ activeSlide }) {
       onEnter: () => setIsScrolled(false),
       onLeave: () => setIsScrolled(true),
       onEnterBack: () => setIsScrolled(false),
-      onLeaveBack: () => setIsScrolled(true),
+      onLeaveBack: () => setIsScrolled(false),
       animation: gsap.to(".navbar", { opacity: 1, duration: 0.05 }),
     });
 
@@ -217,7 +217,7 @@ function Navbar({ activeSlide }) {
       return "text-black border-black";
     }
 
-    return "text-white border-white";
+    else return "text-white border-white";
   };
 
   useEffect(() => {
