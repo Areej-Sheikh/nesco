@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -7,11 +7,29 @@ import XVII from "@/assests/history/XVII.png";
 
 const Year2017Sec2 = () => {
   const [Year2017Sec2InView, setYear2017Sec2InView] = useState(false);
+  const [count, setCount] = useState(1000);
   const { ref: Year2017Sec2Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
     onChange: (inView) => setYear2017Sec2InView(inView),
   });
+
+    useEffect(() => {
+        if (Year2017Sec2InView) {
+          const interval = setInterval(() => {
+            setCount((prevCount) => {
+              const nextCount = prevCount + 5;
+              if (nextCount >= 2017) {
+                clearInterval(interval);
+                return 2017; // Stop exactly at 2017
+              }
+              return nextCount;
+            });
+          }, 10); // Fast counting interval
+    
+          return () => clearInterval(interval);
+        }
+      }, [Year2017Sec2InView]);
 
   return (
     <motion.div
@@ -53,7 +71,7 @@ const Year2017Sec2 = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className=" h-fit w-fit relative text-6xl md:text-8xl font-branding-bold lg:text-9xl text-white  sm:left-0 md:left-1/4 lg:left-1/2  sm:top-0 lg:top-[20vh]  m-2"
             >
-              2017
+              {count}
               <motion.div
                 initial={{ opacity: 0, width: 0 }}
                 animate={Year2017Sec2InView ? { opacity: 1, width: "90%" } : {}}

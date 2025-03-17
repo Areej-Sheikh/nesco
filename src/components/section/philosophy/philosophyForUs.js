@@ -172,7 +172,7 @@ function PhilosophyForUs() {
         </div>
       </div>
       <div className="lg:h-screen relative w-full flex flex-col s14">
-        <div className="bg-[#00B7F1] w-[2000px] h-[1000px] rotate-[136deg] absolute -bottom-1/2 transform md:translate-x-[9.3%]"></div>
+        <div className="bg-[#00B7F1]  md:w-[1600px] lg:w-[1600px] 2xl:w-[2030px] h-[1000px] rotate-[136deg] absolute -bottom-1/2 transform md:translate-x-[9.3%]"></div>
         <div className="hidden lg:flex w-full leading-0 h-full justify-center items-center  absolute">
           <div
             className={`letterAnimation text-[30rem] text-white flex justify-center items-center`}

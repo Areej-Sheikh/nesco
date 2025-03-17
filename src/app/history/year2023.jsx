@@ -1,5 +1,5 @@
 "use client";
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -7,11 +7,29 @@ import XIX from "@/assests/history/XIX.png";
 
 const Year2023 = () => {
   const [Year2023InView, setYear2023InView] = useState(false);
+  const [count, setCount] = useState(1000);
   const { ref: Year2023Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
     onChange: (inView) => setYear2023InView(inView),
   });
+
+    useEffect(() => {
+        if (Year2023InView) {
+          const interval = setInterval(() => {
+            setCount((prevCount) => {
+              const nextCount = prevCount + 5;
+              if (nextCount >= 2023) {
+                clearInterval(interval);
+                return 2023; // Stop exactly at 2023
+              }
+              return nextCount;
+            });
+          }, 10); // Fast counting interval
+    
+          return () => clearInterval(interval);
+        }
+      }, [Year2023InView]);
 
   return (
     <motion.div
@@ -53,7 +71,7 @@ const Year2023 = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className=" h-fit w-fit relative text-6xl md:text-8xl font-branding-bold lg:text-9xl text-white  sm:left-0 md:left-[5vh] lg:left-1/2  sm:top-0 lg:top-[20vh]  m-2"
             >
-              2023
+              {count}
               <motion.div
                 initial={{ opacity: 0, width: 0 }}
                 animate={Year2023InView ? { opacity: 1, width: "90%" } : {}}

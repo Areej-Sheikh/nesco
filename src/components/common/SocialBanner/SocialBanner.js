@@ -8,8 +8,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 import Image from "next/image";
+import Cards from "../cards/Cards";
 
-function SocialBanner1({ SliderData, title }) {
+function SocialBanner1({ SliderData, title, onReadMore, isModalOpen, selectedCard, closeModal }) {
   const sliderRef = React.useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -70,7 +71,7 @@ function SocialBanner1({ SliderData, title }) {
                 <p className="text-3xl text-center">{SliderData[0].title1}</p>
                 <p className="text-3xl text-center">{SliderData[0].title2}</p>
                 <button className="border border-white px-6 py-3 text-white mt-8">
-                  <Link href={SliderData[0].link}>Read More</Link>
+                  <Link href={SliderData[0].link}> </Link>
                 </button>
               </div>
               <Image
@@ -89,8 +90,11 @@ function SocialBanner1({ SliderData, title }) {
                   <div className="absolute w-full h-full flex flex-col justify-center items-center font-branding-medium">
                     <p className="text-4xl text-center">{data.title1}</p>
                     <p className="text-4xl text-center">{data.title2}</p>
-                    <button className="border border-white px-6 py-3 text-white mt-8 tracking-widest">
-                      <Link href={data.link}>Read More</Link>
+                    <button
+                      className="border border-white px-6 py-3 text-white mt-8 tracking-widest cursor-pointer"
+                      onClick={() => onReadMore(data)}
+                    >
+                      Read More
                     </button>
                   </div>
                   <Image
@@ -103,6 +107,14 @@ function SocialBanner1({ SliderData, title }) {
             </Slider>
           )}
         </div>
+
+        {isModalOpen && (
+          <Cards
+            CardData={[selectedCard]}
+            isModalOpen={isModalOpen}
+            closeModal={closeModal}
+          />
+        )}
       </div>
     </div>
   );

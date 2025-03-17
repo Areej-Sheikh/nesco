@@ -94,8 +94,8 @@ const Year1952 = () => {
             animate={year1952InView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, delay: 0.8 }}
           >
-            By this time, SEC was taking over & reviving the fortunes of
-            several struggling companies to build an engineering powerhouse.
+            By this time, SEC was taking over & reviving the fortunes of several
+            struggling companies to build an engineering powerhouse.
           </motion.p>
         </span>
       </motion.div>

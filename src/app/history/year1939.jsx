@@ -27,7 +27,7 @@ const Year1939 = () => {
           }
           return nextCount;
         });
-      }, 5); // Fast interval for smooth counting
+      }, 8); // Fast interval for smooth counting
 
       return () => clearInterval(interval);
     }

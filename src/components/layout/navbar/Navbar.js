@@ -52,7 +52,7 @@ function Navbar({ activeSlide }) {
       title: "Our Impact",
       route: "",
       subMenu: [
-        { title: "Corporate Social Responsibility", route: "/social" },
+        { title: "Corporate Social Responsibility", route: "/social-responsibility" },
         { title: "Sustainability", route: "/sustainability" },
       ],
     },

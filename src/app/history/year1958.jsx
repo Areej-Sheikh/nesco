@@ -1,16 +1,34 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Year1958 = () => {
   const [year1958InView, setYear1958InView] = React.useState(false);
+  const [count, setCount] = useState(1000);
 
   const { ref: year1958Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
     onChange: (inView) => setYear1958InView(inView),
   });
+
+    useEffect(() => {
+        if (year1958InView) {
+          const interval = setInterval(() => {
+            setCount((prevCount) => {
+              const nextCount = prevCount + 5;
+              if (nextCount >= 1958) {
+                clearInterval(interval);
+                return 1958; // Stop exactly at 1958
+              }
+              return nextCount;
+            });
+          }, 10); // Fast counting interval
+    
+          return () => clearInterval(interval);
+        }
+      }, [year1958InView]);
 
   return (
     <motion.div
@@ -29,7 +47,7 @@ const Year1958 = () => {
         className="topDiv flex relative items-center justify-center m-4 border-b-2 border-cyan-300 w-full"
       >
         <p className="text-[60px] sm:text-[70px] md:text-[80px] lg:text-[100px] text-cyan-400 font-bold">
-          1958
+          {count}
         </p>
       </motion.div>
       <motion.div

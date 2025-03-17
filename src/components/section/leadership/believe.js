@@ -17,11 +17,11 @@ function believe() {
         </div>
         <div className="flex relative mt-10">
           <div className=" flex lg:flex-row flex-col xl:items-start items-center w-full gap-10 overflow-hidden">
-            <div className="relative h-[430px] lg:w-[40%] w-full">
+            <div className="relative h-[430px] lg:w-[40%] w-full top-2">
               <Image
                 src={chessImage}
                 alt="Chess Image"
-                className="object-cover w-full h-full "
+                className=" w-[80%] h-full md:ml-[8vh] 2xl:ml-[15vh] "
                 priority
               />
             </div>

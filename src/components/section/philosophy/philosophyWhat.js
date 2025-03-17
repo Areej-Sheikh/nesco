@@ -2,7 +2,6 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef, useState } from "react";
-import Typewriter from "typewriter-effect";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,20 +23,43 @@ function PhilosophyWhat() {
   const headerRef = useRef(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentText((prevIndex) => (prevIndex + 1) % text.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (textContainerRef.current) {
+    const fadeIn = () => {
       gsap.fromTo(
         textContainerRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 1.5, ease: "power2.out" }
+        { opacity: 0, clipPath: "inset(0% 100% 0% 0%)" },
+        {
+          opacity: 1,
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 1.2,
+          ease: "power2.out",
+        }
       );
-    }
+    };
+
+    const fadeOut = () => {
+      gsap.fromTo(
+        textContainerRef.current,
+        { opacity: 1, clipPath: "inset(0% 0% 0% 0%)" },
+        {
+          opacity: 0,
+          clipPath: "inset(0% 100% 0% 0%)", // Same direction as fade-in
+          duration: 1.2,
+          ease: "power2.in",
+        }
+      );
+    };
+
+    fadeIn();
+
+    const interval = setInterval(() => {
+      fadeOut(); // Fade out before changing text
+      setTimeout(() => {
+        setCurrentText((prevIndex) => (prevIndex + 1) % text.length);
+        fadeIn(); // Fade in after changing text
+      }, 1000);
+    }, 4000);
+
+    return () => clearInterval(interval);
   }, [currentText]);
 
   useEffect(() => {
@@ -51,7 +73,7 @@ function PhilosophyWhat() {
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%", // Start animation when the top of the section reaches 80% of the viewport height
+          start: "top 80%",
           toggleActions: "play none none none",
         },
       }
@@ -93,14 +115,7 @@ function PhilosophyWhat() {
                 index === 3 ? "md:pr-32 pr-16" : ""
               } ${index === 5 ? "md:pr-40 pr-24" : ""}`}
             >
-              <Typewriter
-                options={{
-                  strings: [word],
-                  autoStart: true,
-                  loop: true,
-                  cursor: "",
-                }}
-              />
+              {word}
             </p>
           ))}
         </div>
@@ -109,7 +124,7 @@ function PhilosophyWhat() {
             ref={headerRef}
             className="xl:text-6xl lg:text-5xl md:text-4xl text-2xl text-[#00B6F1] font-branding-semibold xl:-ml-40 xl:-mb-10"
           >
-            What We
+            What We  
             <br /> Do Is Believe
           </p>
         </div>

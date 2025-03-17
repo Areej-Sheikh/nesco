@@ -12,7 +12,7 @@ function SlidedownCard({ data }) {
   return (
     <div className="w-full flex flex-col md:items-center px-5 md:px-0">
       {data.map((v, i) => (
-        <div key={i} className="md:w-[50%] my-2">
+        <div key={i} className="md:w-[50%] my-2 relative">
           <h3
             className="font-branding-medium text-3xl text-white flex justify-between items-center cursor-pointer"
             onClick={() => handleToggle(i)}
@@ -29,13 +29,13 @@ function SlidedownCard({ data }) {
 
           {/* Dropdown content */}
           <div
-            className={`transition-all duration-700 ease-in-out overflow-hidden ${
+            className={`transition-all duration-500 ease-in-out overflow-hidden relative left-0 w-full z-10 ${
               openIndex === i
-                ? "opacity-100 max-h-[300px] mt-2"
+                ? "opacity-100 max-h-[300px]"
                 : "opacity-0 max-h-0"
             }`}
           >
-            <div className="bg-[#114086] mt-3 text-white p-3 opacity-65">
+            <div className="bg-[#114086] text-white p-3 opacity-65">
               <p>{v.description.address1}</p>
               <p>{v.description.address2}</p>
               <p>{v.description.city}</p>

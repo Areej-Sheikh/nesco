@@ -1,18 +1,37 @@
 "use client";
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import historyThree from "@/assests/history/historyThree.png";
 
 const Year1956 = () => {
-  const [year1956InView, setYear1956InView] = React.useState(false);
+  const [year1956InView, setYear1956InView] = useState(false);
+   const [count, setCount] = useState(1000);
 
   const { ref: year1956Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
     onChange: (inView) => setYear1956InView(inView),
   });
+
+ useEffect(() => {
+    if (year1956InView) {
+      const interval = setInterval(() => {
+        setCount((prevCount) => {
+          const nextCount = prevCount + 5;
+          if (nextCount >= 1956) {
+            clearInterval(interval);
+            return 1956; // Stop exactly at 1952
+          }
+          return nextCount;
+        });
+      }, 10); // Fast counting interval
+
+      return () => clearInterval(interval);
+    }
+  }, [year1956InView]);
 
   return (
     <motion.div
@@ -41,7 +60,7 @@ const Year1956 = () => {
 
         <div className="content flex flex-col sm:flex-row items-center relative top-4 w-full sm:w-fit m-2 p-3 gap-3 bg-white rounded-md">
           <div className="div1 flex p-2 items-center">
-            <p className="text-2xl sm:text-3xl text-gray-400">1956</p>
+            <p className="text-2xl sm:text-3xl text-gray-400">{count}</p>
           </div>
 
           <div className="div2 flex p-2 text-lg sm:text-xl text-cyan-800 text-center sm:text-left">
