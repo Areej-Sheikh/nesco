@@ -12,8 +12,8 @@ function ScrollSnip({ Children }) {
   // Smoother snap configuration
   const snapConfig = {
     snapTo: 1,
-    // duration: { min: 0.1, max: 1 },
-    ease:"expo.out",
+    duration:0.5,
+    ease:"power1.out",
     inertia: true,
     delay: 0, 
   };

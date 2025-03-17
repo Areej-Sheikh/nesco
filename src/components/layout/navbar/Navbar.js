@@ -121,6 +121,7 @@ function Navbar({ activeSlide }) {
       onLeave: () => setIsScrolled(true),
       onEnterBack: () => setIsScrolled(false),
       onLeaveBack: () => setIsScrolled(true),
+      animation: gsap.to(".navbar", { opacity: 1, duration: 0.05 }),
     });
 
     // Header White Section
@@ -132,6 +133,7 @@ function Navbar({ activeSlide }) {
       onLeave: () => setIsHeaderWhite(false),
       onEnterBack: () => setIsHeaderWhite(true),
       onLeaveBack: () => setIsHeaderWhite(false),
+      animation: gsap.to(".navbar", { opacity: 1, duration: 0.05 }),
     });
 
     // Footer Section
@@ -278,7 +280,7 @@ function Navbar({ activeSlide }) {
   return (
     <nav
        key={activeSlide}
-      className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed transition-all duration-300 ${changeNavbar()} ${changeNavbar1()}`}
+      className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed transition-all duration-50 ${changeNavbar()} ${changeNavbar1()}`}
     >
       {!isScrolled && (
         <div className="fixed top-0 left-0 py-6 md:px-16 px-8 w-full h-20"></div>
