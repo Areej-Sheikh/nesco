@@ -8,14 +8,14 @@ gsap.registerPlugin(ScrollTrigger);
 function ScrollSnip({ Children }) {
   const containerRef = useRef(null);
   const [isDesktop, setIsDesktop] = useState(false);
-  
+
   // Smoother snap configuration
   const snapConfig = {
     snapTo: 1,
-    duration:0.5,
-    ease:"power1.out",
+    duration: 0.3,
+    ease: "power1.out",
     inertia: true,
-    delay: 0, 
+    delay: 0,
   };
 
   useEffect(() => {
@@ -56,9 +56,9 @@ function ScrollSnip({ Children }) {
       trigger: lastSection,
       start: "bottom bottom",
       end: "bottom top",
-      onEnter: () => triggers.forEach(t => t.kill()),
+      onEnter: () => triggers.forEach((t) => t.kill()),
       onLeaveBack: () => {
-        triggers = sections.map(section => 
+        triggers = sections.map((section) =>
           ScrollTrigger.create({
             trigger: section,
             start: "top top",
@@ -70,7 +70,7 @@ function ScrollSnip({ Children }) {
     });
 
     return () => {
-      triggers.forEach(t => t.kill());
+      triggers.forEach((t) => t.kill());
       lastTrigger.kill();
     };
   }, [isDesktop]);
@@ -88,8 +88,8 @@ function ScrollSnip({ Children }) {
   return (
     <div className="container1 font-branding-medium" ref={containerRef}>
       {Children.map((data, index) => (
-        <div 
-          className={` overflow-hidden ${data.classCss}`} 
+        <div
+          className={` overflow-hidden ${data.classCss}`}
           key={index}
           style={{ transform: "translateZ(0)" }} // Boost performance
         >
