@@ -25,16 +25,17 @@ function PhilosophyForUs() {
 
   useEffect(() => {
     if (blueSqRef.current) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            autoToggleLines();
-          }
-        },
-        { threshold: 0.5 }
-      );
-      observer.observe(blueSqRef.current);
-      return () => observer.disconnect();
+      autoToggleLines();
+      // const observer = new IntersectionObserver(
+      //   (entries) => {
+      //     if (entries[0].isIntersecting) {
+      //       autoToggleLines();
+      //     }
+      //   },
+      //   { threshold: 0.5 }
+      // );
+      // observer.observe(blueSqRef.current);
+      // return () => observer.disconnect();
     }
   }, []);
 
@@ -61,7 +62,7 @@ function PhilosophyForUs() {
     setTimeout(() => {
       blueSqRef.current.classList.remove("lineform");
       autoToggleLines2();
-    }, 5000);
+    }, 3000);
   }
 
   function autoToggleLines2() {
