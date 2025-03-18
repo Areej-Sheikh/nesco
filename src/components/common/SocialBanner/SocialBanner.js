@@ -70,12 +70,14 @@ function SocialBanner1({ SliderData, title, onReadMore, isModalOpen, selectedCar
               <div className="absolute w-full h-full flex flex-col justify-center items-center font-branding-medium">
                 <p className="text-3xl text-center">{SliderData[0].title1}</p>
                 <p className="text-3xl text-center">{SliderData[0].title2}</p>
-                <button className="border border-white px-6 py-3 text-white mt-8">
+                <button className="border border-white px-6 py-3 text-white mt-8"
+                onClick={() => onReadMore(SliderData[0])}>
                   <Link href={SliderData[0].link}> </Link>
+                  Read More
                 </button>
               </div>
               <Image
-                src={SliderData[0].image}
+                src={SliderData[0].bImage}
                 alt="banner image"
                 className="mx-auto w-full h-full object-cover "
               />
@@ -98,7 +100,7 @@ function SocialBanner1({ SliderData, title, onReadMore, isModalOpen, selectedCar
                     </button>
                   </div>
                   <Image
-                    src={data.image}
+                    src={data.bImage}
                     alt="banner image"
                     className="mx-auto w-full h-full object-cover "
                   />

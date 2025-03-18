@@ -57,7 +57,7 @@ const Year2017 = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={year2017InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className=" h-fit w-fit relative text-6xl md:text-7xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[15vh] m-2"
+              className=" h-fit w-fit relative text-6xl md:text-7xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[5vh] m-2"
             >
               {count}
               <motion.div
@@ -73,7 +73,7 @@ const Year2017 = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={year2017InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="bottomText flex relative sm:w-full md:w-[70%]  lg:top-[15vh] left-0 sm:left-0  p-2"
+              className="bottomText flex relative sm:w-full md:w-[70%]  lg:top-[10vh] left-0 sm:left-0  p-2"
             >
               <p className="text-sm sm:text-lg md:text-lg lg:text-xl text-white font-poppins">
                 Nesco Events comes to life, delighting patrons with intellectual

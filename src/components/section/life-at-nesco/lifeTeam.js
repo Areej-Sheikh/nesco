@@ -6,12 +6,12 @@ function LifeTeam() {
   return (
     <section className="header_color_black goal-section1 w-full bg-[#EDEDED] lg:h-screen h-full pb-10 flex flex-col justify-center">
       <div className="grid md:grid-cols-2 justify-between gap-10 pt-24 xl:items-start items-center w-[90%] mx-auto ">
-        <div className="relative h-[300px] md:h-[650px]">
+        <div className="relative h-auto w-auto">
           <Image
             src={TeamImage}
             alt="Four People standing in a line and all of them looking forward"
-            fill
-            className="object-cover"
+            
+            className="md:w-full md:h-full"
             priority
           />
         </div>
@@ -25,13 +25,13 @@ function LifeTeam() {
             </h2>
           </div>
           <div className="space-y-4 mt-8">
-            <p className="md:text-3xl text-xl text-justify font-branding-medium">
+            <p className="md:text-xl lg:text-3xl text-justify font-branding-medium">
               At Nesco, our mission is to enhance and enrich lives through every
               product, service, and experience we create. This commitment
               extends to our employees as well, where we provide meaningful work
               and foster personal growth.
             </p>
-            <p className="md:text-3xl text-xl text-justify font-branding-medium pt-5">
+            <p className="md:text-xl lg:text-3xl text-justify font-branding-medium pt-5">
               Inspired by our founder, J.V. Patel, who established scholarships
               for the children of factory workers, we prioritize social
               responsibility and encourage a sense of purpose in every team

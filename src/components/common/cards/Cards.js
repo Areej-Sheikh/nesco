@@ -9,7 +9,7 @@ import MentorImage5 from "@/assests/leadership/27-1.jpg";
 import MentorImage6 from "@/assests/leadership/28-1.jpg";
 
 // Modal Component
-const MentorModal = ({ isOpen, onClose, data }) => {
+export const MentorModal = ({ isOpen, onClose, data }) => {
   const modalRef = useRef(null); // Create a ref for the modal
 
   useEffect(() => {
@@ -33,34 +33,54 @@ const MentorModal = ({ isOpen, onClose, data }) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center" onClick={onClose} > {/* Added onClick to the backdrop to also close modal if clicked on backdrop */}
-      <div className="bg-white p-6 rounded-lg shadow-xl max-w-6xl w-full" ref={modalRef} onClick={(e) => e.stopPropagation()}> {/* Added ref to the modal content and stopPropagation to prevent backdrop click from closing when clicking inside modal */}
-        <button onClick={onClose} className="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center"
+      onClick={onClose}
+    >
+      {" "}
+      {/* Added onClick to the backdrop to also close modal if clicked on backdrop */}
+      <div
+        className="bg-white p-6 rounded-lg shadow-xl max-w-6xl w-full"
+        ref={modalRef}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {" "}
+        {/* Added ref to the modal content and stopPropagation to prevent backdrop click from closing when clicking inside modal */}
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+        >
           <p>x</p>
         </button>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div
+          className={`grid gap-8 ${
+            data.image ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
+          }`}
+        >
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-branding-semibold">{data.name}</h2>
             <p className="text-gray-700">{data.position}</p>
             <p className="text-gray-800">{data.description}</p>
           </div>
-          <div className="flex justify-center items-center">
-            <Image
-              src={data.image}
-              alt={data.name}
-              className="rounded-lg object-cover max-h-96"
-              width={400}
-              height={400}
-            />
-          </div>
+
+          {data.image && (
+            <div className="flex justify-center items-center">
+              <Image
+                src={data.image}
+                alt={data.name}
+                className="rounded-lg object-cover max-h-96"
+                width={400}
+                height={400}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-
-function Cards({CardData}) {
+function Cards({ CardData }) {
   const [CardDatas, setCardDatas] = useState(CardData);
   const [selectedCard, setSelectedCard] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,12 +95,16 @@ function Cards({CardData}) {
     setSelectedCard(null);
   };
 
-
   return (
     <div className="w-full  py-4 flex justify-center">
       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-[90%]">
         {CardDatas?.map((data, index) => (
-          <div key={index} className="flex justify-center" onClick={() => openModal(data)} style={{cursor: 'pointer'}}>
+          <div
+            key={index}
+            className="flex justify-center"
+            onClick={() => openModal(data)}
+            style={{ cursor: "pointer" }}
+          >
             <div className="flex flex-col gap-1 w-[20rem] py-4 px-4 border-gray-500  border-2 h-full items-center ">
               <Image
                 src={data.image}
@@ -103,7 +127,11 @@ function Cards({CardData}) {
           </div>
         ))}
       </div>
-      <MentorModal isOpen={isModalOpen} onClose={closeModal} data={selectedCard} />
+      <MentorModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        data={selectedCard}
+      />
     </div>
   );
 }

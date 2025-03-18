@@ -16,13 +16,13 @@ function LifeCommitment() {
             </h2>
           </div>
           <div className="space-y-4 mt-8">
-            <p className="md:text-3xl text-xl text-justify font-branding-medium">
+            <p className="md:text-xl lg:text-3xl text-justify font-branding-medium">
               At Nesco, our mission is to enhance and enrich lives through every
               product, service, and experience we create. This commitment
               extends to our employees as well, where we provide meaningful work
               and foster personal growth.
             </p>
-            <p className="md:text-3xl text-xl text-justify font-branding-medium pt-5">
+            <p className="md:text-xl lg:text-3xl text-justify font-branding-medium pt-5">
               Inspired by our founder, J.V. Patel, who established scholarships
               for the children of factory workers, we prioritize social
               responsibility and encourage a sense of purpose in every team
@@ -31,12 +31,12 @@ function LifeCommitment() {
             </p>
           </div>
         </div>
-        <div className="relative h-[200px]  sm:h-[300px] md:h-[500px] lg:h-[650px] xl:h-[750px] w-full max-w-full aspect-[16/9]">
+        <div className="relative h-auto w-auto ">
           <Image
             src={CommitmentImage}
             alt="Two People shaking hand"
-            fill
-            className="object-cover"
+            
+            className="md:w-full md:h-full"
             priority
           />
         </div>

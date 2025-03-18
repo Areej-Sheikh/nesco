@@ -56,7 +56,7 @@ const Year2023Sec2 = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={Year2023Sec2InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className=" h-fit w-fit relative text-6xl md:text-7xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[20vh] m-2"
+              className=" h-fit w-fit relative text-6xl md:text-7xl lg:text-9xl font-poppins  text-cyan-500 left-2 sm:left-0  sm:top-0 lg:top-[10vh] m-2"
             >
               {count}
               <motion.div
@@ -72,7 +72,7 @@ const Year2023Sec2 = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={Year2023Sec2InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="bottomText flex relative sm:w-full md:w-[70%]  lg:top-[20vh] left-0 sm:left-0  p-2"
+              className="bottomText flex relative sm:w-full md:w-[70%]  lg:top-[12vh] left-0 sm:left-0  p-2"
             >
               <p className="text-sm sm:text-lg md:text-lg lg:text-xl text-white font-poppins">
                 Added a premium lounge/bar “Dress Circle” towards the end of the

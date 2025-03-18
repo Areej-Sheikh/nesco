@@ -27,7 +27,7 @@
 }
 
 .navbarAnimation {
-  animation: close 1.5s ease-out 1;
+  animation: close 0.35s ease-out 1;
   transition: all 1s;
 }
 @keyframes close {
