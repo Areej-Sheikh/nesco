@@ -69,7 +69,7 @@ const Year2023 = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={Year2023InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className=" h-fit w-fit relative text-6xl md:text-8xl font-branding-bold lg:text-9xl text-white  sm:left-0 md:left-[5vh] lg:left-1/2  sm:top-0 lg:top-[20vh]  m-2"
+              className=" h-fit w-fit relative text-6xl md:text-8xl font-branding-bold lg:text-9xl text-white  sm:left-0 md:left-[5vh] lg:left-1/3  sm:top-0 lg:top-[10vh]  m-2"
             >
               {count}
               <motion.div
@@ -85,7 +85,7 @@ const Year2023 = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={Year2023InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="bottomText flex relative sm:w-full md:w-[70%]  sm:left-0 md:left-1/3 lg:left-1/4 lg:top-[20vh]   p-2"
+              className="bottomText flex relative sm:w-full md:w-[70%]  sm:left-0 md:left-1/3 lg:left-1/4 lg:top-[10vh]   p-2"
             >
               <p className="text-sm sm:text-lg md:text-lg lg:text-xl text-white font-poppins">
                 Recognition as one of the Top 10 Brands in Real Estate

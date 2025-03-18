@@ -131,7 +131,7 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <div className="historyDiv header_purple max-w-full flex flex-col overflow-x-hidden overflow-y-hidden">
+      <div className="historyDiv header_purple max-w-full flex flex-col overflow-x-hidden overflow-y-auto scrollbar-hide">
         <Timeline years={years} isFooterVisible={isFooterVisible} />
 
         <div className="rightSectionContainer w-fit h-fit m-2  lg:ml-[15%]">

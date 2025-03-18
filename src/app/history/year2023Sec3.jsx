@@ -64,13 +64,13 @@ const Year2023Sec3 = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="leftDiv flex flex-col sm:w-full md:w-[50%] lg:w-[50%] relative "
         >
-          <div className="contentDiv flex flex-col relative gap-10  bg-cyan-400 md:top-[10vh] lg:top-[25vh] p-12 sm:left-0 md:left-[15%] lg:left-[0vh] lg:h-[60vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
+          <div className="contentDiv flex flex-col relative gap-10  bg-cyan-400 md:top-[10vh] lg:top-[5vh] 2xl:top-[20vh] p-12 sm:left-0 md:left-[15%] lg:left-[0vh] lg:h-[55vh] 2xl:h-[60vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
             {/* Year Heading */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
               animate={Year2023Sec3InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="h-fit w-fit  relative text-6xl  md:text-8xl font-branding-bold lg:text-9xl text-white sm:left-0 md:left-[5vh] lg:left-1/2 sm:top-0 lg:top-[10vh] m-2"
+              className="h-fit w-fit  relative text-6xl  md:text-8xl font-branding-bold lg:text-9xl text-white sm:left-0 md:left-[5vh] lg:left-1/3 sm:top-0 lg:top-[5vh] m-2"
             >
               {count}
               {/* Horizontal Line */}
@@ -87,7 +87,7 @@ const Year2023Sec3 = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={Year2023Sec3InView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="bottomText flex relative sm:w-full md:w-[70%]  sm:left-0 md:left-1/3 lg:left-1/4 lg:top-[15vh]   p-2"
+              className="bottomText flex relative sm:w-full md:w-[70%]  sm:left-0 md:left-1/3 lg:left-1/3 lg:top-[5vh]    p-2"
             >
               <p className="text-sm sm:text-lg md:text-lg lg:text-xl text-white font-poppins">
                 Food Connoisseurs India Awards – Best Customer Experience in
