@@ -5,21 +5,53 @@ import React, { useState, useEffect } from "react";
 
 function Quote() {
   const [exchange, setExchange] = useState("BSE");
-  const [startDate, setStartDate] = useState({ day: 3, month: 1, year: 2025 });
-  const [endDate, setEndDate] = useState({ day: 3, month: 1, year: 2025 });
+  const [startDate, setStartDate] = useState({ day: 18, month: 3, year: 2025 });
+  const [endDate, setEndDate] = useState({ day: 18, month: 3, year: 2025 });
   const [historicalData, setHistoricalData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const API_ENDPOINT_HISTORICAL = "/api/historical-quote"; // Next.js API route
 
+  const fetchData = async () => {
+    setLoading(true);
+
+    const startDateStr = new Date()?.toLocaleDateString();
+    const endDateStr = new Date()?.toLocaleDateString();
+    try {
+      const response = await fetch(
+        `${API_ENDPOINT_HISTORICAL}?exchange=${exchange}&startDate=${startDateStr}&endDate=${endDateStr}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const apiData = await response.json();
+      setHistoricalData(transformHistoricalData(apiData));
+    } catch (e) {
+      console.error("Error fetching historical data:", e);
+      setError("Failed to load historical stock data. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const handleSearch = async () => {
     setLoading(true);
     setError(null);
     setHistoricalData(null); // Clear previous data
 
-    const startDateStr = `${startDate.year}-${String(startDate.month).padStart(2, '0')}-${String(startDate.day).padStart(2, '0')}`;
-    const endDateStr = `${endDate.year}-${String(endDate.month).padStart(2, '0')}-${String(endDate.day).padStart(2, '0')}`;
+    const startDateStr = `${startDate.year}-${String(startDate.month).padStart(
+      2,
+      "0"
+    )}-${String(startDate.day).padStart(2, "0")}`;
+    const endDateStr = `${endDate.year}-${String(endDate.month).padStart(
+      2,
+      "0"
+    )}-${String(endDate.day).padStart(2, "0")}`;
 
     try {
       const response = await fetch(
@@ -39,20 +71,32 @@ function Quote() {
   };
 
   const transformHistoricalData = (apiData) => {
-    if (!apiData || !Array.isArray(apiData)) {
-      return null; // Handle cases where API data is missing or not an array
-    }
+    console.log(apiData, "STEDATA");
 
-    const rows = apiData.map(item => ({
-      date: item.date || "-", // Assuming API returns 'date' field
-      openPrice: item.openPrice ? `₹${parseFloat(item.openPrice).toFixed(2)}` : "-", // Format price
-      highPrice: item.highPrice ? `₹${parseFloat(item.highPrice).toFixed(2)}` : "-",
-      lowPrice: item.lowPrice ? `₹${parseFloat(item.lowPrice).toFixed(2)}` : "-",
-      closePrice: item.closePrice ? `₹${parseFloat(item.closePrice).toFixed(2)}` : "-",
-      tradedValue: item.tradedValue || "-", // You might need to format traded value
-      noOfTrades: item.noOfTrades || "-",
-      tradedQuantity: item.tradedQuantity || "-",
-    }));
+    // if (!apiData || !Array.isArray(apiData)) {
+    //   return null;
+    // }
+
+    const rows = [
+      {
+        date: apiData?.date || "-",
+        openPrice: apiData?.bse_bid_price
+          ? `₹${parseFloat(apiData?.bse_bid_price).toFixed(2)}`
+          : "-",
+        highPrice: apiData?.bse_offer_price
+          ? `₹${parseFloat(apiData?.bse_offer_price).toFixed(2)}`
+          : "-",
+        lowPrice: apiData?.nse_bid_price
+          ? `₹${parseFloat(apiData?.nse_bid_price).toFixed(2)}`
+          : "-",
+        closePrice: apiData?.bse_close
+          ? `₹${parseFloat(apiData?.bse_close).toFixed(2)}`
+          : "-",
+        tradedValue: apiData.tradedValue || "-",
+        noOfTrades: apiData.noOfTrades || "-",
+        tradedQuantity: apiData.tradedQuantity || "-",
+      },
+    ];
 
     return {
       title: "DATE",
@@ -70,10 +114,9 @@ function Quote() {
     };
   };
 
-
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const months = Array.from({ length: 12 }, (_, i) => i + 1);
-  const years = Array.from({ length: 20 }, (_, i) => 2005 + i); // Adjusted year range
+  const years = Array.from({ length: 21 }, (_, i) => 2005 + i); // Adjusted year range
 
   return (
     <div className="goal-section1 flex flex-col justify-center items-center py-10 font-branding-medium mt-0 lg:mt-10">
@@ -222,7 +265,9 @@ function Quote() {
               ClassCss1="font-size:16px"
             />
           )}
-          {!loading && !error && !historicalData && <p>No historical data found for the selected period.</p>}
+          {!loading && !error && !historicalData && (
+            <p>No historical data found for the selected period.</p>
+          )}
         </div>
         <div className="w-full font-branding-medium">
           <p>^Traded Value Rs. in Crores.</p>
