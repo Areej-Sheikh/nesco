@@ -13,17 +13,15 @@ function MainFinancials() {
       classCss: "section",
     },
     {
-      comp: (
-        <AnimateOnScroll>
-          <FinancialResult />
-        </AnimateOnScroll>
-      ),
+      comp: <FinancialResult />,
       classCss: "section",
     },
   ];
   return (
     <Pagewrapper>
-      <ScrollSnip Children={Children} />
+      <FinancialsBanner />
+      <FinancialResult />
+      {/* <ScrollSnip Children={Children} /> */}
     </Pagewrapper>
   );
 }
