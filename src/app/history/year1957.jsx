@@ -51,9 +51,9 @@ const Year1957 = () => {
         <Image
           src={historyFour}
           alt="Historical Image"
-          width={1000}
-          height={800}
-          className="w-full h-auto object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+          width={1500}
+          height={900}
+          className="w-full sm:max-w-[100%] md:max-w-[90%] lg:max-w-[100%] h-auto object-cover transition-transform duration-300 ease-in-out hover:scale-105"
           priority
         />
 
@@ -62,7 +62,7 @@ const Year1957 = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={year1957InView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="year absolute top-1/2 left-1/3 md:left-1/4  transform -translate-x-1/2 -translate-y-1/2 flex flex-row"
+          className="year absolute inset-0 flex justify-center items-center"
         >
           <p className="text-6xl sm:text-7xl md:text-8xl lg:text-[100px] text-white font-branding-bold">
             {count}

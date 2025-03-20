@@ -92,10 +92,10 @@ const ExperiencedForm = () => {
       <Navbar activeSlide={activeSlide} />
       <div className="flex justify-center items-center min-h-screen bg-gray-100 py-24">
         <Card
-          className="w-full md:w-[1400px] bg-white rounded-xl overflow-hidden"
+          className="w-full md:w-[1400px] bg-white rounded-xl overflow-hidden lg:mt-[7vh]"
           bodyStyle={{ padding: 0 }}
         >
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row ">
             {/* Left Side - Image */}
             <div className="w-full md:w-1/2">
               <Image
