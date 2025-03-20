@@ -52,7 +52,10 @@ function Navbar({ activeSlide }) {
       title: "Our Impact",
       route: "",
       subMenu: [
-        { title: "Corporate Social Responsibility", route: "/social-responsibility" },
+        {
+          title: "Corporate Social Responsibility",
+          route: "/social-responsibility",
+        },
         { title: "Sustainability", route: "/sustainability" },
       ],
     },
@@ -87,7 +90,7 @@ function Navbar({ activeSlide }) {
       return newStates;
     });
     setIsOpen(index);
-    setTextWhite(true)
+    setTextWhite(true);
   };
 
   const handleMouseLeave = (index) => {
@@ -97,8 +100,7 @@ function Navbar({ activeSlide }) {
       return newStates;
     });
     // setIsOpen(null);
-    setTextWhite(false)
-
+    setTextWhite(false);
   };
 
   const handleMouseLeave1 = () => {
@@ -191,13 +193,13 @@ function Navbar({ activeSlide }) {
     if (textBlack) {
       return "text-black border-black";
     }
-    if( textWhite === true && !(isOpen === 4 || isOpen === 5)){
+    if (textWhite === true && !(isOpen === 4 || isOpen === 5)) {
       return "text-white border-white";
     }
-    if(isClosed){
+    if (isClosed) {
       return "text-white border-white";
     }
-    
+
     if (isFooter) {
       return "text-white border-white"; // Apply white text for purple header
     }
@@ -215,9 +217,7 @@ function Navbar({ activeSlide }) {
     }
     if (isScrolled) {
       return "text-black border-black";
-    }
-
-    else return "text-white border-white";
+    } else return "text-white border-white";
   };
 
   useEffect(() => {
@@ -236,10 +236,10 @@ function Navbar({ activeSlide }) {
     if (textBlack) {
       return Nescologo;
     }
-    if( textWhite === true && !(isOpen === 4 || isOpen === 5)){
+    if (textWhite === true && !(isOpen === 4 || isOpen === 5)) {
       return Nescologo2;
     }
-    if(isClosed){
+    if (isClosed) {
       return Nescologo2;
     }
     if (isFooter) {
@@ -266,20 +266,20 @@ function Navbar({ activeSlide }) {
   const changeNavbar = () => {
     if (activePurpleSection) {
       // return "bg-[#403092]"; // Apply purple background when a purple section is active
-      return "bg-[#2b2a76]"
+      return "bg-[#2b2a76]";
     }
     return ""; // Return empty string for other cases
   };
   const changeNavbar1 = () => {
     if (isFooter) {
       // return "bg-[#403092]"; // Apply purple background when isPurple is true
-      return "bg-[#2b2a76]"
+      return "bg-[#2b2a76]";
     }
   };
 
   return (
     <nav
-       key={activeSlide}
+      key={activeSlide}
       className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed transition-all duration-50 ${changeNavbar()} ${changeNavbar1()}`}
     >
       {!isScrolled && (
@@ -326,8 +326,7 @@ function Navbar({ activeSlide }) {
           <span
             className={`inline-block cursor-pointer absolute top-1/2 ${getTextColor()} -translate-y-1/2 right-5`}
           >
-            <GoSearch className="text-[20px] "
-            strokeWidth={1} />
+            <GoSearch className="text-[20px] " strokeWidth={1} />
           </span>
         </div>
       </div>
@@ -381,7 +380,12 @@ function Navbar({ activeSlide }) {
                     <ul className="flex flex-col gap-6 w-[60%] pl-10 pr-20 py-5 text-white">
                       {data.subMenu.map((subData, subIndex) => (
                         <li key={subIndex} className=" text-xl">
-                          <Link href={subData.route} className="hover:text-secondary text-white transition-all duration-200">{subData.title}</Link>
+                          <Link
+                            href={subData.route}
+                            className="hover:text-secondary text-white transition-all duration-200"
+                          >
+                            {subData.title}
+                          </Link>
                         </li>
                       ))}
                     </ul>

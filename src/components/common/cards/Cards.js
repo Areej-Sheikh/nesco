@@ -24,6 +24,8 @@ export const MentorModal = ({ isOpen, onClose, data }) => {
 
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
+      // Disable scrolling when modal is open
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
@@ -65,6 +67,7 @@ export const MentorModal = ({ isOpen, onClose, data }) => {
       //   </Button>,
       // ]}
       footer={false}
+      centered
     >
       <div ref={modalRef} className="w-full h-full -mb-2 p-4">
         <div
@@ -111,7 +114,7 @@ function Cards({ CardData }) {
 
   return (
     <div className="w-full  py-4 flex justify-center">
-      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-[90%]">
+      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 w-[90%]">
         {CardDatas?.map((data, index) => (
           <div
             key={index}
@@ -119,7 +122,7 @@ function Cards({ CardData }) {
             style={{ cursor: "pointer" }}
           >
             <div
-              className="flex flex-col gap-1 w-[19rem] py-4 px-4 border-gray-500  border-2 h-full items-center "
+              className="flex flex-col gap-1 w-[19rem] py-3 px-3 border-gray-500  border-2 h-full items-center "
               onClick={() => openModal(data)}
             >
               <Image

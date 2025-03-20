@@ -43,19 +43,17 @@ const Year1939 = () => {
       transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
     >
       {/* Image + Year Number */}
-      <div className="iconDiv w-full md:w-[60%] relative">
+      <div className="iconDiv w-full md:w-[70%] relative">
         <Image
           src={mid}
           alt="Top Image"
-          width={1800}
+          width={2800}
           height={800}
           className="w-full h-auto object-cover"
           priority
         />
         <div className="year absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <motion.p
-            className="text-[80px] md:text-[140px] lg:text-[180px] text-white font-branding-bold"
-          >
+          <motion.p className="text-[80px] md:text-[140px] lg:text-[180px] text-white font-branding-bold">
             {count}
           </motion.p>
         </div>
@@ -63,22 +61,23 @@ const Year1939 = () => {
 
       {/* Text + Image */}
       <motion.div
-        className="flex-1 flex flex-col justify-center items-start p-4"
+        className="flex flex-col w-[15%] absolute right-20"
         initial={{ opacity: 0, x: 50 }}
         animate={year1939InView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
       >
-        <div className="text-left w-full max-w-sm md:max-w-md lg:max-w-lg ">
+        <div className="text-left w-full ">
           <Image
             src={historyTwo}
             alt="History Image"
             width={300}
             height={300}
-            className="w-full md:w-[80%] lg:w-[60%] h-auto object-cover lg:ml-14 "
+            className="w-full h-auto object-cover"
             priority
           />
-          <p className="text-gray-600 mt-6 sm:text-lg md:text-xl lg:text-xl leading-relaxed text-center w-[60%] ml-16">
-            The founder, Shri. J.V. Patel manifests his vision as the Standard Engineering Company (SEC).
+          <p className="text-gray-600 mt-6 sm:text-lg md:text-xl lg:text-xl leading-relaxed text-center ">
+            The founder, Shri. J.V. Patel manifests his vision as the Standard
+            Engineering Company (SEC).
           </p>
         </div>
       </motion.div>
