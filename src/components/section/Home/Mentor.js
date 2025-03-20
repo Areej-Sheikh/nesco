@@ -63,7 +63,7 @@ function Mentor() {
                   src={backgroundImage}
                   alt="background image"
                   objectFit="cover"
-                  className="w-full xl:scale-[1] lg:scale-[1.7] md:scale-[1.7] scale-[1.5]"
+                  className="w-full xl:scale-[1.3] lg:scale-[1.7] md:scale-[1.7] scale-[1]"
                 />
               </div>
             </div>

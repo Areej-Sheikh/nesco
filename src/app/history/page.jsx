@@ -189,7 +189,7 @@ const page = () => {
           </div>
 
           <div ref={bottomObserver}>
-          {/* <div className="relative bottom-[100vh] left-1/10 h-[800px] w-[2px] bg-black z-10"></div>
+            {/* <div className="relative bottom-[100vh] left-1/10 h-[800px] w-[2px] bg-black z-10"></div>
           <div className="relative  left-0 w-[100px] h-[2px] bg-black"></div> */}
             <motion.div
               className="bottomContentDiv w-fit md:w-[75%] lg:bottom-[10vh] ml-auto text-gray-500 p-4 pt-2 transition-all ease-in-out duration-300 hover:-translate-y-1  lg:z-10 lg:top-[-26vh] flex flex-col md:flex-row relative"
@@ -208,7 +208,7 @@ const page = () => {
                   alt="Mid Image"
                   width={400}
                   height={300}
-                  className="md:w-[95%] lg:w-[90%] h-auto object-cover relative w-full sm:w-auto"
+                  className="md:w-[200px] lg:w-[250px] h-auto object-cover relative w-full sm:w-auto"
                 />
               </motion.div>
 
@@ -218,7 +218,7 @@ const page = () => {
                 animate={bottomInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 1, delay: 1 }}
               >
-                <p className="sm:text-3xl md:text-2xl lg:text-6xl lg:w-[95%]  font-branding-semibold text-center">
+                <p className="sm:text-3xl md:text-2xl lg:text-4xl lg:w-[95%]  font-branding-semibold text-center">
                   ‘Your right is in action, never to its fruits, let not the
                   fruits of action be your motive.’
                 </p>

@@ -21,7 +21,7 @@ function believe() {
               <Image
                 src={chessImage}
                 alt="Chess Image"
-                className=" w-[80%] h-full md:ml-[8vh] 2xl:ml-[15vh] "
+                className=" w-full h-full "
                 priority
               />
             </div>
