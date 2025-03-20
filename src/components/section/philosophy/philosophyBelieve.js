@@ -52,7 +52,7 @@ function PhilosophyBelieve() {
       <div className="w-full h-full absolute">
         <video autoPlay loop muted className="w-full h-full object-cover">
           <source
-            src="https://dayanandsagaruniversity.s3.ap-south-1.amazonaws.com/audio/1740482036556.mp4"
+            src="https://anandrathiimages.s3.ap-south-1.amazonaws.com/5945347_Cluster_Galaxies_3840x2160.mp4"
             type="video/mp4"
           />
         </video>

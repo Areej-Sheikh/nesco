@@ -15,33 +15,39 @@ function OverviewBanner() {
     {
       image: bannerImage,
       data: (
-        <div className="bg-[#4C4C9C] z-20 absolute left-0 bg-opacity-70">
-          <div className="text-center px-10 py-4">
-            <p className="text-white sm:text-xl md:text-2xl font-branding-medium ">
-              To be constantly
-            </p>
+        <>
+          <div className="bg-[#4E4F9F] z-20 absolute left-0 bg-opacity-90">
+            <div className="text-center px-10 py-8">
+              <p className="text-white sm:text-xl md:text-2xl font-branding-medium ">
+                To be constantly
+              </p>
 
-            <p className="text-blue-300 text-xl sm:text-2xl md:text-3xl font-branding-medium">
-              {" "}
-              dynamic is growth.
-            </p>
-            <p className="text-white text-lg sm:text-xl md:text-2xl font-branding-medium">
-              To be constantly
-            </p>
-            <p className="text-blue-300 text-xl sm:text-2xl md:text-3xl  font-branding-medium">
-              learning is wisdom
-            </p>
+              <p className="text-blue-300 text-xl sm:text-2xl md:text-4xl font-branding-medium">
+                {" "}
+                dynamic is growth.
+              </p>
+              <p className="text-white text-lg sm:text-xl md:text-2xl font-branding-medium">
+                To be constantly
+              </p>
+              <p className="text-white text-lg sm:text-xl md:text-2xl  font-branding-medium">
+                learning is wisdom
+              </p>
+            </div>
           </div>
-        </div>
+        </>
       ),
     },
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full header_color_black">
       {/* <Navbar activeSlide={activeSlide} /> */}
       {/* <Banner SliderData={SliderData}  onSlideChange={handleSlideChange} /> */}
-      <Banner SliderData={SliderData} onSlideChange={handleSlideChange} />
+      <Banner
+        SliderData={SliderData}
+        onSlideChange={handleSlideChange}
+        apperentClassName=""
+      />
     </div>
   );
 }
