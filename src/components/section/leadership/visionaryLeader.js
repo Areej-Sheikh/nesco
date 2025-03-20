@@ -36,8 +36,8 @@ function VisionaryLeader() {
   ];
 
   return (
-    <section className="py-16 bg-[#E6F5FC] header_purple goal-section1">
-      <h3 className="text-center text-4xl font-branding-bold">
+    <section className="py-10 bg-[#E6F5FC] header_purple goal-section1">
+      <h3 className="text-center text-4xl font-branding-bold pb-5">
         Our Visionary Leaders
       </h3>
       <Cards CardData={CardData} />

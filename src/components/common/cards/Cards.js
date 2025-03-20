@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react"; // Import useRef and useEffect
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -7,68 +8,81 @@ import MentorImage3 from "@/assests/leadership/9-1.jpg";
 import MentorImage4 from "@/assests/leadership/16-1.jpg";
 import MentorImage5 from "@/assests/leadership/27-1.jpg";
 import MentorImage6 from "@/assests/leadership/28-1.jpg";
+import { Button, Modal } from "antd";
 
 // Modal Component
 export const MentorModal = ({ isOpen, onClose, data }) => {
+  const [loading, setLoading] = useState(false);
   const modalRef = useRef(null); // Create a ref for the modal
 
   useEffect(() => {
     function handleClickOutside(event) {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        onClose(); // Close the modal if clicked outside
+        onClose();
       }
     }
 
     if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside); // Use mousedown for clicks
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside); // Cleanup event listener
+      document.removeEventListener("mousedown", handleClickOutside);
+      // ✅ Re-enable scrolling when closed
+      document.body.style.overflow = "unset";
     };
-  }, [isOpen, onClose]); // Re-run effect when isOpen or onClose changes
+  }, [isOpen, onClose]);
 
-  if (!isOpen || !data) {
-    return null;
-  }
+  if (!isOpen || !data) return null;
+
+  const handleOk = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      onClose();
+    }, 3000);
+  };
 
   return (
-    <div
-      className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center"
-      onClick={onClose}
+    <Modal
+      open={isOpen}
+      // title={data.name}
+      onOk={handleOk}
+      onCancel={onClose}
+      width="80%"
+      // bodyStyle={{ height: "600px" }}
+      // footer={[
+      //   <Button key="back" onClick={onClose}>
+      //     Return
+      //   </Button>,
+      //   <Button
+      //     key="submit"
+      //     type="primary"
+      //     loading={loading}
+      //     onClick={handleOk}
+      //   >
+      //     Submit
+      //   </Button>,
+      // ]}
+      footer={false}
     >
-      {" "}
-      {/* Added onClick to the backdrop to also close modal if clicked on backdrop */}
-      <div
-        className="bg-white p-6 rounded-lg shadow-xl max-w-6xl w-full relative"
-        ref={modalRef}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {" "}
-        {/* Added ref to the modal content and stopPropagation to prevent backdrop click from closing when clicking inside modal */}
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-3 text-gray-500 hover:text-gray-700 text-2xl font-bold"
-        >
-          &times;
-        </button>
+      <div ref={modalRef} className="w-full h-full -mb-2 p-4">
         <div
-          className={`grid gap-8 ${
+          className={`grid gap-8  ${
             data.image ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
           }`}
         >
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-branding-semibold">{data.name}</h2>
             <p className="text-gray-700">{data.position}</p>
-            <p className="text-gray-800">{data.description}</p>
+            <p className="text-gray-800 text-justify">{data.description}</p>
           </div>
-
           {data.image && (
-            <div className="flex justify-center items-center">
+            <div className="flex justify-end items-center">
               <Image
                 src={data.image}
                 alt={data.name}
-                className="rounded-lg object-cover max-h-96"
+                className="rounded-lg object-cover max-h-96 object-top"
                 width={400}
                 height={400}
               />
@@ -76,7 +90,7 @@ export const MentorModal = ({ isOpen, onClose, data }) => {
           )}
         </div>
       </div>
-    </div>
+    </Modal>
   );
 };
 
@@ -102,27 +116,31 @@ function Cards({ CardData }) {
           <div
             key={index}
             className="flex justify-center"
-            onClick={() => openModal(data)}
             style={{ cursor: "pointer" }}
           >
-            <div className="flex flex-col gap-1 w-[20rem] py-4 px-4 border-gray-500  border-2 h-full items-center ">
+            <div
+              className="flex flex-col gap-1 w-[19rem] py-4 px-4 border-gray-500  border-2 h-full items-center "
+              onClick={() => openModal(data)}
+            >
               <Image
                 src={data.image}
                 alt="Mentor"
-                className="h-[13rem] w-[13rem] object-cover object-top filter grayscale contrast-125 hover:filter-none transition-all duration-300"
+                className="h-[14.5rem] object-cover object-top filter grayscale contrast-125 hover:filter-none transition-all duration-300"
               />
 
               <p className="flex justify-between mt-2 w-full">
-                <span className="font-branding-semibold text-xl inline-block w-full text-left">
+                <span className="font-branding-semibold text-lg inline-block w-full text-left">
                   {data.name}
                 </span>
                 <span className="flex items-center">
-                  <button className="text-primary text-lg mr-1">
+                  <button className="text-primary text-lg">
                     <FaArrowRightLong />
                   </button>
                 </span>
               </p>
-              <p className="font-poppins text-left w-full">{data.position}</p>
+              <p className="font-poppins text-left w-full text-[12px]">
+                {data.position}
+              </p>
             </div>
           </div>
         ))}

@@ -46,7 +46,6 @@ function SlidedownCard({ data }) {
           </div>
         </div>
       ))} */}
-//
       {data.map((element, index) => (
         <div key={index} className="md: w-[50%] my-2 ">
           <div
@@ -70,14 +69,14 @@ function SlidedownCard({ data }) {
                   : "opacity-0 max-h-0"
               }`}
             >
-             <div className="bg-[#114086] flex flex-col relative text-white p-3 opacity-65">
-              <p>{element.description.address1}</p>
-              <p>{element.description.address2}</p>
-              <p>{element.description.city}</p>
-              <p>Phone: {element.description.phone1}</p>
-              <p>{element.description.contact}</p>
-              <p>{element.description.phone2}</p>
-            </div>
+              <div className="bg-[#114086] flex flex-col relative text-white p-3 opacity-65">
+                <p>{element.description.address1}</p>
+                <p>{element.description.address2}</p>
+                <p>{element.description.city}</p>
+                <p>Phone: {element.description.phone1}</p>
+                <p>{element.description.contact}</p>
+                <p>{element.description.phone2}</p>
+              </div>
             </div>
           </div>
         </div>
