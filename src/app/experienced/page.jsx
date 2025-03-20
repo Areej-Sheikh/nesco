@@ -6,22 +6,86 @@ import Image from "next/image";
 import img from "@/assests/internships/intern2.jpg";
 import Navbar from "@/components/layout/navbar/Navbar";
 import Footer from "@/components/layout/footer/footer";
+import usePostQuery from "@/hooks/postQuery.hook";
+import { apiUrls } from "@/apis";
+import { toast } from "react-toastify";
 
 const ExperiencedForm = () => {
   const [form] = Form.useForm();
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const handleFinish = (values) => {
-    console.log("Form values:", values);
-    message.success("Application submitted successfully!");
-    form.resetFields();
+  const { postQuery } = usePostQuery();
+
+  const handleDocumentUpload = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      // console.log(reader);
+      reader.onloadend = () => {
+        const base64String = reader.result;
+        // console.log(base64String);
+        resolve(base64String);
+      };
+      reader.onerror = (error) => reject(error);
+      reader.readAsDataURL(file);
+    });
   };
+
+  // const handleFinish = (values) => {
+  //   console.log("Form values:", values);
+  //   message.success("Application submitted successfully!");
+  //   form.resetFields(); // Reset form after submission
+  // };
 
   const handleFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
 
   const normFile = (e) => (Array.isArray(e) ? e : e?.fileList);
+
+  const onSubmit = async (data) => {
+    console.log("Form Submission Triggered! Data:", data);
+    try {
+      const file = data.resume?.[0]?.originFileObj;
+      if (!file) {
+        toast.error("Please select a PDF file");
+        return;
+      }
+
+      const base64String = await handleDocumentUpload(file);
+
+      postQuery({
+        url: apiUrls?.upload?.uploadDocument,
+        postData: { base64String },
+        onSuccess: (response) => {
+          postQuery({
+            url: `${apiUrls?.experience}/`,
+            postData: {
+              name: data?.fullName,
+              email: data?.email,
+              mobile: data?.phone,
+              current_company: data?.current_company,
+              total_experienced: data?.experience,
+              job_title: data?.job_title,
+              resumeFile: response?.data,
+            },
+            onSuccess: () => {
+              toast.success("Document uploaded and data created successfully");
+              form.resetFields(); // Reset form after submission
+              // navigate("/announcement/list");
+            },
+            onFail: () => {
+              toast.error("Failed to create document");
+            },
+          });
+        },
+        onFail: () => {
+          toast.error("Document upload failed");
+        },
+      });
+    } catch (error) {
+      toast.error("Error processing file");
+    }
+  };
 
   return (
     <>
@@ -53,7 +117,7 @@ const ExperiencedForm = () => {
                 form={form}
                 name="experienced_form"
                 layout="vertical"
-                onFinish={handleFinish}
+                onFinish={onSubmit}
                 onFinishFailed={handleFinishFailed}
               >
                 <Row gutter={[24, 24]}>
@@ -130,17 +194,31 @@ const ExperiencedForm = () => {
                   {/* Current/Most Recent Job Title & Company */}
                   <Col xs={24}>
                     <Form.Item
-                      label="Current/Most Recent Job Title & Company"
-                      name="jobDetails"
+                      label="Current Company"
+                      name="current_company"
                       rules={[
                         {
                           required: true,
-                          message:
-                            "Please enter your job title and company name",
+                          message: "Please enter your company name",
                         },
                       ]}
                     >
-                      <Input placeholder="e.g., Software Engineer at Google" />
+                      <Input placeholder="e.g., Google" />
+                    </Form.Item>
+                  </Col>
+
+                  <Col xs={24}>
+                    <Form.Item
+                      label="Current/Most Recent Job Title"
+                      name="job_title"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please enter your job title",
+                        },
+                      ]}
+                    >
+                      <Input placeholder="e.g., Software Engineer" />
                     </Form.Item>
                   </Col>
 
