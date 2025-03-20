@@ -27,7 +27,7 @@ const InternshipForm = () => {
     <>
       <Navbar activeSlide={activeSlide} />
 
-      <div className="flex justify-center items-center min-h-screen bg-gray-100 lg:py-8">
+      <div className="flex justify-center items-center min-h-screen bg-gray-100 lg:py-24">
         <Card
           className="w-full md:w-[1500px] bg-white rounded-xl overflow-hidden"
           bodyStyle={{ padding: 0 }}

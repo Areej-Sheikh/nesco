@@ -26,7 +26,7 @@ const ExperiencedForm = () => {
   return (
     <>
       <Navbar activeSlide={activeSlide} />
-      <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
+      <div className="flex justify-center items-center min-h-screen bg-gray-100 py-24">
         <Card
           className="w-full md:w-[1400px] bg-white rounded-xl overflow-hidden"
           bodyStyle={{ padding: 0 }}
