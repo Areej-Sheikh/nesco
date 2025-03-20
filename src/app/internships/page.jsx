@@ -6,22 +6,85 @@ import Image from "next/image";
 import img from "@/assests/internships/intern2.jpg";
 import Navbar from "@/components/layout/navbar/Navbar";
 import Footer from "@/components/layout/footer/footer";
+import usePostQuery from "@/hooks/postQuery.hook";
+import { apiUrls } from "@/apis";
+import { toast } from "react-toastify";
 
 const InternshipForm = () => {
   const [form] = Form.useForm();
   const [activeSlide, setActiveSlide] = useState(0);
+  const { postQuery } = usePostQuery();
 
-  const handleFinish = (values) => {
-    console.log("Form values:", values);
-    message.success("Application submitted successfully!");
-    form.resetFields(); // Reset form after submission
+  const handleDocumentUpload = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      // console.log(reader);
+      reader.onloadend = () => {
+        const base64String = reader.result;
+        // console.log(base64String);
+        resolve(base64String);
+      };
+      reader.onerror = (error) => reject(error);
+      reader.readAsDataURL(file);
+    });
   };
+
+  // const handleFinish = (values) => {
+  //   console.log("Form values:", values);
+  //   message.success("Application submitted successfully!");
+  //   form.resetFields(); // Reset form after submission
+  // };
 
   const handleFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
 
   const normFile = (e) => (Array.isArray(e) ? e : e?.fileList);
+
+  const onSubmit = async (data) => {
+    console.log("Form Submission Triggered! Data:", data);
+    try {
+      const file = data.resume?.[0]?.originFileObj;
+      if (!file) {
+        toast.error("Please select a PDF file");
+        return;
+      }
+
+      const base64String = await handleDocumentUpload(file);
+
+      postQuery({
+        url: apiUrls?.upload?.uploadDocument,
+        postData: { base64String },
+        onSuccess: (response) => {
+          postQuery({
+            url: `${apiUrls?.internship}/`,
+            postData: {
+              name: data?.fullName,
+              email: data?.email,
+              mobile: data?.phone,
+              university: data?.university,
+              degree: data?.degree,
+              expected_year: data?.graduationYear,
+              resumeFile: response?.data,
+            },
+            onSuccess: () => {
+              toast.success("Document uploaded and data created successfully");
+              form.resetFields(); // Reset form after submission
+              // navigate("/announcement/list");
+            },
+            onFail: () => {
+              toast.error("Failed to create document");
+            },
+          });
+        },
+        onFail: () => {
+          toast.error("Document upload failed");
+        },
+      });
+    } catch (error) {
+      toast.error("Error processing file");
+    }
+  };
 
   return (
     <>
@@ -54,7 +117,7 @@ const InternshipForm = () => {
                 form={form}
                 name="internship_form"
                 layout="vertical"
-                onFinish={handleFinish}
+                onFinish={onSubmit}
                 onFinishFailed={handleFinishFailed}
               >
                 <Row gutter={[24, 16]}>
@@ -117,19 +180,34 @@ const InternshipForm = () => {
                   {/* University & Degree */}
                   <Col xs={24} sm={24} md={12}>
                     <Form.Item
-                      label="University & Degree"
+                      label="University"
                       name="university"
                       rules={[
                         {
                           required: true,
-                          message: "Please enter your university and degree",
+                          message: "Please enter your university",
                         },
                       ]}
                     >
                       <Input
-                        placeholder="Enter your university and degree"
+                        placeholder="Enter your university"
                         className="p-2"
                       />
+                    </Form.Item>
+                  </Col>
+
+                  <Col xs={24} sm={24} md={12}>
+                    <Form.Item
+                      label="Degree"
+                      name="degree"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please enter your degree",
+                        },
+                      ]}
+                    >
+                      <Input placeholder="Enter your degree" className="p-2" />
                     </Form.Item>
                   </Col>
 
