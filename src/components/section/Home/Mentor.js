@@ -1,24 +1,35 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import MentorImage from "@/assests/Home/SirImage.png";
 import backgroundImage from "@/assests/Home/N-3.png";
 import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Mentor() {
   const [text, setText] = useState("");
   const fullText = `In the last eight decades, Nesco has come a long way. We see our present success as only the start to newer and bolder initiatives. This is an affirmation that as we continue to grow, we add to the growth of our country.\n\nOur teams are motivated to set new benchmarks across industries through perseverance and innovation. The world we live in is rapidly evolving and at Nesco we are prepared to meet every challenge head on.`;
+  const textRef = useRef(null);
 
   useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      setText(fullText.slice(0, i + 1));
-      i++;
-      if (i === fullText.length) {
-        clearInterval(interval);
-      }
-    }, 50);
+    setText(fullText);
 
-    return () => clearInterval(interval);
+    gsap.fromTo(
+      textRef.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 50%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+        duration: 2,
+      }
+    );
   }, []);
 
   return (
@@ -37,7 +48,10 @@ function Mentor() {
                 Director and Mentor
               </h3>
               <div className="space-y-2 mt-4 text-gray-700 text-justify">
-                <p className="lg:text-3xl text-2xl font-branding-medium lg:leading-[2.5rem] drop-shadow-xl whitespace-pre-line">
+                <p
+                  ref={textRef}
+                  className="lg:text-3xl text-2xl font-branding-medium lg:leading-[2.5rem] drop-shadow-xl whitespace-pre-line"
+                >
                   {text}
                 </p>
               </div>
