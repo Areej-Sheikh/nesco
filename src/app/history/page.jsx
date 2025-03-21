@@ -134,10 +134,10 @@ const page = () => {
       <div className="historyDiv header_purple max-w-full flex flex-col overflow-x-hidden overflow-y-auto scrollbar-hide">
         <Timeline years={years} isFooterVisible={isFooterVisible} />
 
-        <div className="rightSectionContainer w-fit h-fit m-2  lg:ml-[15%]">
+        <div className="rightSectionContainer w-fit m-2  lg:ml-[10%]">
           <div
             ref={upperObserver}
-            className="upperDiv w-fit md:w-[87%] flex flex-col relative md:left-2 lg:left-[0%] ml-auto transform translate-y-[14vh] "
+            className="upperDiv w-fit md:w-[87%] flex flex-col relative md:left-2 lg:left-[0%] ml-auto transform translate-y-[10vh] "
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -154,7 +154,7 @@ const page = () => {
             </motion.div>
 
             <motion.div
-              className="sideContentDiv flex flex-col relative bg-sky-500 transform text-justify p-8 left-0 md:left-[35%]  md:bottom-[5vh] lg:bottom-[45vh] w-full sm:w-[60%] md:w-[65%] lg:w-[65%] z-50 transition-all ease-in-out duration-300 hover:-translate-y-1 hover:bg-gray-600"
+              className="sideContentDiv flex flex-col relative bg-sky-500 transform text-justify p-8 left-0 md:left-[35%]  md:bottom-[5vh] lg:bottom-[45vh] w-full sm:w-[60%] md:w-[65%] lg:w-[65%] z-50 transition-all ease-in-out duration-300 hover:-translate-y-1 "
               initial={{ opacity: 0, x: 100 }}
               animate={upperInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.5, delay: 1 }}
@@ -186,7 +186,7 @@ const page = () => {
 
           <div ref={bottomObserver}>
             <motion.div
-              className="bottomContentDiv w-fit md:w-[75%]  ml-auto text-gray-500 p-4 transition-all ease-in-out duration-300 hover:-translate-y-1  lg:z-10 lg:top-[-8rem] flex flex-col md:flex-row relative"
+              className="bottomContentDiv w-fit md:w-[80%]  ml-auto text-gray-500 transition-all ease-in-out duration-300 hover:-translate-y-1  lg:z-10 lg:top-[-10rem] transform flex flex-col md:flex-row relative"
               initial={{ opacity: 0, y: 50 }}
               animate={bottomInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.5 }}
@@ -200,9 +200,9 @@ const page = () => {
                 <Image
                   src={historyOne}
                   alt="Mid Image"
-                  width={400}
-                  height={300}
-                  className="md:w-[200px] lg:w-[250px] h-auto object-cover relative w-full sm:w-auto"
+                  width={600}
+                  height={400}
+                  className="md:w-[200px] lg:w-[300px] h-auto object-cover relative w-full sm:w-auto"
                 />
               </motion.div>
 

@@ -44,7 +44,7 @@ const Year1939 = () => {
     >
       {/* Image + Year Number */}
       <div className="iconDiv w-full md:w-[70%] relative">
-        <div className="absolute w-full h-full bg-primary -top-[8%] -left-[10%] z-0"></div>
+        <div className="absolute w-full h-full bg-primary -top-[10%] -left-[10%] z-0"></div>
         <Image
           src={mid}
           alt="Top Image"

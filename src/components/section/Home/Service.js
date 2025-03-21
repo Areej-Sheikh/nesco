@@ -24,7 +24,7 @@ function Service() {
           {/* <p className="text-primary md:text-4xl text-3xl font-bold mt-10"> */}
 
           <p
-            className="xl:text-[3.2rem] lg:text-[3rem] text-[2rem] text-2xl font-bold text-primary xl:mt-10 tracking-wide lg:leading-[3.5rem] leading-[2.5rem] w-[80%]"
+            className="xl:text-[3.2rem] lg:text-[3rem] text-[2rem] text-2xl font-bold text-primary text-justify xl:mt-10 tracking-wide lg:leading-[3.5rem] leading-[2.5rem] w-[80%]"
             style={{ fontFamily: "BrandingSemibold" }}
           >
             In service of a better & brighter tomorrow
