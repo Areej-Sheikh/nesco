@@ -1,15 +1,15 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
+gsap.registerPlugin(ScrollTrigger);
 
 function Banner({
   SliderData,
@@ -21,11 +21,12 @@ function Banner({
 }) {
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const mainBannerRef = useRef(null); // Ref for Main Banner section
 
   useEffect(() => {
     if (swiperInstance) {
-      swiperInstance.on("slideChange", () => {
-        setActiveIndex(swiperInstance.activeIndex);
+      swiperInstance.on("slideChange", (swiper) => {
+        setActiveIndex(swiper.activeIndex);
       });
     }
   }, [swiperInstance]);
@@ -33,6 +34,37 @@ function Banner({
   useEffect(() => {
     onSlideChange(activeIndex);
   }, [activeIndex, onSlideChange]);
+
+  // Track Main Banner visibility
+  useEffect(() => {
+    if (mainBannerRef.current && swiperInstance) {
+      ScrollTrigger.create({
+        trigger: mainBannerRef.current,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => {
+          swiperInstance.slideTo(0); // Start from slide 0
+          swiperInstance.autoplay.start();
+        },
+        onLeave: () => {
+          swiperInstance.slideTo(1); // Stop at slide 1
+          swiperInstance.autoplay.stop();
+        },
+        onEnterBack: () => {
+          swiperInstance.slideTo(0); // Start from slide 0 again
+          swiperInstance.autoplay.start();
+        },
+        onLeaveBack: () => {
+          swiperInstance.slideTo(1); // Stop at slide 1 when leaving back
+          swiperInstance.autoplay.stop();
+        },
+      });
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger);
+    };
+  }, [swiperInstance]);
 
   return (
     <div
@@ -77,7 +109,10 @@ function Banner({
             >
               {SliderData.map((data, index) => (
                 <SwiperSlide key={index}>
-                  <div className="bg-black text-white flex justify-center items-center text-2xl h-[100vh] relative transition-all duration-700">
+                  <div
+                    ref={index === 0 ? mainBannerRef : null} // Attach ref to Main Banner
+                    className="bg-black text-white flex justify-center items-center text-2xl h-[100vh] relative transition-all duration-700"
+                  >
                     {!data.data ? (
                       <div className="w-full h-full relative z-10">
                         {index !== 0 ? (

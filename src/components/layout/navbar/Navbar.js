@@ -1,6 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaSearch,
+  FaBars,
+  FaTimes,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
 import "./Navbar.css";
 import Nescologo from "@/assests/Home/logo-blue.png";
 import Nescologo2 from "@/assests/Home/logo-white.png";
@@ -75,6 +81,7 @@ function Navbar({ activeSlide }) {
   const [isOpen, setIsOpen] = useState(null);
   const [isClosed, setIsClosed] = useState(false);
   const [textWhite, setTextWhite] = useState(false);
+  const [expandedMenuIndex, setExpandedMenuIndex] = useState(null); // State to track expanded mobile menu
 
   const logo = {
     imagePath: Nescologo,
@@ -99,7 +106,6 @@ function Navbar({ activeSlide }) {
       newStates[index] = false;
       return newStates;
     });
-    // setIsOpen(null);
     setTextWhite(false);
   };
 
@@ -109,6 +115,14 @@ function Navbar({ activeSlide }) {
   };
   const handleMouseEnter1 = () => {
     setIsClosed(true);
+  };
+
+  const toggleMobileMenu = (index) => {
+    if (expandedMenuIndex === index) {
+      setExpandedMenuIndex(null); // Collapse if already expanded
+    } else {
+      setExpandedMenuIndex(index); // Expand the clicked menu
+    }
   };
 
   useEffect(() => {
@@ -143,7 +157,6 @@ function Navbar({ activeSlide }) {
       trigger: ".footer_section",
       start: "top bottom",
       end: "bottom center",
-      // markers: true,
       onEnter: () => setIsFooter(true),
       onLeave: () => setIsFooter(false),
       onEnterBack: () => setIsFooter(true),
@@ -157,7 +170,6 @@ function Navbar({ activeSlide }) {
         trigger: section,
         start: "top center",
         end: "bottom center",
-
         onEnter: () => setActivePurpleSection(section),
         onLeave: () => setActivePurpleSection(null),
         onEnterBack: () => setActivePurpleSection(section),
@@ -172,7 +184,6 @@ function Navbar({ activeSlide }) {
         trigger: section,
         start: "top center",
         end: "bottom center",
-
         onEnter: () => setTextBlack(section),
         onLeave: () => setTextBlack(null),
         onEnterBack: () => setTextBlack(section),
@@ -188,33 +199,34 @@ function Navbar({ activeSlide }) {
 
   const getTextColor = () => {
     if (activePurpleSection) {
-      return "text-white border-white"; // Apply white text for purple header
+      return "text-white border-white";
     }
-    if (textBlack) {
-      return "text-black border-black";
-    }
+
     if (textWhite === true && !(isOpen === 4 || isOpen === 5)) {
       return "text-white border-white";
     }
     if (isClosed) {
       return "text-white border-white";
     }
-
     if (isFooter) {
-      return "text-white border-white"; // Apply white text for purple header
+      return "text-white border-white";
     }
-    if (isOpen) {
+    if (isOpen && !(isOpen === 4 || isOpen === 5)) {
       return "text-white border-white";
     }
     if (isOpen === 0) {
       return "text-white border-white";
     }
-    if (activeSlide === 0 && isOpen === null) {
+    if (activeSlide === 0) {
+      return "text-black border-black";
+    }
+    if (textBlack) {
       return "text-black border-black";
     }
     if (isHeaderWhite) {
       return "text-white border-white";
     }
+
     if (isScrolled) {
       return "text-black border-black";
     } else return "text-white border-white";
@@ -231,11 +243,9 @@ function Navbar({ activeSlide }) {
 
   const getLogoColorWork = () => {
     if (activePurpleSection) {
-      return Nescologo2; // Apply brightness for purple header
+      return Nescologo2;
     }
-    if (textBlack) {
-      return Nescologo;
-    }
+
     if (textWhite === true && !(isOpen === 4 || isOpen === 5)) {
       return Nescologo2;
     }
@@ -243,16 +253,19 @@ function Navbar({ activeSlide }) {
       return Nescologo2;
     }
     if (isFooter) {
-      return Nescologo2; // Apply brightness for purple header
+      return Nescologo2;
     }
     if (activeSlide === 0 && isOpen === null) {
       return Nescologo;
     }
-    if (isOpen) {
+    if (isOpen && !(isOpen === 4 || isOpen === 5)) {
       return Nescologo2;
     }
     if (isOpen === 0) {
       return Nescologo2;
+    }
+    if (textBlack) {
+      return Nescologo;
     }
     if (isHeaderWhite) {
       return Nescologo2;
@@ -265,21 +278,18 @@ function Navbar({ activeSlide }) {
 
   const changeNavbar = () => {
     if (activePurpleSection) {
-      // return "bg-[#403092]"; // Apply purple background when a purple section is active
       return "bg-[#2b2a76]";
     }
-    return ""; // Return empty string for other cases
+    return "";
   };
   const changeNavbar1 = () => {
     if (isFooter) {
-      // return "bg-[#403092]"; // Apply purple background when isPurple is true
       return "bg-[#2b2a76]";
     }
   };
 
   return (
     <nav
-      // key={activeSlide}
       className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed transition-all duration-50 ${changeNavbar()} ${changeNavbar1()}`}
     >
       {!isScrolled && (
@@ -299,7 +309,7 @@ function Navbar({ activeSlide }) {
       </div>
 
       {/* Desktop NavBar */}
-      <div className={`hidden xl:flex items-center z-50 relative`}>
+      <div className={`hidden xl:flex items-center z-[60] relative`}>
         <ul className="flex items-center ">
           {NavData.map((data, index) => (
             <li
@@ -338,7 +348,7 @@ function Navbar({ activeSlide }) {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 w-64 h-full bg-[#403092] p-8 transition-transform transform z-20 ${
+        className={`fixed top-0 right-0 w-64 h-full bg-[#403092] p-8 transition-transform transform z-[60] ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         } xl:hidden`}
       >
@@ -362,7 +372,30 @@ function Navbar({ activeSlide }) {
         <ul className="flex flex-col gap-6">
           {NavData.map((data, index) => (
             <li key={index} className="text-white text-xl">
-              <Link href={data.route}>{data.title}</Link>
+              <div
+                className="flex items-center justify-between cursor-pointer"
+                onClick={() => toggleMobileMenu(index)}
+              >
+                <Link href={data.route}>{data.title}</Link>
+                {data.subMenu.length > 0 && (
+                  <span>
+                    {expandedMenuIndex === index ? (
+                      <FaChevronUp />
+                    ) : (
+                      <FaChevronDown />
+                    )}
+                  </span>
+                )}
+              </div>
+              {expandedMenuIndex === index && data.subMenu.length > 0 && (
+                <ul className="pl-4 mt-2">
+                  {data.subMenu.map((subData, subIndex) => (
+                    <li key={subIndex} className="text-white text-lg my-1">
+                      <Link href={subData.route}>{subData.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>
