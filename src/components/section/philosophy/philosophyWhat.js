@@ -1,7 +1,7 @@
 "use client";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React, { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,18 +18,15 @@ function PhilosophyWhat() {
   ];
 
   const [currentText, setCurrentText] = useState(0);
-  const sectionRef = useRef(null);
+  const sectionRef1 = useRef(null);
   const textContainerRef = useRef(null);
   const headerRef = useRef(null);
 
   useEffect(() => {
-    if (!sectionRef.current || !textContainerRef.current || !headerRef.current)
-      return;
-
     const fadeIn = () => {
       gsap.fromTo(
         textContainerRef.current,
-        { opacity: 0, clipPath: "inset(0% 100% 0% 0%)" },
+        { opacity: 0.4, clipPath: "inset(0% 100% 0% 0%)" },
         {
           opacity: 1,
           clipPath: "inset(0% 0% 0% 0%)",
@@ -44,8 +41,8 @@ function PhilosophyWhat() {
         textContainerRef.current,
         { opacity: 1, clipPath: "inset(0% 0% 0% 0%)" },
         {
-          opacity: 0,
-          clipPath: "inset(0% 100% 0% 0%)", // Same direction as fade-in
+          opacity: 0.4,
+          clipPath: "inset(0% 100% 0% 0%)",
           duration: 1.2,
           ease: "power2.in",
         }
@@ -55,10 +52,10 @@ function PhilosophyWhat() {
     fadeIn();
 
     const interval = setInterval(() => {
-      fadeOut(); // Fade out before changing text
+      fadeOut();
       setTimeout(() => {
         setCurrentText((prevIndex) => (prevIndex + 1) % text.length);
-        fadeIn(); // Fade in after changing text
+        fadeIn();
       }, 1000);
     }, 4000);
 
@@ -66,46 +63,50 @@ function PhilosophyWhat() {
   }, [currentText]);
 
   useEffect(() => {
-    if (!sectionRef.current || !headerRef.current) return;
+    setTimeout(() => {
+      ScrollTrigger.matchMedia({
+        "(min-width: 768px)": function () {
+          gsap.fromTo(
+            sectionRef1.current,
+            { opacity: 0.4, y: 100 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1.5,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: sectionRef1.current,
+                start: "top 80%",
+                toggleActions: "play none none none",
+              },
+            }
+          );
 
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
+          gsap.fromTo(
+            headerRef.current,
+            { x: 200, opacity: 0.4 },
+            {
+              x: 0,
+              opacity: 1,
+              duration: 1.5,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: sectionRef1.current,
+                start: "top 80%",
+                toggleActions: "play none none none",
+              },
+            }
+          );
         },
-      }
-    );
+      });
 
-    gsap.fromTo(
-      headerRef.current,
-      { x: 200, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-
-    ScrollTrigger.refresh();
+      ScrollTrigger.refresh();
+    }, 500);
   }, []);
 
   return (
     <div
-      ref={sectionRef}
+      ref={sectionRef1}
       className="w-full md:h-screen relative flex justify-center items-center py-20"
     >
       <div className="w-full h-fit flex md:flex-row flex-col justify-start items-center md:gap-0">

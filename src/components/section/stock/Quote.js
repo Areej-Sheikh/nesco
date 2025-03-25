@@ -126,7 +126,7 @@ function Quote() {
         Historical Stock Quote
       </h2>
       <div className=" flex justify-center  w-[90%]  ">
-        <div className="flex lg:flex-row flex-col gap-10 justify-center items-center bg-[#B8DFFC] p-4 w-[70%]">
+        <div className="flex lg:flex-row flex-col md:gap-10 gap-5 justify-center items-center bg-[#B8DFFC] p-4 md:w-[70%] w-full">
           {/* Exchange Selector */}
           <div className="flex flex-col gap-2">
             <p className="text-[#3460C6] font-branding-semibold">Exchange: </p>
@@ -237,11 +237,13 @@ function Quote() {
           {/* Search Button */}
           <div>
             <button
-              className="px-12 py-2 text-xl text-primary border-2 border-primary rounded-full font-branding-bold"
+              className={`${
+                loading === true ? "px-10" : "px-12"
+              } py-2 text-xl text-primary border-2 border-primary rounded-full font-branding-bold`}
               onClick={handleSearch}
               disabled={loading}
             >
-              {loading ? "Searching..." : "Search"}
+              {loading ? "Searching" : "Search"}
             </button>
           </div>
         </div>
