@@ -8,7 +8,7 @@ function OverviewBanner() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const handleSlideChange = () => {
-    setActiveSlide(0);
+    setActiveSlide(1);
   };
 
   const SliderData = [
@@ -46,7 +46,7 @@ function OverviewBanner() {
       <Banner
         SliderData={SliderData}
         onSlideChange={handleSlideChange}
-        apperentClassName=""
+        apperentClassName="absolute"
       />
     </div>
   );

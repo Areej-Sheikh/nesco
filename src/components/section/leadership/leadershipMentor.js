@@ -39,14 +39,14 @@ function LeadershipMentor() {
             <div className="relative">
               <div className="space-y-2 mt-2 text-justify">
                 <p className="font-branding-medium">
-                  A fearless pioneer, Sumant Patels crystal-clear vision had
+                  A fearless pioneer, Sumant Patels crystal clear vision had
                   been instrumental in shaping the Nesco Group. A mechanical
-                  engineer from the University of Pennsylva nia, USA and a
+                  engineer from the University of Pennsylvania, USA and a
                   business graduate from the prestigious Wharton School, he
-                  returned to India in 1960 and suUC-cessfully founded the
-                  engineering heavyweights-GMM and Indabrator, in the decades
+                  returned to India in 1960 and sucessfully founded the
+                  engineering heavyweights GMM and Indabrator, in the decades
                   that followed, Sumant's eye on the big picture emboldened
-                  teams to innovative-ly face challenges in each new sector. As
+                  teams to innovatively face challenges in each new sector. As
                   the architect of Nescos diversification, he created a
                   state-of-the-art IT Park with unique offerings. His foresight
                   established in dia's largest exhibition venue in the private
