@@ -39,19 +39,19 @@ function LeadershipMentor2() {
             <div className="relative">
               <div className="space-y-2 mt-2 text-justify">
                 <p className="font-branding-medium text-white">
-                  A dynamic peoples leader, Krishna Patel is adept at spotting
+                  A dynamic people's leader, Krishna Patel is adept at spotting
                   and implementing future trends in any industry even as he
                   hones in on new business opportunities and verticals. An
                   alumnus of The Pennsylvania State University, USA and Kingston
                   University, UK, he is passionate about bringing a global
                   perspective to the workings of Nesco. Krishna began his career
-                  in Corporate Strategywith Fisher Hamilton in Pittsburgh, USA.
+                  in Corporate Strategy with Fisher Hamilton in Pittsburgh, USA.
                   His experience taught him the value of a services backbone. He
                   has guided the corporate expansion of Bombay Exhibition Center
                   and introduced the fast-gaining service verticals of
                   hospitality and events.A technology enthusiast, Krishna keeps
                   up-to-date with the latest industry trends, introducing new
-                  technologies and global industry norms to ourworld at Nesco.
+                  technologies and global industry norms to our world at Nesco.
                 </p>
               </div>
             </div>
