@@ -3,7 +3,7 @@ import background from "@/assests/Home/N.png";
 
 function Life() {
   return (
-    <section className="header_white flex justify-between items-center w-full bg-[#403092] relative pt-16 xl:pt-10 overflow-hidden xl:h-auto 2xl:h-screen lg:h-screen h-full ">
+    <section className="header_white flex justify-between items-center w-full bg-[#403092] relative pt-16 xl:pt-14 overflow-hidden xl:h-auto 2xl:h-screen lg:h-screen h-full ">
       <div className="px-[5%] ">
         <div className="flex flex-col xl:w-[50%] md:gap-7 gap-10 md:py-20 pb-20 z-10">
           {/* <p className="text-3xl font-bold text-secondary text-center md:text-left"> */}
@@ -34,7 +34,7 @@ function Life() {
             Place to Work Certified. This recognition reflects our dedication to
             providing our team with the best platform for professional
             development, collaboration, and success. We believe that when our
-            people flourish, so does our organi- zation, making Nesco not just a
+            people flourish, so does our organization, making Nesco not just a
             workplace, but a community of motivated individuals shaping the
             future together.
           </p>
