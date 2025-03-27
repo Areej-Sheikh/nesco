@@ -13,7 +13,7 @@ function Mentor() {
 
   return (
     <section
-      className="header_white flex flex-col items-center justify-center relative w-full h-full overflow-hidden lg:h-screen "
+      className="header_white flex flex-col items-center justify-center relative w-full h-full overflow-hidden lg:h-screen min-h-[800px]"
       style={{
         backgroundImage: `url(${backgroundImage.src})`,
         backgroundSize: "cover",

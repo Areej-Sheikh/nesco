@@ -5,7 +5,7 @@ import "./animation.css";
 
 export default function Goal() {
   return (
-    <section className="w-full lg:h-screen h-full bg-gray-200 pb-10 flex flex-col justify-center">
+    <section className="w-full lg:h-screen h-full bg-gray-200 pb-10 flex flex-col justify-center min-h-[800px]">
       <div className="grid md:grid-cols-2 justify-between gap-10 md:gap-0 pt-16 items-center w-[90%] mx-auto goal-section1">
         <div className={`relative h-[400px] md:h-[700px] mt-12`}>
           <Image
