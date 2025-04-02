@@ -15,7 +15,7 @@ function ScrollSnip({ Children }) {
     duration: 0.5,
     ease: "power1.out",
     inertia: true,
-    delay: 0,
+    delay: 0.0005,
   };
 
   useEffect(() => {
