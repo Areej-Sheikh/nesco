@@ -198,7 +198,7 @@ function SebiDetails() {
 
       case "documentPdf":
         return (
-          <div className=" gap-4">
+          <div className="bg-[#F3F3F3] gap-4">
             {item.tables.map((doc, docIndex) => (
               <div key={docIndex} className="border p-3 rounded">
                 <p className="flex items-center text-left gap-1">
