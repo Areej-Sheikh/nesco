@@ -277,6 +277,23 @@ function Navbar({ activeSlide }) {
     return Nescologo2;
   };
 
+  useEffect(() => {
+    if (isOpen !== null && NavData[isOpen]?.subMenu?.length > 0) {
+      const isThirdItemHovered =
+        hoverStates[3] &&
+        hoverStates.every((state, i) => (i === 3 ? state : !state));
+
+      setHoverStyle({
+        height: !isThirdItemHovered
+          ? NavData[isOpen].subMenu.length * 70 + 50
+          : NavData[isOpen].subMenu.length * 75 + 50,
+        opacity: 0,
+      });
+    } else {
+      setHoverStyle({ height: 0, opacity: 0 });
+    }
+  }, [isOpen, hoverStates]);
+
   const changeNavbar = () => {
     if (activePurpleSection) {
       return "bg-[#2b2a76]";
@@ -288,17 +305,6 @@ function Navbar({ activeSlide }) {
       return "bg-[#2b2a76]";
     }
   };
-
-  useEffect(() => {
-    if (isOpen !== null && NavData[isOpen]?.subMenu?.length > 0) {
-      setHoverStyle({
-        height: NavData[isOpen].subMenu.length * 80 + 40,
-        opacity: 0,
-      });
-    } else {
-      setHoverStyle({ height: 0, opacity: 0 });
-    }
-  }, [isOpen]);
 
   return (
     <nav
@@ -418,8 +424,9 @@ function Navbar({ activeSlide }) {
           ))}
         </ul>
       </div>
+
       <div
-        className="absolute left-0 w-full  bg-black bg-opacity-90 z-40 transition-all duration-300 overflow-hidden"
+        className="absolute left-0 w-full -mt-20 bg-black bg-opacity-90 z-40 transition-all duration-300 overflow-hidden  hidden xl:block"
         style={{
           top: "100%",
           height: hoverStyle.height,
@@ -431,19 +438,22 @@ function Navbar({ activeSlide }) {
             return (
               <div
                 key={index}
-                className="absolute left-0 w-full pt-20 bg-transparant transition-all bg-opacity-90 z-40 duration-300 overflow-hidden"
+                className="absolute left-0 w-full pt-4 bg-transparant transition-all bg-opacity-90 z-40 duration-300 overflow-hidden hidden xl:block"
                 // className={`absolute top-0 pt-20 left-0 w-full bg-black bg-opacity-90 z-40 overflow-hidden lg:flex
                 // ${
                 //   isOpen !== null
                 //     ? "animate-dropdown-open"
                 //     : "animate-dropdown-close"
                 // }`}
-                style={{ top: "100%", height: hoverStyle.height }}
+                style={{
+                  top: "100%",
+                  height: hoverStyle.height,
+                }}
                 onMouseEnter={handleDropdownEnter}
                 onMouseLeave={handleDropdownLeave}
               >
-                <div className="w-full h-full flex justify-end">
-                  <ul className="flex flex-col gap-6 lg:gap-4 w-[60%] pl-10 pr-20 py-5">
+                <div className="w-full flex justify-end">
+                  <ul className="flex flex-col gap-6 lg:gap-4 w-[64%] pl-10 pr-20 py-5">
                     {data.subMenu.map((subData, subIndex) => (
                       <li
                         key={subIndex}
