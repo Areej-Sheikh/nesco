@@ -63,6 +63,7 @@ function Navbar({ activeSlide }) {
           route: "/social-responsibility",
         },
         { title: "Sustainability", route: "/sustainability" },
+        { title: "", route: "" },
       ],
     },
     { title: "Life at Nesco", route: "/life-at-nesco", subMenu: [] },
@@ -240,6 +241,7 @@ function Navbar({ activeSlide }) {
     buttonColorElements.forEach((element) => {
       element.style.color = color;
     });
+    getTextColor();
   }, [activeSlide]);
 
   const getLogoColorWork = () => {
@@ -285,8 +287,8 @@ function Navbar({ activeSlide }) {
 
       setHoverStyle({
         height: !isThirdItemHovered
-          ? NavData[isOpen].subMenu.length * 70 + 50
-          : NavData[isOpen].subMenu.length * 75 + 50,
+          ? NavData[isOpen].subMenu.length * 64 + 50
+          : NavData[isOpen].subMenu.length * 60 + 50,
         opacity: 0,
       });
     } else {
@@ -328,7 +330,9 @@ function Navbar({ activeSlide }) {
       </div>
 
       {/* Desktop NavBar */}
-      <div className={`hidden xl:flex items-center z-[60] relative`}>
+      <div
+        className={`hidden xl:flex items-center z-[60] relative justify-end`}
+      >
         <ul className="flex items-center ">
           {NavData.map((data, index) => (
             <li
@@ -453,7 +457,7 @@ function Navbar({ activeSlide }) {
                 onMouseLeave={handleDropdownLeave}
               >
                 <div className="w-full flex justify-end">
-                  <ul className="flex flex-col gap-6 lg:gap-4 w-[64%] pl-10 pr-20 py-5">
+                  <ul className="flex flex-col gap-6 lg:gap-4 w-[60%] pl-5 py-5">
                     {data.subMenu.map((subData, subIndex) => (
                       <li
                         key={subIndex}
