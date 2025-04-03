@@ -79,6 +79,7 @@ function Navbar({ activeSlide }) {
   const [isFooter, setIsFooter] = useState(false);
   const [textBlack, setTextBlack] = useState(null);
   const [isOpen, setIsOpen] = useState(null);
+  const [hoverStyle, setHoverStyle] = useState({ height: 0, opacity: 0 });
   const [isClosed, setIsClosed] = useState(false);
   const [textWhite, setTextWhite] = useState(false);
   const [expandedMenuIndex, setExpandedMenuIndex] = useState(null); // State to track expanded mobile menu
@@ -288,9 +289,21 @@ function Navbar({ activeSlide }) {
     }
   };
 
+  useEffect(() => {
+    if (isOpen !== null && NavData[isOpen]?.subMenu?.length > 0) {
+      setHoverStyle({
+        height: NavData[isOpen].subMenu.length * 80 + 40,
+        opacity: 0,
+      });
+    } else {
+      setHoverStyle({ height: 0, opacity: 0 });
+    }
+  }, [isOpen]);
+
   return (
     <nav
-      className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed transition-all duration-50 ${changeNavbar()} ${changeNavbar1()}`}
+      // className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed transition-all duration-50 ${changeNavbar()} ${changeNavbar1()}`}
+      className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed transition-all duration-200 ${changeNavbar()} ${changeNavbar1()}`}
     >
       {!isScrolled && (
         <div className="fixed top-0 left-0 py-6 md:px-16 px-8 w-full h-20"></div>
@@ -314,7 +327,12 @@ function Navbar({ activeSlide }) {
           {NavData.map((data, index) => (
             <li
               key={index}
-              className={`${getTextColor()} border-r font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5`}
+              className={`${getTextColor()} border-r font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5 `}
+              // className={`${getTextColor()} border-r font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5 ${
+              //   isOpen !== null
+              //     ? "animate-dropdown-open"
+              //     : "animate-dropdown-close"
+              // }`}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
             >
@@ -400,18 +418,27 @@ function Navbar({ activeSlide }) {
           ))}
         </ul>
       </div>
+      <div
+        className="absolute left-0 w-full  bg-black bg-opacity-90 z-40 transition-all duration-300 overflow-hidden"
+        style={{
+          top: "100%",
+          height: hoverStyle.height,
+        }}
+      ></div>
       {isOpen !== null &&
         NavData.map((data, index) => {
           if (index === isOpen && data.subMenu.length > 0) {
             return (
               <div
                 key={index}
-                className={`absolute top-0 pt-20 left-0 w-full bg-black bg-opacity-90 z-40 hidden lg:flex 
-                ${
-                  isOpen !== null
-                    ? "animate-dropdown-open"
-                    : "animate-dropdown-close"
-                }`}
+                className="absolute left-0 w-full pt-20 bg-transparant transition-all bg-opacity-90 z-40 duration-300 overflow-hidden"
+                // className={`absolute top-0 pt-20 left-0 w-full bg-black bg-opacity-90 z-40 overflow-hidden lg:flex
+                // ${
+                //   isOpen !== null
+                //     ? "animate-dropdown-open"
+                //     : "animate-dropdown-close"
+                // }`}
+                style={{ top: "100%", height: hoverStyle.height }}
                 onMouseEnter={handleDropdownEnter}
                 onMouseLeave={handleDropdownLeave}
               >
