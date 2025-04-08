@@ -270,13 +270,13 @@ function SebiDetails() {
                     return (
                       <div
                         key={fieldIndex}
-                        className=" px-4 py-2 rounded flex w-full"
+                        className=" px-4 py-2 rounded w-full"
                       >
-                        <div className="">
-                          {field.pdfDate && (
+                        {field.documentDate && (
+                          <div className="font-branding-bold ml-5 my-2">
                             <p>{formatDate(field.documentDate)}</p>
-                          )}
-                        </div>
+                          </div>
+                        )}
                         <div className="w-[100%] ">
                           <p className="flex items-center">
                             <span className="h-full w-fit">
@@ -364,7 +364,7 @@ function SebiDetails() {
   };
 
   return (
-    <div className="flex justify-center header_purple">
+    <div className="flex justify-center h-fit">
       {loading ? (
         "Loading...."
       ) : (

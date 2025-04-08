@@ -15,11 +15,11 @@ function Mainsebi() {
   const Children = [
     {
       comp: <SebiBanner />,
-      classCss: "section",
+      classCss: "",
     },
     {
       comp: (
-        <div className="mt-14 flex justify-center items-center mb-20 header_purple">
+        <div className="mt-14 flex justify-center items-center mb-20 header_purple lg:min-h-[180vh]">
           <SebiDetails />
         </div>
       ),
