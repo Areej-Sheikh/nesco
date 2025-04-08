@@ -298,7 +298,16 @@ function Navbar({ activeSlide }) {
       element.style.color = color;
     });
     getTextColor();
-  }, [activeSlide]);
+  }, [
+    activeSlide,
+    activePurpleSection,
+    textWhite,
+    isOpen,
+    isFooter,
+    textBlack,
+    isHeaderWhite,
+    isScrolled,
+  ]);
 
   const getLogoColorWork = () => {
     if (activePurpleSection) {
