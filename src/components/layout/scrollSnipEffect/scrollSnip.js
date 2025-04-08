@@ -74,7 +74,7 @@ function ScrollSnip({ Children }) {
       {Children.map((data, index) => (
         <section
           key={index}
-          className={`lg:min-h-screen flex items-center justify-center ${data.classCss}`}
+          className={` flex items-center justify-center ${data.classCss}`}
           style={{ scrollSnapAlign: "start", transform: "translateZ(0)" }} // Performance boost
         >
           {data.comp}

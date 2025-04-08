@@ -58,7 +58,7 @@ export const MentorModal = ({ isOpen, onClose, data, lenis }) => {
       >
         <div ref={modalRef} className="w-full -mb-3">
           <h2 className="text-2xl font-branding-semibold text-primary">
-            {data.name}
+            {data.name || data.title}
           </h2>
           <p className="text-gray-700 mb-5 text-[1.1rem]">{data.position}</p>
           <div
