@@ -364,30 +364,29 @@ function SebiDetails() {
         );
 
       case "positionTable":
-        return item.tables.map((table, tableIndex) => (
-          <div key={tableIndex} className="p-4 w-full bg-[#F3F3F3]">
-            <div className="w-full h-full grid lg:grid-cols-2 grid-cols-1">
-              <table className="w-full border-collapse">
-                <thead>
-                  <h4 className="font-bold mb-2">{table.tablePositionTitle}</h4>
-
-                  <tr className="bg-gray-100">
-                    <th className="border p-2 text-left">Name</th>
-                    <th className="border p-2 text-left">Position</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {table.fields.map((field, fieldIndex) => (
-                    <tr key={fieldIndex}>
-                      <td className="border p-2">{field.name1}</td>
-                      <td className="border p-2">{field.position}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#F3F3F3]">
+            {item.tables.map((table, tableIndex) => (
+              <div key={tableIndex} className="p-4 w-full bg-[#F3F3F3]">
+                <div>
+                  <h4 className="font-branding-bold py-2 px-6 bg-[#D6D6D6]">
+                    {table.tablePositionTitle}
+                  </h4>
+                  <table className="w-full border-collapse">
+                    <tbody>
+                      {table.fields.map((field, fieldIndex) => (
+                        <tr key={fieldIndex}>
+                          <td className="border p-2">{field.name1}</td>
+                          <td className="border p-2">{field.position}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ))}
           </div>
-        ));
+        );
 
       case "documentAll":
         return (
@@ -572,7 +571,7 @@ function SebiDetails() {
                                           rel="noopener noreferrer"
                                           className="hover:text-blue-500 underline inline-block w-full"
                                         >
-                                          {field.documentName}
+                                          {data.fileName}
                                         </a>
                                       )}
                                     </>
