@@ -1491,10 +1491,26 @@ export function SCHEDULE() {
       filePath:
         "/resources/images/pdf/presentation-of-analyst-meeting–21-08-2024.pdf",
     },
+
     {
       fileName: "Schedule Of Analyst Meeting – 21-08-2024",
       filePath:
         "/resources/images/pdf/Intimation-of-Analyst-Meet-21-08-2024.pdf",
+    },
+    {
+      fileName: "Outcome of Analyst Meeting - 20.03.2023",
+      filePath:
+        "https://nescoltd-my.sharepoint.com/personal/companysecretary_nesco_in/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fcompanysecretary%5Fnesco%5Fin%2FDocuments%2FDATA%2FJINAL%2FNESCO%2FSEBI%2FCompliances%2FF%20Y%202022%2D23%2FQuarter%2031%2E03%2E2023%2FAnaylst%20Meeting%2FOutcome%20of%20Analyst%20Meeting%20%2D%20Nesco%20Limited%20%2D%2020%2E03%2E2023%2Epdf&parent=%2Fpersonal%2Fcompanysecretary%5Fnesco%5Fin%2FDocuments%2FDATA%2FJINAL%2FNESCO%2FSEBI%2FCompliances%2FF%20Y%202022%2D23%2FQuarter%2031%2E03%2E2023%2FAnaylst%20Meeting&ga=1",
+    },
+    {
+      fileName: "Outcome of Analyst Meeting - 17.11.2021",
+      filePath:
+        "https://nescoltd-my.sharepoint.com/personal/companysecretary_nesco_in/_layouts/15/stream.aspx?id=%2Fpersonal%2Fcompanysecretary%5Fnesco%5Fin%2FDocuments%2FDocuments%2FDATA%20JINAL%2FJINAL%2FNESCO%2FSEBI%2FCompliances%2FInvestor%20Meeting%2F17%2E11%2E2021%2FOutcome%20of%20Institutional%20Investor%20Meeting%20%2D%2017%2E11%2E2021%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ea5d61f60%2D2483%2D4fb3%2Daeae%2D8668305a7d71",
+    },
+    {
+      fileName: "Outcome of Analyst Meeting - 01.06.2021",
+      filePath:
+        "https://nescoltd-my.sharepoint.com/personal/companysecretary_nesco_in/_layouts/15/stream.aspx?id=%2Fpersonal%2Fcompanysecretary%5Fnesco%5Fin%2FDocuments%2FDocuments%2FDATA%20JINAL%2FJINAL%2FNESCO%2FSEBI%2FCompliances%2FInvestor%20Meeting%2F01%2E06%2E2021%2FOutcome%20of%20Analyst%20Meet%20%20%2D%2001%2E06%2E2021%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E2ede4a8b%2D9392%2D4ee6%2D87b0%2D1fc2efd67ba3",
     },
   ];
 }
