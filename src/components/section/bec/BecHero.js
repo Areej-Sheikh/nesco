@@ -22,32 +22,26 @@ function BecHero() {
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
       
-      {/* Content */}
+      {/* Content - Just like in the screenshot */}
       {/* <div className="relative z-10 px-[5%] h-full flex flex-col justify-center">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl mt-32">
           <h1
-            className="text-white text-[2.5rem] sm:text-[3.5rem] font-bold leading-[1.2] drop-shadow-lg mb-6"
+            className="text-white text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.2] drop-shadow-lg mb-4"
             style={{ fontFamily: "BrandingSemibold" }}
           >
             A Confluence of business & cultures
           </h1>
-          <p 
-            className="text-white text-xl sm:text-2xl drop-shadow-lg"
-            style={{ fontFamily: "BrandingRegular" }}
-          >
-            Where global businesses converge in Mumbai
-          </p>
         </div>
       </div> */}
 
-      {/* Logo positioned in bottom right corner - BLUE BANNER STYLE */}
-      <div className="absolute bottom-8 right-[-200px] px-8 py-4 bg-white bg-opacity-70 z-20 flex items-center justify-center rounded-full w-[500px]">
+      {/* Logo positioned with responsive design */}
+      <div className="absolute bottom-8 sm:right-[-200px] right-[-80px] px-4 sm:px-8 py-3 sm:py-4 bg-white bg-opacity-70 z-20 flex items-center rounded-full w-[180px] sm:w-[320px] md:w-[500px]">
         <Image
           src={becLogo}
           alt="Bombay Exhibition Center Logo"
-          width={180}
-          height={100}
-          className="object-contain mr-auto ml-6"
+          width={210}
+          height={60}
+          className="object-contain mr-auto ml-2 sm:ml-6"
         />
       </div>
     </section>

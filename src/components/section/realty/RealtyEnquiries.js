@@ -1,9 +1,9 @@
 import React from "react";
-import { MdEmail, MdPhone } from "react-icons/md";
+import { MdEmail, MdPhone } from "react-icons/md"; // Importing Material Design icons
 
-function BecEnquiries() {
+function RealtyEnquiries() {
   return (
-    <section className="py-16 px-[5%] bg-white border-t-[5px] border-[#f9d342] w-full">
+    <section className="py-16 px-[5%] bg-[#2c3e50] text-white w-full">
       <div className="w-[90%] mx-auto">
         <h2 
           className="text-[1.8rem] font-bold mb-8"
@@ -13,14 +13,14 @@ function BecEnquiries() {
         </h2>
         <div className="flex flex-col gap-4">
           <p className="flex items-center text-[1rem]">
-            <span className="w-5 h-5 mr-3 flex items-center justify-center text-[#f9d342]">
-              <MdEmail size={20} />
+            <span className="mr-3 text-xl">
+              <MdEmail />
             </span>
-            <span style={{ fontFamily: "BrandingMedium" }}>info@bombayexhibitioncenter.in</span>
+            <span style={{ fontFamily: "BrandingMedium" }}>contact@nescoreality.in</span>
           </p>
           <p className="flex items-center text-[1rem]">
-            <span className="w-5 h-5 mr-3 flex items-center justify-center text-[#f9d342]">
-              <MdPhone size={20} />
+            <span className="mr-3 text-xl">
+              <MdPhone />
             </span>
             <span style={{ fontFamily: "BrandingMedium" }}>022 66450123</span>
           </p>
@@ -30,4 +30,4 @@ function BecEnquiries() {
   );
 }
 
-export default BecEnquiries;
+export default RealtyEnquiries;

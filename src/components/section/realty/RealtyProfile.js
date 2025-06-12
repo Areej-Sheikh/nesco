@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 // Import profile image
-import profileImage from "@/assests/nesco-business-page/bec-elements/49.jpg";
+import profileImage from "@/assests/nesco-business-page/nesco-reality-elements/18.jpg";
 
-function BecProfile() {
+function RealtyProfile() {
   return (
     <section className="w-full h-screen overflow-hidden bg-[#f9f9f9] flex items-center">
       <div className="px-[5%] w-full h-full flex items-center">
@@ -15,25 +15,25 @@ function BecProfile() {
               className="text-[2rem] md:text-[2.2rem] font-bold mb-2"
               style={{ fontFamily: "BrandingSemibold" }}
             >
-              Harsh Mukherjee
+              Dharmesh Joshi
             </h3>
             <p 
               className="text-[1.1rem] text-[#666] mb-6"
               style={{ fontFamily: "BrandingMedium" }}
             >
-              Assistant Vice President - Sales
+              Sr. General Manager - Special Projects
             </p>
             <p 
               className="text-[1.2rem] font-bold mb-5"
               style={{ fontFamily: "BrandingSemibold" }}
             >
-              Belief: Actually, I can
+              Belief: Action is better than Words. Quit talking and lets start Doing!
             </p>
             <p 
               className="text-[1rem] leading-[1.8]"
               style={{ fontFamily: "BrandingMedium" }}
             >
-              For over 25 years, Harsh Mukherjee has been both a marketing leader and mentor. Harsh is analytical about task completion and delivering value to customers. He began his career in the publications industry. His fondness for the written word exists to this day as he enjoys reading the latest in current affairs and science and technology.
+              Dharmesh is a multifaceted professional with good understanding of various industries. With techno-commercial experience and working with top management, enables him to add value in Corporate Strategy & Infrastructure projects. Dharmesh is very passionate about whatever he does. Currently handling Special Projects, he is involved in Nesco's various Divisions. Dharmesh enjoys reading, music and spending his time with family.
             </p>
           </div>
 
@@ -41,7 +41,7 @@ function BecProfile() {
           <div className="flex-1 relative h-[350px] md:h-[450px] w-full">
             <Image
               src={profileImage}
-              alt="Harsh Mukherjee"
+              alt="Dharmesh Joshi"
               fill
               className="object-cover rounded-md"
               priority
@@ -53,4 +53,4 @@ function BecProfile() {
   );
 }
 
-export default BecProfile;
+export default RealtyProfile;

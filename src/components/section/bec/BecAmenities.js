@@ -8,8 +8,8 @@ import foodIcon from "@/assests/nesco-business-page/bec-elements/43.jpg";
 import greenSpacesIcon from "@/assests/nesco-business-page/bec-elements/44.jpg";
 import securityIcon from "@/assests/nesco-business-page/bec-elements/45.jpg";
 import internetIcon from "@/assests/nesco-business-page/bec-elements/46.jpg";
-import eventsIcon from "@/assests/nesco-business-page/bec-elements/47.jpg";
-import transportIcon from "@/assests/nesco-business-page/bec-elements/48.jpg";
+import eventsIcon from "@/assests/nesco-business-page/bec-elements/48.jpg";
+import transportIcon from "@/assests/nesco-business-page/bec-elements/47.jpg";
 
 function BecAmenities() {
   const amenitiesList = [
@@ -56,48 +56,42 @@ function BecAmenities() {
   ];
 
   return (
-    <section className="w-full h-screen overflow-hidden bg-[#f5f5f5]">
-      {/* Section Title with yellow top border */}
-      <div className="px-[5%] w-full border-t-2 border-[#f9d342] pt-8 pb-8">
-        <h2 
-          className="text-[2.5rem] md:text-[3rem] font-bold text-black"
-          style={{ fontFamily: "BrandingSemibold" }}
-        >
-          Amenities
-        </h2>
-      </div>
+    <section className="w-full h-screen flex flex-col overflow-hidden bg-white">
+      {/* Section Title - Match Realty spacing */}
+      <h2 
+        className="text-[2rem] font-bold px-[5%] pt-12 pb-8"
+        style={{ fontFamily: "BrandingSemibold" }}
+      >
+        Amenities
+      </h2>
       
-      {/* Amenities Grid with fixed height container */}
-      <div className="px-[5%] h-[calc(100%-140px)] flex items-center justify-center">
-        <div className="w-full max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-6 md:gap-10">
-            {amenitiesList.map((item, index) => (
-              <div className="text-center" key={index}>
-                <div className="w-[70px] h-[70px] mb-5 mx-auto">
-                  <Image
-                    src={item.icon}
-                    alt={`${item.name} Icon`}
-                    width={70}
-                    height={70}
-                    className="object-contain"
-                  />
-                </div>
-                <h4 
-                  className="text-[1.15rem] font-bold mb-2 text-black"
-                  style={{ fontFamily: "BrandingSemibold" }}
-                >
-                  {item.name}
-                </h4>
-                <p 
-                  className="text-[0.95rem] text-[#666] px-2"
-                  style={{ fontFamily: "BrandingMedium" }}
-                >
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+      {/* Amenities Grid - Match Realty spacing */}
+      <div className="w-full flex-1 px-[5%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        {amenitiesList.map((item, index) => (
+          <div key={index} className="flex flex-col items-center text-center">
+            <div className="w-[60px] h-[60px] mb-4">
+              <Image
+                src={item.icon}
+                alt={item.name}
+                width={60}
+                height={60}
+                className="object-contain"
+              />
+            </div>
+            <h3 
+              className="text-[1rem] md:text-[1.2rem] font-bold mb-2 text-[#fdc95d]"
+              style={{ fontFamily: "BrandingSemibold" }}
+            >
+              {item.name}
+            </h3>
+            <p 
+              className="text-[0.8rem] md:text-[0.9rem] text-[#fdc95d]"
+              style={{ fontFamily: "BrandingRegular" }}
+            >
+              {item.desc}
+            </p>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

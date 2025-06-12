@@ -1,0 +1,45 @@
+import React from "react";
+import Image from "next/image";
+
+// Import initiative image
+import incubationImage from "@/assests/nesco-business-page/nesco-reality-elements/10.jpg";
+
+function RealtyInitiative() {
+  return (
+    <section className="w-full h-screen flex flex-col md:flex-row overflow-hidden bg-white">
+      {/* Left column - description */}
+      <div className="md:w-1/2 w-full p-[5%] flex flex-col justify-center">
+        <h2 
+          className="text-[1.8rem] md:text-[2rem] font-bold mb-4"
+          style={{ fontFamily: "BrandingSemibold" }}
+        >
+          Our initiative
+        </h2>
+        <h3 
+          className="text-[1.4rem] md:text-[1.6rem] font-bold mb-5"
+          style={{ fontFamily: "BrandingSemibold" }}
+        >
+          Incubation centre
+        </h3>
+        <p 
+          className="text-[1rem] leading-relaxed"
+          style={{ fontFamily: "BrandingRegular" }}
+        >
+          Envisioned with foresight, the Incubation Centre is enabling promising, young businesses to take on bigger challenges. A fully-operational Incubator, the Centre functions as a catalyst for the new-age companies that are redefining business, operations and workplace culture in the startup era.
+        </p>
+      </div>
+      
+      {/* Right column - image */}
+      <div className="md:w-1/2 w-full relative h-[300px] md:h-auto">
+        <Image
+          src={incubationImage}
+          alt="Incubation Centre"
+          fill
+          className="object-cover"
+        />
+      </div>
+    </section>
+  );
+}
+
+export default RealtyInitiative;

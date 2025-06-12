@@ -4,11 +4,11 @@ import Image from "next/image";
 // Import facility image
 import burgerImage from "@/assests/nesco-business-page/bec-elements/40.jpg";
 
-function BecFacilities() {
+function HospitalityFacilities() {
   return (
     <section className="w-full h-screen overflow-hidden bg-white">
       {/* Section Title with yellow top border */}
-      <div className="px-[5%] w-full border-t-2 border-[#f9d342] pt-8 pb-4">
+      <div className="px-[5%] w-full border-t-2 border-[#ffffff] pt-8 pb-4">
         <h2 
           className="text-[2rem] md:text-[2.2rem] font-bold text-black"
           style={{ fontFamily: "BrandingSemibold" }}
@@ -92,4 +92,4 @@ function BecFacilities() {
   );
 }
 
-export default BecFacilities;
+export default HospitalityFacilities;

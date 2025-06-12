@@ -2,31 +2,31 @@ import React from "react";
 import Image from "next/image";
 
 // Import stat icons
-import spaceIcon from "@/assests/nesco-business-page/bec-elements/37.png";
-import visitorsIcon from "@/assests/nesco-business-page/bec-elements/38.png";
-import hostIcon from "@/assests/nesco-business-page/bec-elements/39.png";
+import brandsIcon from "@/assests/nesco-business-page/nesco-food-elements/25.png";
+import spaceIcon from "@/assests/nesco-business-page/nesco-food-elements/26.png";
+import mealsIcon from "@/assests/nesco-business-page/nesco-food-elements/27.png";
 
-function BecStats() {
+function HospitalityStats() {
   const stats = [
     {
+      icon: brandsIcon,
+      value: "8+ food brands owned & operated with 130+ recipes",
+      label: ""
+    },
+    {
       icon: spaceIcon,
-      value: "60k",
-      label: "Sq.m of space",
+      value: "24k",
+      label: "Sq.ft food prep + flight kitchen"
     },
     {
-      icon: visitorsIcon,
-      value: "20mn",
-      label: "visitors a year",
-    },
-    {
-      icon: hostIcon,
-      value: "#1 Host",
-      label: "for most exhibitions in India",
-    },
+      icon: mealsIcon,
+      value: "80k",
+      label: "Meals a day"
+    }
   ];
 
   return (
-    <section className="w-full h-screen bg-[#f9d342] overflow-hidden">
+    <section className="w-full h-screen bg-[#7cc14f] overflow-hidden">
       <div className="w-full h-full flex items-center justify-center">
         <div className="w-[90%] max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 py-12">
           {stats.map((stat, index) => (
@@ -61,4 +61,4 @@ function BecStats() {
   );
 }
 
-export default BecStats;
+export default HospitalityStats;

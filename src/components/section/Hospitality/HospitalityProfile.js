@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 // Import profile image
-import profileImage from "@/assests/nesco-business-page/bec-elements/49.jpg";
+import profileImage from "@/assests/nesco-business-page/nesco-food-elements/30.jpg";
 
-function BecProfile() {
+function HospitalityProfile() {
   return (
     <section className="w-full h-screen overflow-hidden bg-[#f9f9f9] flex items-center">
       <div className="px-[5%] w-full h-full flex items-center">
@@ -15,25 +15,25 @@ function BecProfile() {
               className="text-[2rem] md:text-[2.2rem] font-bold mb-2"
               style={{ fontFamily: "BrandingSemibold" }}
             >
-              Harsh Mukherjee
+              Saurav Banerjee
             </h3>
             <p 
               className="text-[1.1rem] text-[#666] mb-6"
               style={{ fontFamily: "BrandingMedium" }}
             >
-              Assistant Vice President - Sales
+              Corporate Executive Chef
             </p>
             <p 
               className="text-[1.2rem] font-bold mb-5"
               style={{ fontFamily: "BrandingSemibold" }}
             >
-              Belief: Actually, I can
+              Belief: For me the team comes first and commitment to hard work is our tool to achieve any goal.
             </p>
             <p 
               className="text-[1rem] leading-[1.8]"
               style={{ fontFamily: "BrandingMedium" }}
             >
-              For over 25 years, Harsh Mukherjee has been both a marketing leader and mentor. Harsh is analytical about task completion and delivering value to customers. He began his career in the publications industry. His fondness for the written word exists to this day as he enjoys reading the latest in current affairs and science and technology.
+              Chef Saurav Banerjee is our Corporate Executive Chef. He has a rich background spanning across diverse cuisines and experience in renowned kitchens. An alumnus of the Oberoi, Chef Saurav started restaurants and a long and very successful stint with "The Oberoi Group of Hotels". He is passionate about creating unique culinary experiences and is dedicated to inspiring our team towards culinary excellence. He has served one and all with utmost dignity, looking after the culinary notations of all walks of life.
             </p>
           </div>
 
@@ -41,7 +41,7 @@ function BecProfile() {
           <div className="flex-1 relative h-[350px] md:h-[450px] w-full">
             <Image
               src={profileImage}
-              alt="Harsh Mukherjee"
+              alt="Saurav Banerjee"
               fill
               className="object-cover rounded-md"
               priority
@@ -53,4 +53,4 @@ function BecProfile() {
   );
 }
 
-export default BecProfile;
+export default HospitalityProfile;

@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 import Pagewrapper from "@/components/layout/pagewrapper";
 import ScrollSnip from "@/components/layout/scrollSnipEffect/scrollSnip";
-import AnimateOnScroll from "../../common/animateContent/animation";
 
 // Import all BEC components
 import BecHero from "./BecHero";
 import BecDescription from "./BecDescription";
+import BecHalls from "./BecHalls";
 import BecDisplay from "./BecDisplay";
+import BecStats from "./BecStats";
 import BecFacilities from "./BecFacilities";
 import BecAmenities from "./BecAmenities";
 import BecProfile from "./BecProfile";
@@ -19,39 +20,45 @@ function MainBec() {
   const Children = [
     {
       comp: <BecHero />,
-      classCss: "section snap-start",
+      classCss: "section",
     },
     {
       comp: <BecDescription />,
-      classCss: "section snap-start",
+      classCss: "section",
+    },
+    {
+      comp: <BecHalls />,
+      classCss: "section",
     },
     {
       comp: <BecDisplay />,
-      classCss: "section snap-start",
+      classCss: "section",
+    },
+    {
+      comp: <BecStats />,
+      classCss: "section",
     },
     {
       comp: <BecFacilities />,
-      classCss: "section snap-start",
+      classCss: "section",
     },
     {
       comp: <BecAmenities />,
-      classCss: "section snap-start",
+      classCss: "section",
     },
     {
       comp: <BecProfile />,
-      classCss: "section snap-start",
+      classCss: "section",
     },
     {
       comp: <BecEnquiries />,
-      classCss: "section snap-start",
+      classCss: "section",
     },
   ];
 
   return (
-    <Pagewrapper activeSlide={activeSlide}>
-      <div className="snap-y snap-mandatory">
-        <ScrollSnip Children={Children} />
-      </div>
+    <Pagewrapper activeSlide={activeSlide} className="overflow-x-hidden">
+      <ScrollSnip Children={Children} />
     </Pagewrapper>
   );
 }

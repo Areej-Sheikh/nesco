@@ -117,3 +117,28 @@ body {
 .goal-section {
   height: auto;
 }
+
+/* Add these at the end of your CSS file */
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Hide horizontal scrollbar and fix double scrollbar issue */
+.snap-y.snap-mandatory {
+  overflow-x: hidden !important; 
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+.snap-y.snap-mandatory::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prevent any shadows or outlines from extending beyond viewport */
+* {
+  box-shadow: none !important;
+  outline: none !important;
+}

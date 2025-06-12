@@ -2,15 +2,15 @@ import React from "react";
 import Image from "next/image";
 
 // Import display image
-import displayImage from "@/assests/nesco-business-page/bec-elements/36.jpg";
+import displayImage from "@/assests/nesco-business-page/nesco-food-elements/24.jpg";
 
-function BecDisplay() {
+function HospitalityDisplay() {
   return (
     <section className="w-full h-screen overflow-hidden bg-white">
       <div className="w-full h-full relative">
         <Image
           src={displayImage}
-          alt="Exhibition Floor Display"
+          alt="Authentic Indian cuisine display"
           fill
           className="object-cover w-full"
           priority
@@ -22,4 +22,4 @@ function BecDisplay() {
   );
 }
 
-export default BecDisplay;
+export default HospitalityDisplay;
