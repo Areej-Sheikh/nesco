@@ -36,7 +36,7 @@ function Navbar({ activeSlide }) {
         { title: "Nesco Realty", route: "/realty" },
         { title: "Hospitality", route: "/hospitality" },
         { title: "Nesco Events", route: "" },
-        { title: "Engineering", route: "" },
+        { title: "Engineering", route: "/indrabrator" },
       ],
     },
     {
