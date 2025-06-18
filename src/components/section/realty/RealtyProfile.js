@@ -18,19 +18,19 @@ function RealtyProfile() {
               Dharmesh Joshi
             </h3>
             <p 
-              className="text-[1.1rem] text-[#666] mb-6"
+              className="text-[1.4rem] text-[#666] mb-6"
               style={{ fontFamily: "BrandingMedium" }}
             >
               Sr. General Manager - Special Projects
             </p>
             <p 
-              className="text-[1.2rem] font-bold mb-5"
+              className="text-[1.7rem] font-bold mb-5"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               Belief: Action is better than Words. Quit talking and lets start Doing!
             </p>
             <p 
-              className="text-[1rem] leading-[1.8]"
+              className="text-[1.5rem] leading-[1.8]"
               style={{ fontFamily: "BrandingMedium" }}
             >
               Dharmesh is a multifaceted professional with good understanding of various industries. With techno-commercial experience and working with top management, enables him to add value in Corporate Strategy & Infrastructure projects. Dharmesh is very passionate about whatever he does. Currently handling Special Projects, he is involved in Nesco's various Divisions. Dharmesh enjoys reading, music and spending his time with family.

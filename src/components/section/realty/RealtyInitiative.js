@@ -10,19 +10,19 @@ function RealtyInitiative() {
       {/* Left column - description */}
       <div className="md:w-1/2 w-full p-[5%] flex flex-col justify-center">
         <h2 
-          className="text-[1.8rem] md:text-[2rem] font-bold mb-4"
+          className="text-[2.8rem] md:text-[3rem] font-bold mb-4"
           style={{ fontFamily: "BrandingSemibold" }}
         >
           Our initiative
         </h2>
         <h3 
-          className="text-[1.4rem] md:text-[1.6rem] font-bold mb-5"
+          className="text-[2.4rem] md:text-[2.6rem] font-bold mb-5"
           style={{ fontFamily: "BrandingSemibold" }}
         >
           Incubation centre
         </h3>
         <p 
-          className="text-[1rem] leading-relaxed"
+          className="text-[1.5rem] leading-relaxed"
           style={{ fontFamily: "BrandingRegular" }}
         >
           Envisioned with foresight, the Incubation Centre is enabling promising, young businesses to take on bigger challenges. A fully-operational Incubator, the Centre functions as a catalyst for the new-age companies that are redefining business, operations and workplace culture in the startup era.

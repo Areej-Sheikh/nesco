@@ -23,12 +23,12 @@ function RealtyHero() {
       </div>
       
       {/* Logo positioned in top right */}
-      <div className="absolute bottom-8 sm:right-[-200px] right-[-80px] px-4 sm:px-8 py-3 sm:py-4 bg-white bg-opacity-70 z-20 flex items-center rounded-full w-[180px] sm:w-[320px] md:w-[500px]">
+      <div className="absolute bottom-8 sm:right-[-200px] right-[-80px] px-4 sm:px-8 py-3 sm:py-4 bg-white bg-opacity-70 z-20 flex items-center rounded-full w-[180px] sm:w-[320px] md:w-[500px] hidden sm:flex">
         <Image
           src={realtyLogo}
           alt="nesco realty Logo"
-          width={210}
-          height={60}
+          width={250}
+          height={90}
           className="object-contain mr-auto ml-2 sm:ml-6"
         />
       </div>

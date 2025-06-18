@@ -26,40 +26,45 @@ function BecHalls() {
   ];
 
   return (
-    <section className="w-full h-screen bg-white flex flex-col overflow-hidden">
-      {/* Title */}
-      <div className="w-full py-8 px-[5%] flex justify-center items-center">
-        {/* <h2
-          className="text-[#2c3e50] text-[1.8rem] md:text-[2rem] italic"
-          style={{ fontFamily: "TimesNewRoman" }}
-        >
-          Exhibition Spaces
-        </h2> */}
-      </div>
-
-      {/* Halls Grid - Keep original gap and layout */}
-      <div className="w-full flex-1 px-[5%] grid grid-cols-1 md:grid-cols-3 gap-4">
-        {halls.map((hall, index) => (
-          <div key={index} className="flex flex-col h-[90%]">
-            {/* Image container with original relative sizing */}
-            <div className="relative w-full flex-1 overflow-hidden">
-              <Image
-                src={hall.image}
-                alt={hall.alt}
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* Title below image - no background color */}
-            <p
-              className="text-center w-full py-4 italic text-[#2c3e50]"
-              style={{ fontFamily: "TimesNewRoman" }}
+    <section className="w-full h-auto min-h-screen bg-white flex flex-col overflow-hidden">
+      {/* Keep significant top padding to maintain position */}
+      <div className="w-full pt-24 sm:pt-32 md:pt-40 px-[5%] flex flex-col h-full">
+        {/* Optional header or title area */}
+        <div className="mb-4 sm:mb-8">
+          {/* You could add a title here if needed */}
+        </div>
+        
+        {/* Halls layout with TALLER images */}
+        <div className="w-full max-w-7xl mx-auto flex flex-col sm:flex-row gap-6 sm:gap-8 flex-1">
+          {halls.map((hall, index) => (
+            <div 
+              key={index} 
+              className="flex-1 flex flex-col h-[65vh] sm:h-[70vh] md:h-[75vh]"
             >
-              {hall.title}
-            </p>
-          </div>
-        ))}
+              {/* Image container with INCREASED height */}
+              <div className="relative flex-1 w-full overflow-hidden rounded-md">
+                <Image
+                  src={hall.image}
+                  alt={hall.alt}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 640px) 90vw, (max-width: 768px) 45vw, 30vw"
+                />
+              </div>
+
+              {/* Title below image */}
+              <p
+                className="text-center w-full py-3 sm:py-4 italic text-[#2c3e50] text-[1rem] sm:text-[1.1rem] md:text-[1.2rem]"
+                style={{ fontFamily: "TimesNewRoman" }}
+              >
+                {hall.title}
+              </p>
+            </div>
+          ))}
+        </div>
+        
+        {/* Reduced bottom padding to allow more space for taller images */}
+        <div className="pb-4 sm:pb-8"></div>
       </div>
     </section>
   );

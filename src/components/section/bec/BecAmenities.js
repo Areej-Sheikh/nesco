@@ -56,36 +56,37 @@ function BecAmenities() {
   ];
 
   return (
-    <section className="w-full h-screen flex flex-col overflow-hidden bg-white">
-      {/* Section Title - Match Realty spacing */}
+    <section className="w-full h-screen flex flex-col overflow-hidden bg-white py-4 sm:py-8">
+      {/* Section Title - Responsive typography and spacing */}
       <h2 
-        className="text-[2rem] font-bold px-[5%] pt-12 pb-8"
+        className="text-[1.6rem] sm:text-[1.8rem] md:text-[2rem] font-bold px-[5%] pt-8 pb-6 sm:pb-8"
         style={{ fontFamily: "BrandingSemibold" }}
       >
         Amenities
       </h2>
       
-      {/* Amenities Grid - Match Realty spacing */}
-      <div className="w-full flex-1 px-[5%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+      {/* Amenities Grid - Improved responsive grid */}
+      <div className="w-full flex-1 px-[5%] grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 overflow-y-auto">
         {amenitiesList.map((item, index) => (
           <div key={index} className="flex flex-col items-center text-center">
-            <div className="w-[60px] h-[60px] mb-4">
+            {/* Responsive icon sizing */}
+            <div className="w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] mb-2 sm:mb-4">
               <Image
                 src={item.icon}
                 alt={item.name}
-                width={60}
-                height={60}
-                className="object-contain"
+                width={160}
+                height={160}
+                className="object-contain w-full h-full"
               />
             </div>
             <h3 
-              className="text-[1rem] md:text-[1.2rem] font-bold mb-2 text-[#fdc95d]"
+              className="text-[0.9rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] font-bold mb-1 sm:mb-2 text-[#fdc95d]"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               {item.name}
             </h3>
             <p 
-              className="text-[0.8rem] md:text-[0.9rem] text-[#fdc95d]"
+              className="text-[0.7rem] sm:text-[0.8rem] md:text-[0.9rem] text-[#fdc95d]"
               style={{ fontFamily: "BrandingRegular" }}
             >
               {item.desc}

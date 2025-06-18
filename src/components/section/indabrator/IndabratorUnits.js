@@ -1,15 +1,15 @@
 import React from "react";
 import Image from "next/image";
 
-// Import unit images
-import factoryImg from "@/assests/nesco-business-page/Indabrator-Elements/59.jpg";
-import unit1Img from "@/assests/nesco-business-page/Indabrator-Elements/60.jpg";
-import unit2Img from "@/assests/nesco-business-page/Indabrator-Elements/61.jpg";
+// Import unit images - using the ones from your attachments
+import factoryImg1 from "@/assests/nesco-business-page/Indabrator-Elements/63.jpg"; // First factory image
+import factoryImg2 from "@/assests/nesco-business-page/Indabrator-Elements/64.jpg"; // Second factory image
 
 function IndabratorUnits() {
   return (
     <section className="w-full h-screen bg-white flex flex-col overflow-hidden">
-      <div className="w-full py-8 px-[5%]">
+      {/* Title with padding */}
+      <div className="w-full pt-16 pb-4 px-[5%]">
         <h2 
           className="text-[2rem] md:text-[2.2rem] font-bold"
           style={{ fontFamily: "BrandingSemibold" }}
@@ -18,60 +18,78 @@ function IndabratorUnits() {
         </h2>
       </div>
       
-      {/* Factory Image */}
-      <div className="relative w-full h-[250px] md:h-[300px] mb-8">
-        <Image
-          src={factoryImg}
-          alt="Indabrator Factory"
-          fill
-          className="object-cover"
-        />
-      </div>
-      
-      {/* Units Description */}
-      <div className="w-full flex-1 px-[5%] flex flex-col md:flex-row gap-6">
-        {/* Unit 1 */}
-        <div className="md:w-1/2 p-4 bg-gray-50 rounded-md flex flex-col h-[300px] md:h-auto">
-          <div className="flex items-center mb-4">
+      {/* Container for both factory sections */}
+      <div className="flex-1 flex flex-col gap-4 overflow-y-auto">
+        {/* Works I Section */}
+        <div className="relative w-full h-[45vh]">
+          {/* Background Image */}
+          <Image
+            src={factoryImg1}
+            alt="Indabrator Factory - Works I"
+            fill
+            className="object-cover"
+            priority
+          />
+          
+          {/* White overlay card with Works I information */}
+          <div className="absolute right-[5%] top-1/2 transform -translate-y-1/2 bg-white p-5 md:p-6 max-w-[85%] md:max-w-[420px] shadow-md">
             <h3 
-              className="text-[1.4rem] font-bold"
+              className="text-[1.2rem] md:text-[1.4rem] font-bold mb-1"
               style={{ fontFamily: "BrandingSemibold" }}
             >
-              Works1
+              Works I
             </h3>
-            <span className="text-sm text-gray-500 ml-2">Vataman, Gujarat</span>
+            <p className="text-sm text-gray-600 mb-3">Vataman, Gujarat</p>
+            
+            <p 
+              className="text-[0.9rem] md:text-[1rem] leading-relaxed"
+              style={{ fontFamily: "BrandingRegular" }}
+            >
+              The Vataman units are situated within 31 acres of green expanses. At this location, over 1500 skilled workers are engaged in the manufacturing of shot-blasting machines and other equipment.
+            </p>
+            <p 
+              className="text-[0.9rem] md:text-[1rem] leading-relaxed mt-2"
+              style={{ fontFamily: "BrandingRegular" }}
+            >
+              The unit produces numerous shot blasting, painting and air pollution control equipments every year. The R&D Centre facilitates in creating customized solutions for all applications.
+            </p>
           </div>
-          
-          <p 
-            className="text-[0.95rem] leading-relaxed flex-grow"
-            style={{ fontFamily: "BrandingRegular" }}
-          >
-            The Vataman units are situated within 31 acres of green expanses. At this location, over 1500 skilled workers are engaged in manufacturing of shot-blasting machines and other equipment.
-            <br /><br />
-            The unit produces numerous shot blasting, painting and air pollution control equipments every year. The R&D Centre facilitates in creating customized solutions for all applications.
-          </p>
         </div>
         
-        {/* Unit 2 */}
-        <div className="md:w-1/2 p-4 bg-gray-50 rounded-md flex flex-col h-[300px] md:h-auto">
-          <div className="flex items-center mb-4">
+        {/* Works II Section */}
+        <div className="relative w-full h-[45vh]">
+          {/* Background Image */}
+          <Image
+            src={factoryImg2}
+            alt="Indabrator Factory - Works II"
+            fill
+            className="object-cover"
+            priority
+          />
+          
+          {/* White overlay card with Works II information */}
+          <div className="absolute left-[5%] top-1/2 transform -translate-y-1/2 bg-white p-5 md:p-6 max-w-[85%] md:max-w-[420px] shadow-md">
             <h3 
-              className="text-[1.4rem] font-bold"
+              className="text-[1.2rem] md:text-[1.4rem] font-bold mb-1"
               style={{ fontFamily: "BrandingSemibold" }}
             >
-              Works2
+              Works II
             </h3>
-            <span className="text-sm text-gray-500 ml-2">Karamsad, Gujarat</span>
+            <p className="text-sm text-gray-600 mb-3">Karamsad, Gujarat</p>
+            
+            <p 
+              className="text-[0.9rem] md:text-[1rem] leading-relaxed"
+              style={{ fontFamily: "BrandingRegular" }}
+            >
+              The Indabrator foundry and abrasive plant is located within 60 acres of land in Karamsad, Gujarat. Lauded as one of India's finest manufacturing centers, the plant includes full heat treatment facilities and physical and chemical tests laboratories.
+            </p>
+            <p 
+              className="text-[0.9rem] md:text-[1rem] leading-relaxed mt-2"
+              style={{ fontFamily: "BrandingRegular" }}
+            >
+              The state-of-the-art alloy iron foundry enables the manufacture of highly wear-resistant shell-molded alloy iron castings and spares.
+            </p>
           </div>
-          
-          <p 
-            className="text-[0.95rem] leading-relaxed flex-grow"
-            style={{ fontFamily: "BrandingRegular" }}
-          >
-            The Indabrator foundry and abrasives plant is located within 60 acres of land in Karamsad, Gujarat. Located at the of Indra Project manufacturing complex, this facility houses well-equipped testing facilities and physical and chemical tests laboratories.
-            <br /><br />
-            The state-of-the-art alloy iron foundry enables the production of high-density abrasives with mounted shot testing chambers.
-          </p>
         </div>
       </div>
     </section>

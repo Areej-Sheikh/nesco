@@ -61,12 +61,12 @@ function RealtyAmenities() {
       <div className="w-full flex-1 px-[5%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
         {amenities.map((amenity, index) => (
           <div key={index} className="flex flex-col items-center text-center">
-            <div className="w-[60px] h-[60px] mb-4">
+            <div className="w-[160px] h-[160px] mb-4">
               <Image
                 src={amenity.icon}
                 alt={amenity.title}
-                width={60}
-                height={60}
+                width={160}
+                height={160}
                 className="object-contain"
               />
             </div>

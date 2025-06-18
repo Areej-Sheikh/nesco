@@ -9,12 +9,12 @@ import assemblyImage from "@/assests/nesco-business-page/nesco-reality-elements/
 function RealtySpaces() {
   const spaces = [
     {
-      title: "Residential Spaces",
+      title: "Workspaces",
       image: residentialImage,
       alt: "Modern residential living space"
     },
     {
-      title: "Workspaces",
+      title: "Residential Spaces",
       image: workspaceImage,
       alt: "Professional workspace environment"
     },
@@ -26,15 +26,9 @@ function RealtySpaces() {
   ];
 
   return (
-    <section className="w-full h-screen bg-[#2c3e50] flex flex-col overflow-hidden">
+    <section className="w-full h-screen bg-[#0e129f] flex flex-col overflow-hidden">
       {/* Title */}
       <div className="w-full py-8 px-[5%] flex justify-center items-center">
-        <h2 
-          className="text-white text-[1.8rem] md:text-[2rem] italic"
-          style={{ fontFamily: "TimesNewRoman" }}
-        >
-          Residential Spaces
-        </h2>
       </div>
       
       {/* Spaces Grid */}

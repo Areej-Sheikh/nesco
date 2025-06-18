@@ -19,39 +19,39 @@ function MainBec() {
 
   const Children = [
     {
-      comp: <BecHero />,
+      comp: (<BecHero />),
       classCss: "section",
     },
     {
-      comp: <BecDescription />,
+      comp: (<BecDescription />),
       classCss: "section",
     },
     {
-      comp: <BecHalls />,
+      comp: (<BecHalls />),
       classCss: "section",
     },
     {
-      comp: <BecDisplay />,
+      comp: (<BecDisplay />),
       classCss: "section",
     },
     {
-      comp: <BecStats />,
+      comp: (<BecStats />),
       classCss: "section",
     },
     {
-      comp: <BecFacilities />,
+      comp: (<BecFacilities />),
       classCss: "section",
     },
     {
-      comp: <BecAmenities />,
+      comp: (<BecAmenities />),
       classCss: "section",
     },
     {
-      comp: <BecProfile />,
+      comp: (<BecProfile />),
       classCss: "section",
     },
     {
-      comp: <BecEnquiries />,
+      comp: (<BecEnquiries />),
       classCss: "section",
     },
   ];

@@ -10,8 +10,8 @@ function HospitalityStats() {
   const stats = [
     {
       icon: brandsIcon,
-      value: "8+ food brands owned & operated with 130+ recipes",
-      label: ""
+      value: "8+",
+      label: "food brands owned & operated with 130+ recipes"
     },
     {
       icon: spaceIcon,

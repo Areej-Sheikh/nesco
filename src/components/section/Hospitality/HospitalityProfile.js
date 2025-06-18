@@ -18,19 +18,19 @@ function HospitalityProfile() {
               Saurav Banerjee
             </h3>
             <p 
-              className="text-[1.1rem] text-[#666] mb-6"
+              className="text-[1.4rem] text-[#666] mb-6"
               style={{ fontFamily: "BrandingMedium" }}
             >
               Corporate Executive Chef
             </p>
             <p 
-              className="text-[1.2rem] font-bold mb-5"
+              className="text-[1.7rem] font-bold mb-5"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               Belief: For me the team comes first and commitment to hard work is our tool to achieve any goal.
             </p>
             <p 
-              className="text-[1rem] leading-[1.8]"
+              className="text-[1.5rem] leading-[1.8]"
               style={{ fontFamily: "BrandingMedium" }}
             >
               Chef Saurav Banerjee is our Corporate Executive Chef. He has a rich background spanning across diverse cuisines and experience in renowned kitchens. An alumnus of the Oberoi, Chef Saurav started restaurants and a long and very successful stint with "The Oberoi Group of Hotels". He is passionate about creating unique culinary experiences and is dedicated to inspiring our team towards culinary excellence. He has served one and all with utmost dignity, looking after the culinary notations of all walks of life.

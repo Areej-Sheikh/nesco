@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 // Import stat icons
-import facilityIcon from "@/assests/nesco-business-page/Indabrator-Elements/62.jpg";
-import projectsIcon from "@/assests/nesco-business-page/Indabrator-Elements/63.jpg";
-import experienceIcon from "@/assests/nesco-business-page/Indabrator-Elements/64.jpg";
+import facilityIcon from "@/assests/nesco-business-page/Indabrator-Elements/60.png";
+import projectsIcon from "@/assests/nesco-business-page/Indabrator-Elements/61.png";
+import experienceIcon from "@/assests/nesco-business-page/Indabrator-Elements/62.png";
 
 function IndabratorStats() {
   const stats = [

@@ -11,6 +11,7 @@ import IndabratorUnits from "./IndabratorUnits";
 import IndabratorStats from "./IndabratorStats";
 import IndabratorProfile from "./IndabratorProfile";
 import IndabratorEnquiries from "./IndabratorEnquiries";
+import IndabratorDisplay from "./IndrabratorDisplay";
 
 function MainIndabrator() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -27,6 +28,10 @@ function MainIndabrator() {
     {
       comp: <IndabratorServices />,
       classCss: "section",
+    },
+    {
+        comp: <IndabratorDisplay />,
+        classCss: "section",
     },
     {
       comp: <IndabratorUnits />,
@@ -47,7 +52,7 @@ function MainIndabrator() {
   ];
 
   return (
-    <Pagewrapper activeSlide={activeSlide}>
+    <Pagewrapper activeSlide={activeSlide} className="overflow-x-hidden">
       <ScrollSnip Children={Children} />
     </Pagewrapper>
   );
