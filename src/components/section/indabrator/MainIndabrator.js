@@ -8,6 +8,7 @@ import IndabratorHero from "./IndabratorHero";
 import IndabratorIntro from "./IndabratorIntro";
 import IndabratorServices from "./IndabratorServices";
 import IndabratorUnits from "./IndabratorUnits";
+import IndabratorUnitss from "./indrabratorUnits2";
 import IndabratorStats from "./IndabratorStats";
 import IndabratorProfile from "./IndabratorProfile";
 import IndabratorEnquiries from "./IndabratorEnquiries";
@@ -34,11 +35,15 @@ function MainIndabrator() {
         classCss: "section",
     },
     {
+      comp: <IndabratorStats />,
+      classCss: "section",
+    },
+    {
       comp: <IndabratorUnits />,
       classCss: "section",
     },
     {
-      comp: <IndabratorStats />,
+      comp: <IndabratorUnitss />,
       classCss: "section",
     },
     {

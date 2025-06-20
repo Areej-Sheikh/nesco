@@ -50,11 +50,11 @@ function IndabratorServices() {
   ];
 
   return (
-    <section className="w-full h-screen bg-blue-900 flex flex-col overflow-hidden">
-      <div className="w-full flex-1 px-[5%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 py-12">
+    <section className="w-full h-screen bg-[#0e129f] flex flex-col overflow-hidden">
+      <div className="w-full flex-1 px-[5%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 py-12 mt-16">
         {services.map((service, index) => (
           <div key={index} className="flex flex-col items-center">
-            <div className="relative w-full h-[150px] sm:h-[180px] md:h-[200px] mb-3 overflow-hidden rounded-md">
+            <div className="relative w-full h-[190px] sm:h-[230px] md:h-[250px] mb-3 overflow-hidden rounded-md">
               <Image
                 src={service.image}
                 alt={service.alt}
@@ -64,7 +64,7 @@ function IndabratorServices() {
               <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-all"></div>
             </div>
             <p
-              className="text-center w-full py-2 text-white text-[0.9rem] md:text-[1rem]"
+              className="text-center w-full py-2 text-white text-[1rem] md:text-[1rem]"
               style={{ fontFamily: "BrandingRegular" }}
             >
               {service.title}
