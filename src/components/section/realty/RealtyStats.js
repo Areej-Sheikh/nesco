@@ -26,7 +26,7 @@ function RealtyStats() {
   ];
 
   return (
-    <section className="w-full h-screen flex items-center justify-center bg-white">
+    <section className="w-full h-auto flex items-center justify-center bg-white">
       <div className="w-[90%] max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center text-center px-4">

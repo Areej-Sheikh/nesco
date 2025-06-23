@@ -27,7 +27,7 @@ function BecStats() {
   ];
 
 return (
-<section className="w-full h-screen flex items-center justify-center bg-[#fab62a]">
+<section className="w-full h-auto flex items-center justify-center bg-[#fab62a]">
       <div className="w-[90%] max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 py-12">
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center text-center px-4">
