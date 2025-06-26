@@ -14,7 +14,7 @@ function HospitalityIntro() {
       </div>
       
       {/* Right column - Description with responsive typography */}
-      <div className="md:w-1/2 w-full p-4 sm:p-[5%] bg-gray-50 flex flex-col justify-center">
+      <div className="md:w-1/2 w-full p-4 sm:p-[5%] bg-white flex flex-col justify-center">
         <p 
           className="text-[1.1rem] sm:text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem] mb-3 sm:mb-5 leading-[1.4] sm:leading-relaxed"
           style={{ fontFamily: "BrandingMedium" }}

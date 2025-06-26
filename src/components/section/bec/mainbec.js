@@ -21,7 +21,7 @@ function MainBec() {
   const Children = [
     {
       comp: (<BecHero />),
-      classCss: "section",
+      classCss: "section header_white",
     },
     {
       comp: (<BecDescription />),

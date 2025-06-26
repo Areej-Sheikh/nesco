@@ -48,7 +48,7 @@ function RealtyStats() {
             </h3>
             <p 
               className="text-center text-[0.9rem] sm:text-[1rem] text-[#483bb0]"
-              style={{ fontFamily: "BrandingRegular" }}
+              style={{ fontFamily: "BrandingMedium" }}
             >
               {stat.label}
             </p>

@@ -24,11 +24,11 @@ function MainRealty() {
     },
     {
       comp: <RealtyIntro />,
-      classCss: "section",
+      classCss: "section header_color_black pt-0 lg:pt-10",
     },
     {
       comp: <RealtySpaces />,
-      classCss: "section",
+      classCss: "section header_purple",
     },
     {
       comp: <RealtyCollaboration />,
