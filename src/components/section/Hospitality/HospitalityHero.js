@@ -34,7 +34,7 @@ function HospitalityHero() {
             alt="Nesco Realty Logo"
             width={210}
             height={60}
-            className="object-contain scale-[1.65] sm:scale-[1.8] md:scale-[1.95] transform-gpu"
+            className="object-contain scale-[1.45] sm:scale-[1.7] md:scale-[1.85] transform-gpu"
             style={{ marginLeft: "5rem" }}
           />
         </div>

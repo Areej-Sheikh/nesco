@@ -9,7 +9,7 @@ function IndabratorUnits() {
   return (
     <section className="w-full h-screen bg-white flex flex-col overflow-hidden">
       {/* Title with padding */}
-      <div className="w-full pt-16 pb-4 px-[5%]">
+      <div className="w-full pt-12 pb-4 px-[5%]">
         <h2
           className="text-[2rem] md:text-[2.2rem] font-bold"
           style={{ fontFamily: "BrandingSemibold" }}

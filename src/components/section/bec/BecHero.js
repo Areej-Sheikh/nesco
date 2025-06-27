@@ -49,6 +49,8 @@ function BecHero() {
           />
         </div>
       </div>
+
+
     </section>
   );
 }

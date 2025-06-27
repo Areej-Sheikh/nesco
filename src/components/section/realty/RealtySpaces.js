@@ -26,11 +26,11 @@ function RealtySpaces() {
   ];
 
   return (
-    <section className=" w-full bg-blue-800 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+    <section className=" w-full bg-blue-800 py-2 sm:py-4 lg:py-8 px-4 sm:px-6 lg:px-8">
       {/* Main Title */}
-      <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+      {/* <div className="text-center mb-8 sm:mb-10 lg:mb-12"> */}
 
-      </div>
+      {/* </div> */}
       
       {/* Spaces Grid */}
       <div className="max-w-7xl mx-auto header_white">

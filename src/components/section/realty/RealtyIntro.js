@@ -2,7 +2,7 @@ import React from "react";
 
 function RealtyIntro() {
   return (
-    <section className="w-full h-screen bg-white flex flex-col md:flex-row overflow-hidden goal-section1">
+    <section className="w-full h-auto bg-white flex flex-col md:flex-row overflow-hidden goal-section1">
       {/* Left column - Main heading */}
       <div className="md:w-1/2 w-full p-[5%] flex flex-col justify-center flex-1">
         <h1 
@@ -17,7 +17,7 @@ function RealtyIntro() {
       </div>
       
       {/* Right column - Description */}
-      <div className="md:w-1/2 w-full p-4 sm:p-6 md:p-[5%] bg-white flex flex-col justify-center">
+      <div className="md:w-1/2 w-full p-4 sm:p-6 md:p-[5%] bg-white flex flex-col ">
         <div className="h-full flex flex-col">
           <p 
             className="text-[1.5rem] sm:text-[1.6rem] md:text-[1.7rem] lg:text-[1.8rem] mb-5 leading-relaxed pt-0 md:pt-[5%]"

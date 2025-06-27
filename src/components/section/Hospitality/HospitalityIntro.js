@@ -2,7 +2,7 @@ import React from "react";
 
 function HospitalityIntro() {
   return (
-    <section className="w-full min-h-screen h-auto bg-white flex flex-col md:flex-row overflow-hidden">
+    <section className="w-full min-h-auto h-auto bg-white flex flex-col md:flex-row overflow-hidden">
       {/* Left column - Main heading with better mobile sizing */}
       <div className="md:w-1/2 w-full p-4 sm:p-[5%] flex flex-col justify-center">
         <h1 
