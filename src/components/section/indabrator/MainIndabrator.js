@@ -12,21 +12,84 @@ import IndabratorStats from "./IndabratorStats";
 import IndabratorProfile from "./IndabratorProfile";
 import IndabratorEnquiries from "./IndabratorEnquiries";
 import IndabratorDisplay from "./IndrabratorDisplay";
+import AnimateOnScroll from "@/components/common/animateContent/animation";
+import ScrollSnip from "@/components/layout/scrollSnipEffect/scrollSnip";
 
 function MainIndabrator() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  const Children = [
+    {
+      comp: <IndabratorHero />,
+      classCss: "section ",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <IndabratorIntro />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <IndabratorServices />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_white",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <IndabratorDisplay />
+        </AnimateOnScroll>
+      ),
+      classCss: "section",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <IndabratorStats />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <IndabratorUnits />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_purple",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <IndabratorUnitss />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_purple",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <IndabratorProfile />
+        </AnimateOnScroll>
+      ),
+      classCss: "header_purple ",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <IndabratorEnquiries />
+        </AnimateOnScroll>
+      ),
+      classCss: "header_purple ",
+    },
+  ];
 
   return (
-    <Pagewrapper activeSlide={activeSlide} className="overflow-x-hidden">
-      <IndabratorHero />
-      <IndabratorIntro />
-      <IndabratorServices />
-      <IndabratorDisplay />
-      <IndabratorStats />
-      <IndabratorUnits />
-      <IndabratorUnitss />
-      <IndabratorProfile />
-      <IndabratorEnquiries />
+    <Pagewrapper>
+      <ScrollSnip Children={Children} />
     </Pagewrapper>
   );
 }

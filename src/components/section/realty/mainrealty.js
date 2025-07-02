@@ -12,21 +12,84 @@ import RealtyInitiative from "./RealtyInitiative";
 import RealtyAmenities from "./RealtyAmenities";
 import RealtyProfile from "./RealtyProfile";
 import RealtyEnquiries from "./RealtyEnquiries";
+import AnimateOnScroll from "@/components/common/animateContent/animation";
+import ScrollSnip from "@/components/layout/scrollSnipEffect/scrollSnip";
 
 function MainRealty() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  const Children = [
+    {
+      comp: <RealtyHero />,
+      classCss: "section ",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <RealtyIntro />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <RealtySpaces />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_white",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <RealtyCollaboration />
+        </AnimateOnScroll>
+      ),
+      classCss: "section",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <RealtyStats />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <RealtyInitiative />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <RealtyAmenities />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_purple",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <RealtyProfile />
+        </AnimateOnScroll>
+      ),
+      classCss: "header_purple section",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <RealtyEnquiries />
+        </AnimateOnScroll>
+      ),
+      classCss: "header_purple",
+    },
+  ];
 
   return (
-    <Pagewrapper activeSlide={activeSlide}>
-      <RealtyHero />
-      <RealtyIntro />
-      <RealtySpaces />
-      <RealtyCollaboration />
-      <RealtyStats />
-      <RealtyInitiative />
-      <RealtyAmenities />
-      <RealtyProfile />
-      <RealtyEnquiries />
+    <Pagewrapper>
+      <ScrollSnip Children={Children} />
     </Pagewrapper>
   );
 }

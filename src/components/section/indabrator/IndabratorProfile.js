@@ -6,47 +6,48 @@ import profileImage from "@/assests/nesco-business-page/Indabrator-Elements/65.j
 
 function IndabratorProfile() {
   return (
-    <section className="w-full min-h-screen bg-white py-2 sm:py-4 md:py-8">
-      <div className="container px-6 sm:px-10 md:px-16 lg:px-24 mx-auto">
+    <div className="w-full lg:min-h-screen bg-white py-8 lg:py-12">
+      <div className="w-[90%] mx-auto lg:mt-20">
         {/* Main heading */}
         <h2
-          className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.2rem] font-bold mb-8 sm:mb-10 md:mb-12"
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 lg:mb-12 text-left"
           style={{ fontFamily: "BrandingSemibold" }}
         >
           Meet the people who make it possible.
         </h2>
 
         {/* Profile container */}
-        <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
-          {/* Image container - fixed aspect ratio */}
-          <div className="md:w-[40%] w-full">
-            <div className="aspect-[3/4] w-full relative rounded-md overflow-hidden shadow-lg">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          {/* Image container - Left side */}
+          <div className="w-full lg:w-[40%]">
+            <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[700px] w-full overflow-hidden rounded-lg shadow-lg">
               <Image
                 src={profileImage}
                 alt="Dr. Pawan Kumar Singh"
                 fill
                 className="object-cover object-top"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
 
-          {/* Text content */}
-          <div className="md:w-[60%] w-full">
+          {/* Text content - Right side */}
+          <div className="w-full lg:w-[60%]">
             <h3
-              className="text-[1.8rem] sm:text-[2rem] md:text-[2.2rem] font-bold mb-1"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 text-left"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               Dr Pawan Kumar Singh
             </h3>
             <p
-              className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.4rem] text-gray-700 mb-6"
+              className="text-xl sm:text-2xl lg:text-3xl text-[#666] mb-12 text-left"
               style={{ fontFamily: "BrandingMedium" }}
             >
               Vice-President- Sales & Operations
             </p>
 
-            <div className="mb-6">
+            <div className="mb-10">
               <p
                 className="text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] font-bold mb-2"
                 style={{ fontFamily: "BrandingSemibold" }}
@@ -60,7 +61,7 @@ function IndabratorProfile() {
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-10">
               <p
                 className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.4rem] leading-relaxed"
                 style={{ fontFamily: "BrandingMedium" }}
@@ -99,7 +100,7 @@ function IndabratorProfile() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

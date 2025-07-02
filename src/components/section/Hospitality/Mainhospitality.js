@@ -11,20 +11,84 @@ import HospitalityStats from "./HospitalityStats";
 import HospitalityRoot from "./HospitalityRoot";
 import HospitalityFacilities from "./HospitalityFacilities";
 import HospitalityProfile from "./HospitalityProfile";
+import ScrollSnip from "@/components/layout/scrollSnipEffect/scrollSnip";
+import AnimateOnScroll from "@/components/common/animateContent/animation";
 
 function MainHospitality() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  const Children = [
+    {
+      comp: <HospitalityHero />,
+      classCss: "section ",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <HospitalityIntro />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <HospitalityServices />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_white",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <HospitalityDisplay />
+        </AnimateOnScroll>
+      ),
+      classCss: "section",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <HospitalityStats />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <HospitalityRoot />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <HospitalityFacilities />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_purple",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <HospitalityProfile />
+        </AnimateOnScroll>
+      ),
+      classCss: "header_purple ",
+    },
+    // {
+    //   comp: (
+    //     <AnimateOnScroll>
+    //       <RealtyEnquiries />
+    //     </AnimateOnScroll>
+    //   ),
+    //   classCss: "header_purple",
+    // },
+  ];
 
   return (
-    <Pagewrapper activeSlide={activeSlide}>
-      <HospitalityHero />
-      <HospitalityIntro />
-      <HospitalityServices />
-      <HospitalityDisplay />
-      <HospitalityStats />
-      <HospitalityRoot />
-      <HospitalityFacilities />
-      <HospitalityProfile />
+    <Pagewrapper>
+      <ScrollSnip Children={Children} />
     </Pagewrapper>
   );
 }

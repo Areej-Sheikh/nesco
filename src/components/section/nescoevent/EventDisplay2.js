@@ -6,7 +6,7 @@ import decorativePattern from "@/assests/nesco-business-page/nesco-events/74.jpg
 
 function EventDisplay() {
   return (
-    <section className="w-full h-screen overflow-hidden bg-white relative">
+    <div className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-screen overflow-hidden bg-white relative">
       <div className="w-full h-full relative">
         <Image
           src={decorativePattern}
@@ -14,11 +14,10 @@ function EventDisplay() {
           fill
           className="object-cover w-full"
           priority
-          sizes="100vw"
           quality={100}
         />
       </div>
-    </section>
+    </div>
   );
 }
 

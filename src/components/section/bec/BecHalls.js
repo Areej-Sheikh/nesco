@@ -26,37 +26,35 @@ function BecHalls() {
   ];
 
   return (
-    <section className="w-full bg-white pb-[1%] ">
-          {/* Main Title */}
-          <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-    
-          </div>
-          
-          {/* Spaces Grid */}
-          <div className="max-w-7xl mx-auto">
-            {/* Mobile: Single column, Tablet: 2 columns, Desktop: 3 columns */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
-              {spaces.map((space, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  {/* Image Container - Responsive heights */}
-                  <div className="w-full max-w-sm h-64 sm:h-80 md:h-96 lg:h-[36rem] mb-4 sm:mb-6 overflow-hidden relative rounded-lg">
-                    <Image
-                      src={space.image}
-                      alt={space.alt}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  
-                  {/* Title Below Image */}
-                  <h3 className="text-black text-lg sm:text-xl lg:text-2xl font-light italic text-center px-2">
-                    {space.title}
-                  </h3>
-                </div>
-              ))}
+    <div className="w-full bg-white pb-[1%] px-4 sm:px-6 lg:px-8 lg:pt-20">
+      {/* Main Title */}
+      <div className="text-center mb-8 sm:mb-10 lg:mb-12"></div>
+
+      {/* Spaces Grid */}
+      <div className="max-w-7xl mx-auto">
+        {/* Mobile: Single column, Tablet: 2 columns, Desktop: 3 columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+          {spaces.map((space, index) => (
+            <div key={index} className="flex flex-col items-center">
+              {/* Image Container - Responsive heights */}
+              <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[36rem] mb-3 sm:mb-4 lg:mb-6 overflow-hidden relative rounded-lg">
+                <Image
+                  src={space.image}
+                  alt={space.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Title Below Image */}
+              <h3 className="text-black text-lg sm:text-xl lg:text-2xl font-light italic text-center px-2">
+                {space.title}
+              </h3>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 

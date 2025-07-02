@@ -11,52 +11,47 @@ function RealtySpaces() {
     {
       title: "Workspaces",
       image: workspaceImage,
-      alt: "Modern workspace environment"
+      alt: "Modern workspace environment",
     },
     {
-      title: "Residential Spaces", 
+      title: "Residential Spaces",
       image: residentialImage,
-      alt: "Modern residential living space"
+      alt: "Modern residential living space",
     },
     {
       title: "Assembly Spaces",
-      image: assemblyImage, 
-      alt: "Assembly and event spaces"
-    }
+      image: assemblyImage,
+      alt: "Assembly and event spaces",
+    },
   ];
 
   return (
-    <section className=" w-full bg-blue-800 py-2 sm:py-4 lg:py-8 px-4 sm:px-6 lg:px-8">
-      {/* Main Title */}
-      {/* <div className="text-center mb-8 sm:mb-10 lg:mb-12"> */}
-
-      {/* </div> */}
-      
+    <div className="w-full bg-blue-800 py-4 sm:py-6 md:py-8 lg:py-8 px-4 sm:px-6 lg:px-8 ">
       {/* Spaces Grid */}
-      <div className="max-w-7xl mx-auto header_white">
-        {/* Mobile: Single column, Tablet: 2 columns, Desktop: 3 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto lg:mt-20">
+        {/* Responsive grid: 1 column mobile, 2 columns tablet, 3 columns desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
           {spaces.map((space, index) => (
             <div key={index} className="flex flex-col items-center">
-              {/* Image Container - Responsive heights */}
-              <div className="w-full max-w-sm h-64 sm:h-80 md:h-96 lg:h-[36rem] mb-4 sm:mb-6 overflow-hidden relative rounded-lg">
+              {/* Image Container - Better responsive heights and aspect ratios */}
+              <div className="w-full max-w-sm h-48 sm:h-64 md:h-72 lg:h-[36rem] mb-3 sm:mb-4 lg:mb-6 overflow-hidden relative rounded-lg shadow-lg">
                 <Image
                   src={space.image}
                   alt={space.alt}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
-              
-              {/* Title Below Image */}
-              <h3 className="text-white text-lg sm:text-xl lg:text-2xl font-light italic text-center px-2">
+
+              {/* Title Below Image - Improved mobile readability while keeping lg styles */}
+              <h3 className="text-white text-base sm:text-lg lg:text-2xl font-light italic text-center px-2 leading-relaxed">
                 {space.title}
               </h3>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
