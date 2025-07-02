@@ -7,7 +7,7 @@ import factoryImg2 from "@/assests/nesco-business-page/Indabrator-Elements/64.jp
 
 function IndabratorUnitss() {
   return (
-    <section className="w-full h-auto bg-white flex flex-col overflow-hidden">
+    <div className="w-full h-auto bg-white flex flex-col overflow-hidden">
       {/* Title with padding */}
       <div className="w-full pt-10 pb-4 px-[5%]">
         {/* <h2 
@@ -18,9 +18,9 @@ function IndabratorUnitss() {
         </h2> */}
       </div>
 
-      {/* Container for both factory sections */}
+      {/* Container for both factory divs */}
       <div className="flex-1 flex flex-col gap-4 overflow-y-auto">
-        {/* Works I Section */}
+        {/* Works I div */}
         {/* <div className="relative w-full h-[90vh]">
 
           <Image
@@ -55,7 +55,7 @@ function IndabratorUnitss() {
           </div>
         </div> */}
 
-        {/* Works II Section */}
+        {/* Works II div */}
         <div className="relative w-full h-[90vh]">
           <Image
             src={factoryImg2}
@@ -93,7 +93,7 @@ function IndabratorUnitss() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

@@ -13,21 +13,85 @@ import BecFacilities from "./BecFacilities";
 import BecAmenities from "./BecAmenities";
 import BecProfile from "./BecProfile";
 import BecEnquiries from "./BecEnquiries";
+import ScrollSnip from "@/components/layout/scrollSnipEffect/scrollSnip";
 
 function MainBec() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  // const [activeSlide, setActiveSlide] = useState(0);
+
+  const Children = [
+    {
+      comp: <BecHero />,
+      classCss: "section ",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <BecDescription />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <BecHalls />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_purple",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <BecDisplay />
+        </AnimateOnScroll>
+      ),
+      classCss: "section",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <BecStats />
+        </AnimateOnScroll>
+      ),
+      classCss: "section",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <BecFacilities />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_purple",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <BecAmenities />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_purple",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <BecProfile />
+        </AnimateOnScroll>
+      ),
+      classCss: "header_purple section",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <BecEnquiries />
+        </AnimateOnScroll>
+      ),
+      classCss: "header_purple",
+    },
+  ];
 
   return (
-    <Pagewrapper activeSlide={activeSlide} className="overflow-x-hidden">
-      <BecHero />
-      <BecDescription />
-      <BecHalls />
-      <BecDisplay />
-      <BecStats />
-      <BecFacilities />
-      <BecAmenities />
-      <BecProfile />
-      <BecEnquiries />
+    <Pagewrapper>
+      <ScrollSnip Children={Children} />
     </Pagewrapper>
   );
 }

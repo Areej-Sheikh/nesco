@@ -7,9 +7,9 @@ import factoryImg2 from "@/assests/nesco-business-page/Indabrator-Elements/64.jp
 
 function IndabratorUnits() {
   return (
-    <section className="w-full h-auto bg-white flex flex-col overflow-hidden">
+    <div className="w-full h-auto bg-white flex flex-col overflow-hidden lg:mt-20">
       {/* Title with padding */}
-      <div className="w-full pb-4 px-[5%]">
+      <div className="w-full py-4 px-[5%]">
         <h2
           className="text-[2rem] md:text-[2.2rem] font-bold"
           style={{ fontFamily: "BrandingSemibold" }}
@@ -18,9 +18,9 @@ function IndabratorUnits() {
         </h2>
       </div>
 
-      {/* Container for both factory sections */}
+      {/* Container for both factory divs */}
       <div className="flex-1 flex flex-col gap-4 overflow-y-auto">
-        {/* Works I Section */}
+        {/* Works I div */}
         <div className="relative w-full h-[90vh]">
           <Image
             src={factoryImg1}
@@ -30,14 +30,16 @@ function IndabratorUnits() {
             priority
           />
 
-          <div className="absolute right-[5%] bottom-0 bg-white p-5 md:p-6 max-w-[95%] md:max-w-[580px] min-h-[420px] shadow-md">
+          <div className="absolute right-[5%] lg:bottom-10 bottom-0 bg-white p-5 md:p-6 max-w-[95%] md:max-w-[580px] min-h-[420px] shadow-md">
             <h3
               className="text-[1.2rem] md:text-[1.4rem] font-bold mb-1"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               Works I
             </h3>
-            <p className="text-md font-bold text-gray-600 mb-3">Vataman, Gujarat</p>
+            <p className="text-md font-bold text-gray-600 mb-3">
+              Vataman, Gujarat
+            </p>
 
             <p
               className="text-[1.1rem] md:text-[1.2rem] leading-relaxed"
@@ -58,7 +60,7 @@ function IndabratorUnits() {
           </div>
         </div>
 
-        {/* Works II Section */}
+        {/* Works II div */}
         {/* <div className="relative w-full h-[45vh]">
 
           <Image
@@ -94,7 +96,7 @@ function IndabratorUnits() {
           </div>
         </div> */}
       </div>
-    </section>
+    </div>
   );
 }
 

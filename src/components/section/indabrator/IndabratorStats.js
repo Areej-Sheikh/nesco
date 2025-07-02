@@ -11,27 +11,30 @@ function IndabratorStats() {
     {
       icon: facilityIcon,
       value: "11 Lac",
-      label: "sq.ft manufacturing capacity"
+      label: "sq.ft manufacturing capacity",
     },
     {
       icon: projectsIcon,
       value: "15k+",
-      label: "completed installations"
+      label: "completed installations",
     },
     {
       icon: experienceIcon,
       value: "47",
-      label: "years of excellence"
-    }
+      label: "years of excellence",
+    },
   ];
 
   return (
-    <section className="w-full h-auto flex items-center justify-center bg-[#4dbeaf]">
+    <div className="w-full h-auto flex items-center justify-center bg-[#4dbeaf]">
       <div className="w-[90%] max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 py-12">
         {stats.map((stat, index) => (
-          <div key={index} className="flex flex-col items-center text-center px-4">
+          <div
+            key={index}
+            className="flex flex-col items-center text-center px-4"
+          >
             {/* Responsive image size - larger on desktop */}
-            <div className="w-[120px] h-[120px] sm:w-[180px] sm:h-[180px] md:w-[280px] md:h-[280px] lg:w-[360px] lg:h-[360px] mb-[-50px]">
+            <div className="w-[120px] h-[120px] sm:w-[180px] sm:h-[180px] md:w-[280px] md:h-[280px] lg:w-[360px] lg:h-[360px] lg:mb-[-50px] mb-[-20px]">
               <Image
                 src={stat.icon}
                 alt={`${stat.label} icon`}
@@ -40,13 +43,13 @@ function IndabratorStats() {
                 className="object-contain w-full h-full"
               />
             </div>
-            <h3 
+            <h3
               className="text-[2.8rem] sm:text-[3rem] md:text-[3.5rem] font-bold mb-2 text-white"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               {stat.value}
             </h3>
-            <p 
+            <p
               className="text-center text-[0.9rem] sm:text-[1rem] text-white"
               style={{ fontFamily: "BrandingMedium" }}
             >
@@ -55,7 +58,7 @@ function IndabratorStats() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
 

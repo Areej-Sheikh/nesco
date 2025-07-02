@@ -6,41 +6,45 @@ import incubationImage from "@/assests/nesco-business-page/nesco-reality-element
 
 function RealtyInitiative() {
   return (
-    <section className="w-full h-auto flex flex-col md:flex-row overflow-hidden bg-white">
+    <div className="w-full max-w-[90%] h-auto lg:min-h-screen flex flex-col md:flex-row overflow-hidden bg-white mx-auto py-8 md:py-0 lg:mt-4">
       {/* Left column - description */}
-      <div className="md:w-1/2 w-full pl-[2%] pt-[2%] pb-[2%] flex flex-col justify-center">
-        <h2 
-          className="text-[2.8rem] md:text-[3rem] font-bold "
+      <div className="md:w-1/2 w-full py-6 md:py-[2%] flex flex-col justify-center">
+        <h2
+          className="text-[1.8rem] sm:text-[2.5rem] md:text-[2.8rem] lg:text-[3rem] font-bold mb-2"
           style={{ fontFamily: "BrandingSemibold" }}
         >
           Our initiative
         </h2>
-        <h3 
-          className="text-[2.4rem] md:text-[2.6rem] font-bold mb-5"
+        <h3
+          className="text-[1.6rem] sm:text-[2.2rem] md:text-[2.4rem] lg:text-[2.6rem] font-bold mb-4 md:mb-6"
           style={{ fontFamily: "BrandingMedium" }}
         >
           Incubation centre
         </h3>
-        <p 
-          className="text-[2.2rem] leading-relaxed"
+        <p
+          className="text-[1.2rem] sm:text-[1.8rem] md:text-[2rem] lg:text-[2.2rem] leading-relaxed text-justify"
           style={{ fontFamily: "BrandingMedium" }}
         >
-          Envisioned with foresight, the Incubation Centre is enabling promising, young businesses to take on bigger challenges. A fully-operational Incubator, the Centre functions as a catalyst for the new-age companies that are redefining business, operations and workplace culture in the startup era.
+          Envisioned with foresight, the Incubation Centre is enabling
+          promising, young businesses to take on bigger challenges. A
+          fully-operational Incubator, the Centre functions as a catalyst for
+          the new-age companies that are redefining business, operations and
+          workplace culture in the startup era.
         </p>
       </div>
-      
+
       {/* Right column - image */}
-      <div className="md:w-1/2 w-full flex items-center justify-center pr-12 py-16">
-          <div className="w-full h-full relative bg-gray-100  overflow-hidden shadow-lg">
-            <Image
-              src={incubationImage}
-              alt="Modern incubation centre workspace with yellow and blue workstations"
-              fill
-              className="object-cover"
-            />
-          </div>
+      <div className="md:w-1/2 w-full flex items-center justify-center px-4 md:px-6 lg:px-8 py-6 md:py-16">
+        <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] overflow-hidden bg-gray-100 shadow-lg rounded-lg">
+          <Image
+            src={incubationImage}
+            alt="Modern incubation centre workspace with yellow and blue workstations"
+            fill
+            className="object-cover"
+          />
         </div>
-    </section>
+      </div>
+    </div>
   );
 }
 

@@ -11,20 +11,76 @@ import EventDisplay from "./EventDisplay";
 import EventDisplay2 from "./EventDisplay2";
 import EventProfile from "./EventProfile";
 import EventEnquiries from "./EventEnquiries";
+import ScrollSnip from "@/components/layout/scrollSnipEffect/scrollSnip";
+import AnimateOnScroll from "@/components/common/animateContent/animation";
 
 function MainEvent() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  const Children = [
+    {
+      comp: <EventHero />,
+      classCss: "section ",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <EventIntro />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <EventServices />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_white",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <EventStats />
+        </AnimateOnScroll>
+      ),
+      classCss: "section",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <EventDisplay />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <EventDisplay2 />
+        </AnimateOnScroll>
+      ),
+      classCss: "section header_color_black",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <EventProfile />
+        </AnimateOnScroll>
+      ),
+      classCss: " header_purple",
+    },
+    {
+      comp: (
+        <AnimateOnScroll>
+          <EventEnquiries />
+        </AnimateOnScroll>
+      ),
+      classCss: "header_purple ",
+    },
+  ];
 
   return (
-    <Pagewrapper activeSlide={activeSlide} className="overflow-x-hidden">
-      <EventHero />
-      <EventIntro />
-      <EventServices />
-      <EventStats />
-      <EventDisplay />
-      <EventDisplay2 />
-      <EventProfile />
-      <EventEnquiries />
+    <Pagewrapper>
+      <ScrollSnip Children={Children} />
     </Pagewrapper>
   );
 }

@@ -15,38 +15,38 @@ function IndabratorServices() {
     {
       title: "Shot-Blasting Machines",
       image: shotBlastingImg,
-      alt: "Shot-Blasting Machine"
+      alt: "Shot-Blasting Machine",
     },
     {
       title: "Air Pollution Control Systems",
       image: airPollutionImg,
-      alt: "Air Pollution Control System"
+      alt: "Air Pollution Control System",
     },
     {
       title: "Spares",
       image: sparesImg,
-      alt: "Indabrator Spares"
+      alt: "Indabrator Spares",
     },
     {
       title: "Abrasives",
       image: abrasivesImg,
-      alt: "Industrial Abrasives"
+      alt: "Industrial Abrasives",
     },
     {
       title: "O & M",
       image: omImg,
-      alt: "Operations & Maintenance"
+      alt: "Operations & Maintenance",
     },
     {
       title: "AMC",
       image: amcImg,
-      alt: "Annual Maintenance Contract"
+      alt: "Annual Maintenance Contract",
     },
     {
       title: "Painting Systems",
       image: paintingImg,
-      alt: "Industrial Painting Systems"
-    }
+      alt: "Industrial Painting Systems",
+    },
   ];
 
   // Split services for desktop layout
@@ -54,7 +54,7 @@ function IndabratorServices() {
   const bottomRowServices = services.slice(4);
 
   return (
-    <section className="w-full min-h-auto bg-[#0e129f] flex flex-col justify-center items-center px-8 sm:px-12 lg:px-16 py-8 sm:py-12 lg:py-16">
+    <div className="w-full min-h-auto bg-[#0e129f] flex flex-col justify-center items-center px-8 sm:px-12 lg:px-16 py-8 sm:py-12 lg:py-16 lg:pt-24 lg:h-screen pt-12">
       {/* Small screens only - Single column layout */}
       <div className="block lg:hidden w-full space-y-6 mb-6">
         {services.map((service, index) => (
@@ -80,7 +80,10 @@ function IndabratorServices() {
       {/* Top row - 4 items */}
       <div className="hidden lg:grid grid-cols-4 gap-12 mb-16 w-full">
         {topRowServices.map((service, index) => (
-          <div key={`desktop-top-${index}`} className="flex flex-col items-center">
+          <div
+            key={`desktop-top-${index}`}
+            className="flex flex-col items-center"
+          >
             <div className="relative w-full h-56 mb-4 overflow-hidden rounded-lg shadow-lg">
               <Image
                 src={service.image}
@@ -101,7 +104,10 @@ function IndabratorServices() {
       {/* Bottom row - 3 items centered */}
       <div className="hidden lg:grid grid-cols-3 gap-12 w-full max-w-5xl">
         {bottomRowServices.map((service, index) => (
-          <div key={`desktop-bottom-${index}`} className="flex flex-col items-center">
+          <div
+            key={`desktop-bottom-${index}`}
+            className="flex flex-col items-center"
+          >
             <div className="relative w-full h-56 mb-4 overflow-hidden rounded-lg shadow-lg">
               <Image
                 src={service.image}
@@ -118,7 +124,7 @@ function IndabratorServices() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
 

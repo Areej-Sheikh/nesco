@@ -16,55 +16,55 @@ function BecAmenities() {
     {
       icon: parkingIcon,
       name: "Ample Parking Space",
-      desc: "for over 2,000 vehicles at any given time"
+      desc: "for over 2,000 vehicles at any given time",
     },
     {
       icon: spacesIcon,
       name: "Spaces of Limitless Possibility",
-      desc: "that evolve to suit your every need"
+      desc: "that evolve to suit your every need",
     },
     {
       icon: foodIcon,
       name: "Versatile Food & Beverage options",
-      desc: "including open air cafes & food courts"
+      desc: "including open air cafes & food courts",
     },
     {
       icon: greenSpacesIcon,
       name: "Lush Open Spaces",
-      desc: "with over 1,000 trees"
+      desc: "with over 1,000 trees",
     },
     {
       icon: securityIcon,
       name: "Watchtowers & high level",
-      desc: "professional security"
+      desc: "professional security",
     },
     {
       icon: internetIcon,
       name: "24/7 Internet",
-      desc: "state of the art technology services"
+      desc: "state of the art technology services",
     },
     {
       icon: eventsIcon,
       name: "75 events a year",
-      desc: "hosted at our facilities"
+      desc: "hosted at our facilities",
     },
     {
       icon: transportIcon,
       name: "Transportation services",
-      desc: "available to and from the BEC"
-    }
+      desc: "available to and from the BEC",
+    },
   ];
 
   return (
-    <section className="w-full h-screen flex flex-col overflow-hidden bg-white py-4 sm:py-8">
-      {/* Section Title - Responsive typography and spacing */}
-      <h2 
+    <div className="w-full h-screen flex flex-col overflow-hidden bg-white py-4 sm:py-8 lg:pt-20">
+      {/* div Title - Responsive typography and spacing */}
+      <h2
         className="text-[2.6rem] sm:text-[2.8rem] md:text-[3rem] font-bold px-[5%] pt-8 pb-6 sm:pb-8"
         style={{ fontFamily: "BrandingSemibold" }}
       >
         Amenities
       </h2>
-      
+
       {/* Amenities Grid - Improved responsive grid */}
       <div className="w-full flex-1 px-[5%] grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 overflow-y-auto">
         {amenitiesList.map((item, index) => (
@@ -79,23 +79,22 @@ function BecAmenities() {
                 className="object-contain w-full h-full"
               />
             </div>
-            <p 
+            <p
               className="text-[1.1rem] sm:text-[1.2rem] md:text-[1.3rem] text-[#fdc95d]"
               style={{ fontFamily: "BrandingMedium" }}
             >
-              <span 
+              <span
                 className="font-bold"
                 style={{ fontFamily: "BrandingSemibold" }}
               >
                 {item.name}
-              </span>
-              {" "}
+              </span>{" "}
               {item.desc}
             </p>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
 
