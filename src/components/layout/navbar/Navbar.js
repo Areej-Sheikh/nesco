@@ -32,7 +32,10 @@ function Navbar({ activeSlide }) {
       title: "Businesses",
       route: "",
       subMenu: [
-        { title: "Bombay Exhibition Center", route: "/bombay-exhibition-center" },
+        {
+          title: "Bombay Exhibition Center",
+          route: "/bombay-exhibition-center",
+        },
         { title: "Nesco Realty", route: "/realty" },
         { title: "Hospitality", route: "/hospitality" },
         { title: "Nesco Events", route: "/nescoevent" },
@@ -430,11 +433,11 @@ function Navbar({ activeSlide }) {
             <input
               type="text"
               placeholder="Search..."
-              className={`w-full h-10 pl-4 pr-10 rounded-full bg-opacity-20 ${
+              className={`w-full h-10 pl-4 pr-10 rounded-full  ${
                 isScrolled || textBlack
                   ? "bg-gray-200 text-black"
-                  : "bg-white text-white"
-              } focus:outline-none`}
+                  : " text-black"
+              }`}
               value={searchQuery}
               onChange={handleSearchChange}
               onClick={() => setShowSearchResults(true)}
@@ -444,10 +447,7 @@ function Navbar({ activeSlide }) {
                 isScrolled || textBlack ? "text-gray-700" : "text-white"
               } -translate-y-1/2 right-3`}
             >
-              <GoSearch
-                className={`text-[20px] ${getTextColor()}`}
-                strokeWidth={1}
-              />
+              <GoSearch className={`text-[20px] text-black`} strokeWidth={1} />
             </span>
 
             {/* Search results dropdown */}

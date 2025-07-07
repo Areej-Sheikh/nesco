@@ -7,7 +7,7 @@ import factoryImg2 from "@/assests/nesco-business-page/Indabrator-Elements/64.jp
 
 function IndabratorUnits() {
   return (
-    <div className="w-full h-auto bg-white flex flex-col overflow-hidden lg:mt-20">
+    <div className="w-full h-auto bg-white flex flex-col overflow-hidden lg:pt-20">
       {/* Title with padding */}
       <div className="w-full py-4 px-[5%]">
         <h2
