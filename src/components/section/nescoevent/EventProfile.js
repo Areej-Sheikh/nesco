@@ -9,7 +9,7 @@ function EventProfile() {
   return (
     <div className="w-full lg:min-h-screen bg-white py-8 lg:py-12 relative overflow-hidden">
       {/* Watermark - 76 image in background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="relative w-full h-full opacity-80">
           <Image
             src={watermark}
@@ -19,9 +19,9 @@ function EventProfile() {
             priority
           />
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-[90%] mx-auto lg:mt-20 relative z-10">
+      <div className="w-[90%] mx-auto lg:mt-20 relative">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Text Content - Left side */}
           <div className="w-full lg:w-[60%]">
@@ -40,7 +40,7 @@ function EventProfile() {
 
             <div className="space-y-10">
               <p
-                className="text-xl sm:text-2xl lg:text-3xl leading-loose text-justify"
+                className="text-xl lg:text-2xl text-justify"
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 Balachandran Nambisan is a seasoned leader in strategic brand
@@ -51,7 +51,7 @@ function EventProfile() {
               </p>
 
               <p
-                className="text-xl sm:text-2xl lg:text-3xl leading-loose text-justify"
+                className="text-xl lg:text-2xl text-justify"
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 As the former Chief Business Officer at Laqshya Live
@@ -63,7 +63,7 @@ function EventProfile() {
               </p>
 
               <p
-                className="text-xl sm:text-2xl lg:text-3xl leading-loose text-justify"
+                className="text-xl lg:text-2xl text-justify"
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 His impressive portfolio includes partnerships with Bentley,
@@ -76,13 +76,24 @@ function EventProfile() {
           </div>
 
           {/* Image Container - Right side */}
-          <div className="w-full lg:w-[40%] flex items-center justify-end">
-            <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[700px] w-full overflow-hidden rounded-lg shadow-lg">
+          <div className="w-full lg:w-[40%] flex items-center justify-end relative">
+            {/* Background Image */}
+            <div className="absolute w-full h-full ">
+              <Image
+                src={watermark}
+                alt="Background"
+                fill
+                className="object-cover rounded-lg shadow-lg lg:translate-y-8 xl:translate-y-16"
+                priority
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 45vw, 50vw"
+              />
+            </div>
+            <div className="relative h-[400px] lg:h-[500px] xl:h-[600px] w-full rounded-lg shadow-lg">
               <Image
                 src={profileImage}
                 alt="Balachandran Nambisan"
                 fill
-                className="object-cover"
+                className="object-cover sm:object-contain lg:object-cover object-top"
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
               />

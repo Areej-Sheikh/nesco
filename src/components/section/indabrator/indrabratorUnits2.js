@@ -9,14 +9,14 @@ function IndabratorUnitss() {
   return (
     <div className="w-full h-auto bg-white flex flex-col overflow-hidden">
       {/* Title with padding */}
-      <div className="w-full pt-10 pb-4 px-[5%]">
-        {/* <h2 
+      {/* <div className="w-full pt-10 pb-4 px-[5%]"> */}
+      {/* <h2 
           className="text-[2rem] md:text-[2.2rem] font-bold"
           style={{ fontFamily: "BrandingSemibold" }}
         >
           Our Manufacturing Units
         </h2> */}
-      </div>
+      {/* </div> */}
 
       {/* Container for both factory divs */}
       <div className="flex-1 flex flex-col gap-4 overflow-y-auto">
@@ -56,7 +56,7 @@ function IndabratorUnitss() {
         </div> */}
 
         {/* Works II div */}
-        <div className="relative w-full h-[90vh]">
+        <div className="relative w-full h-[100vh]">
           <Image
             src={factoryImg2}
             alt="Indabrator Factory - Works II"
@@ -65,7 +65,7 @@ function IndabratorUnitss() {
             priority
           />
 
-          <div className="absolute left-[5%] bottom-0 bg-white p-5 md:p-6 max-w-[95%] md:max-w-[580px] min-h-[420px] shadow-md">
+          <div className="absolute left-[5%] bg-white p-5 md:p-6 max-w-[95%] md:max-w-[580px] min-h-[420px] shadow-md lg:bottom-5 bottom-0">
             <h3
               className="text-[1.2rem] md:text-[1.4rem] font-bold mb-1"
               style={{ fontFamily: "BrandingSemibold" }}
