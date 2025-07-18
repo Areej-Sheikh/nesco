@@ -174,9 +174,14 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="mt-2 border-t-2 w-full">
+      <div className="mt-2 border-t-2 w-full flex md:flex-row flex-col gap-3 items-center relative justify-center">
         <p className="pt-2 flex justify-center items-center leading-3 text-sm">
           © 2025 NESCO. ALL RIGHTS RESERVED
+        </p>
+        <p className="pt-2 flex justify-center items-center leading-3 text-sm md:absolute right-10 mb-2 md:mb-0">
+          <Link href="/privacy-policy" className="underline">
+            Privacy Policy
+          </Link>
         </p>
       </div>
     </div>
