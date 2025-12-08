@@ -25,15 +25,23 @@ function AnnouncementFilter() {
     });
   }, []);
 
+  // Helper to calculate Financial Year (e.g., Date in March 2025 belongs to 2024-2025)
+  const getFinancialYear = (dateString) => {
+    const date = new Date(dateString);
+    // If month is Jan(0), Feb(1), or Mar(2), subtract 1 from year. Otherwise use current year.
+    const startYear = date.getMonth() >= 3 ? date.getFullYear() : date.getFullYear() - 1;
+    return `${startYear}-${startYear + 1}`;
+  };
+
   // Transform and sort data in descending order (newest first)
   const transformedData = Array.isArray(getData)
     ? getData
         .map((item, index) => {
-          const year = `${new Date(item.date).getFullYear()}-${
-            new Date(item.date).getFullYear() + 1
-          }`;
+          // LOGIC UPDATED: Use the helper to ensure 'year' property matches FY logic
+          const year = getFinancialYear(item.date);
+          
           return {
-            year,
+            year, 
             description: item.title,
             file: item.file,
             date: item.date.split("T")[0],
@@ -48,16 +56,10 @@ function AnnouncementFilter() {
   const totalRows = transformedData.length;
   const [selectedYears, setSelectedYears] = useState([]);
 
-  // Extract unique years and sort them in descending order
+  // Extract unique years using the consistent helper function
   const allYears = Array.from(
     new Set(
-      transformedData.map((item) => {
-        const date = new Date(item.date);
-        const startYear =
-          date.getMonth() >= 3 ? date.getFullYear() : date.getFullYear() - 1;
-        const endYear = startYear + 1;
-        return `${startYear}-${endYear}`;
-      })
+      transformedData.map((item) => item.year) // Use the pre-calculated valid FY from transformedData
     )
   ).sort((a, b) => b.localeCompare(a)); // Sort years descending (newest first)
 
@@ -69,14 +71,24 @@ function AnnouncementFilter() {
     );
   };
 
-  // Filter data based on selected years
+  // LOGIC UPDATED: Strict April to March Filtering
   const filteredData = transformedData.filter((item) => {
     if (selectedYears.length === 0) return true;
     const itemDate = new Date(item.date);
+    
     return selectedYears.some((year) => {
       const [startYear, endYear] = year.split("-").map(Number);
-      const startDate = new Date(startYear, 2, 1); // March 1st of startYear
-      const endDate = new Date(endYear, 2, 31); // March 31st of endYear (changed from 1, 31)
+      
+      // FIX: Month is 0-indexed. 
+      // 0=Jan, 1=Feb, 2=Mar, 3=April.
+      
+      // Start: April 1st of the Start Year
+      const startDate = new Date(startYear, 3, 1); 
+      
+      // End: March 31st of the End Year
+      // We add 23:59:59 to ensure we include announcements made on the very last day
+      const endDate = new Date(endYear, 2, 31, 23, 59, 59); 
+
       return itemDate >= startDate && itemDate <= endDate;
     });
   });

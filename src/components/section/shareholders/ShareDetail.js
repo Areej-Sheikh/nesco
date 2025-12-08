@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React, { useEffect, useState, useMemo } from "react";
 import { FaArrowDown } from "react-icons/fa";
-import image from "@/assests/shareHolder/48.png";
-import imageBlue from "@/assests/shareHolder/48blue.png";
-import image2 from "@/assests/shareHolder/50.png";
-import imageBlue2 from "@/assests/shareHolder/50blue.png";
+import image from "@/assests/shareHolder/white-2-3.png";
+import imageBlue from "@/assests/shareHolder/2-3.png";
+import image2 from "@/assests/shareHolder/white-1-2.png";
+import imageBlue2 from "@/assests/shareHolder/1-2.png";
 import useGetQuery from "@/hooks/getQuery.hook";
 import { apiUrls } from "@/apis";
 

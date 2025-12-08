@@ -4,15 +4,15 @@ function ShareInvestor() {
   const contacts = [
     {
       title: "REGISTRAR & TRANSFER AGENT",
-      title1: "Link Intime India Private Limited",
+      title1: "MUFG Intime India Pvt. Ltd",
       addressTitle: "Nesco Limited",
       address: {
         address1: "C-101, 247 Park,",
         address2: "LBS Marg, Vikhroli West,",
         address3: "Mumbai 400083.",
         fax: "Fax: +91 22 4098 6060",
-        phone: "Phone: +91 22 4918 6270",
-        email: "Email: rnt.helpdesk@linkintime.co.in",
+        phone: "Phone: +91 810 811 8484",
+        email: "Email: investor.helpdesk@in.mpms.mufg.com",
       },
     },
     {
@@ -24,6 +24,7 @@ function ShareInvestor() {
         address3: "Mumbai 400063.",
         phone: "Phone: +91 22 66450123",
         mobile: "Mobile: 9137500282",
+        CIN: "CIN L68100MH1946PLC004886",
       },
     },
     {
@@ -78,16 +79,18 @@ function ShareInvestor() {
       },
     },
     {
-      title: "REGISTRAR & TRANSFER AGENT",
-      title1: "Link Intime India Private Limited",
-      addressTitle: "Unit: Nesco Limited",
+      title: "NODAL OFFICER",
+      title1: "Ms. Shalini Kamath ",
+      post1: "(Company Secretary & Compliance Officer)",
+      addressTitle: "Nesco Center",
       address: {
-        address1: "C-101, 247 Park,",
-        address2: "LBS Marg, Vikhroli West,",
-        address3: "Mumbai 400083.",
-        fax: "Fax: +91 22 4098 6060",
-        phone: "Phone: +91 22 4918 6270",
-        email: "Email: rnt.helpdesk@linkintime.co.in",
+        address1: "Western Express Highway",
+        address2: "Goregaon (East),",
+        address3: "Mumbai 400063.",
+        phone: "Tel: +91 22 66450123",
+        mobile: "Mobile: 9137500282",
+        email: "Email: companysecretary@nesco.in",
+        CIN : "CIN L68100MH1946PLC004886",
       },
     },
   ];
