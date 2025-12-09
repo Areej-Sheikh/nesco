@@ -40,6 +40,7 @@ function SebiDetails() {
       onSuccess: (res) => {
         setGetData(res?.data || []);
         setTimeout(() => setLoading(false), 2000);
+        console.log(getData);
       },
       onFail: (err) => {
         console.error("Failed to fetch announcements data:", err);
@@ -171,6 +172,7 @@ function SebiDetails() {
           ...item,
           _ids: [item._id], // Keep track of all IDs
         };
+  
       } else {
         // Merge tables from duplicate titles
         groupedByTitle[title]._ids.push(item._id);
@@ -184,6 +186,7 @@ function SebiDetails() {
         }
       }
     });
+
 
     // Convert back to array and sort tables
     return Object.values(groupedByTitle).map(item => {
@@ -212,7 +215,6 @@ function SebiDetails() {
           }
         });
       }
-      
       return item;
     });
   }, [getData]);
@@ -221,6 +223,8 @@ function SebiDetails() {
     if (openIndex !== null) {
       setCurrentTitle(transformedData[openIndex]?.title);
     }
+
+    console.log("hello this is transoformed data " ,transformedData);
   }, [openIndex, transformedData]);
 
   const handleToggle = (index) => {
@@ -695,7 +699,7 @@ function SebiDetails() {
               <div
                 className={`transition-all duration-700 ease-in-out overflow-hidden ${
                   openIndex === index
-                    ? "opacity-100 max-h-[5000px]"
+                    ? "opacity-100 max-h-[8000px]"
                     : "opacity-0 max-h-0"
                 }`}
               >
