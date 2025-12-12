@@ -950,7 +950,7 @@ export function CorporateReport() {
     {
       fileName: "67ee3c0d23e05f8b3a3bd783",
       filePath:
-        "/assets/pdfs/investors/corp-gov/corporate-governance/Corproate%20Governance%20Report%2030.09..2023",
+        "/assets/pdfs/investors/corp-gov/corporate-governance/Corproate Governance Report 30.09.2023.pdf",
     },
     {
       fileName: "67ee3c0d23e05f8b3a3bd784",
@@ -966,7 +966,7 @@ export function CorporateReport() {
     {
       fileName: "67ee3c0d23e05f8b3a3bd787",
       filePath:
-        "/assets/pdfs/investors/corp-gov/corporate-governance/Corporate%20Governance%20Report%20-%2030.06.2022.pdf",
+        "/assets/pdfs/investors/corp-gov/corporate-governance/Corporate Governance Report 30.06.2022.pdf",
     },
     {
       fileName: "67ee3c0d23e05f8b3a3bd788",
@@ -1546,6 +1546,11 @@ export function SrutinizerReport() {
       filePath:
         "/resources/images/pdf/scrutiniser-report/Postal-Ballot-Scrutinizers-Report-2017-18.pdf",
     },
+
+    {
+      fileName:" 56th Annual General Meeting",
+      filePath:"/resources/images/pdf/scrutiniser-report/Scrutiniser-Report-2014-2015.pdf"
+    }
   ];
 }
 
