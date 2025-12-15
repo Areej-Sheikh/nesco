@@ -162,21 +162,21 @@ function SebiDetails() {
 
     // Group items by title and merge their tables
     const groupedByTitle = {};
-    
+
     transformed.forEach((item) => {
       const title = item.title;
-      
+
       if (!groupedByTitle[title]) {
         // First occurrence of this title
         groupedByTitle[title] = {
           ...item,
           _ids: [item._id], // Keep track of all IDs
         };
-  
+
       } else {
         // Merge tables from duplicate titles
         groupedByTitle[title]._ids.push(item._id);
-        
+
         // Merge tables based on option type
         if (item.tables && item.tables.length > 0) {
           groupedByTitle[title].tables = [
@@ -205,11 +205,11 @@ function SebiDetails() {
               // Get the date from either documentDate or pdfDate
               const dateA = a.documentDate || a.pdfDate;
               const dateB = b.documentDate || b.pdfDate;
-              
+
               if (!dateA && !dateB) return 0;
               if (!dateA) return 1;
               if (!dateB) return -1;
-              
+
               return new Date(dateB) - new Date(dateA);
             });
           }
@@ -224,7 +224,7 @@ function SebiDetails() {
       setCurrentTitle(transformedData[openIndex]?.title);
     }
 
-    console.log("hello this is transoformed data " ,transformedData);
+    console.log("hello this is transoformed data ", transformedData);
   }, [openIndex, transformedData]);
 
   const handleToggle = (index) => {
@@ -355,7 +355,7 @@ function SebiDetails() {
         return (
           <div className="bg-[#F3F3F3] p-4 space-y-3">
             {/* Handle hardcoded data based on title */}
-            {item.title === "TERMS AND CONDITIONS OF APPOINTMENT OF INDEPENDENT DIRECTORS OF THE COMPANY" && 
+            {item.title === "TERMS AND CONDITIONS OF APPOINTMENT OF INDEPENDENT DIRECTORS OF THE COMPANY" &&
               TermsAndCondition().map((data, index) => (
                 <div key={index} className="border p-3 rounded bg-white hover:bg-gray-50 transition-colors">
                   <a
@@ -370,8 +370,8 @@ function SebiDetails() {
                 </div>
               ))
             }
-            
-            {item.title === "Policies & Codes" && 
+
+            {item.title === "Policies & Codes" &&
               PolicyAndCode().map((data, index) => (
                 <div key={index} className="border p-3 rounded bg-white hover:bg-gray-50 transition-colors">
                   <a
@@ -386,8 +386,8 @@ function SebiDetails() {
                 </div>
               ))
             }
-            
-            {item.title === "POLICIES ON BRSR" && 
+
+            {item.title === "POLICIES ON BRSR" &&
               PolicyAndCodeBRSR().map((data, index) => (
                 <div key={index} className="border p-3 rounded bg-white hover:bg-gray-50 transition-colors">
                   <a
@@ -402,8 +402,8 @@ function SebiDetails() {
                 </div>
               ))
             }
-            
-            {item.title === "CRITERIA OF MAKING PAYMENTS TO NON-EXECUTIVE DIRECTORS OF THE COMPANY" && 
+
+            {item.title === "CRITERIA OF MAKING PAYMENTS TO NON-EXECUTIVE DIRECTORS OF THE COMPANY" &&
               Criteria().map((data, index) => (
                 <div key={index} className="border p-3 rounded bg-white hover:bg-gray-50 transition-colors">
                   <a
@@ -418,8 +418,8 @@ function SebiDetails() {
                 </div>
               ))
             }
-            
-            {item.title === "DETAILS OF DIRECTORS' FAMILIARISATION PROGRAMMES OF THE COMPANY" && 
+
+            {item.title === "DETAILS OF DIRECTORS' FAMILIARISATION PROGRAMMES OF THE COMPANY" &&
               Details().map((data, index) => (
                 <div key={index} className="border p-3 rounded bg-white hover:bg-gray-50 transition-colors">
                   <a
@@ -434,8 +434,8 @@ function SebiDetails() {
                 </div>
               ))
             }
-            
-            {item.title === "MEMORANDUM AND ARTICLES OF ASSOCIATION" && 
+
+            {item.title === "MEMORANDUM AND ARTICLES OF ASSOCIATION" &&
               Memorandum().map((data, index) => (
                 <div key={index} className="border p-3 rounded bg-white hover:bg-gray-50 transition-colors">
                   <a
@@ -450,8 +450,8 @@ function SebiDetails() {
                 </div>
               ))
             }
-            
-            {item.title === "AMALGAMATION" && 
+
+            {item.title === "AMALGAMATION" &&
               Amalgamation().map((data, index) => (
                 <div key={index} className="border p-3 rounded bg-white hover:bg-gray-50 transition-colors">
                   <a
@@ -469,12 +469,12 @@ function SebiDetails() {
 
             {/* Render API data if no hardcoded match */}
             {!["TERMS AND CONDITIONS OF APPOINTMENT OF INDEPENDENT DIRECTORS OF THE COMPANY",
-                "Policies & Codes",
-                "POLICIES ON BRSR",
-                "CRITERIA OF MAKING PAYMENTS TO NON-EXECUTIVE DIRECTORS OF THE COMPANY",
-                "DETAILS OF DIRECTORS' FAMILIARISATION PROGRAMMES OF THE COMPANY",
-                "MEMORANDUM AND ARTICLES OF ASSOCIATION",
-                "AMALGAMATION"].includes(item.title) &&
+              "Policies & Codes",
+              "POLICIES ON BRSR",
+              "CRITERIA OF MAKING PAYMENTS TO NON-EXECUTIVE DIRECTORS OF THE COMPANY",
+              "DETAILS OF DIRECTORS' FAMILIARISATION PROGRAMMES OF THE COMPANY",
+              "MEMORANDUM AND ARTICLES OF ASSOCIATION",
+              "AMALGAMATION"].includes(item.title) &&
               item.tables.map((doc, docIndex) => (
                 <div key={docIndex} className="border p-3 rounded bg-white hover:bg-gray-50 transition-colors">
                   <a
@@ -665,13 +665,14 @@ function SebiDetails() {
             ))}
           </div>
         );
-        
+
       default:
         return <p className="text-gray-500 p-4">No data available</p>;
     }
   };
 
   return (
+
     <div className="flex justify-center min-h-screen py-6">
       {loading ? (
         <div className="text-center py-10 text-lg">Loading....</div>
@@ -679,10 +680,11 @@ function SebiDetails() {
         <div className="lg:w-[80%] w-[90%]">
           {transformedData.map((item, index) => (
             <div key={item._ids ? item._ids.join('-') : item._id || index} className="mb-3">
-              <div
+              {/* <div
                 className="border-2 border-gray-300 px-4 py-3 font-bold flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors"
                 onClick={() => handleToggle(index)}
               >
+              
                 <p className="text-gray-700 font-branding-semibold w-[95%] uppercase text-sm md:text-base">
                   {item.title}
                 </p>
@@ -695,13 +697,32 @@ function SebiDetails() {
                     +
                   </span>
                 </div>
-              </div>
+              </div> */}
+              {item?.title && (
+                <div
+                  className="border-2 border-gray-300 px-4 py-3 font-bold flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors"
+                  onClick={() => handleToggle(index)}
+                >
+                  <p className="text-gray-700 font-branding-semibold w-[95%] uppercase text-sm md:text-base">
+                    {item.title}
+                  </p>
+
+                  <div className="text-blue-800 w-[5%] flex justify-center items-center">
+                    <span
+                      className={`transition-transform duration-300 font-bold text-2xl md:text-3xl inline-block ${openIndex === index ? "rotate-45" : "rotate-0"
+                        }`}
+                    >
+                      +
+                    </span>
+                  </div>
+                </div>
+              )}
+
               <div
-                className={`transition-all duration-700 ease-in-out overflow-hidden ${
-                  openIndex === index
-                    ? "opacity-100 max-h-[8000px]"
-                    : "opacity-0 max-h-0"
-                }`}
+                className={`transition-all duration-700 ease-in-out overflow-hidden ${openIndex === index
+                  ? "opacity-100 max-h-[8000px]"
+                  : "opacity-0 max-h-0"
+                  }`}
               >
                 <div className="border-2 border-gray-300 border-t-0">
                   {renderTableContent(item)}
