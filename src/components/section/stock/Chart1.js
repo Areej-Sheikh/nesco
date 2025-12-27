@@ -1,6 +1,7 @@
 "use client";
 import LineChart from "@/components/common/LineChart/line";
 import React, { useState, useEffect } from "react";
+import { fetchChartData, transformChartData as transformChartDataUtil } from "@/utils/stockDataFetcher";
 
 function Chart1() {
   const [select, setSelect] = useState("nse");
@@ -9,25 +10,27 @@ function Chart1() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_ENDPOINT_CHART = "/api/chart-data";
+  const periodMap = {
+    "Today": "1d",
+    "1 Month": "1mo",
+    "3 Months": "3mo",
+    "6 Months": "6mo",
+    "1 Year": "1y",
+    "3 Years": "2y",
+    "Custom": "1mo",
+  };
 
   useEffect(() => {
-    const fetchChartData = async () => {
+    const loadChartData = async () => {
       setLoading(true);
       setError(null);
       setChartData(null);
 
       try {
-        const response = await fetch(
-          `${API_ENDPOINT_CHART}?exchange=${select}&monthRange=${selectMonth}`
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const apiData = await response.json();
-        console.log("API Response:", apiData); // Debugging
-
-        setChartData(transformChartData(apiData));
+        const period = periodMap[selectMonth] || "1mo";
+        const rawChartData = await fetchChartData(select, period);
+        const transformedData = transformChartDataUtil(rawChartData);
+        setChartData(transformedData);
       } catch (e) {
         console.error("Error fetching chart data:", e);
         setError("Failed to load chart data. Please try again later.");
@@ -36,26 +39,8 @@ function Chart1() {
       }
     };
 
-    fetchChartData();
+    loadChartData();
   }, [select, selectMonth]);
-
-  // Function to transform API data into the required chart format
-  const transformChartData = (apiData) => {
-    if (!apiData) return null;
-
-    console.log("Transforming data for:", select);
-
-    return {
-      labels: ["Open", "Close", "Bid Price", "Offer Price"], // Static labels
-      stockPrices: [
-        parseFloat(apiData[`${select}_open`] || 0),
-        parseFloat(apiData[`${select}_close`] || 0),
-        parseFloat(apiData[`${select}_bid_price`] || 0),
-        parseFloat(apiData[`${select}_offer_price`] || 0),
-      ],
-      volumes: [parseInt(apiData[`${select}_volume`] || 0, 10)],
-    };
-  };
 
   if (loading) {
     return (
@@ -86,9 +71,15 @@ function Chart1() {
   return (
     <div className="goal-section1 pb-10 py-20 bg-white shadow-md rounded-lg flex justify-center">
       <div className="flex flex-col w-[90%] items-center">
-        <h1 className="text-6xl font-branding-semibold text-[#2C4AA0] text-center mb-10">
-          Stock Chart
+        <h1 className="text-5xl font-branding-bold text-[#2C4AA0] text-center mb-2">
+          NESCO Limited
         </h1>
+        <p className="text-lg text-gray-600 text-center mb-8">
+          NSE: NESCO
+        </p>
+        <h2 className="text-6xl font-branding-semibold text-[#2C4AA0] text-center mb-10">
+          Stock Chart
+        </h2>
         <div className="flex w-full border-b-2 border-b-[#433DC5] mb-5">
           <button
             onClick={() => setSelect("nse")}
