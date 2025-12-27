@@ -18,12 +18,14 @@ import { MdOutlineFileDownload } from "react-icons/md";
 export default function StockChart({ GraphData }) {
   const { stockPrices, volumes, labels } = GraphData;
 
-  // Transform data for Recharts
-  const chartData = labels.map((label, index) => ({
-    name: label,
-    value: stockPrices[index],
-    volume: volumes[index],
-  }));
+  // Filter out points with missing or zero values (assuming 0 is invalid for price)
+  const chartData = labels
+    .map((label, index) => ({
+      name: label,
+      value: stockPrices[index],
+      volume: volumes[index],
+    }))
+    .filter(point => point.value && point.value > 0);
 
   const areaChartData = [
     { name: "09:24", value: 20 },
