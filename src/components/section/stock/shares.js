@@ -1,35 +1,30 @@
 "use client";
 import MainTable from "@/components/common/table/mainTable";
 import React, { useState, useEffect } from "react";
+import { fetchBothExchanges, transformQuoteData } from "@/utils/stockDataFetcher";
 
 function Shares() {
   const [select, setSelect] = useState("bse");
-  const [stockData, setStockData] = useState(null); // Store raw API data
   const [nseDisplayData, setNseDisplayData] = useState(null); // Data for NSE tables
-  const [bseDisplayData, setBsetDisplayData] = useState(null); // Data for BSE tables
+  const [bseDisplayData, setBseDisplayData] = useState(null); // Data for BSE tables
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [timing, setTiming] = useState({
-    delay: "...",
+    delay: "Real-time",
     lastUpdated: "...",
   });
-
-  const API_ENDPOINT = "/api/stock-data"; // Next.js API route - adjust if needed
 
   useEffect(() => {
     const fetchStockData = async () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch(API_ENDPOINT); // No exchange param needed now, API returns both
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setStockData(data); // Store the raw data
+        const data = await fetchBothExchanges();
+        setNseDisplayData(transformDisplayData(data.nse));
+        setBseDisplayData(transformDisplayData(data.bse));
         setTiming({
-          delay: "15", // Assuming realtime data from this API
-          lastUpdated: new Date().toLocaleString(), // Update timestamp
+          delay: "Real-time",
+          lastUpdated: new Date().toLocaleString(),
         });
       } catch (e) {
         console.error("Error fetching stock data:", e);
@@ -40,64 +35,50 @@ function Shares() {
     };
 
     fetchStockData();
-  }, []); // Fetch data once on component mount
+  }, []);
 
-  useEffect(() => {
-    if (stockData) {
-      // Transform data whenever raw stockData changes
-      setNseDisplayData(transformStockData("nse", stockData));
-      setBsetDisplayData(transformStockData("bse", stockData));
-    }
-  }, [stockData]); // Re-transform data when stockData updates
+  const transformDisplayData = (stockData) => {
+    if (!stockData) return null;
 
-  const transformStockData = (exchange, rawData) => {
-    if (!rawData) return null;
-
-    const exchangeData = rawData[exchange]; // e.g., rawData['nse'] or rawData['bse']
-    const bidPrice = rawData[`${exchange}_bid_price`] || "-";
-    const offerPrice = rawData[`${exchange}_offer_price`] || "-";
-    const closePrice = rawData[`${exchange}_close`] || "-";
-    const currentPrice = rawData[exchange] || "-";
-    const volume = rawData[`${exchange}_volume`] || "-";
-    const openPrice = rawData[`${exchange}_open`] || "-";
-
-    let changePercent = "-";
-    let changeValue = "-";
-
-    if (currentPrice !== "-" && closePrice !== "-") {
-      changeValue = (parseFloat(currentPrice) - parseFloat(closePrice)).toFixed(2);
-      changePercent = ((parseFloat(changeValue) / parseFloat(closePrice)) * 100).toFixed(2) + "%";
-    }
-
+    const currentPrice = stockData.currentPrice;
+    const previousClose = stockData.previousClose;
+    const open = stockData.open;
+    const dayHigh = stockData.dayHigh;
+    const dayLow = stockData.dayLow;
+    const fiftyTwoWeekHigh = stockData.fiftyTwoWeekHigh;
+    const fiftyTwoWeekLow = stockData.fiftyTwoWeekLow;
+    const volume = stockData.volume;
+    const change = stockData.change;
+    const changePercent = stockData.changePercent;
 
     return {
-      NseData: { // Reusing NseData for both NSE and BSE display structure
+      NseData: {
         title: "CURRENCY",
         dataIndex: "currency",
         header: [
           { title: "PRICE", dataIndex: "price" },
-          { title: "BID", dataIndex: "bid" },
-          { title: "OFFER", dataIndex: "offer" },
+          { title: "PREVIOUS CLOSE", dataIndex: "bid" },
+          { title: "CHANGE", dataIndex: "offer" },
           { title: "CHANGE IN (%)", dataIndex: "change" },
           { title: "VOLUME", dataIndex: "volume" },
         ],
         rows: [
           {
-            currency: "Rupees", // Assuming currency is always Rupees
+            currency: "Rupees",
             price: `₹ ${currentPrice}`,
-            bid: `₹ ${bidPrice}`,
-            offer: `₹ ${offerPrice}`,
-            change: `${changeValue} (${changePercent})`,
+            bid: `₹ ${previousClose}`,
+            offer: `₹ ${change}`,
+            change: `${changePercent}%`,
             volume: volume,
           },
         ],
       },
-      NseData2: { // Reusing NseData2 for both NSE and BSE display structure
+      NseData2: {
         title: "TODAY'S OPEN",
         dataIndex: "todayOpen",
         header: [
           { title: "PREVIOUS CLOSE", dataIndex: "previousClose" },
-          { title: "TODAY'S OPEN", dataIndex: "todayOpen" }, // Changed header to "TODAY'S OPEN"
+          { title: "TODAY'S OPEN", dataIndex: "todayOpen" },
           { title: "INTRADAY HIGH", dataIndex: "intradayHigh" },
           { title: "INTRADAY LOW", dataIndex: "intradayLow" },
           { title: "52 WEEK HIGH", dataIndex: "weekHigh" },
@@ -105,12 +86,12 @@ function Shares() {
         ],
         rows: [
           {
-            todayOpen: `₹ ${openPrice}`,
-            previousClose: `₹ ${closePrice}`,
-            intradayHigh: "-", // Not in API response
-            intradayLow: "-",  // Not in API response
-            weekHigh: "-",     // Not in API response
-            weekLow: "-",      // Not in API response
+            todayOpen: `₹ ${open}`,
+            previousClose: `₹ ${previousClose}`,
+            intradayHigh: `₹ ${dayHigh}`,
+            intradayLow: `₹ ${dayLow}`,
+            weekHigh: `₹ ${fiftyTwoWeekHigh}`,
+            weekLow: `₹ ${fiftyTwoWeekLow}`,
           },
         ],
       },
@@ -151,6 +132,12 @@ function Shares() {
 
   return (
     <section className="header_purple goal-section1 pt-20 pb-10 font-branding-medium flex justify-center items-center flex-col">
+      <h1 className="text-5xl font-branding-bold text-primary text-center mb-2">
+        NESCO Limited
+      </h1>
+      <p className="text-xl text-gray-600 text-center mb-8">
+        NSE: NESCO
+      </p>
       <h2 className="text-6xl font-branding-semibold text-primary text-center my-8">
         Shares
       </h2>
