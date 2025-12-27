@@ -2,6 +2,7 @@
 import MainTable from "@/components/common/table/mainTable";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { fetchChartData, transformChartData as transformChartDataUtil } from "@/utils/stockDataFetcher";
 
 function Quote() {
   const [exchange, setExchange] = useState("BSE");
@@ -11,22 +12,44 @@ function Quote() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_ENDPOINT_HISTORICAL = "/api/historical-quote"; // Next.js API route
-
   const fetchData = async () => {
     setLoading(true);
+    setError(null);
+    setHistoricalData(null);
 
-    const startDateStr = new Date()?.toLocaleDateString();
-    const endDateStr = new Date()?.toLocaleDateString();
     try {
-      const response = await fetch(
-        `${API_ENDPOINT_HISTORICAL}?exchange=${exchange}&startDate=${startDateStr}&endDate=${endDateStr}`
-      );
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      const exchangeKey = exchange.toLowerCase();
+      const rawChartData = await fetchChartData(exchangeKey, "1y");
+      
+      if (rawChartData && rawChartData.length > 0) {
+        const rows = rawChartData.map((item) => ({
+          date: new Date(item.date).toLocaleDateString(),
+          volume:
+            item.volume && item.volume > 0
+              ? (item.volume / 100000).toFixed(2) + " Lakh"
+              : "-",
+          openPrice: `₹${item.open?.toFixed(2) || "-"}`,
+          closePrice: `₹${item.close?.toFixed(2) || "-"}`,
+          highPrice: `₹${item.high?.toFixed(2) || "-"}`,
+          lowPrice: `₹${item.low?.toFixed(2) || "-"}`,
+        }));
+
+        setHistoricalData({
+          title: "DATE",
+          dataIndex: "date",
+          header: [
+            { title: "DATE", dataIndex: "date" },
+            { title: "VOLUME", dataIndex: "volume" },
+            { title: "OPEN PRICE", dataIndex: "openPrice" },
+            { title: "HIGH PRICE", dataIndex: "highPrice" },
+            { title: "LOW PRICE", dataIndex: "lowPrice" },
+            { title: "CLOSE PRICE", dataIndex: "closePrice" },
+          ],
+          rows: rows,
+        });
+      } else {
+        setError("No historical data available for the selected period.");
       }
-      const apiData = await response.json();
-      setHistoricalData(transformHistoricalData(apiData));
     } catch (e) {
       console.error("Error fetching historical data:", e);
       setError("Failed to load historical stock data. Please try again later.");
@@ -42,26 +65,50 @@ function Quote() {
   const handleSearch = async () => {
     setLoading(true);
     setError(null);
-    setHistoricalData(null); // Clear previous data
-
-    const startDateStr = `${startDate.year}-${String(startDate.month).padStart(
-      2,
-      "0"
-    )}-${String(startDate.day).padStart(2, "0")}`;
-    const endDateStr = `${endDate.year}-${String(endDate.month).padStart(
-      2,
-      "0"
-    )}-${String(endDate.day).padStart(2, "0")}`;
+    setHistoricalData(null);
 
     try {
-      const response = await fetch(
-        `${API_ENDPOINT_HISTORICAL}?exchange=${exchange}&startDate=${startDateStr}&endDate=${endDateStr}`
-      );
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      const exchangeKey = exchange.toLowerCase();
+      const rawChartData = await fetchChartData(exchangeKey, "1y");
+      
+      // Filter data based on selected date range
+      const startDateObj = new Date(startDate.year, startDate.month - 1, startDate.day);
+      const endDateObj = new Date(endDate.year, endDate.month - 1, endDate.day);
+
+      const filteredData = rawChartData.filter((item) => {
+        const itemDate = new Date(item.date);
+        return itemDate >= startDateObj && itemDate <= endDateObj;
+      });
+
+      if (filteredData && filteredData.length > 0) {
+        const rows = filteredData.map((item) => ({
+          date: new Date(item.date).toLocaleDateString(),
+          volume:
+            item.volume && item.volume > 0
+              ? (item.volume / 100000).toFixed(2) + " Lakh"
+              : "-",
+          openPrice: `₹${item.open?.toFixed(2) || "-"}`,
+          closePrice: `₹${item.close?.toFixed(2) || "-"}`,
+          highPrice: `₹${item.high?.toFixed(2) || "-"}`,
+          lowPrice: `₹${item.low?.toFixed(2) || "-"}`,
+        }));
+
+        setHistoricalData({
+          title: "DATE",
+          dataIndex: "date",
+          header: [
+            { title: "DATE", dataIndex: "date" },
+            { title: "VOLUME", dataIndex: "volume" },
+            { title: "OPEN PRICE", dataIndex: "openPrice" },
+            { title: "HIGH PRICE", dataIndex: "highPrice" },
+            { title: "LOW PRICE", dataIndex: "lowPrice" },
+            { title: "CLOSE PRICE", dataIndex: "closePrice" },
+          ],
+          rows: rows,
+        });
+      } else {
+        setError("No historical data available for the selected period.");
       }
-      const apiData = await response.json();
-      setHistoricalData(transformHistoricalData(apiData));
     } catch (e) {
       console.error("Error fetching historical data:", e);
       setError("Failed to load historical stock data. Please try again later.");
@@ -70,58 +117,18 @@ function Quote() {
     }
   };
 
-  const transformHistoricalData = (apiData) => {
-    console.log(apiData, "STEDATA");
-
-    // if (!apiData || !Array.isArray(apiData)) {
-    //   return null;
-    // }
-
-    const rows = [
-      {
-        date: apiData?.date || "-",
-        volume: apiData?.volume || "-",
-        openPrice: apiData?.bse_bid_price
-          ? `₹${parseFloat(apiData?.bse_bid_price).toFixed(2)}`
-          : "-",
-        closePrice: apiData?.bse_close
-          ? `₹${parseFloat(apiData?.bse_close).toFixed(2)}`
-          : "-",
-        highPrice: apiData?.bse_offer_price
-          ? `₹${parseFloat(apiData?.bse_offer_price).toFixed(2)}`
-          : "-",
-        lowPrice: apiData?.nse_bid_price
-          ? `₹${parseFloat(apiData?.nse_bid_price).toFixed(2)}`
-          : "-",
-        // tradedValue: apiData.tradedValue || "-",
-        // noOfTrades: apiData.noOfTrades || "-",
-        // tradedQuantity: apiData.tradedQuantity || "-",
-      },
-    ];
-
-    return {
-      title: "DATE",
-      dataIndex: "date",
-      header: [
-        { title: "Volume", dataIndex: "volume" },
-        { title: "OPEN PRICE", dataIndex: "openPrice" },
-        { title: "HIGH PRICE", dataIndex: "highPrice" },
-        { title: "LOW PRICE", dataIndex: "lowPrice" },
-        { title: "CLOSE PRICE", dataIndex: "closePrice" },
-        // { title: "TRADED VALUE", dataIndex: "tradedValue" },
-        // { title: "NO. OF TRADES", dataIndex: "noOfTrades" },
-        // { title: "TRADED QUANTITY", dataIndex: "tradedQuantity" },
-      ],
-      rows: rows,
-    };
-  };
-
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const months = Array.from({ length: 12 }, (_, i) => i + 1);
   const years = Array.from({ length: 21 }, (_, i) => 2005 + i); // Adjusted year range
 
   return (
     <div className="header_purple flex flex-col justify-center items-center py-10 font-branding-medium mt-0 lg:mt-10">
+      <h1 className="text-5xl font-branding-bold text-primary text-center mb-2">
+        NESCO Limited
+      </h1>
+      <p className="text-lg text-gray-300 text-center mb-8">
+        NSE: NESCO
+      </p>
       <h2 className="text-6xl font-branding-semibold text-primary text-center mb-10">
         Historical Stock Quote
       </h2>
