@@ -43,22 +43,7 @@ function MainLeadership() {
       ),
       classCss: "section",
     },
-    {
-      comp: (
-        <AnimateOnScroll>
-          <LeadershipMentor3 />
-        </AnimateOnScroll>
-      ),
-      classCss: "section",
-    },
-    {
-      comp: (
-        <AnimateOnScroll>
-          <LeadershipMentor4 />
-        </AnimateOnScroll>
-      ),
-      classCss: "section",
-    },
+
     {
       comp: (
         <AnimateOnScroll>

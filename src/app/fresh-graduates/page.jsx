@@ -99,36 +99,33 @@ const GraduateForm = () => {
       <Navbar activeSlide={activeSlide} />
       <ToastContainer />
       <div className="flex justify-center items-center min-h-screen bg-gray-100 lg:py-10 header_purple">
-        <Card
-          className="w-full md:w-[1500px] bg-white rounded-xl overflow-hidden lg:mt-[7vh]"
-          bodyStyle={{ padding: 0 }}
-        >
-          <div className="flex flex-col md:flex-row">
-            <div className="w-full md:w-1/2">
-              <Image
-                src={img}
-                alt="Graduate"
-                width={600}
-                height={400}
-                className="object-cover w-full h-full "
-              />
-            </div>
+          <Card
+            className="w-full md:w-[1400px] bg-white rounded-xl overflow-hidden lg:mt-[7vh]"
+            bodyStyle={{ padding: 0 }}
+          >
+            <div className="flex flex-col md:flex-row">
+              <div className="w-full md:w-1/2">
+                <Image
+                  src={img}
+                  alt="Graduate"
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-full"
+                />
+              </div>
 
-            <div className="w-full md:w-1/2 p-8">
-              <h2 className="text-3xl font-bold text-center mb-2 text-gray-700">
-                Fresh Graduate Application
-              </h2>
-              <h3 className="text-lg font-branding-semibold mb-6 text-center">
-                Vacancy : 100
-              </h3>
-              <Form
-                form={form}
-                name="graduate_form"
-                layout="vertical"
-                onFinish={onSubmit}
-                onFinishFailed={handleFinishFailed}
-              >
-                <Row gutter={[24, 16]}>
+              <div className="w-full md:w-1/2 p-8">
+                <h2 className="text-3xl font-bold text-center mb-6 text-gray-700">
+                  Fresh Graduate Application
+                </h2>
+                <Form
+                  form={form}
+                  name="graduate_form"
+                  layout="vertical"
+                  onFinish={onSubmit}
+                  onFinishFailed={handleFinishFailed}
+                >
+                  <Row gutter={[24, 24]}>
                   <Col xs={24} sm={24} md={12}>
                     <Form.Item
                       label="Full Name"

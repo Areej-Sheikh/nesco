@@ -111,7 +111,8 @@ function VideoBanner({ SliderData }) {
                     <video
                       ref={(el) => setVideoRef(el, index)}
                       controls
-                      className="w-full rounded-lg shadow-lg xl:h-[60vh] bg-white"
+                      className="w-full rounded-lg shadow-lg xl:h-[60vh] bg-white video-full-timeline"
+                      style={{ minHeight: '320px', minWidth: '100%', background: '#fff', paddingBottom: '0', boxSizing: 'border-box' }}
                       onClick={() => handleVideoClick(index)}
                     >
                       <source src={data.video} type={`video/${data.type}`} />

@@ -10,13 +10,11 @@ function IndabratorProfile() {
       <div className="w-[90%] mx-auto lg:mt-20">
         {/* Main heading */}
         <h2
-          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 lg:mb-12 text-left"
+          className="text-[2rem] xs:text-[2.4rem] sm:text-[2.8rem] md:text-[3.4rem] lg:text-[3.8rem] xl:text-[4.4rem] 2xl:text-[5rem] font-bold leading-[1.1] sm:leading-[1.15] mb-4 sm:mb-6 text-left"
           style={{ fontFamily: "BrandingSemibold" }}
         >
           Meet the people who make it possible.
         </h2>
-
-        {/* Profile container */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Image container - Left side */}
           <div className="w-full lg:w-[40%]">
@@ -31,70 +29,34 @@ function IndabratorProfile() {
               />
             </div>
           </div>
-
           {/* Text content - Right side */}
           <div className="w-full lg:w-[60%]">
             <h3
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 text-left"
+              className="text-[2rem] sm:text-[2.4rem] md:text-[2.8rem] lg:text-[3.2rem] font-bold mb-4 text-left"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               Dr Pawan Kumar Singh
             </h3>
             <p
-              className="text-xl sm:text-2xl lg:text-3xl text-[#666] mb-12 text-left"
+              className="text-[1.5rem] sm:text-[1.7rem] md:text-[1.9rem] lg:text-[2rem] text-[#666] mb-6 text-left"
               style={{ fontFamily: "BrandingMedium" }}
             >
               Vice-President- Sales & Operations
             </p>
-
-            <div className="mb-10">
+            <div className="mb-6">
               <p
-                className="text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] font-bold mb-2"
+                className="text-[1.3rem] sm:text-[1.4rem] md:text-[1.5rem] font-bold mb-2 text-left"
                 style={{ fontFamily: "BrandingSemibold" }}
               >
-                Belief:{" "}
-                <span className="font-normal">
-                  "Shape the sustainable future by creating unprecedented value
-                  and opportunity for our customers, employees, investors, and
-                  ecosystem partners."
-                </span>
+                Belief: <span className="font-normal">"Shape the sustainable future by creating unprecedented value and opportunity for our customers, employees, investors, and ecosystem partners."</span>
               </p>
             </div>
-
             <div className="space-y-10">
               <p
-                className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.4rem] leading-relaxed"
+                className="text-[0.95rem] xs:text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] lg:text-[1.3rem] xl:text-[1.4rem] 2xl:text-[1.5rem] leading-[1.6] sm:leading-[1.65] md:leading-[2] text-gray-800 text-left"
                 style={{ fontFamily: "BrandingMedium" }}
               >
-                Dr. Pawan Kumar Singh is heading the Indabrator division as
-                Vice-President- Sales & Operations. In his role, he oversees and
-                leads Nesco's Manufacturing unit (Indabrator), with
-                responsibilities spanning across Sales and Operations.
-              </p>
-
-              <p
-                className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.4rem] leading-relaxed"
-                style={{ fontFamily: "BrandingMedium" }}
-              >
-                His expertise extends to various aspects of business management,
-                including P&L management in multi-plant operations within heavy
-                engineering, industrial/mechanical equipment, components,
-                automotive manufacturing, and machine building segments. Dr.
-                Singh has worked with several multinational companies in these
-                roles.
-              </p>
-
-              <p
-                className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.4rem] leading-relaxed"
-                style={{ fontFamily: "BrandingMedium" }}
-              >
-                He has has a proven track record in Operational Excellence and
-                Efficiencies, Value Engineering, Sustainability, Safety,
-                Quality, Delivery & Cost (S2QDC), and, notably, New
-                Product/Process Introduction. Well-versed in B2B Sales, Business
-                Development & Strategy, Customer and Market Expansion &
-                Retention, Financials including EBIT, Purchase, Project
-                Management, and Supply Chain management.
+                Dr. Pawan Kumar Singh is heading the Indabrator division as Vice-President- Sales & Operations. In his role, he oversees and leads Nesco's Manufacturing unit (Indabrator), with responsibilities spanning across Sales and Operations.
               </p>
             </div>
           </div>

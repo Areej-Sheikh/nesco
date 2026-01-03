@@ -2,6 +2,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Environment Setup
+
+1. Create a `.env.local` file in the root directory
+2. Add your Twelve Data API key:
+   ```
+   NEXT_PUBLIC_TWELVE_DATA_API_KEY=your_api_key_here
+   ```
+3. Get your API key from [Twelve Data](https://twelvedata.com/)
+
+### Running the Development Server
+
 First, run the development server:
 
 ```bash

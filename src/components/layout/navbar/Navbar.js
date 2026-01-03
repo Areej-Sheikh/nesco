@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import "./Navbar.css";
 import Nescologo from "@/assests/Home/logo-blue.png";
-import Nescologo2 from "@/assests/Home/logo-white.png";
+import Nescologo2 from "@/assests/Home/logo-blue.png";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
@@ -378,9 +378,9 @@ function Navbar({ activeSlide }) {
 
   return (
     <nav
-      // className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed transition-all duration-50 ${changeNavbar()} ${changeNavbar1()}`}
-      className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed top-0 transition-all duration-200 ${changeNavbar()} ${changeNavbar1()}`}
+      className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed top-0 transition-all duration-200 bg-white ${changeNavbar()} ${changeNavbar1()}`}
     >
+
       {!isScrolled && (
         <div className="fixed top-0 left-0 py-6 md:px-16 px-8 w-full h-20"></div>
       )}
@@ -405,7 +405,7 @@ function Navbar({ activeSlide }) {
           {NavData.map((data, index) => (
             <li
               key={index}
-              className={`${getTextColor()} border-r font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5 `}
+              className={`text-gray-500 border-r font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5 `}
               // className={`${getTextColor()} border-r font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5 ${
               //   isOpen !== null
               //     ? "animate-dropdown-open"
@@ -417,9 +417,8 @@ function Navbar({ activeSlide }) {
               <Link
                 href={data.route}
                 key={index}
-                className={`${
-                  hoverStates[index] && "boxAnimation relative overflow-hidden"
-                } w-full`}
+                className={`${hoverStates[index] && "boxAnimation relative overflow-hidden"
+                  } w-full`}
               >
                 {data.title}
               </Link>
@@ -433,19 +432,17 @@ function Navbar({ activeSlide }) {
             <input
               type="text"
               placeholder="Search..."
-              className={`w-full h-10 pl-4 pr-10 rounded-full  ${
-                isScrolled || textBlack
+              className={`w-full h-10 pl-4 pr-10 rounded-full  ${isScrolled || textBlack
                   ? "bg-gray-200 text-black"
                   : " text-black"
-              }`}
+                }`}
               value={searchQuery}
               onChange={handleSearchChange}
               onClick={() => setShowSearchResults(true)}
             />
             <span
-              className={`inline-block cursor-pointer absolute top-1/2 ${
-                isScrolled || textBlack ? "text-gray-700" : "text-white"
-              } -translate-y-1/2 right-3`}
+              className={`inline-block cursor-pointer absolute top-1/2 ${isScrolled || textBlack ? "text-gray-700" : "text-white"
+                } -translate-y-1/2 right-3`}
             >
               <GoSearch className={`text-[20px] text-black`} strokeWidth={1} />
             </span>
@@ -491,9 +488,8 @@ function Navbar({ activeSlide }) {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 w-64 h-full bg-[#403092] p-8 transition-transform transform z-[60] ${
-          isSidebarOpen ? "translate-x-0" : "translate-x-full"
-        } xl:hidden`}
+        className={`fixed top-0 right-0 w-64 h-full bg-[#403092] p-8 transition-transform transform z-[60] ${isSidebarOpen ? "translate-x-0" : "translate-x-full"
+          } xl:hidden`}
       >
         <div className="flex justify-end items-center mb-8">
           <FaTimes

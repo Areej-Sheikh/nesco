@@ -38,6 +38,12 @@ function BecDescription() {
             className="text-[0.95rem] xs:text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] lg:text-[1.3rem] xl:text-[1.4rem] 2xl:text-[1.5rem] leading-[1.6] sm:leading-[1.65] md:leading-[2] text-gray-800"
             style={{ fontFamily: "BrandingMedium" }}
           >
+            Nesco is coming up with two new pillarless exhibition halls, each spanning 2 lakh sq. ft. The first hall will be ready by January 2027 and the second by January 2028, further enhancing our capacity for world-class exhibitions.
+          </p>
+          <p
+            className="text-[0.95rem] xs:text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] lg:text-[1.3rem] xl:text-[1.4rem] 2xl:text-[1.5rem] leading-[1.6] sm:leading-[1.65] md:leading-[2] text-gray-800"
+            style={{ fontFamily: "BrandingMedium" }}
+          >
             The BEC has attained historical status in Mumbai as the ideal
             location for exhibitions, MICE, trade shows, business displays,
             events and entertainment.

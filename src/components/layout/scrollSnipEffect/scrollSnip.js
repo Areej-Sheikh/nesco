@@ -73,18 +73,18 @@ function ScrollSnip({ Children }) {
     <div
       ref={containerRef}
       className="container1 font-branding-medium scroll-smooth"
+      style={{ scrollSnapType: 'y mandatory', height: '100vh', overflowY: 'auto' }}
     >
       {Children.map((data, index) => {
         // Split the classCss into individual classes
         const classes = data.classCss.split(' ');
         const hasHeaderWhite = classes.includes('header_white');
-        
         return (
           <section
             key={index}
             className={`flex items-center justify-center ${data.classCss}`}
             data-header-white={hasHeaderWhite ? "true" : "false"}
-            style={{ scrollSnapAlign: "start", transform: "translateZ(0)" }} // Performance boost
+            style={{ scrollSnapAlign: "start", minHeight: '100vh', width: '100vw', transform: "translateZ(0)" }}
           >
             {data.comp}
           </section>

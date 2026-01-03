@@ -11,7 +11,7 @@ function IndabratorUnits() {
       {/* Title with padding */}
       <div className="w-full py-4 px-[5%]">
         <h2
-          className="text-[2rem] md:text-[2.2rem] font-bold"
+          className="text-[2.2rem] md:text-[2.2rem] font-bold"
           style={{ fontFamily: "BrandingSemibold" }}
         >
           Our Manufacturing Units
@@ -32,21 +32,17 @@ function IndabratorUnits() {
 
           <div className="absolute right-[5%] lg:bottom-10 bottom-0 bg-white p-5 md:p-6 max-w-[95%] md:max-w-[580px] min-h-[420px] shadow-md">
             <h3
-              className="text-[1.2rem] md:text-[1.4rem] font-bold mb-1"
+              className="text-[1.4rem] md:text-[1.4rem] font-bold mb-1"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               Works I
             </h3>
-            <p className="text-md font-bold text-gray-600 mb-3">
-              Nesco Limited (INDABRATOR division), Nadiad- Petlad Road, Vishnoli - 388 130, Dist: Anand, Gujarat, INDIA               
-              <br />
-              Email: indabrator.sales@nesco.in; indabrator.spares@nesco.in      
-              <br />         
-              Phone: +91 (0) 2697 265800 , +91-63587 29669,  +91-70439 35577  
+            <p className="text-[1.2rem] font-bold text-gray-600 mb-3">
+              Vishnoli, Gujarat           
             </p>
 
             <p
-              className="text-[1.1rem] md:text-[1.2rem] leading-relaxed"
+              className="text-[1.2rem] md:text-[1.2rem] leading-relaxed"
               style={{ fontFamily: "BrandingMedium" }}
             >
               The Vataman units are situated within 31 acres of green expanses.
@@ -54,7 +50,7 @@ function IndabratorUnits() {
               manufacturing of shot-blasting machines and other equipment.
             </p>
             <p
-              className="text-[1.1rem] md:text-[1.2rem] leading-relaxed mt-2"
+              className="text-[1.2rem] md:text-[1.2rem] leading-relaxed mt-2"
               style={{ fontFamily: "BrandingMedium" }}
             >
             The unit produces numerous shot blasting, painting systems every year. The R&D Centre facilitates in creating customized solutions for all applications.
