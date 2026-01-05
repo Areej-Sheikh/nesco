@@ -25,7 +25,7 @@ function RealtyProfile() {
       name: "Rishab Doshi",
       title: "Head- Special Project",
       // Rishab does not have a belief quote in the provided text, so we leave it null
-      belief: null, 
+      belief: null,
       description: [
         "Rishab Doshi is a dynamic professional with diverse and extensive experience across the Finance, Real Estate, and Hospitality sectors. A Chartered Accountant (CA), Chartered Financial Analyst (CFA), and holder of a General LLB, Rishab has built a robust career working with prominent international private equity firms such as Blackstone and Lakeshore.",
         "He currently serves as Co-Head of Food, Liaison, Way-Side Amenities, and Corporate Strategy at Nesco. As the youngest member of Nesco’s leadership team, Rishab has played a key role in driving the exponential growth of Nesco Foods. He has been instrumental in advancing the company’s hospitality vision—developing vibrant culinary ecosystems that seamlessly integrate innovation, and exceptional guest experiences across dining venues and large-scale events.",
@@ -41,21 +41,20 @@ function RealtyProfile() {
         <div key={profile.id}>
           {/* Add a separator/spacing for the second profile onwards */}
           <div
-            className={`w-[90%] mx-auto lg:mt-20 ${
-              index !== 0 ? "mt-16 pt-16 border-t border-gray-200" : ""
-            }`}
+            className={`w-[90%] mx-auto lg:mt-20 ${index !== 0 ? "mt-16 pt-16 border-t border-gray-200" : ""
+              }`}
           >
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-[5vh] lg:gap-[3vw]">
               {/* Text Content - Left side */}
-              <div className="w-full lg:w-[60%]">
+              <div className="w-full lg:w-[50%] xl:w-[45%] space-y-[2vh]">
                 <h3
-                  className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 text-left"
+                  className="text-[clamp(2rem,4vw,3.5rem)] font-bold leading-tight"
                   style={{ fontFamily: "BrandingSemibold" }}
                 >
                   {profile.name}
                 </h3>
                 <p
-                  className="text-xl sm:text-2xl lg:text-3xl text-[#666] mb-12 text-left"
+                  className="text-[clamp(1.2rem,2.5vw,1.8rem)] text-[#666]"
                   style={{ fontFamily: "BrandingMedium" }}
                 >
                   {profile.title}
@@ -64,18 +63,18 @@ function RealtyProfile() {
                 {/* Only render Belief section if it exists */}
                 {profile.belief && (
                   <p
-                    className="text-xl sm:text-2xl lg:text-3xl font-bold mb-10 text-left leading-tight"
+                    className="text-[clamp(1.2rem,2.5vw,1.8rem)] font-bold leading-tight"
                     style={{ fontFamily: "BrandingSemibold" }}
                   >
                     {profile.belief}
                   </p>
                 )}
 
-                <div className="space-y-10">
+                <div className="space-y-[2vh]">
                   {profile.description.map((paragraph, i) => (
                     <p
                       key={i}
-                      className="text-xl sm:text-2xl lg:text-3xl leading-loose text-justify"
+                      className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-justify"
                       style={{ fontFamily: "BrandingMedium" }}
                     >
                       {paragraph}
@@ -85,8 +84,8 @@ function RealtyProfile() {
               </div>
 
               {/* Image Container - Right side */}
-              <div className="w-full lg:w-[40%] flex items-center justify-end">
-                <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[700px] w-full overflow-hidden rounded-lg shadow-lg">
+              <div className="w-full lg:w-[45%] xl:w-[50%] relative h-[60vh] sm:h-[70vh] lg:h-[75vh] flex items-center justify-end">
+                <div className="relative h-[400px] sm:h-[500px] lg:h-full w-full overflow-hidden rounded-lg shadow-lg">
                   <Image
                     src={profile.image}
                     alt={profile.name}

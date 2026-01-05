@@ -31,11 +31,12 @@ function LifeCommitment() {
             </p>
           </div>
         </div>
-        <div className="relative h-auto w-auto ">
+        <div className="relative h-[280px] md:h-[550px]">
           <Image
             src={CommitmentImage}
-            alt="Two People shaking hand"
-            className="md:w-full md:h-full aspect-square"
+            alt="Three people discuss about their work"
+            fill
+            className="object-cover"
             priority
           />
         </div>

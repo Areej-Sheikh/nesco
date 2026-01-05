@@ -54,12 +54,18 @@ const Timeline = ({ years, isFooterVisible }) => {
 
   // --- NEW FUNCTIONALITY: CLICK TO SCROLL ---
   const handleYearClick = (year) => {
-    // We select the element based on the data-year attribute used by your Year components
-    // If there are multiple sections for a year (like 2017Sec2), querySelector will grab the first one, which is correct.
     const section = document.querySelector(`[data-year="${year}"]`);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "center" });
-      // Optional: Manually set active year immediately for instant feedback
+      // Get navbar height (if fixed/sticky)
+      const navbar = document.querySelector('nav') || document.querySelector('.navbar');
+      const navHeight = navbar ? navbar.offsetHeight : 0;
+      // Get section position
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      // Scroll so section top is just below navbar
+      window.scrollTo({
+        top: sectionTop - navHeight - 16, // 16px extra spacing
+        behavior: 'smooth',
+      });
       setActiveYear(year.toString());
     }
   };

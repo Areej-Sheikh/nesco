@@ -72,8 +72,8 @@ export const fetchChartData = async (exchange = 'nse', period = '1mo') => {
 };
 
 /**
- * Transform YahooFinance quote data to component format
- * @param {Object} quoteData - Raw quote data
+ * Transform quote data to component format
+ * @param {Object} quoteData - Raw quote data from API
  * @returns {Object} Transformed data for components
  */
 export const transformQuoteData = (quoteData) => {

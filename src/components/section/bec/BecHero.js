@@ -21,31 +21,17 @@ function BecHero() {
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      {/* Content - Just like in the screenshot */}
-      {/* <div className="relative z-10 px-[5%] h-full flex flex-col justify-center">
-        <div className="max-w-2xl mt-32">
-          <h1
-            className="text-white text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.2] drop-shadow-lg mb-4"
-            style={{ fontFamily: "BrandingSemibold" }}
-          >
-            A Confluence of business & cultures
-          </h1>
-        </div>
-      </div> */}
 
-      <div
-        className="absolute bottom-8 sm:right-[-200px] right-[0px] px-4 sm:px-8 py-1 sm:py-2 bg-white bg-opacity-70 z-20 flex items-center w-[250px] sm:w-[380px] md:w-[600px] sm:flex overflow-hidden rounded-l-[5rem]"
-        // style={{ borderRadius: "5rem" }}
-      >
-        {/* Fixed-size container for the logo */}
-        <div className="w-[200px] sm:w-[340px] md:w-[540px] relative flex items-center justify-start overflow-hidden">
+
+      {/* Logo Container - unified style */}
+      <div className="absolute bottom-8 right-0 px-8 py-2 bg-white bg-opacity-70 z-20 flex items-center w-[480px] h-[200px] overflow-hidden rounded-l-[5rem]">
+        <div className="w-[350px] h-[180px] relative flex items-center justify-center overflow-hidden">
           <Image
             src={becLogo}
             alt="Bombay Exhibition Center Logo"
-            width={210}
-            height={60}
-            className="object-contain sm:scale-140 md:scale-150 transform-gpu md:ml-[5rem]"
-            // style={{ marginLeft: "5rem" }}
+            width={350}
+            height={180}
+            className="object-contain"
           />
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import ServiceImage from "@/assests/Home/girl.jpg";
+import Link from "next/link";
 
 function Service() {
   return (
@@ -37,9 +38,11 @@ function Service() {
             to education, infrastructure & medical facilities in rural areas.
           </p>
           <div className="mt-8">
-            <button className="px-8 py-2 bg-primary border border-black lg:text-[1.4rem] uppercase font-branding-semibold text-white">
-              Explore
-            </button>
+            <Link href="/social-responsibility">
+              <button className="px-8 py-2 bg-primary border border-black lg:text-[1.4rem] uppercase font-branding-semibold text-white">
+                Explore
+              </button>
+            </Link>
           </div>
         </div>
       </div>

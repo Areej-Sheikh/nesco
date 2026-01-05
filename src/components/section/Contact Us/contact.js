@@ -12,9 +12,8 @@ function Contact() {
         address1: "Nesco Centre, Hall No. 1",
         address2: "Western Express Highway",
         city: "Goregaon (East) Mumbai 400063",
-        phone1: "7045029812",
+        phone1: "022 66450123",
         contact: "contact@bombayexhibitioncenter.in",
-        phone2: "022 6645 0123",
       },
     },
     {
@@ -23,9 +22,8 @@ function Contact() {
         address1: "Nesco Centre, Hall No. 1",
         address2: "Western Express Highway",
         city: "Goregaon (East) Mumbai 400063",
-        phone1: "7045029812",
-        contact: "contact@bombayexhibitioncenter.in",
-        phone2: "022 6645 0123",
+        phone1: "+91 99099 44444",
+        contact: "events@nesco.co.in",
       },
     },
     {
@@ -34,31 +32,28 @@ function Contact() {
         address1: "Nesco Centre, Hall No. 1",
         address2: "Western Express Highway",
         city: "Goregaon (East) Mumbai 400063",
-        phone1: "7045029812",
-        contact: "contact@bombayexhibitioncenter.in",
-        phone2: "022 6645 0123",
+        phone1: "022 66450123",
+        contact: "foods@nesco.in",
       },
     },
     {
       title: "Nesco Realty",
       description: {
-        address1: "Nesco Centre, Hall No. 1",
+        address1: "Nesco Centre, Hall No. 3",
         address2: "Western Express Highway",
         city: "Goregaon (East) Mumbai 400063",
-        phone1: "7045029812",
-        contact: "contact@bombayexhibitioncenter.in",
-        phone2: "022 6645 0123",
+        phone1: "022 66450123",
+        contact: "contact@nescoreality.in",
       },
     },
     {
       title: "Indabrator",
       description: {
-        address1: "Nesco Centre, Hall No. 1",
+        address1: "Indabrator, Nesco Limited",
         address2: "Western Express Highway",
         city: "Goregaon (East) Mumbai 400063",
-        phone1: "7045029812",
-        contact: "contact@bombayexhibitioncenter.in",
-        phone2: "022 6645 0123",
+        phone1: "+91 99099 44443",
+        contact: "Machines: indabrator.sales@nesco.in | Spares: indabrator.spares@nesco.in",
       },
     },
   ];
@@ -79,11 +74,6 @@ function Contact() {
       </div>
       <div className="w-full flex flex-col md:items-center mt-32 z-10 relative">
         <SlidedownCard data={data} />
-        <div className="w-[50%] my-2 flex-col gap-4 font-branding-medium text-3xl text-white flex items-start cursor-pointer px-5 md:px-0 ">
-          {/* <p>Careers</p> */}
-          <Link href="/life-at-nesco">Life at Nesco</Link>
-          <p>Investors</p>
-        </div>
       </div>
     </div>
   );

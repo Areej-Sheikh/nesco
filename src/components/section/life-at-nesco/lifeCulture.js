@@ -6,7 +6,7 @@ function LifeCulture() {
   return (
     <section className="goal-section1 header_color_black w-full lg:h-screen h-full bg-secondary pb-10 flex flex-col justify-center">
       <div className="grid md:grid-cols-2 justify-between gap-10 pt-24 xl:items-start items-center w-[90%] mx-auto ">
-        <div className="relative h-[300px] md:h-[650px]">
+        <div className="relative h-[280px] md:h-[550px]">
           <Image
             src={CultureImage}
             alt="Three people discuss about their work"

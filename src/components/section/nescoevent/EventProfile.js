@@ -22,25 +22,25 @@ function EventProfile() {
       </div> */}
 
       <div className="w-[90%] mx-auto lg:mt-20 relative">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-[5vh] lg:gap-[3vw]">
           {/* Text Content - Left side */}
-          <div className="w-full lg:w-[60%]">
+          <div className="w-full lg:w-[50%] xl:w-[45%] space-y-[2vh]">
             <h3
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 text-left"
+              className="text-[clamp(2rem,4vw,3.5rem)] font-bold leading-tight"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               Balakrishnan Balram
             </h3>
             <p
-              className="text-xl sm:text-2xl lg:text-3xl text-[#666] mb-12 text-left"
+              className="text-[clamp(1.2rem,2.5vw,1.8rem)] text-[#666]"
               style={{ fontFamily: "BrandingMedium" }}
             >
               Head - Nesco Events
             </p>
 
-            <div className="space-y-10">
+            <div className="space-y-[2vh]">
               <p
-                className="text-xl lg:text-2xl text-justify"
+                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-left text-justify"
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 Balakrishnan Balram is a seasoned leader in strategic brand
@@ -51,7 +51,7 @@ function EventProfile() {
               </p>
 
               <p
-                className="text-xl lg:text-2xl text-justify"
+                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-left text-justify"
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 As the former Chief Business Officer at Laqshya Live
@@ -63,7 +63,7 @@ function EventProfile() {
               </p>
 
               <p
-                className="text-xl lg:text-2xl text-justify"
+                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-left text-justify"
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 His impressive portfolio includes partnerships with Bentley,
@@ -76,7 +76,7 @@ function EventProfile() {
           </div>
 
           {/* Image Container - Right side */}
-          <div className="w-full lg:w-[40%] flex items-center justify-end relative">
+          <div className="w-full lg:w-[45%] xl:w-[50%] relative h-[60vh] sm:h-[70vh] lg:h-[75vh] flex items-center justify-end">
             {/* Background Image */}
             <div className="absolute w-full h-full ">
               <Image
@@ -88,7 +88,7 @@ function EventProfile() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 45vw, 50vw"
               />
             </div>
-            <div className="relative h-[400px] lg:h-[500px] xl:h-[600px] w-full rounded-lg shadow-lg">
+            <div className="relative h-[400px] lg:h-full w-full rounded-lg shadow-lg">
               <Image
                 src={profileImage}
                 alt="Balachandran Nambisan"

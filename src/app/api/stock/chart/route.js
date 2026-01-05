@@ -1,4 +1,6 @@
-import YahooFinance from 'yahoo-finance2';
+import { getPersistentCache, setPersistentCache } from '../../../../utils/persistentCache';
+
+const ALPHA_VANTAGE_API_KEY = '76M34K2003RZNXPT';
 
 export async function GET(request) {
   try {
@@ -6,13 +8,12 @@ export async function GET(request) {
     const exchange = searchParams.get('exchange') || 'nse';
     const period = searchParams.get('period') || '1mo';
 
-    // NESCO stock symbols
-    const symbols = {
-      nse: 'NESCO.NS',
-      bse: 'NESCO.BO',
+    const symbolMap = {
+      nse: '505355.BSE', // Force BSE code as reliable fallback
+      bse: '505355.BSE',
     };
 
-    const symbol = symbols[exchange.toLowerCase()];
+    const symbol = symbolMap[exchange.toLowerCase()];
     if (!symbol) {
       return Response.json(
         { error: 'Invalid exchange. Use "nse" or "bse"' },
@@ -20,50 +21,118 @@ export async function GET(request) {
       );
     }
 
-    console.log(`Fetching chart for symbol: ${symbol}, period: ${period}`);
+    const cacheKey = `chart_${exchange}_${symbol}`; // Removed period from key to share history across periods
 
-    // Map periods to date ranges
-    const periodMap = {
-      '1d': { days: 1, interval: '5m' },
-      '5d': { days: 5, interval: '15m' },
-      '1mo': { days: 30, interval: '1d' },
-      '3mo': { days: 90, interval: '1d' },
-      '6mo': { days: 180, interval: '1d' },
-      '1y': { days: 365, interval: '1d' },
-      '2y': { days: 730, interval: '1d' },
-      '5y': { days: 1825, interval: '1d' },
-      '10y': { days: 3650, interval: '1d' },
-      'ytd': { days: 365, interval: '1d' },
-      'max': { days: 3650, interval: '1d' },
-    };
+    // 1. Try to get valid fresh data
+    const cachedData = getPersistentCache(cacheKey);
+    if (cachedData && !cachedData.isStale) {
+      // Filter data based on requested period if necessary? 
+      // For now, client likely handles filtering, or we return all History.
+      // Let's return all.
+      return Response.json({ ...cachedData, fromCache: true });
+    }
 
-    const config = periodMap[period] || periodMap['1mo'];
-    const now = new Date();
-    const startDate = new Date(now);
-    startDate.setDate(startDate.getDate() - config.days);
+    console.log(`Fetching Chart data from Alpha Vantage for ${symbol}...`);
 
-    const yahooFinance = new YahooFinance();
-    const data = await yahooFinance.chart(symbol, {
-      period1: startDate,
-      period2: now,
-      interval: config.interval,
-    });
+    // 2. Prepare for Fetch
+    // Check if we have STALE data to decide between 'compact' and 'full'
+    const staleData = getPersistentCache(cacheKey, true); // Get stale if exists
+    const hasHistory = staleData && staleData.quotes && staleData.quotes.length > 200;
 
-    console.log(`Chart data fetched successfully for ${symbol}`);
-    
-    return Response.json({
-      quotes: data.quotes || [],
-      symbol: symbol,
-    });
+    // If we have > 200 days of history, we only need 'compact' (latest 100 days) to update.
+    // Otherwise, fetch 'full' (20 years) to build history.
+    const outputSize = hasHistory ? 'compact' : 'full';
+
+    console.log(`Existing history length: ${staleData?.quotes?.length || 0}. Using outputsize=${outputSize}`);
+
+    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&outputsize=${outputSize}&apikey=${ALPHA_VANTAGE_API_KEY}`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Alpha Vantage API error: ${response.status} ${response.statusText}`);
+      }
+
+      const jsonData = await response.json();
+
+      if (jsonData['Error Message']) {
+        throw new Error(jsonData['Error Message']);
+      }
+      if (jsonData['Note']) {
+        throw new Error(`Alpha Vantage API Note: ${jsonData['Note']}`);
+      }
+      if (jsonData['Information']) {
+        throw new Error(`Alpha Vantage API Info: ${jsonData['Information']}`);
+      }
+
+      const timeSeries = jsonData['Time Series (Daily)'];
+      if (!timeSeries) {
+        throw new Error('No Time Series data found in response');
+      }
+
+      // 3. Transform new data
+      const dates = Object.keys(timeSeries).sort(); // Oldest first
+      const newQuotes = dates.map(date => {
+        const dp = timeSeries[date];
+        return {
+          date: date,
+          open: parseFloat(dp['1. open']),
+          high: parseFloat(dp['2. high']),
+          low: parseFloat(dp['3. low']),
+          close: parseFloat(dp['4. close']),
+          volume: parseInt(dp['5. volume'])
+        };
+      });
+
+      // 4. Merge with stale data
+      let finalQuotes = newQuotes;
+      if (hasHistory) {
+        // Create a Map for existing quotes
+        const quoteMap = new Map();
+        staleData.quotes.forEach(q => quoteMap.set(q.date, q));
+
+        // Overwrite with new quotes
+        newQuotes.forEach(q => quoteMap.set(q.date, q));
+
+        // Convert back to array and sort
+        finalQuotes = Array.from(quoteMap.values()).sort((a, b) => new Date(a.date) - new Date(b.date));
+      }
+
+      const responseData = {
+        quotes: finalQuotes,
+        symbol,
+      };
+
+      // 5. Save merged data to cache
+      setPersistentCache(cacheKey, responseData);
+
+      return Response.json(responseData);
+
+    } catch (apiError) {
+      console.error("Alpha Vantage Fetch Failed:", apiError.message);
+
+      // Fallback: If we have stale data, return it despite error
+      if (staleData) {
+        console.log("Serving stale data due to API failure.");
+        return Response.json({
+          ...staleData,
+          fromCache: true,
+          isStale: true,
+          warning: "Data may be outdated due to API limits. " + apiError.message
+        });
+      }
+
+      // No fallback possible
+      return Response.json(
+        { error: 'Failed to fetch chart data', details: apiError.message },
+        { status: 500 }
+      );
+    }
+
   } catch (error) {
-    console.error('Error fetching chart data:', error.message);
-    console.error('Full error:', error);
+    console.error('Error in Chart API:', error);
     return Response.json(
-      { 
-        error: 'Failed to fetch chart data', 
-        details: error.message,
-        stack: error.stack 
-      },
+      { error: 'Internal Server Error', details: error.message },
       { status: 500 }
     );
   }

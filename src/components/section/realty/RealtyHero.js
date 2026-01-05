@@ -19,23 +19,20 @@ function RealtyHero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      {/* Logo positioned in top right - size unchanged */}
-      <div
-        className="absolute bottom-8 md:right-[-200px] right-[0px] px-4 sm:px-8 py-1 sm:py-2 bg-white bg-opacity-70 z-20 flex items-center w-[250px] sm:w-[380px] md:w-[600px] sm:flex overflow-hidden rounded-l-[5rem]"
-        // style={{ borderRadius: "5rem" }}
-      >
-        {/* Fixed-size container for the logo */}
-        <div className="w-[180px] sm:w-[340px] md:w-[540px] relative flex items-center justify-start overflow-hidden">
+
+
+      {/* Logo Container - unified style */}
+      <div className="absolute bottom-8 right-0 px-8 py-2 bg-white bg-opacity-70 z-20 flex items-center w-[480px] h-[200px] overflow-hidden rounded-l-[5rem]">
+        <div className="w-[350px] h-[180px] relative flex items-center justify-center overflow-hidden">
           <Image
             src={realtyLogo}
             alt="Nesco Realty Logo"
-            width={210}
-            height={60}
-            className="object-contain scale-[1.65] sm:scale-[1.8] md:scale-[1.95] transform-gpu md:ml-[5rem]"
-            // style={{ marginLeft: "5rem" }}
+            width={350}
+            height={180}
+            className="object-contain"
           />
         </div>
       </div>

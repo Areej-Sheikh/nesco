@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Button, Modal } from "antd";
+// No animation imports
 
 // Modal Component
 export const MentorModal = ({ isOpen, onClose, data, lenis }) => {
@@ -49,6 +50,10 @@ export const MentorModal = ({ isOpen, onClose, data, lenis }) => {
     };
   }, [isOpen, onClose, lenis]);
 
+
+  // No animation variants
+
+  // AnimatePresence handles mounting/unmounting with animation
   if (!isOpen || !data) return null;
 
   const handleOk = () => {
@@ -60,19 +65,13 @@ export const MentorModal = ({ isOpen, onClose, data, lenis }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center w-full h-full justify-center bg-black bg-opacity-60 backdrop-blur-sm">
+    isOpen && data ? (
       <Modal
-        open={isOpen}
+        open={true}
         onOk={handleOk}
         onCancel={onClose}
         width={mobileView ? "90%" : "60%"}
-        style={{
-          top: "50%",
-          transform: "translateY(-50%)",
-          maxHeight: "80vh",
-        }}
         footer={false}
-        maskStyle={{ backdropFilter: "blur(3px)" }}
       >
         <div ref={modalRef} className="w-full -mb-3">
           <h2 className="text-2xl font-branding-semibold text-primary">
@@ -101,7 +100,7 @@ export const MentorModal = ({ isOpen, onClose, data, lenis }) => {
           </div>
         </div>
       </Modal>
-    </div>
+    ) : null
   );
 };
 

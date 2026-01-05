@@ -1,21 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-
-  // Disable Turbopack and force Webpack
-  experimental: {
-    turbo: {
-      rules: {}, // disable Turbopack features
-      resolveAlias: {}, 
-    },
-    serverActions: {
-      bodySizeLimit: "2mb",
-    },
-  },
-  webpack: (config) => {
-    return config; // force Webpack bundler
-  },
 
   async rewrites() {
     return [
