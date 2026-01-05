@@ -2,7 +2,7 @@ import React from "react";
 
 function HospitalityIntro() {
   return (
-    <div className="w-[90%] h-auto bg-white flex flex-col md:flex-row mx-auto md:gap-14 lg:mt-20">
+    <div className="w-[90%] lg:min-h-screen bg-white flex flex-col md:flex-row mx-auto md:gap-14">
       {/* Left column - Main heading with improved responsive text */}
       <div className="md:w-[50%] w-full flex flex-col justify-center py-8 md:py-12">
         <h1

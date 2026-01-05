@@ -26,13 +26,13 @@ function IndabratorHero() {
 
 
       {/* Logo Container - unified style */}
-      <div className="absolute bottom-8 right-0 px-8 py-2 bg-white bg-opacity-70 z-20 flex items-center w-[520px] h-[182px] overflow-hidden rounded-l-[5rem]">
-        <div className="w-[234px] h-[130px] relative flex items-center justify-center overflow-hidden">
+      <div className="absolute bottom-8 right-0 px-8 py-2 bg-white bg-opacity-70 z-20 flex items-center w-[480px] h-[200px] overflow-hidden rounded-l-[5rem]">
+        <div className="w-[350px] h-[180px] relative flex items-center justify-center overflow-hidden">
           <Image
             src={indabratorLogo}
             alt="Indabrator Logo"
-            width={234}
-            height={130}
+            width={350}
+            height={180}
             className="object-contain"
           />
         </div>

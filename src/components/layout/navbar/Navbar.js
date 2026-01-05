@@ -378,7 +378,8 @@ function Navbar({ activeSlide }) {
 
   return (
     <nav
-      className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed top-0 transition-all duration-200 bg-white ${changeNavbar()} ${changeNavbar1()}`}
+      className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed top-0 transition-all duration-200 ${isScrolled ? "bg-white" : "bg-white/45"
+        } ${changeNavbar()} ${changeNavbar1()}`}
     >
 
       {!isScrolled && (
@@ -405,7 +406,8 @@ function Navbar({ activeSlide }) {
           {NavData.map((data, index) => (
             <li
               key={index}
-              className={`text-gray-500 border-r font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5 `}
+              className={`text-gray-500 border-r font-bold text-[1.1rem] last:border-none xl:px-6 lg:px-5 `}
+              style={{ fontFamily: "BrandingSemibold" }}
               // className={`${getTextColor()} border-r font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5 ${
               //   isOpen !== null
               //     ? "animate-dropdown-open"
@@ -433,8 +435,8 @@ function Navbar({ activeSlide }) {
               type="text"
               placeholder="Search..."
               className={`w-full h-10 pl-4 pr-10 rounded-full  ${isScrolled || textBlack
-                  ? "bg-gray-200 text-black"
-                  : " text-black"
+                ? "bg-gray-200 text-black"
+                : " text-black"
                 }`}
               value={searchQuery}
               onChange={handleSearchChange}

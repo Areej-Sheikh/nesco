@@ -2,11 +2,11 @@ import React from "react";
 
 function IndabratorIntro() {
   return (
-    <div className="w-[90%] h-auto lg:h-screen bg-white flex flex-col md:flex-row mx-auto md:gap-14 lg:mt-20">
+    <div className="w-[90%] lg:min-h-screen bg-white flex flex-col md:flex-row mx-auto md:gap-14">
       {/* Left column - Main heading with improved responsive text */}
       <div className="md:w-[50%] w-full flex flex-col justify-center py-8 md:py-12">
         <h1
-          className="text-[4rem] sm:text-[4.4rem] md:text-[5.4rem] lg:text-[5.9rem] font-bold leading-tight mb-6 text-center md:text-left"
+          className="text-[2rem] xs:text-[2.4rem] sm:text-[2.8rem] md:text-[3.4rem] lg:text-[3.8rem] xl:text-[4.4rem] 2xl:text-[5rem] font-bold leading-[1.1] sm:leading-[1.15] mb-4 sm:mb-6 text-left"
           style={{ fontFamily: "BrandingSemibold" }}
         >
           A pioneer of dreams that will engineer tomorrow.

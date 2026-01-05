@@ -8,33 +8,33 @@ function HospitalityProfile() {
   return (
     <div className="w-full lg:min-h-screen bg-white py-8 lg:py-12">
       <div className="w-[90%] mx-auto lg:mt-20">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-[5vh] lg:gap-[3vw]">
           {/* Text Content - Left side */}
-          <div className="w-full lg:w-[60%]">
+          <div className="w-full lg:w-[50%] xl:w-[45%] space-y-[2vh]">
             <h3
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 text-left"
+              className="text-[clamp(2rem,4vw,3.5rem)] font-bold leading-tight"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               Saurav Banerjee
             </h3>
             <p
-              className="text-xl sm:text-2xl lg:text-3xl text-[#666] mb-12 text-left"
+              className="text-[clamp(1.2rem,2.5vw,1.8rem)] text-[#666]"
               style={{ fontFamily: "BrandingMedium" }}
             >
               Corporate Executive Chef
             </p>
 
             <p
-              className="text-xl sm:text-2xl lg:text-3xl font-bold mb-10 text-left leading-tight"
+              className="text-[clamp(1.2rem,2.5vw,1.8rem)] font-bold leading-tight"
               style={{ fontFamily: "BrandingSemibold" }}
             >
               Belief: For me the team comes first and commitment to hard work is
               our tool to achieve any goal.
             </p>
 
-            <div className="space-y-10">
+            <div className="space-y-[2vh]">
               <p
-                className="text-xl sm:text-2xl lg:text-3xl leading-loose text-justify"
+                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-justify"
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 Chef Saurav Banerjee is our Corporate Executive Chef. He has a
@@ -48,7 +48,7 @@ function HospitalityProfile() {
                 life.
               </p>
               <p
-                className="text-xl sm:text-2xl lg:text-3xl leading-loose text-justify"
+                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-justify"
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 Chef Banerjee is excited to showcase high levels of creativity
@@ -59,8 +59,8 @@ function HospitalityProfile() {
           </div>
 
           {/* Image Container - Right side */}
-          <div className="w-full lg:w-[40%] flex items-center justify-end">
-            <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[700px] w-full overflow-hidden rounded-lg shadow-lg">
+          <div className="w-full lg:w-[45%] xl:w-[50%] relative h-[60vh] sm:h-[70vh] lg:h-[75vh] flex items-center justify-end">
+            <div className="relative h-[400px] sm:h-[500px] lg:h-full w-full overflow-hidden rounded-lg shadow-lg">
               <Image
                 src={profileImage}
                 alt="Saurav Banerjee"

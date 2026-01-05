@@ -1,149 +1,116 @@
-import { getFromCache, getStaleCache, setCache, retryWithBackoff, getOrCreateRequest } from '../../../../utils/cache';
+import { getPersistentCache, setPersistentCache } from '../../../../utils/persistentCache';
 
-// Get API key from environment variable
-const TWELVE_DATA_API_KEY = process.env.NEXT_PUBLIC_TWELVE_DATA_API_KEY || process.env.TWELVE_DATA_API_KEY;
+const ALPHA_VANTAGE_API_KEY = '76M34K2003RZNXPT';
 
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
     const exchange = searchParams.get('exchange') || 'nse';
 
-    if (!TWELVE_DATA_API_KEY) {
-      return Response.json(
-        { error: 'Twelve Data API key not configured. Please set NEXT_PUBLIC_TWELVE_DATA_API_KEY environment variable.' },
-        { status: 500 }
-      );
-    }
-
-    // NESCO stock symbols for Twelve Data
-    // Try multiple formats as Twelve Data may use different symbol formats
-    const symbolFormats = {
-      nse: ['NESCO.NSE', 'NESCO', 'NESCO:NS'],  // Try NSE formats
-      bse: ['NESCO.BSE', 'NESCO', 'NESCO:BO'],  // Try BSE formats
+    // Map internal exchange codes to Alpha Vantage symbols
+    // Alpha Vantage typically supports 'Symbol.BSE' or 'Symbol.NSE' (or just 'Symbol' for US)
+    // For Indian stocks: 'NESCO.BSE', 'NESCO.NSE' are correct.
+    const symbolMap = {
+      nse: '505355.BSE', // Force BSE code as NESCO.NSE/NESCO.BSE failing
+      bse: '505355.BSE',
     };
 
-    const formats = symbolFormats[exchange.toLowerCase()];
-    if (!formats) {
+    const symbol = symbolMap[exchange.toLowerCase()];
+    if (!symbol) {
       return Response.json(
         { error: 'Invalid exchange. Use "nse" or "bse"' },
         { status: 400 }
       );
     }
 
-    // Check cache first (use first format for cache key)
-    const primarySymbol = formats[0];
-    const cacheKey = `quote_${exchange}_${primarySymbol}`;
-    const cachedData = getFromCache(cacheKey);
+    const cacheKey = `quote_${exchange}`;
+
+    // 1. Try to get valid data from cache
+    const cachedData = getPersistentCache(cacheKey);
     if (cachedData) {
       return Response.json({ ...cachedData, fromCache: true });
     }
 
-    console.log(`Fetching quote for exchange: ${exchange} from Twelve Data`);
-    
-    // Use getOrCreateRequest to deduplicate simultaneous requests
-    try {
-      const data = await getOrCreateRequest(cacheKey, async () => {
-        // Try each symbol format until one works
-        let lastError = null;
-        for (const symbol of formats) {
-          try {
-            return await retryWithBackoff(async () => {
-              const url = `https://api.twelvedata.com/quote?symbol=${encodeURIComponent(symbol)}&apikey=${TWELVE_DATA_API_KEY}`;
-              const response = await fetch(url);
-              
-              if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`Twelve Data API error: ${response.status} - ${errorText}`);
-              }
-              
-              const jsonData = await response.json();
-              
-              // Check if API returned an error
-              if (jsonData.status === 'error') {
-                throw new Error(jsonData.message || 'Twelve Data API error');
-              }
-              
-              // Transform Twelve Data response to match expected format
-              return transformTwelveDataQuote(jsonData);
-            }, 2, 2000);
-          } catch (error) {
-            lastError = error;
-            console.log(`Symbol format ${symbol} failed, trying next format...`);
-            continue;
-          }
-        }
-        // If all formats failed, throw the last error
-        throw lastError || new Error('All symbol formats failed');
-      });
+    console.log(`Fetching fresh Quote data from Alpha Vantage for ${symbol}...`);
 
-      // Cache the result
-      setCache(cacheKey, data, 'quote');
+    // 2. Fetch from Alpha Vantage
+    const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${ALPHA_VANTAGE_API_KEY}`;
+    const response = await fetch(url);
 
-      console.log(`Quote data fetched successfully for ${symbol}`);
-      return Response.json(data);
-    } catch (apiError) {
-      // If API fails, try to return stale cache as fallback
-      const staleData = getStaleCache(cacheKey, 2 * 60 * 60 * 1000); // Accept up to 2 hours old data
-      
-      if (staleData) {
-        console.log(`API failed, returning stale cache for ${symbol}`);
-        return Response.json({ 
-          ...staleData, 
-          fromCache: true, 
-          stale: true,
-          warning: 'Using cached data due to API rate limiting'
-        });
-      }
-      
-      // Re-throw if no stale cache available
-      throw apiError;
+    if (!response.ok) {
+      throw new Error(`Alpha Vantage API error: ${response.status} ${response.statusText}`);
     }
+
+    const jsonData = await response.json();
+
+    // Check for API errors or Rate Limit messages
+    if (jsonData['Error Message']) {
+      throw new Error(jsonData['Error Message']);
+    }
+    if (jsonData['Note']) { // Rate limit note
+      console.warn('Alpha Vantage Rate Limit/Note:', jsonData['Note']);
+      // If we hit rate limit, maybe throw or return old cache? 
+      // Current logic: throwing will eventually return 500, but we want to fail gracefully.
+      // But for now let's just throw to see failure logs if any.
+      throw new Error(`Alpha Vantage API Note: ${jsonData['Note']}`);
+    }
+
+    const globalQuote = jsonData['Global Quote'];
+    if (!globalQuote || Object.keys(globalQuote).length === 0) {
+      throw new Error('No Global Quote data found');
+    }
+
+    // 3. Transform data
+    // Alpha Vantage returns keys like "01. symbol", "05. price"
+    const data = transformAlphaVantageQuote(globalQuote, exchange);
+
+    // 4. Save to cache
+    setPersistentCache(cacheKey, data);
+
+    return Response.json(data);
+
   } catch (error) {
-    console.error('Error fetching stock quote:', error.message);
-    console.error('Full error:', error);
-    
-    // Check for rate limit errors more thoroughly
-    const isRateLimited = 
-      error.status === 429 || 
-      error.statusCode === 429 ||
-      (error.message && error.message.includes('429')) ||
-      (error.message && error.message.includes('Too Many Requests')) ||
-      (error.message && error.message.includes('rate limit'));
-    
-    const statusCode = error.code || error.status || error.statusCode || 500;
-    
+    console.error('Error in Quote API:', error);
     return Response.json(
-      { 
-        error: isRateLimited 
-          ? 'Rate limited by data provider. Please try again later. The API is temporarily unavailable.'
-          : 'Failed to fetch stock data', 
-        details: error.message,
-        statusCode: isRateLimited ? 429 : statusCode,
-      },
-      { status: isRateLimited ? 429 : 500 }
+      { error: 'Failed to fetch quote data', details: error.message },
+      { status: 500 }
     );
   }
 }
 
-/**
- * Transform Twelve Data quote response to match Yahoo Finance format
- * @param {Object} data - Twelve Data API response
- * @returns {Object} Transformed data
- */
-function transformTwelveDataQuote(data) {
+function transformAlphaVantageQuote(data, exchange) {
+  // data keys example:
+  // "01. symbol": "NESCO.BSE",
+  // "02. open": "123.45",
+  // "03. high": "125.00",
+  // "04. low": "122.00",
+  // "05. price": "124.50",
+  // "06. volume": "1000",
+  // "07. latest trading day": "2024-01-01",
+  // "08. previous close": "123.00",
+  // "09. change": "1.50",
+  // "10. change percent": "1.22%"
+
+  const price = parseFloat(data['05. price']) || 0;
+  const prevClose = parseFloat(data['08. previous close']) || 0;
+
   return {
-    symbol: data.symbol,
-    regularMarketPrice: parseFloat(data.close) || 0,
-    regularMarketPreviousClose: parseFloat(data.previous_close) || 0,
-    regularMarketOpen: parseFloat(data.open) || 0,
-    regularMarketDayHigh: parseFloat(data.high) || 0,
-    regularMarketDayLow: parseFloat(data.low) || 0,
-    regularMarketVolume: parseInt(data.volume) || 0,
-    fiftyTwoWeekHigh: parseFloat(data.fifty_two_week?.high) || parseFloat(data.high) || 0,
-    fiftyTwoWeekLow: parseFloat(data.fifty_two_week?.low) || parseFloat(data.low) || 0,
-    currency: data.currency || 'INR',
-    exchange: data.exchange,
-    name: data.name,
-    datetime: data.datetime,
+    symbol: data['01. symbol'],
+    regularMarketPrice: price,
+    regularMarketPreviousClose: prevClose,
+    regularMarketOpen: parseFloat(data['02. open']) || 0,
+    regularMarketDayHigh: parseFloat(data['03. high']) || 0,
+    regularMarketDayLow: parseFloat(data['04. low']) || 0,
+    regularMarketVolume: parseInt(data['06. volume']) || 0,
+    // Alpha Vantage Global Quote doesn't give 52-week directly. 
+    // We can omit or default them to 0 (or Day High/Low as fallback for visual safety)
+    fiftyTwoWeekHigh: 0,
+    fiftyTwoWeekLow: 0,
+    currency: 'INR', // Safe assumption for NSE/BSE
+    exchange: exchange.toUpperCase(),
+    name: 'NESCO Limited',
+    datetime: new Date().toISOString(),
+    change: parseFloat(data['09. change']) || 0,
+    changePercent: parseFloat((data['10. change percent'] || '').replace('%', '')) || 0
   };
 }

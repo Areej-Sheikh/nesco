@@ -1,7 +1,6 @@
-import { getFromCache, getStaleCache, setCache, retryWithBackoff, getOrCreateRequest } from '../../../../utils/cache';
+import { getPersistentCache, setPersistentCache } from '../../../../utils/persistentCache';
 
-// Get API key from environment variable
-const TWELVE_DATA_API_KEY = process.env.NEXT_PUBLIC_TWELVE_DATA_API_KEY || process.env.TWELVE_DATA_API_KEY;
+const ALPHA_VANTAGE_API_KEY = '76M34K2003RZNXPT';
 
 export async function GET(request) {
   try {
@@ -9,169 +8,132 @@ export async function GET(request) {
     const exchange = searchParams.get('exchange') || 'nse';
     const period = searchParams.get('period') || '1mo';
 
-    if (!TWELVE_DATA_API_KEY) {
-      return Response.json(
-        { error: 'Twelve Data API key not configured. Please set NEXT_PUBLIC_TWELVE_DATA_API_KEY environment variable.' },
-        { status: 500 }
-      );
-    }
-
-    // NESCO stock symbols for Twelve Data
-    // Try multiple formats as Twelve Data may use different symbol formats
-    const symbolFormats = {
-      nse: ['NESCO.NSE', 'NESCO', 'NESCO:NS'],  // Try NSE formats
-      bse: ['NESCO.BSE', 'NESCO', 'NESCO:BO'],  // Try BSE formats
+    const symbolMap = {
+      nse: '505355.BSE', // Force BSE code as reliable fallback
+      bse: '505355.BSE',
     };
 
-    const formats = symbolFormats[exchange.toLowerCase()];
-    if (!formats) {
+    const symbol = symbolMap[exchange.toLowerCase()];
+    if (!symbol) {
       return Response.json(
         { error: 'Invalid exchange. Use "nse" or "bse"' },
         { status: 400 }
       );
     }
 
-    // Check cache first (use first format for cache key)
-    const primarySymbol = formats[0];
-    const cacheKey = `chart_${exchange}_${primarySymbol}_${period}`;
-    const cachedData = getFromCache(cacheKey);
-    if (cachedData) {
+    const cacheKey = `chart_${exchange}_${symbol}`; // Removed period from key to share history across periods
+
+    // 1. Try to get valid fresh data
+    const cachedData = getPersistentCache(cacheKey);
+    if (cachedData && !cachedData.isStale) {
+      // Filter data based on requested period if necessary? 
+      // For now, client likely handles filtering, or we return all History.
+      // Let's return all.
       return Response.json({ ...cachedData, fromCache: true });
     }
 
-    console.log(`Fetching chart for exchange: ${exchange}, period: ${period} from Twelve Data`);
+    console.log(`Fetching Chart data from Alpha Vantage for ${symbol}...`);
 
-    // Map periods to Twelve Data intervals
-    const periodMap = {
-      '1d': { interval: '5min', outputsize: 288 }, // 5min intervals for 1 day
-      '5d': { interval: '30min', outputsize: 240 }, // 30min intervals for 5 days
-      '1mo': { interval: '1day', outputsize: 30 },
-      '3mo': { interval: '1day', outputsize: 90 },
-      '6mo': { interval: '1day', outputsize: 180 },
-      '1y': { interval: '1day', outputsize: 365 },
-      '2y': { interval: '1week', outputsize: 104 },
-      '5y': { interval: '1week', outputsize: 260 },
-      '10y': { interval: '1month', outputsize: 120 },
-      'ytd': { interval: '1day', outputsize: 365 },
-      'max': { interval: '1month', outputsize: 120 },
-    };
+    // 2. Prepare for Fetch
+    // Check if we have STALE data to decide between 'compact' and 'full'
+    const staleData = getPersistentCache(cacheKey, true); // Get stale if exists
+    const hasHistory = staleData && staleData.quotes && staleData.quotes.length > 200;
 
-    const config = periodMap[period] || periodMap['1mo'];
+    // If we have > 200 days of history, we only need 'compact' (latest 100 days) to update.
+    // Otherwise, fetch 'full' (20 years) to build history.
+    const outputSize = hasHistory ? 'compact' : 'full';
 
-    // Use getOrCreateRequest to deduplicate simultaneous requests
+    console.log(`Existing history length: ${staleData?.quotes?.length || 0}. Using outputsize=${outputSize}`);
+
+    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&outputsize=${outputSize}&apikey=${ALPHA_VANTAGE_API_KEY}`;
+
     try {
-      const data = await getOrCreateRequest(cacheKey, async () => {
-        // Try each symbol format until one works
-        let lastError = null;
-        for (const symbol of formats) {
-          try {
-            return await retryWithBackoff(async () => {
-              const url = `https://api.twelvedata.com/time_series?symbol=${encodeURIComponent(symbol)}&interval=${config.interval}&outputsize=${config.outputsize}&apikey=${TWELVE_DATA_API_KEY}`;
-              const response = await fetch(url);
-              
-              if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`Twelve Data API error: ${response.status} - ${errorText}`);
-              }
-              
-              const jsonData = await response.json();
-              
-              // Check if API returned an error
-              if (jsonData.status === 'error') {
-                throw new Error(jsonData.message || 'Twelve Data API error');
-              }
-              
-              // Transform Twelve Data response to match expected format
-              const transformed = transformTwelveDataChart(jsonData);
-              return { ...transformed, symbol };
-            }, 2, 2000);
-          } catch (error) {
-            lastError = error;
-            console.log(`Symbol format ${symbol} failed, trying next format...`);
-            continue;
-          }
-        }
-        // If all formats failed, throw the last error
-        throw lastError || new Error('All symbol formats failed');
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Alpha Vantage API error: ${response.status} ${response.statusText}`);
+      }
+
+      const jsonData = await response.json();
+
+      if (jsonData['Error Message']) {
+        throw new Error(jsonData['Error Message']);
+      }
+      if (jsonData['Note']) {
+        throw new Error(`Alpha Vantage API Note: ${jsonData['Note']}`);
+      }
+      if (jsonData['Information']) {
+        throw new Error(`Alpha Vantage API Info: ${jsonData['Information']}`);
+      }
+
+      const timeSeries = jsonData['Time Series (Daily)'];
+      if (!timeSeries) {
+        throw new Error('No Time Series data found in response');
+      }
+
+      // 3. Transform new data
+      const dates = Object.keys(timeSeries).sort(); // Oldest first
+      const newQuotes = dates.map(date => {
+        const dp = timeSeries[date];
+        return {
+          date: date,
+          open: parseFloat(dp['1. open']),
+          high: parseFloat(dp['2. high']),
+          low: parseFloat(dp['3. low']),
+          close: parseFloat(dp['4. close']),
+          volume: parseInt(dp['5. volume'])
+        };
       });
 
+      // 4. Merge with stale data
+      let finalQuotes = newQuotes;
+      if (hasHistory) {
+        // Create a Map for existing quotes
+        const quoteMap = new Map();
+        staleData.quotes.forEach(q => quoteMap.set(q.date, q));
+
+        // Overwrite with new quotes
+        newQuotes.forEach(q => quoteMap.set(q.date, q));
+
+        // Convert back to array and sort
+        finalQuotes = Array.from(quoteMap.values()).sort((a, b) => new Date(a.date) - new Date(b.date));
+      }
+
       const responseData = {
-        quotes: data.quotes || [],
-        symbol: data.symbol || primarySymbol,
+        quotes: finalQuotes,
+        symbol,
       };
 
-    // Cache the result
-    setCache(cacheKey, responseData, 'chart');
+      // 5. Save merged data to cache
+      setPersistentCache(cacheKey, responseData);
 
-    console.log(`Chart data fetched successfully for ${symbol}`);
-    
-    return Response.json(responseData);
+      return Response.json(responseData);
+
     } catch (apiError) {
-      // If API fails, try to return stale cache as fallback
-      const staleData = getStaleCache(cacheKey, 4 * 60 * 60 * 1000); // Accept up to 4 hours old data
-      
+      console.error("Alpha Vantage Fetch Failed:", apiError.message);
+
+      // Fallback: If we have stale data, return it despite error
       if (staleData) {
-        console.log(`API failed, returning stale cache for ${symbol}`);
-        return Response.json({ 
-          ...staleData, 
-          fromCache: true, 
-          stale: true,
-          warning: 'Using cached data due to API rate limiting'
+        console.log("Serving stale data due to API failure.");
+        return Response.json({
+          ...staleData,
+          fromCache: true,
+          isStale: true,
+          warning: "Data may be outdated due to API limits. " + apiError.message
         });
       }
-      
-      // Re-throw if no stale cache available
-      throw apiError;
+
+      // No fallback possible
+      return Response.json(
+        { error: 'Failed to fetch chart data', details: apiError.message },
+        { status: 500 }
+      );
     }
+
   } catch (error) {
-    console.error('Error fetching chart data:', error.message);
-    console.error('Full error:', error);
-    
-    // Check for rate limit errors more thoroughly
-    const isRateLimited = 
-      error.status === 429 || 
-      error.statusCode === 429 ||
-      (error.message && error.message.includes('429')) ||
-      (error.message && error.message.includes('Too Many Requests')) ||
-      (error.message && error.message.includes('rate limit'));
-    
-    const statusCode = error.code || error.status || error.statusCode || 500;
-    
+    console.error('Error in Chart API:', error);
     return Response.json(
-      { 
-        error: isRateLimited 
-          ? 'Rate limited by data provider. Please try again later. The API is temporarily unavailable.'
-          : 'Failed to fetch chart data', 
-        details: error.message,
-        statusCode: isRateLimited ? 429 : statusCode,
-      },
-      { status: isRateLimited ? 429 : 500 }
+      { error: 'Internal Server Error', details: error.message },
+      { status: 500 }
     );
   }
-}
-
-/**
- * Transform Twelve Data time series response to match expected format
- * @param {Object} data - Twelve Data API response
- * @returns {Object} Transformed data with quotes array
- */
-function transformTwelveDataChart(data) {
-  if (!data.values || !Array.isArray(data.values)) {
-    return { quotes: [] };
-  }
-
-  // Twelve Data returns values in reverse chronological order (newest first)
-  // We need to reverse it to get chronological order (oldest first)
-  const quotes = data.values
-    .reverse()
-    .map((item) => ({
-      date: item.datetime,
-      open: parseFloat(item.open) || 0,
-      high: parseFloat(item.high) || 0,
-      low: parseFloat(item.low) || 0,
-      close: parseFloat(item.close) || 0,
-      volume: parseInt(item.volume) || 0,
-    }));
-
-  return { quotes };
 }
