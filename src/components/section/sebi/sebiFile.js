@@ -688,6 +688,65 @@ export function AnnualReport() {
       filePath:
         "/assets/pdfs/investors/financials/annual-reports/NESCO_AR_2016-17__final.pdf",
     },
+    {
+      year: "2011-12",
+      fileName: " Annual Report",
+      filePath: "https://drive.google.com/file/d/169f3QqKkeNQ44d_nogHvB0mxAcrNi145/view?usp=sharing",
+    },
+    ,
+    {
+      year: "2011-12",
+      fileName: "Annual Report",
+      filePath: "https://drive.google.com/file/d/1IJqteIt1qTarP9TmSr0lnEPn_3nJl7Ti/view?usp=sharing",
+    }
+    ,
+    {
+      year: "2011-12",
+      fileName: "52nd Annual Report",
+      filePath: "https://drive.google.com/file/d/1clA0BMmN-n9U6_cemUdpr-CYhex83doP/view?usp=sharing",
+    }
+    ,
+    {
+      year: "2011-12",
+      fileName: "Annual Report",
+      filePath: "https://drive.google.com/file/d/1Wl0pT9oBLk2usnUbRji2knJVanwyew6_/view?usp=sharing",
+    }
+    ,
+    {
+      year: "2011-12",
+      fileName: "53rd Annual Report",
+      filePath: "https://drive.google.com/file/d/1cPnSi5zVewbm7TDpc5mipsXJkd5uAif5/view?usp=sharing",
+    },
+    {
+      year: "2012-2013",
+      fileName: "54th Annual Report",
+      filePath: "https://drive.google.com/file/d/1v6bRDqkLvP7i2HX6EGdjeDxVbuBbsfLl/view?usp=sharing"
+    },
+    {
+      year: "2013-2014",
+      fileName: "55th Annual Report",
+      filePath: "https://drive.google.com/file/d/1zGMZT_ovGjIC7VqJqA13GF70pV00p-72/view?usp=sharing"
+    }, 
+    {
+      year:"2014-2015",
+      fileName:" 56th Annual Report",
+      filePath:"https://drive.google.com/file/d/1GTixlxIWI_v1iJUwzs-QMb3gSKm-3_AX/view?usp=sharing"
+    },
+    {
+      year:"2015-2016",
+      fileName:" 57th Annual Report",
+      filePath:"https://drive.google.com/file/d/1q55gbRWsriV0bsU1vQW35LwQKPzk1yio/view?usp=sharing"
+    },
+    {
+      year:"2019-2020",
+      fileName:"61st Annual Report",
+      filePath:"https://drive.google.com/file/d/1zSrkf7Pxms6keaOaqrPGFhgQqQRkXwJ9/view?usp=sharing"
+    },
+    {
+      year:"2019-2020",
+      fileName:" Statement in accordance with Rule 5(2) of the Companies (Appointment and Remuneration of Managerial Personnel) Rules, 2014",
+      filePath:"https://drive.google.com/file/d/1miRqnvmieJs0nRS5ewbItLkrk54dwcje/view?usp=sharing"
+    }
   ];
 }
 
@@ -891,7 +950,7 @@ export function CorporateReport() {
     {
       fileName: "67ee3c0d23e05f8b3a3bd783",
       filePath:
-        "/assets/pdfs/investors/corp-gov/corporate-governance/Corproate%20Governance%20Report%2030.09..2023",
+        "/assets/pdfs/investors/corp-gov/corporate-governance/Corproate Governance Report 30.09.2023.pdf",
     },
     {
       fileName: "67ee3c0d23e05f8b3a3bd784",
@@ -907,7 +966,7 @@ export function CorporateReport() {
     {
       fileName: "67ee3c0d23e05f8b3a3bd787",
       filePath:
-        "/assets/pdfs/investors/corp-gov/corporate-governance/Corporate%20Governance%20Report%20-%2030.06.2022.pdf",
+        "/assets/pdfs/investors/corp-gov/corporate-governance/Corporate Governance Report 30.06.2022.pdf",
     },
     {
       fileName: "67ee3c0d23e05f8b3a3bd788",
@@ -1487,6 +1546,11 @@ export function SrutinizerReport() {
       filePath:
         "/resources/images/pdf/scrutiniser-report/Postal-Ballot-Scrutinizers-Report-2017-18.pdf",
     },
+
+    {
+      fileName:" 56th Annual General Meeting",
+      filePath:"/resources/images/pdf/scrutiniser-report/Scrutiniser-Report-2014-2015.pdf"
+    }
   ];
 }
 

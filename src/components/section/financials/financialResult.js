@@ -27,6 +27,7 @@ function FinancialResult() {
         console.log("✅ API SUCCESS. Raw Data Received:", res?.data);
         setGetData(res?.data || []);
         setLoading(false);
+        console.log(getData);
       },
       onFail: (err) => {
         console.error("❌ API FAILED:", err);
@@ -88,7 +89,7 @@ function FinancialResult() {
 
     // Sort by Date Descending (Newest First)
     const sorted = processed.sort((a, b) => b.rawDate - a.rawDate);
-    
+
     console.log("✅ TRANSFORMATION COMPLETE. Total Items:", sorted.length);
     return sorted;
   }, [getData]);
@@ -119,7 +120,7 @@ function FinancialResult() {
     } else if (activeTab === "annualReturn") {
       data = data.filter(
         (item) =>
-          item.option === "annual" &&
+          item.option === "annual-return" &&
           item.title &&
           item.title.toLowerCase().includes("annual return")
       );
@@ -170,7 +171,7 @@ function FinancialResult() {
     <div>
       <div className="flex justify-center mt-16 lg:mt-28 mb-10 header_purple goal-section1">
         <div className="flex items-end flex-col border-2 w-[90%] lg:px-12 px-5">
-          
+
           {/* --- TABS --- */}
           <div className="w-full flex md:flex-row flex-col justify-between items-center z-50 gap-6 lg:w-[85%] transform md:-translate-y-1/2">
             {[
@@ -181,11 +182,10 @@ function FinancialResult() {
             ].map((tab) => (
               <div
                 key={tab.id}
-                className={`${
-                  activeTab === tab.id
-                    ? "bg-white text-blue-600 border-blue-600"
-                    : "bg-blue-600 text-white"
-                } hover:text-blue-600 hover:bg-white hover:border-blue-600 border-2 px-4 transition-all duration-300 py-2 text-center font-branding-medium text-2xl w-full md:w-auto cursor-pointer`}
+                className={`${activeTab === tab.id
+                  ? "bg-white text-blue-600 border-blue-600"
+                  : "bg-blue-600 text-white"
+                  } hover:text-blue-600 hover:bg-white hover:border-blue-600 border-2 px-4 transition-all duration-300 py-2 text-center font-branding-medium text-2xl w-full md:w-auto cursor-pointer`}
               >
                 <button
                   className="w-full h-full"
@@ -198,13 +198,13 @@ function FinancialResult() {
           </div>
 
           <div className="my-12 flex md:flex-row flex-col justify-between w-[98%] md:w-full">
-            
+
             {/* --- FILTERS SIDEBAR --- */}
             <div className="md:w-[30%] py-6 mt-2 mb-2 flex flex-col">
               <p className="mt-2 font-branding-medium text-gray-500 text-2xl">
                 FILTERS
               </p>
-              
+
               <button
                 className="mt-4 mb-2 font-branding-medium text-gray-500 text-left hover:text-gray-700 transition-colors"
                 onClick={handleSelectAllYears}
@@ -217,7 +217,7 @@ function FinancialResult() {
               <p className="mt-5 mb-2 font-branding-medium text-gray-500 text-left">
                 YEAR
               </p>
-              
+
               {allYears.slice(0, visibleCheckboxes).map((year) => (
                 <div key={year} className="flex items-center mb-2">
                   <input
@@ -227,8 +227,8 @@ function FinancialResult() {
                     checked={selectedYears.includes(year)}
                     onChange={() => handleYearChange(year)}
                   />
-                  <label 
-                    htmlFor={`year-${year}`} 
+                  <label
+                    htmlFor={`year-${year}`}
                     className="ml-2 text-base md:text-xl font-medium text-gray-500 cursor-pointer select-none"
                   >
                     {year}
@@ -259,14 +259,14 @@ function FinancialResult() {
                   <div className="flex flex-col gap-1">
                     {["1", "2", "3", "4"].map((q) => (
                       <div key={q} className="flex items-center gap-2">
-                         <input
+                        <input
                           type="checkbox"
                           id={`quarter-${q}`}
                           className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 cursor-pointer"
                           checked={selectedQuarters.includes(q)}
                           onChange={() => handleQuarterChange(q)}
                         />
-                        <label 
+                        <label
                           htmlFor={`quarter-${q}`}
                           className="text-gray-500 text-base md:text-xl cursor-pointer select-none"
                         >
@@ -293,7 +293,7 @@ function FinancialResult() {
                         <th className="bg-[#2b2a76] text-gray-200 shadow-sm pl-8 py-3 text-3xl rounded-t-sm">
                           Title
                           <span className="text-sm ml-4 font-normal text-gray-300">
-                             ({filteredData.length} Found)
+                            ({filteredData.length} Found)
                           </span>
                         </th>
                       </tr>
@@ -301,6 +301,10 @@ function FinancialResult() {
                     <tbody>
                       {filteredData.length > 0 ? (
                         filteredData
+                          .sort((a, b) => {
+                            const order = { Q1: 1, Q2: 2, Q3: 3, Q4: 4 };
+                            return order[a.title] - order[b.title];
+                          })
                           .slice(0, visibleRows)
                           .map((data, index) => (
                             <tr key={index} className="hover:bg-gray-50 transition-colors duration-150 border-b border-gray-100">
@@ -313,18 +317,26 @@ function FinancialResult() {
                                 >
                                   {/* --- DISPLAY ROW --- */}
                                   <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 w-full">
-                                    
+
                                     {/* Financial Year */}
                                     <span className="text-blue-600 font-semibold whitespace-nowrap text-base">
                                       {data.year}
                                     </span>
-                                    
+
                                     <span className="hidden md:block text-gray-300">|</span>
-                                    
+
                                     {/* Title */}
                                     <span className="flex-1">
                                       {data.title}
+                                      {" "}
+                                      {{
+                                        Q1: "Apr - Jun",
+                                        Q2: "Jul - Sep",
+                                        Q3: "Oct - Dec",
+                                        Q4: "Jan - Mar",
+                                      }[data.title] || ""}
                                     </span>
+
                                   </div>
                                 </a>
                               </td>
