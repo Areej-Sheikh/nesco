@@ -1,10 +1,10 @@
-"use client";
-import React, { useEffect, useState, useRef } from "react";
-import MentorImage from "@/assests/Home/mentorNew/2.png";
-import backgroundImage from "@/assests/Home/mentorNew/SumanBack.jpg";
-import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+'use client';
+import React, { useEffect, useState, useRef } from 'react';
+import MentorImage from '@/assests/Home/mentorNew/2.png';
+import backgroundImage from '@/assests/Home/mentorNew/SumanBack.jpg';
+import Image from 'next/image';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,9 +16,9 @@ function Mentor() {
       className="header_white flex flex-col items-center justify-center relative w-full h-full overflow-hidden lg:h-screen min-h-[800px]"
       style={{
         backgroundImage: `url(${backgroundImage.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       <div className="z-20 relative lg:w-[100%] w-[90%] flex flex-col items-center justify-center mx-auto mt-12 lg:mb-0 mb-10 h-full  goal-section1">
@@ -47,16 +47,16 @@ function Mentor() {
               <h2 className="text-xl flex items-center font-branding-medium whitespace-nowrap flex-wrap">
                 A note from the Founding
                 <strong className="font-branding-semibold ml-1 ">
-                  {" "}
+                  {' '}
                   Director and Mentor
                 </strong>
               </h2>
-              <div className="space-y-2 mt-2 text-justify">
+              <div className="space-y-2 mt-2 ">
                 <p className="font-branding-medium">
-                  {fullText.split("\n")[0]}
+                  {fullText.split('\n')[0]}
                 </p>
                 <p className="font-branding-medium">
-                  {fullText.split("\n")[1]}
+                  {fullText.split('\n')[1]}
                 </p>
               </div>
             </div>

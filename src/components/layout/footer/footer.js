@@ -1,98 +1,98 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import InstagramIcon from "@/assests/footer/i1.png";
-import LinkdeinIcon from "@/assests/footer/f2.png";
-import ContactIcon from "@/assests/footer/p1.png";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import InstagramIcon from '@/assests/footer/i1.png';
+import LinkdeinIcon from '@/assests/footer/f2.png';
+import ContactIcon from '@/assests/footer/p1.png';
 
 function Footer() {
   const FooterData = [
     {
-      title: "About",
-      titleLink: "",
+      title: 'About',
+      titleLink: '',
       category: [
         {
-          title: "Overview",
-          link: "/overview",
+          title: 'Overview',
+          link: '/overview',
         },
         {
-          title: "Philosophy",
-          link: "/philosophy",
+          title: 'Philosophy',
+          link: '/philosophy',
         },
         {
-          title: "History",
-          link: "/history",
+          title: 'History',
+          link: '/history',
         },
         {
-          title: "Leadership",
-          link: "/leadership",
+          title: 'Leadership',
+          link: '/leadership',
         },
       ],
     },
     {
-      title: "Businesses",
-      titleLink: "",
+      title: 'Businesses',
+      titleLink: '',
       category: [
         {
-          title: "Bombay Exhibition Center",
-          link: "",
+          title: 'Bombay Exhibition Center',
+          link: '/bombay-exhibition-center',
         },
         {
-          title: "Nesco Realty",
-          link: "",
+          title: 'Nesco Realty',
+          link: '/realty',
         },
         {
-          title: "Hospitality ",
-          link: "",
+          title: 'Hospitality ',
+          link: '/hospitality',
         },
         {
-          title: "Nesco Events",
-          link: "",
+          title: 'Nesco Events',
+          link: '/nescoevent',
         },
         {
-          title: "Engineering",
-          link: "",
+          title: 'Engineering',
+          link: '/indrabrator',
         },
       ],
     },
     {
-      title: "Investors",
-      titleLink: "",
+      title: 'Investors',
+      titleLink: '',
       category: [
         {
-          title: "Announcements ",
-          link: "/announcements",
+          title: 'Announcements ',
+          link: '/announcements',
         },
         {
-          title: "Financials",
-          link: "/financials",
+          title: 'Financials',
+          link: '/financials',
         },
         {
           title:
-            "Disclosures under Regulation 46 of SEBI (LODR) Regulations, 2015 & other statutory information Financials ",
-          link: "/sebi",
+            'Disclosures under Regulation 46 of SEBI (LODR) Regulations, 2015 & other statutory information Financials ',
+          link: '/sebi',
         },
         {
-          title: "Shareholder Services ",
-          link: "/shareholders",
+          title: 'Shareholder Services ',
+          link: '/shareholders',
         },
         {
-          title: "Stock Information ",
-          link: "/stock",
+          title: 'Stock Information ',
+          link: '/stock',
         },
       ],
     },
     {
-      title: "Our Impact",
-      titleLink: "",
+      title: 'Our Impact',
+      titleLink: '',
       category: [
         {
-          title: "Corporate Social Responsibility",
-          link: "/social-responsibility",
+          title: 'Corporate Social Responsibility',
+          link: '/social-responsibility',
         },
         {
-          title: "Sustainability",
-          link: "/sustainability",
+          title: 'Sustainability',
+          link: '/sustainability',
         },
       ],
     },
@@ -100,8 +100,8 @@ function Footer() {
 
   const FooterData2 = [
     {
-      title: "Life At Nesco",
-      link: "life-at-nesco ",
+      title: 'Life At Nesco',
+      link: 'life-at-nesco ',
     },
   ];
 
@@ -123,7 +123,7 @@ function Footer() {
               <div className="mt-3 flex flex-col gap-1.5 text-left">
                 {data?.category?.map((d, h) => (
                   <Link
-                    key={"key" + h}
+                    key={'key' + h}
                     href={d.link}
                     className="text-base text-white font-branding-medium transition-all lg:mx-3"
                   >

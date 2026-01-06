@@ -1,6 +1,6 @@
-import React from "react";
-import CultureImage from "@/assests/careers/culture.png";
-import Image from "next/image";
+import React from 'react';
+import CultureImage from '@/assests/careers/culture.png';
+import Image from 'next/image';
 
 function LifeCulture() {
   return (
@@ -18,20 +18,20 @@ function LifeCulture() {
         <div className="">
           <div className="">
             <h2
-              style={{ fontFamily: "BrandingSemibold" }}
+              style={{ fontFamily: 'BrandingSemibold' }}
               className="text-[#1e3a8a] text-2xl md:text-5xl lg:text-6xl font-branding-semibold font-bold"
             >
               Our Culture
             </h2>
           </div>
           <div className="space-y-4 mt-8">
-            <p className="md:text-3xl text-xl text-justify font-branding-medium ">
+            <p className="md:text-3xl text-xl  font-branding-medium ">
               At Nesco, our mission is to enhance and enrich lives through every
               product, service, and experience we create. This commitment
               extends to our employees as well, where we provide meaningful work
               and foster personal growth.
             </p>
-            <p className="md:text-3xl text-xl text-justify font-branding-medium pt-5">
+            <p className="md:text-3xl text-xl  font-branding-medium pt-5">
               Inspired by our founder, J.V. Patel, who established scholarships
               for the children of factory workers, we prioritize social
               responsibility and encourage a sense of purpose in every team

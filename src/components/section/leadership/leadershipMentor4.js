@@ -1,7 +1,7 @@
-import React from "react";
-import MentorImage from "@/assests/Home/Ashish-5-removebg-preview.png";
-import backgroundImage from "@/assests/Home/mentorNew/KrishnaBack.jpg";
-import Image from "next/image";
+import React from 'react';
+import MentorImage from '@/assests/Home/Ashish-5-removebg-preview.png';
+import backgroundImage from '@/assests/Home/mentorNew/KrishnaBack.jpg';
+import Image from 'next/image';
 
 function LeadershipMentor4() {
   return (
@@ -9,9 +9,9 @@ function LeadershipMentor4() {
       className="header_white flex flex-col items-center justify-center relative w-full h-full overflow-hidden xl:h-screen min-h-[500px]"
       style={{
         backgroundImage: `url(${backgroundImage.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
       id="krishna"
     >
@@ -38,10 +38,19 @@ function LeadershipMentor4() {
 
             <hr className=" bg-white border-1 border-white mb-4 " />
             <div className="relative">
-              <div className="space-y-2 mt-2 text-justify">
+              <div className="space-y-2 mt-2 ">
                 <p className="font-branding-medium text-white">
-                  A strong proponent of business success and a believer of building strong human capital assets, Ashish has been entrusted with envisioning the HR road map and charting out the people strategy by implementing and aligning it with the groups business objectives.
-                  Ashish holds a PhD in Engagement Practices from Symbiosis International University and an MBA in HR from NMIMS and has over 25 years of experience of working in the areas of Talent Acquisition, Talent Management, Organization wide HR transformation and Capability development across various industries like IT, HR Consulting, Media & Manufacturing.
+                  A strong proponent of business success and a believer of
+                  building strong human capital assets, Ashish has been
+                  entrusted with envisioning the HR road map and charting out
+                  the people strategy by implementing and aligning it with the
+                  groups business objectives. Ashish holds a PhD in Engagement
+                  Practices from Symbiosis International University and an MBA
+                  in HR from NMIMS and has over 25 years of experience of
+                  working in the areas of Talent Acquisition, Talent Management,
+                  Organization wide HR transformation and Capability development
+                  across various industries like IT, HR Consulting, Media &
+                  Manufacturing.
                 </p>
               </div>
             </div>

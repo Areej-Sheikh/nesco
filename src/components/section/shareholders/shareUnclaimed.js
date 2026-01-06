@@ -1,8 +1,8 @@
-"use client";
-import { apiUrls } from "@/apis";
-import useGetQuery from "@/hooks/getQuery.hook";
-import React, { useEffect, useMemo, useState } from "react";
-import { FaArrowDown } from "react-icons/fa";
+'use client';
+import { apiUrls } from '@/apis';
+import useGetQuery from '@/hooks/getQuery.hook';
+import React, { useEffect, useMemo, useState } from 'react';
+import { FaArrowDown } from 'react-icons/fa';
 
 function ShareUnclaimed() {
   const { getQuery } = useGetQuery();
@@ -10,10 +10,10 @@ function ShareUnclaimed() {
   const [getData, setGetData] = useState([]);
 
   // Function to format date
-  const formatDate = (dateString) => {
+  const formatDate = dateString => {
     const date = new Date(dateString);
     const day = date.getDate();
-    const month = date.toLocaleString("default", { month: "short" });
+    const month = date.toLocaleString('default', { month: 'short' });
     const year = date.getFullYear();
     return `${day} ${month} ${year}`;
   };
@@ -22,21 +22,21 @@ function ShareUnclaimed() {
     setLoading(true);
     getQuery({
       url: `${apiUrls?.shareholder.unclaimed}`,
-      onSuccess: (res) => {
+      onSuccess: res => {
         setGetData(res?.data || []);
         setTimeout(() => setLoading(false), 2000);
       },
-      onFail: (err) => {
-        console.error("Failed to fetch announcements data:", err);
+      onFail: err => {
+        console.error('Failed to fetch announcements data:', err);
       },
     });
   }, []);
 
   const transformedData = useMemo(() => {
     return Array.isArray(getData)
-      ? getData.map((item) => ({
-          lastDate: formatDate(item.lastDate.split("T")[0]), // Format lastDate
-          dueDate: formatDate(item.dueDate.split("T")[0]), // Format dueDate
+      ? getData.map(item => ({
+          lastDate: formatDate(item.lastDate.split('T')[0]), // Format lastDate
+          dueDate: formatDate(item.dueDate.split('T')[0]), // Format dueDate
           year: `${+item.year}-${+item.year + 1}`,
           dividend: item.dividend,
           unclaimedAmount: item.unclaimedAmount,
@@ -53,7 +53,7 @@ function ShareUnclaimed() {
             Unclaimed Dividends
           </p>
 
-          <p className="justify-center text-justify text-3xl sm:text-2xl font-branding-medium">
+          <p className="justify-center  text-3xl sm:text-2xl font-branding-medium">
             Pursuant to Sections 124(5) of the Companies Act, 2013, read with
             rules framed there under, the Company is required to transfer the
             amount of dividend remained unpaid/unclaimed for a period of seven

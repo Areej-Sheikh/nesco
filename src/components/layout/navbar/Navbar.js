@@ -1,76 +1,76 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   FaSearch,
   FaBars,
   FaTimes,
   FaChevronDown,
   FaChevronUp,
-} from "react-icons/fa";
-import "./Navbar.css";
-import Nescologo from "@/assests/Home/logo-blue.png";
-import Nescologo2 from "@/assests/Home/logo-blue.png";
-import Image from "next/image";
-import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { GoSearch } from "react-icons/go";
-import searchSuggestions from "@/utils/seachData";
+} from 'react-icons/fa';
+import './Navbar.css';
+import Nescologo from '@/assests/Home/logo-blue.png';
+import Nescologo2 from '@/assests/Home/logo-blue.png';
+import Image from 'next/image';
+import Link from 'next/link';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { GoSearch } from 'react-icons/go';
+import searchSuggestions from '@/utils/seachData';
 function Navbar({ activeSlide }) {
   const NavData = [
     {
-      title: "About",
-      route: "",
+      title: 'About',
+      route: '',
       subMenu: [
-        { title: "Overview", route: "/overview" },
-        { title: "Philosophy", route: "/philosophy" },
-        { title: "History", route: "/history" },
-        { title: "Leadership", route: "/leadership" },
+        { title: 'Overview', route: '/overview' },
+        { title: 'Philosophy', route: '/philosophy' },
+        { title: 'History', route: '/history' },
+        { title: 'Leadership', route: '/leadership' },
       ],
     },
     {
-      title: "Businesses",
-      route: "",
+      title: 'Businesses',
+      route: '',
       subMenu: [
         {
-          title: "Bombay Exhibition Center",
-          route: "/bombay-exhibition-center",
+          title: 'Bombay Exhibition Center',
+          route: '/bombay-exhibition-center',
         },
-        { title: "Nesco Realty", route: "/realty" },
-        { title: "Hospitality", route: "/hospitality" },
-        { title: "Nesco Events", route: "/nescoevent" },
-        { title: "Engineering", route: "/indrabrator" },
+        { title: 'Nesco Realty', route: '/realty' },
+        { title: 'Hospitality', route: '/hospitality' },
+        { title: 'Nesco Events', route: '/nescoevent' },
+        { title: 'Engineering', route: '/indrabrator' },
       ],
     },
     {
-      title: "Investors",
-      route: "",
+      title: 'Investors',
+      route: '',
       subMenu: [
-        { title: "Announcements", route: "/announcements" },
-        { title: "Financials", route: "/financials" },
+        { title: 'Announcements', route: '/announcements' },
+        { title: 'Financials', route: '/financials' },
         {
           title:
-            "Disclosures under Regulation 46 of SEBI (LODR) Regulations, 2015 & Other statutory information Financials",
-          route: "/sebi",
+            'Disclosures under Regulation 46 of SEBI (LODR) Regulations, 2015 & Other statutory information Financials',
+          route: '/sebi',
         },
-        { title: "Shareholder Services", route: "/shareholders" },
-        { title: "Stock Information", route: "/stock" },
+        { title: 'Shareholder Services', route: '/shareholders' },
+        { title: 'Stock Information', route: '/stock' },
       ],
     },
     {
-      title: "Our Impact",
-      route: "",
+      title: 'Our Impact',
+      route: '',
       subMenu: [
         {
-          title: "Corporate Social Responsibility",
-          route: "/social-responsibility",
+          title: 'Corporate Social Responsibility',
+          route: '/social-responsibility',
         },
-        { title: "Sustainability", route: "/sustainability" },
-        { title: "", route: "" },
+        { title: 'Sustainability', route: '/sustainability' },
+        { title: '', route: '' },
       ],
     },
-    { title: "Life at Nesco", route: "/life-at-nesco", subMenu: [] },
-    { title: "Contact", route: "/contact-us", subMenu: [] },
+    { title: 'Life at Nesco', route: '/life-at-nesco', subMenu: [] },
+    { title: 'Contact', route: '/contact-us', subMenu: [] },
   ];
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -89,22 +89,22 @@ function Navbar({ activeSlide }) {
   const [expandedMenuIndex, setExpandedMenuIndex] = useState(null); // State to track expanded mobile menu
   const [isClosing, setIsClosing] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const searchRef = useRef(null);
 
   const logo = {
     imagePath: Nescologo,
-    link: "/",
+    link: '/',
   };
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = e => {
     const query = e.target.value;
     setSearchQuery(query);
 
     if (query.length > 0) {
-      const results = searchSuggestions.filter((item) =>
+      const results = searchSuggestions.filter(item =>
         item.title.toLowerCase().includes(query.toLowerCase())
       );
       setSearchResults(results);
@@ -115,24 +115,24 @@ function Navbar({ activeSlide }) {
     }
   };
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = event => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
         setShowSearchResults(false);
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
-  const handleMouseEnter = (index) => {
+  const handleMouseEnter = index => {
     if (isAnimating) return;
 
-    setHoverStates((prev) => {
+    setHoverStates(prev => {
       const newStates = [...prev];
       newStates[index] = true;
       return newStates;
@@ -142,8 +142,8 @@ function Navbar({ activeSlide }) {
     setTextWhite(true);
   };
 
-  const handleMouseLeave = (index) => {
-    setHoverStates((prev) => {
+  const handleMouseLeave = index => {
+    setHoverStates(prev => {
       const newStates = [...prev];
       newStates[index] = false;
       return newStates;
@@ -164,7 +164,7 @@ function Navbar({ activeSlide }) {
     setIsAnimating(false);
   };
 
-  const toggleMobileMenu = (index) => {
+  const toggleMobileMenu = index => {
     if (expandedMenuIndex === index) {
       setExpandedMenuIndex(null); // Collapse if already expanded
     } else {
@@ -177,14 +177,14 @@ function Navbar({ activeSlide }) {
 
     // Banner Section
     ScrollTrigger.create({
-      trigger: ".banner-section",
-      start: "top top",
-      end: "bottom top",
+      trigger: '.banner-section',
+      start: 'top top',
+      end: 'bottom top',
       onEnter: () => setIsScrolled(false),
       onLeave: () => setIsScrolled(true),
       onEnterBack: () => setIsScrolled(false),
       onLeaveBack: () => setIsScrolled(false),
-      animation: gsap.to(".navbar", { opacity: 1, duration: 0.05 }),
+      animation: gsap.to('.navbar', { opacity: 1, duration: 0.05 }),
     });
 
     // Check screen size
@@ -192,23 +192,23 @@ function Navbar({ activeSlide }) {
       const isMobileOrTablet = window.innerWidth <= 1024; // Adjust breakpoint as needed
 
       // Clear existing ScrollTriggers
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars?.id === "sectionTrigger") {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars?.id === 'sectionTrigger') {
           trigger.kill();
         }
       });
 
       // Get all sections we want to observe
       const sectionsToObserve = isMobileOrTablet
-        ? document.querySelectorAll("section") // All sections on mobile/tablet
-        : document.querySelectorAll(".header_purple"); // Only purple sections on desktop
+        ? document.querySelectorAll('section') // All sections on mobile/tablet
+        : document.querySelectorAll('.header_purple'); // Only purple sections on desktop
 
-      sectionsToObserve.forEach((section) => {
+      sectionsToObserve.forEach(section => {
         ScrollTrigger.create({
-          id: "sectionTrigger", // Add identifier so we can kill these later
+          id: 'sectionTrigger', // Add identifier so we can kill these later
           trigger: section,
-          start: "top center",
-          end: "bottom center",
+          start: 'top center',
+          end: 'bottom center',
           onEnter: () => setActivePurpleSection(section),
           onLeave: () => setActivePurpleSection(null),
           onEnterBack: () => setActivePurpleSection(section),
@@ -221,28 +221,28 @@ function Navbar({ activeSlide }) {
     checkScreenSize();
 
     // Update on resize
-    window.addEventListener("resize", checkScreenSize);
+    window.addEventListener('resize', checkScreenSize);
 
     // White Header Section (keep existing)
-    const WhiteHeader = document.querySelectorAll(".header_white");
-    WhiteHeader.forEach((section) => {
+    const WhiteHeader = document.querySelectorAll('.header_white');
+    WhiteHeader.forEach(section => {
       ScrollTrigger.create({
         trigger: section,
-        start: "top center",
-        end: "bottom center",
+        start: 'top center',
+        end: 'bottom center',
         onEnter: () => setIsHeaderWhite(true),
         onLeave: () => setIsHeaderWhite(false),
         onEnterBack: () => setIsHeaderWhite(true),
         onLeaveBack: () => setIsHeaderWhite(false),
-        animation: gsap.to(".navbar", { opacity: 1, duration: 0.05 }),
+        animation: gsap.to('.navbar', { opacity: 1, duration: 0.05 }),
       });
     });
 
     // Footer Section (keep existing)
     ScrollTrigger.create({
-      trigger: ".footer_section",
-      start: "top bottom",
-      end: "bottom top",
+      trigger: '.footer_section',
+      start: 'top bottom',
+      end: 'bottom top',
       onEnter: () => {
         if (window.innerWidth <= 768) setIsFooter(true);
       },
@@ -258,12 +258,12 @@ function Navbar({ activeSlide }) {
     });
 
     // Black Text Sections (keep existing)
-    const blackTextSections = document.querySelectorAll(".header_color_black");
-    blackTextSections.forEach((section) => {
+    const blackTextSections = document.querySelectorAll('.header_color_black');
+    blackTextSections.forEach(section => {
       ScrollTrigger.create({
         trigger: section,
-        start: "top center",
-        end: "bottom center",
+        start: 'top center',
+        end: 'bottom center',
         onEnter: () => setTextBlack(section),
         onLeave: () => setTextBlack(null),
         onEnterBack: () => setTextBlack(section),
@@ -273,31 +273,31 @@ function Navbar({ activeSlide }) {
 
     // Cleanup
     return () => {
-      window.removeEventListener("resize", checkScreenSize);
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      window.removeEventListener('resize', checkScreenSize);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
   const getTextColor = () => {
-    if (activePurpleSection) return "text-white border-white";
+    if (activePurpleSection) return 'text-white border-white';
     if (textWhite && !(isOpen === 4 || isOpen === 5))
-      return "text-white border-white";
-    if (isFooter) return "text-white border-white";
+      return 'text-white border-white';
+    if (isFooter) return 'text-white border-white';
     if (isOpen !== null && !(isOpen === 4 || isOpen === 5))
-      return "text-white border-white";
-    if (isOpen === 0) return "text-white border-white";
-    if (activeSlide === 0) return "text-black border-black";
-    if (isHeaderWhite) return "text-white border-white";
-    if (textBlack) return "text-black border-black";
-    if (isScrolled) return "text-black border-black";
-    return "text-white border-white";
+      return 'text-white border-white';
+    if (isOpen === 0) return 'text-white border-white';
+    if (activeSlide === 0) return 'text-black border-black';
+    if (isHeaderWhite) return 'text-white border-white';
+    if (textBlack) return 'text-black border-black';
+    if (isScrolled) return 'text-black border-black';
+    return 'text-white border-white';
   };
 
   useEffect(() => {
-    const buttonColorElements = document.querySelectorAll(".buttonColor");
-    const color = activeSlide === 0 ? "#06A7E5" : "#FFFFFF";
+    const buttonColorElements = document.querySelectorAll('.buttonColor');
+    const color = activeSlide === 0 ? '#06A7E5' : '#FFFFFF';
 
-    buttonColorElements.forEach((element) => {
+    buttonColorElements.forEach(element => {
       element.style.color = color;
     });
     getTextColor();
@@ -366,22 +366,22 @@ function Navbar({ activeSlide }) {
 
   const changeNavbar = () => {
     if (activePurpleSection) {
-      return "bg-[#2b2a76]";
+      return 'bg-[#2b2a76]';
     }
-    return "";
+    return '';
   };
   const changeNavbar1 = () => {
     if (isFooter) {
-      return "bg-[#2b2a76]";
+      return 'bg-[#2b2a76]';
     }
   };
 
   return (
     <nav
-      className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed top-0 transition-all duration-200 ${isScrolled ? "bg-white" : "bg-white/45"
-        } ${changeNavbar()} ${changeNavbar1()}`}
+      className={`py-6 md:px-6 px-8 flex items-center justify-between w-full z-[999] fixed top-0 transition-all duration-200 ${
+        isScrolled ? 'bg-white' : 'bg-white'
+      } ${changeNavbar()} ${changeNavbar1()}`}
     >
-
       {!isScrolled && (
         <div className="fixed top-0 left-0 py-6 md:px-16 px-8 w-full h-20"></div>
       )}
@@ -407,7 +407,7 @@ function Navbar({ activeSlide }) {
             <li
               key={index}
               className={`text-gray-500 border-r font-bold text-[1.1rem] last:border-none xl:px-6 lg:px-5 `}
-              style={{ fontFamily: "BrandingSemibold" }}
+              style={{ fontFamily: 'BrandingSemibold' }}
               // className={`${getTextColor()} border-r font-branding-medium text-[1.1rem] last:border-none xl:px-6 lg:px-5 ${
               //   isOpen !== null
               //     ? "animate-dropdown-open"
@@ -419,8 +419,9 @@ function Navbar({ activeSlide }) {
               <Link
                 href={data.route}
                 key={index}
-                className={`${hoverStates[index] && "boxAnimation relative overflow-hidden"
-                  } w-full`}
+                className={`${
+                  hoverStates[index] && 'boxAnimation relative overflow-hidden'
+                } w-full`}
               >
                 {data.title}
               </Link>
@@ -434,17 +435,19 @@ function Navbar({ activeSlide }) {
             <input
               type="text"
               placeholder="Search..."
-              className={`w-full h-10 pl-4 pr-10 rounded-full  ${isScrolled || textBlack
-                ? "bg-gray-200 text-black"
-                : " text-black"
-                }`}
+              className={`w-full h-10 pl-4 pr-10 rounded-full  ${
+                isScrolled || textBlack
+                  ? 'bg-gray-200 text-black'
+                  : ' text-black'
+              }`}
               value={searchQuery}
               onChange={handleSearchChange}
               onClick={() => setShowSearchResults(true)}
             />
             <span
-              className={`inline-block cursor-pointer absolute top-1/2 ${isScrolled || textBlack ? "text-gray-700" : "text-white"
-                } -translate-y-1/2 right-3`}
+              className={`inline-block cursor-pointer absolute top-1/2 ${
+                isScrolled || textBlack ? 'text-gray-700' : 'text-white'
+              } -translate-y-1/2 right-3`}
             >
               <GoSearch className={`text-[20px] text-black`} strokeWidth={1} />
             </span>
@@ -464,7 +467,7 @@ function Navbar({ activeSlide }) {
                           className="text-gray-800 block"
                           onClick={() => {
                             setShowSearchResults(false);
-                            setSearchQuery("");
+                            setSearchQuery('');
                           }}
                         >
                           {result.title}
@@ -490,8 +493,9 @@ function Navbar({ activeSlide }) {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 w-64 h-full bg-[#403092] p-8 transition-transform transform z-[60] ${isSidebarOpen ? "translate-x-0" : "translate-x-full"
-          } xl:hidden`}
+        className={`fixed top-0 right-0 w-64 h-full bg-[#403092] p-8 transition-transform transform z-[60] ${
+          isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
+        } xl:hidden`}
       >
         <div className="flex justify-end items-center mb-8">
           <FaTimes
@@ -525,7 +529,7 @@ function Navbar({ activeSlide }) {
                       href={result.route}
                       className="text-gray-800 block"
                       onClick={() => {
-                        setSearchQuery("");
+                        setSearchQuery('');
                         toggleSidebar();
                       }}
                     >
@@ -572,7 +576,7 @@ function Navbar({ activeSlide }) {
       <div
         className="absolute left-0 w-full -mt-24 bg-black bg-opacity-90 z-40 transition-all duration-300 overflow-hidden  hidden xl:block"
         style={{
-          top: "100%",
+          top: '100%',
           height: hoverStyle.height,
         }}
       ></div>
@@ -590,7 +594,7 @@ function Navbar({ activeSlide }) {
                 //     : "animate-dropdown-close"
                 // }`}
                 style={{
-                  top: "100%",
+                  top: '100%',
                   // height: hoverStyle.height,
                 }}
                 onMouseEnter={handleDropdownEnter}

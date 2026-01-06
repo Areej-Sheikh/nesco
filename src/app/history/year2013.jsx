@@ -1,9 +1,9 @@
-"use client";
-import { React, useState, useEffect } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import historyXIII from "@/assests/history/historyXIII.jpg";
+'use client';
+import { React, useState, useEffect } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import historyXIII from '@/assests/history/historyXIII.jpg';
 
 const Year2013 = () => {
   const [year2013InView, setYear2013InView] = useState(false);
@@ -11,25 +11,25 @@ const Year2013 = () => {
   const { ref: year2013Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
-    onChange: (inView) => setYear2013InView(inView),
+    onChange: inView => setYear2013InView(inView),
   });
 
-    useEffect(() => {
-        if (year2013InView) {
-          const interval = setInterval(() => {
-            setCount((prevCount) => {
-              const nextCount = prevCount + 5;
-              if (nextCount >= 2013) {
-                clearInterval(interval);
-                return 2013; // Stop exactly at 2013
-              }
-              return nextCount;
-            });
-          }, 10); // Fast counting interval
-    
-          return () => clearInterval(interval);
-        }
-      }, [year2013InView]);
+  useEffect(() => {
+    if (year2013InView) {
+      const interval = setInterval(() => {
+        setCount(prevCount => {
+          const nextCount = prevCount + 5;
+          if (nextCount >= 2013) {
+            clearInterval(interval);
+            return 2013; // Stop exactly at 2013
+          }
+          return nextCount;
+        });
+      }, 10); // Fast counting interval
+
+      return () => clearInterval(interval);
+    }
+  }, [year2013InView]);
 
   return (
     <motion.div
@@ -37,7 +37,7 @@ const Year2013 = () => {
       className="year2013 sm:mt-[2vh] md:mt-[2vh] lg:mt-[2vh] flex flex-col sm:flex-col p-6 md:ml-4 "
       initial={{ opacity: 0, x: 50 }}
       animate={year2013InView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
       whileHover={{ scale: 1.02, y: -5 }}
       data-year="2013"
     >
@@ -49,7 +49,7 @@ const Year2013 = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="leftDiv flex flex-col sm:w-full md:w-[50%] lg:w-[50%] lg:top-[40vh]  relative "
         >
-          <div className="contentDiv flex flex-col relative gap-4 bg-[#001F9C] p-12 sm:left-0 md:left-[15%] lg:left-[20%] lg:h-[60vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-blue-500/50">
+          <div className="contentDiv flex flex-col relative gap-4 bg-[#001F9C] p-12 sm:left-0 md:left-[15%] lg:left-[20%] lg:h-[70vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-blue-500/50">
             {/* Year Heading */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
@@ -60,7 +60,7 @@ const Year2013 = () => {
               {count}
               <motion.div
                 initial={{ opacity: 0, width: 0 }}
-                animate={year2013InView ? { opacity: 1, width: "90%" } : {}}
+                animate={year2013InView ? { opacity: 1, width: '90%' } : {}}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="mt-2 h-[2px] bg-cyan-500 w-full"
               ></motion.div>

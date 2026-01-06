@@ -84,7 +84,7 @@ export const MentorModal = ({ isOpen, onClose, data, lenis }) => {
             }`}
           >
             <div className="flex flex-col gap-4">
-              <p className="text-gray-800 text-justify">{data.description}</p>
+              <p className="text-gray-800 ">{data.description}</p>
             </div>
             {data.image && (
               <div className="flex justify-end items-start">

@@ -1,9 +1,9 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
 // Import profile image
-import profileImage from "@/assests/nesco-business-page/bec-elements/49.png";
-import backgroundImage from "@/assests/nesco-business-page/bec-elements/back.png";
+import profileImage from '@/assests/nesco-business-page/bec-elements/49.png';
+import backgroundImage from '@/assests/nesco-business-page/bec-elements/back.png';
 
 function BecProfile() {
   return (
@@ -14,25 +14,25 @@ function BecProfile() {
           <div className="w-full lg:w-[50%] xl:w-[45%] space-y-[2vh]">
             <h3
               className="text-[clamp(2rem,4vw,3.5rem)] font-bold leading-tight"
-              style={{ fontFamily: "BrandingSemibold" }}
+              style={{ fontFamily: 'BrandingSemibold' }}
             >
               Harsh Mukherjee
             </h3>
             <p
               className="text-[clamp(1.2rem,2.5vw,1.8rem)] text-[#666]"
-              style={{ fontFamily: "BrandingMedium" }}
+              style={{ fontFamily: 'BrandingMedium' }}
             >
               Assistant Vice President - Sales
             </p>
             <p
               className="text-[clamp(1.2rem,2.5vw,1.8rem)] font-bold"
-              style={{ fontFamily: "BrandingSemibold" }}
+              style={{ fontFamily: 'BrandingSemibold' }}
             >
               Belief: Actually, I can
             </p>
             <p
-              className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-justify"
-              style={{ fontFamily: "BrandingMedium" }}
+              className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed "
+              style={{ fontFamily: 'BrandingMedium' }}
             >
               For over 25 years, Harsh Mukherjee has been both a marketing
               leader and mentor. Harsh is analytical about task completion and

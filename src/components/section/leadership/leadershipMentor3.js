@@ -1,7 +1,7 @@
-import React from "react";
-import MentorImage from "@/assests/Home/mentor_3-removebg-preview.png";
-import backgroundImage from "@/assests/Home/mentorNew/KrishnaBack.jpg";
-import Image from "next/image";
+import React from 'react';
+import MentorImage from '@/assests/Home/mentor_3-removebg-preview.png';
+import backgroundImage from '@/assests/Home/mentorNew/KrishnaBack.jpg';
+import Image from 'next/image';
 
 function LeadershipMentor3() {
   return (
@@ -9,9 +9,9 @@ function LeadershipMentor3() {
       className="header_white flex flex-col items-center justify-center relative w-full h-full overflow-hidden xl:h-screen min-h-[500px]"
       style={{
         backgroundImage: `url(${backgroundImage.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
       id="krishna"
     >
@@ -38,9 +38,17 @@ function LeadershipMentor3() {
 
             <hr className=" bg-white border-1 border-white mb-4 " />
             <div className="relative">
-              <div className="space-y-2 mt-2 text-justify">
+              <div className="space-y-2 mt-2 ">
                 <p className="font-branding-medium text-white">
-                  A multifaceted administrator and controller, Dipesh Singhania is the resident expert at financial and legal due diligence, risk management and corporate governance. His value-driven nature complements his skill in pursuing strategic and sustainable financial growth for the company.Dipesh is a qualified Chartered Accountant, Certified Public Accountant, Certified Information Systems Auditor and Certified Internal Auditor. He brings with himself the experience garnered from roles in ITeS, consulting, automobiles and FMCG.
+                  A multifaceted administrator and controller, Dipesh Singhania
+                  is the resident expert at financial and legal due diligence,
+                  risk management and corporate governance. His value-driven
+                  nature complements his skill in pursuing strategic and
+                  sustainable financial growth for the company.Dipesh is a
+                  qualified Chartered Accountant, Certified Public Accountant,
+                  Certified Information Systems Auditor and Certified Internal
+                  Auditor. He brings with himself the experience garnered from
+                  roles in ITeS, consulting, automobiles and FMCG.
                 </p>
               </div>
             </div>

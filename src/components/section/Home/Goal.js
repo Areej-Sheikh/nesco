@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
-import GoalImage from "@/assests/Home/goal.png";
-import Image from "next/image";
-import "./animation.css";
+import React, { useEffect, useState, useRef } from 'react';
+import GoalImage from '@/assests/Home/goal.png';
+import Image from 'next/image';
+import './animation.css';
 
 export default function Goal() {
   return (
@@ -19,7 +19,7 @@ export default function Goal() {
         <div className="">
           <div>
             <h1
-              style={{ fontFamily: "BrandingSemibold" }}
+              style={{ fontFamily: 'BrandingSemibold' }}
               className={`text-[#1e3a8a] text-4xl md:text-5xl lg:text-6xl font-BrandingSemibold font-bold md:pt-28 text-center lg:text-left`}
             >
               One goal. 8 decades.
@@ -33,7 +33,7 @@ export default function Goal() {
               In 1939, we set out on our goal to make India stand out on the
               world map.
             </h2>
-            <p className="text-gray-700 text-[19px] text-justify font-branding-medium tracking-wider leading-relaxed">
+            <p className="text-gray-700 text-[19px]  font-branding-medium ">
               From designing and manufacturing engineering solutions, the Nesco
               Group has diversified into multiple industries including
               Exhibitions, Real Estate, Hospitality, Events and Entertainment.

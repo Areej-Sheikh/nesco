@@ -1,8 +1,8 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
 // Import initiative image
-import incubationImage from "@/assests/nesco-business-page/nesco-reality-elements/10.jpg";
+import incubationImage from '@/assests/nesco-business-page/nesco-reality-elements/10.jpg';
 
 function RealtyInitiative() {
   return (
@@ -11,19 +11,19 @@ function RealtyInitiative() {
       <div className="lg:w-1/2 w-full py-6 md:py-[2%] flex flex-col justify-center lg:pr-10">
         <h2
           className="text-[1.8rem] sm:text-[2.5rem] md:text-[2.8rem] lg:text-[3rem] font-bold mb-2"
-          style={{ fontFamily: "BrandingSemibold" }}
+          style={{ fontFamily: 'BrandingSemibold' }}
         >
           Our initiative
         </h2>
         <h3
           className="text-[1.6rem] sm:text-[2.2rem] md:text-[2.4rem] lg:text-[2.6rem] font-bold mb-4 md:mb-6"
-          style={{ fontFamily: "BrandingMedium" }}
+          style={{ fontFamily: 'BrandingMedium' }}
         >
           Incubation centre
         </h3>
         <p
-          className="text-[1.2rem] sm:text-[1.8rem] md:text-[2rem] lg:text-[2.2rem] leading-relaxed text-justify"
-          style={{ fontFamily: "BrandingMedium" }}
+          className="text-[1.2rem] sm:text-[1.8rem] md:text-[2rem] lg:text-[2.2rem] leading-relaxed "
+          style={{ fontFamily: 'BrandingMedium' }}
         >
           Envisioned with foresight, the Incubation Centre is enabling
           promising, young businesses to take on bigger challenges. A

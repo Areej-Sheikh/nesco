@@ -1,6 +1,6 @@
-import React from "react";
-import ServiceImage from "@/assests/Home/girl.jpg";
-import Link from "next/link";
+import React from 'react';
+import ServiceImage from '@/assests/Home/girl.jpg';
+import Link from 'next/link';
 
 function Service() {
   return (
@@ -25,14 +25,14 @@ function Service() {
           {/* <p className="text-primary md:text-4xl text-3xl font-bold mt-10"> */}
 
           <p
-            className="xl:text-[3.2rem] lg:text-[3rem] text-[2rem] text-2xl font-bold text-primary text-justify xl:mt-10 tracking-wide lg:leading-[3.5rem] leading-[2.5rem] w-[80%]"
-            style={{ fontFamily: "BrandingSemibold" }}
+            className="xl:text-[3.2rem] lg:text-[3rem] text-[2rem] text-2xl font-bold text-primary  xl:mt-10  lg:leading-[3.5rem] leading-[2.5rem] w-[80%]"
+            style={{ fontFamily: 'BrandingSemibold' }}
           >
             In service of a better & brighter tomorrow
           </p>
 
           {/* <p className="text-lg lg:text-xl text-justify"> */}
-          <p className="text-justify md:w-[80%] lg:text-[1.47rem] text-[1.2rem] font-branding-medium leading-[2rem] ">
+          <p className=" md:w-[80%] lg:text-[1.47rem] text-[1.2rem] font-branding-medium leading-[2rem] ">
             For us, social responsibility is all about creating positive impact
             in the lives of the hopeful by working tirelessly to improve access
             to education, infrastructure & medical facilities in rural areas.

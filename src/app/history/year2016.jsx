@@ -1,10 +1,10 @@
 // components/historyYears/Year2016.js
-"use client";
-import { React, useState, useEffect } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import historyXIV from "@/assests/history/historyXIV.png";
+'use client';
+import { React, useState, useEffect } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import historyXIV from '@/assests/history/historyXIV.png';
 
 const Year2016 = () => {
   const [year2016InView, setYear2016InView] = useState(false);
@@ -12,13 +12,13 @@ const Year2016 = () => {
   const { ref: year2016Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
-    onChange: (inView) => setYear2016InView(inView),
+    onChange: inView => setYear2016InView(inView),
   });
 
   useEffect(() => {
     if (year2016InView) {
       const interval = setInterval(() => {
-        setCount((prevCount) => {
+        setCount(prevCount => {
           const nextCount = prevCount + 5;
           if (nextCount >= 2016) {
             clearInterval(interval);
@@ -38,7 +38,7 @@ const Year2016 = () => {
       className="year2016 md:mt-[10vh] lg:mt-[20vh] mt-0 flex flex-col sm:flex-col p-6"
       initial={{ opacity: 0, x: 50 }}
       animate={year2016InView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
       whileHover={{ scale: 1.02, y: -5 }}
       data-year="2016"
     >
@@ -67,7 +67,7 @@ const Year2016 = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="leftDiv flex flex-col sm:w-full md:w-[50%] lg:w-[50%] relative "
         >
-          <div className="contentDiv flex flex-col relative gap-4 bg-cyan-400 p-12 sm:left-0 md:left-[15%] lg:left-[0%]  lg:h-[60vh] lg:top-[35vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
+          <div className="contentDiv flex flex-col relative gap-4 bg-cyan-400 p-12 sm:left-0 md:left-[15%] lg:left-[0%]  lg:h-[80vh] lg:top-[35vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
             {/* Year Heading */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
@@ -78,7 +78,7 @@ const Year2016 = () => {
               {count}
               <motion.div
                 initial={{ opacity: 0, width: 0 }}
-                animate={year2016InView ? { opacity: 1, width: "90%" } : {}}
+                animate={year2016InView ? { opacity: 1, width: '90%' } : {}}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="mt-2 h-[2px] bg-white w-full"
               ></motion.div>

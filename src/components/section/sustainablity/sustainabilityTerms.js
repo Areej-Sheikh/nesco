@@ -1,6 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import stakeholder from "@/assests/sustainability/stakeholder.png";
+import Image from 'next/image';
+import React from 'react';
+import stakeholder from '@/assests/sustainability/stakeholder.png';
 
 function SustainabilityTerms() {
   return (
@@ -8,7 +8,7 @@ function SustainabilityTerms() {
       <div className="my-10 text-center w-[90%]">
         <div className="text-right md:mr-24">
           <h1 className="text-3xl font-bold px-5 py-3 bg-[#C7E6F3] text-gray-900 inline-block text-center ">
-            {" "}
+            {' '}
             Stakeholder Engagement & Management
           </h1>
         </div>
@@ -21,9 +21,9 @@ function SustainabilityTerms() {
               className=" border-[3px] border-sky-200 w-[99%]"
             />
           </div>
-          <div className="basis-[60%] text-justify ">
+          <div className="basis-[60%] ">
             <p className="lg:text-[21px] md:text-[16px] text-[14px] w-[93%] md:ml-10 sm:pl-0 pl-3">
-              {" "}
+              {' '}
               Nesco believes that stakeholder engagement is a cornerstone of our
               commitment to sustainability through transparency and
               accountability. We have identified our stakeholders which

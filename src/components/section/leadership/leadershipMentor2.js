@@ -1,7 +1,7 @@
-import React from "react";
-import MentorImage from "@/assests/Home/mentorNew/3.png";
-import backgroundImage from "@/assests/Home/mentorNew/KrishnaBack.jpg";
-import Image from "next/image";
+import React from 'react';
+import MentorImage from '@/assests/Home/mentorNew/3.png';
+import backgroundImage from '@/assests/Home/mentorNew/KrishnaBack.jpg';
+import Image from 'next/image';
 
 function LeadershipMentor2() {
   return (
@@ -9,9 +9,9 @@ function LeadershipMentor2() {
       className="header_white flex flex-col items-center justify-center relative w-full h-full overflow-hidden xl:h-screen min-h-[500px]"
       style={{
         backgroundImage: `url(${backgroundImage.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
       id="krishna"
     >
@@ -38,7 +38,7 @@ function LeadershipMentor2() {
 
             <hr className=" bg-white border-1 border-white mb-4 " />
             <div className="relative">
-              <div className="space-y-2 mt-2 text-justify">
+              <div className="space-y-2 mt-2 ">
                 <p className="font-branding-medium text-white">
                   A dynamic people's leader, Krishna Patel is adept at spotting
                   and implementing future trends in any industry even as he

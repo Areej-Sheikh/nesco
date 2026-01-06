@@ -1,8 +1,8 @@
-import React from "react";
-import Icon1 from "@/assests/sustainability/icon11.png";
-import Icon2 from "@/assests/sustainability/bankIcon.png";
-import Icon3 from "@/assests/sustainability/userIcon.png";
-import Image from "next/image";
+import React from 'react';
+import Icon1 from '@/assests/sustainability/icon11.png';
+import Icon2 from '@/assests/sustainability/bankIcon.png';
+import Icon3 from '@/assests/sustainability/userIcon.png';
+import Image from 'next/image';
 
 function SustainabilityGovernance() {
   return (
@@ -11,7 +11,7 @@ function SustainabilityGovernance() {
         <h1 className="text-3xl text-[#39c2ab] mb-8 font-branding-bold">
           ESG Governance Structure
         </h1>
-        <p className="lg:text-[21px] md:text-[16px] text-[14px] text-justify font-medium text-black mb-20">
+        <p className="lg:text-[21px] md:text-[16px] text-[14px]  font-medium text-black mb-20">
           Nesco&#39;s Risk Committee of the Board ensures oversight of our
           sustainability initiatives. The committee evaluates our policies and
           practices to meet regulatory requirements and assesses the impact of
@@ -44,7 +44,7 @@ function SustainabilityGovernance() {
               </div>
             </div>
             <div className="w-full h-full  px-8">
-              <div className="text-justify px-8 text-xl pb-20 pt-20 bg-gray-200 rounded-3xl flex flex-col items-center">
+              <div className=" px-8 text-xl pb-20 pt-20 bg-gray-200 rounded-3xl flex flex-col items-center">
                 <p>
                   Nesco is committed to reducing its environmental impact by
                   adopting renewable energy, minimizing waste, and conserving
@@ -74,7 +74,7 @@ function SustainabilityGovernance() {
               </div>
             </div>
             <div className="w-full h-full  px-8">
-              <div className="text-justify px-8 text-xl pb-20 pt-20 bg-gray-200 rounded-3xl flex flex-col items-center h-full">
+              <div className=" px-8 text-xl pb-20 pt-20 bg-gray-200 rounded-3xl flex flex-col items-center h-full">
                 <p>
                   Nesco focuses on social responsibility by promoting fair labor
                   practices, ensuring employee safety, and engaging with local
@@ -106,7 +106,7 @@ function SustainabilityGovernance() {
               </div>
             </div>
             <div className="w-full h-full px-8">
-              <div className="text-justify px-8 text-xl pb-20 pt-20 bg-gray-200 rounded-3xl flex flex-col items-center h-full">
+              <div className=" px-8 text-xl pb-20 pt-20 bg-gray-200 rounded-3xl flex flex-col items-center h-full">
                 <p>
                   Nesco adheres to strong corporate governance, ensuring
                   transparency, accountability, and ethical decision-making. Our
@@ -124,7 +124,7 @@ function SustainabilityGovernance() {
             <div className="py-10 bg-[#69bbef] w-[122%] px-2 rounded-[65px] mb-5 relative right-7">
               <p className="text-2xl text-white">Social</p>
             </div>
-            <p className="text-justify px-8 text-[15px]">
+            <p className=" px-8 text-[15px]">
               Nesco focuses on social responsibility by promoting fair labor
               practices, ensuring employee safety, and engaging with local
               communities. We strive to create an in clusive workplace, support
@@ -136,7 +136,7 @@ function SustainabilityGovernance() {
             <div className="py-10 bg-[#48cfde] w-[122%] px-2 rounded-[65px] mb-5 relative right-7">
               <p className="text-2xl text-white">Governance</p>
             </div>
-            <p className="text-justify px-8 text-[15px]">
+            <p className=" px-8 text-[15px]">
               Nesco adheres to strong corporate gov ernance, ensuring
               transparency, account ability, and ethical decision-making. Our
               governance framework ensures that sus tainability is integrated
@@ -147,7 +147,7 @@ function SustainabilityGovernance() {
         </div>
         <div>
           <button className="bg-[#07af8b] text-white p-3 mb-20 text-xl static">
-            {" "}
+            {' '}
             Refer to Section Policies on BRSR
           </button>
         </div>

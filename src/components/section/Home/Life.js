@@ -1,5 +1,5 @@
-import React from "react";
-import background from "@/assests/Home/N.png";
+import React from 'react';
+import background from '@/assests/Home/N.png';
 
 function Life() {
   return (
@@ -9,7 +9,7 @@ function Life() {
           {/* <p className="text-3xl font-bold text-secondary text-center md:text-left"> */}
           <p
             className="lg:text-[3.5rem] text-2xl font-bold text-secondary mt-10 tracking-wide leading-[3.5rem]"
-            style={{ fontFamily: "BrandingBoldHeading" }}
+            style={{ fontFamily: 'BrandingBoldHeading' }}
           >
             Life at Nesco
           </p>
@@ -17,18 +17,18 @@ function Life() {
           <p
             className="lg:text-4xl text-xl text-white"
             style={{
-              fontFamily: "BrandingMedium",
+              fontFamily: 'BrandingMedium',
             }}
           >
             An inspired culture of progress
           </p>
           {/* <p className="text-white text-justify md:w-[70%] md:text-base text-lg"> */}
-          <p className="text-justify text-white text-[1.4rem] md:w-[80%] font-branding-medium leading-[2.2rem]">
-            At Nesco, we foster an inspired culture of{" "}
+          <p className=" text-white text-[1.4rem] md:w-[80%] font-branding-medium leading-[2.2rem]">
+            At Nesco, we foster an inspired culture of{' '}
             <span className="font-bold">
-              {" "}
+              {' '}
               progress, where every individual is empowered
-            </span>{" "}
+            </span>{' '}
             to grow, innovate, and thrive. Our commitment to creating a
             nurturing environment has earned us the distinction of being a Great
             Place to Work Certified. This recognition reflects our dedication to
@@ -49,20 +49,20 @@ function Life() {
           <div className="absolute hidden lg:block z-0 xl:bottom-20 bottom-10 right-12 h-[33%] w-[140px]">
             <div
               className="overflow-hidden lg:text-[2.3rem] text-2xl relative text-white bg-red-600 text-[2rem] leading-8 border-x-2 border-t-2 border-white p-3"
-              style={{ fontFamily: "BrandingSemibold" }}
+              style={{ fontFamily: 'BrandingSemibold' }}
             >
               Great Place To Work
             </div>
             <div className="text-white flex flex-col items-center border-x-2 relative">
               <p
                 className="text-[1.8rem]"
-                style={{ fontFamily: "BrandingSemibold" }}
+                style={{ fontFamily: 'BrandingSemibold' }}
               >
                 Certified
               </p>
               <p
                 className="text-[8px] uppercase pb-1"
-                style={{ fontFamily: "BrandingSemibold" }}
+                style={{ fontFamily: 'BrandingSemibold' }}
               >
                 December 2024 - December 2025
               </p>

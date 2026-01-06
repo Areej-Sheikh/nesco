@@ -1,6 +1,6 @@
-import React from "react";
-import sustainabilityPerformance from "@/assests/sustainability/sustainabilityPerformance.png";
-import Image from "next/image";
+import React from 'react';
+import sustainabilityPerformance from '@/assests/sustainability/sustainabilityPerformance.png';
+import Image from 'next/image';
 
 function SustainabilityPerformance() {
   return (
@@ -22,18 +22,18 @@ function SustainabilityPerformance() {
             <h1 className="text-[#BA74B9] text-3xl font-branding-semibold font-bold lg:mb-16 mb-8 lg:mt-0 mt-8">
               ESG Performance
             </h1>
-            <p className="xl:text-[21px] lg:text-[17px] text-[16px] text-justify">
+            <p className="xl:text-[21px] lg:text-[17px] text-[16px] ">
               At Nesco, we are committed to environmental stewardship and are
               focused on minimizing our carbon footprint, conserving natural
               resources, and promoting sustainable practices. Through continuous
               innovation and investment in green technologies, we strive to
               achieve operational excellence while safe
             </p>
-            <p className="xl:text-[21px] lg:text-[17px] text-[16px] text-justify mt-5">
+            <p className="xl:text-[21px] lg:text-[17px] text-[16px]  mt-5">
               Nesco is continuously improving its sustainability practices while
               identifying opportunities to adopt industry best practices.
             </p>
-            <p className="xl:text-[21px] lg:text-[17px] text-[16px] text-justify mt-5">
+            <p className="xl:text-[21px] lg:text-[17px] text-[16px]  mt-5">
               The ESG ambitions and action areas are aligned with the NGRBC
               Principles. Performance against these principles is discussed in
               detail in the Business Responsibility and Sustainability Report

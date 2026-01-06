@@ -1,9 +1,9 @@
-"use client";
-import { React, useState, useEffect } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import XVIII from "@/assests/history/XVIII.jpg";
+'use client';
+import { React, useState, useEffect } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import XVIII from '@/assests/history/XVIII.jpg';
 
 const Year2019 = () => {
   const [Year2019InView, setYear2019InView] = useState(false);
@@ -11,13 +11,13 @@ const Year2019 = () => {
   const { ref: Year2019Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
-    onChange: (inView) => setYear2019InView(inView),
+    onChange: inView => setYear2019InView(inView),
   });
 
   useEffect(() => {
     if (Year2019InView) {
       const interval = setInterval(() => {
-        setCount((prevCount) => {
+        setCount(prevCount => {
           const nextCount = prevCount + 5;
           if (nextCount >= 2019) {
             clearInterval(interval);
@@ -37,7 +37,7 @@ const Year2019 = () => {
       className="Year2019 mt-[10vh] flex flex-col sm:flex-col p-6 md:mr-4 "
       initial={{ opacity: 0, x: 50 }}
       animate={Year2019InView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
       whileHover={{ scale: 1.02, y: -5 }}
       data-year="2019"
     >
@@ -63,7 +63,7 @@ const Year2019 = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="leftDiv flex flex-col sm:w-full md:w-[50%] lg:w-[50%] relative "
         >
-          <div className="contentDiv flex flex-col relative gap-10 bg-cyan-400 md:top-[10vh] lg:top-[25vh] p-12 sm:left-0 md:left-[15%] lg:left-[0vh] lg:h-[60vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
+          <div className="contentDiv flex flex-col relative gap-10 bg-cyan-400 md:top-[10vh] lg:top-[25vh] p-12 sm:left-0 md:left-[15%] lg:left-[0vh] lg:h-[90vh] mb-20 transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
             {/* Year Heading */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
@@ -74,7 +74,7 @@ const Year2019 = () => {
               {count}
               <motion.div
                 initial={{ opacity: 0, width: 0 }}
-                animate={Year2019InView ? { opacity: 1, width: "90%" } : {}}
+                animate={Year2019InView ? { opacity: 1, width: '90%' } : {}}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="mt-2 h-[2px] bg-white w-full"
               ></motion.div>

@@ -1,71 +1,84 @@
-"use client";
-import { useState, useEffect, useRef } from "react";
-import Navbar from "@/components/layout/navbar/Navbar";
-import React from "react";
-import Image from "next/image";
-import top from "@/assests/history/top.png";
-import historyOne from "@/assests/history/historyOne.png";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import Year1939 from "./year1939";
-import Year1952 from "./year1952";
-import Year1956 from "./year1956";
-import Year1957 from "./year1957";
-import Year1958 from "./year1958";
-import Year1960 from "./year1960";
-import Year1962 from "./year1962";
-import Year1964 from "./year1964";
-import Year1966 from "./year1966";
-import Year1986 from "./year1986";
-import Year1992 from "./year1992";
-import Year2001 from "./year2001";
-import Year2013 from "./year2013";
-import Year2016 from "./year2016";
-import Year2017 from "./year2017";
-import Year2019 from "./year2019";
-import Year2023 from "./year2023";
-import Year2017Sec2 from "./year2017Sec2";
-import Year2017Sec3 from "./year2017Sec3";
-import Year2023Sec2 from "./year2023Sec2";
-import Year2023Sec3 from "./year2023Sec3";
-import Footer from "@/components/layout/footer/footer";
+'use client';
+import { useState, useEffect, useRef } from 'react';
+import Navbar from '@/components/layout/navbar/Navbar';
+import React from 'react';
+import Image from 'next/image';
+import top from '@/assests/history/top.png';
+import historyOne from '@/assests/history/historyOne.png';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import Year1939 from './year1939';
+import Year1952 from './year1952';
+import Year1956 from './year1956';
+import Year1957 from './year1957';
+import Year1958 from './year1958';
+import Year1960 from './year1960';
+import Year1962 from './year1962';
+import Year1964 from './year1964';
+import Year1966 from './year1966';
+import Year1986 from './year1986';
+import Year1992 from './year1992';
+import Year2001 from './year2001';
+import Year2013 from './year2013';
+import Year2016 from './year2016';
+import Year2017 from './year2017';
+import Year2019 from './year2019';
+import Year2023 from './year2023';
+import Year2017Sec2 from './year2017Sec2';
+import Year2017Sec3 from './year2017Sec3';
+import Year2023Sec2 from './year2023Sec2';
+import Year2023Sec3 from './year2023Sec3';
+import Footer from '@/components/layout/footer/footer';
 
 const Timeline = ({ years, isFooterVisible }) => {
-  const [activeYear, setActiveYear] = useState(years[0]);
+  const [activeYear, setActiveYear] = useState(years[0].toString());
 
   useEffect(() => {
-    const sections = document.querySelectorAll("[data-year]");
+    const scrollRoot = document.querySelector('.historyDiv');
+    const sections = scrollRoot
+      ? scrollRoot.querySelectorAll('[data-year]')
+      : document.querySelectorAll('[data-year]');
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
-            setActiveYear(entry.target.getAttribute("data-year"));
+            setActiveYear(entry.target.getAttribute('data-year'));
           }
         });
       },
-      { threshold: 0.5 }
+      { root: scrollRoot || null, threshold: 0.5 }
     );
 
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach(section => observer.observe(section));
 
-    return () => sections.forEach((section) => observer.unobserve(section));
+    return () => sections.forEach(section => observer.unobserve(section));
   }, []);
 
   // --- NEW FUNCTIONALITY: CLICK TO SCROLL ---
-  const handleYearClick = (year) => {
+  const handleYearClick = year => {
     const section = document.querySelector(`[data-year="${year}"]`);
+    const scrollRoot = document.querySelector('.historyDiv');
     if (section) {
-      // Get navbar height (if fixed/sticky)
-      const navbar = document.querySelector('nav') || document.querySelector('.navbar');
+      const navbar =
+        document.querySelector('nav') || document.querySelector('.navbar');
       const navHeight = navbar ? navbar.offsetHeight : 0;
-      // Get section position
-      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-      // Scroll so section top is just below navbar
-      window.scrollTo({
-        top: sectionTop - navHeight - 16, // 16px extra spacing
-        behavior: 'smooth',
-      });
+
+      if (scrollRoot) {
+        // Calculate top relative to the scroll container
+        const top =
+          section.getBoundingClientRect().top -
+          scrollRoot.getBoundingClientRect().top +
+          scrollRoot.scrollTop;
+        scrollRoot.scrollTo({ top: top - navHeight - 16, behavior: 'smooth' });
+      } else {
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: sectionTop - navHeight - 16,
+          behavior: 'smooth',
+        });
+      }
+
       setActiveYear(year.toString());
     }
   };
@@ -77,13 +90,17 @@ const Timeline = ({ years, isFooterVisible }) => {
         fixed top-[10%] right-2 md:left-auto md:right-auto md:w-auto 
         lg:w-[13%] p-4 rounded-lg z-50 hidden
         md:flex transition-opacity duration-500 ${
-          isFooterVisible ? "opacity-0 pointer-events-none" : "opacity-100"
+          isFooterVisible ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
+      style={{
+        maxHeight: '80vh',
+        overflowY: 'auto',
+      }}
     >
       <ul className="relative pl-4">
         {years.map((year, index) => (
-          <li 
-            key={index} 
+          <li
+            key={index}
             // Added cursor-pointer and onClick handler
             className="relative flex items-center space-x-2 mb-3 cursor-pointer group"
             onClick={() => handleYearClick(year)}
@@ -92,16 +109,16 @@ const Timeline = ({ years, isFooterVisible }) => {
               className="w-3 h-3 rounded-full relative z-10"
               animate={{
                 backgroundColor:
-                  year.toString() === activeYear ? "#3B82F6" : "#6B7280",
+                  year.toString() === activeYear ? '#3B82F6' : '#6B7280',
                 scale: year.toString() === activeYear ? 1.5 : 1,
               }}
               whileHover={{ scale: 1.5 }} // Added hover effect for better UX
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
             ></motion.span>
             <motion.p
               className="text-xl font-poppins transition-all group-hover:text-black" // Added hover text color change
               animate={{
-                color: year.toString() === activeYear ? "#000000" : "#6B7280",
+                color: year.toString() === activeYear ? '#000000' : '#6B7280',
                 fontWeight: year.toString() === activeYear ? 700 : 400,
               }}
             >
@@ -112,8 +129,8 @@ const Timeline = ({ years, isFooterVisible }) => {
               <motion.div
                 className="absolute left-[-3] top-3 w-[2px] bg-blue-500 origin-top"
                 initial={{ height: 0 }}
-                animate={{ height: "40px" }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                animate={{ height: '40px' }}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
               ></motion.div>
             )}
           </li>
@@ -136,21 +153,21 @@ const page = () => {
   const footerRef = useRef(null);
 
   const { ref: footerObserver } = useInView({
-    threshold: 0.1, 
+    threshold: 0.1,
     triggerOnce: false,
-    onChange: (inView) => setIsFooterVisible(inView),
+    onChange: inView => setIsFooterVisible(inView),
   });
 
   const { ref: upperObserver } = useInView({
     threshold: 0.4,
     triggerOnce: true,
-    onChange: (inView) => setUpperInView(inView),
+    onChange: inView => setUpperInView(inView),
   });
 
   const { ref: bottomObserver } = useInView({
     threshold: 0.4,
     triggerOnce: true,
-    onChange: (inView) => setBottomInView(inView),
+    onChange: inView => setBottomInView(inView),
   });
 
   return (
@@ -179,7 +196,7 @@ const page = () => {
             </motion.div>
 
             <motion.div
-              className="sideContentDiv flex flex-col relative bg-sky-500 transform text-justify p-8 left-0 md:left-[35%] md:bottom-[5vh] lg:bottom-[45vh] w-full sm:w-[60%] md:w-[65%] lg:w-[65%] z-50 transition-all ease-in-out duration-300 hover:-translate-y-1 "
+              className="sideContentDiv flex flex-col relative bg-sky-500 transform p-8 left-0 md:left-[35%] md:bottom-[5vh] lg:bottom-[45vh] w-full sm:w-[60%] md:w-[65%] lg:w-[65%] z-50 transition-all ease-in-out duration-300 hover:-translate-y-1 "
               initial={{ opacity: 0, x: 100 }}
               animate={upperInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.5, delay: 1 }}

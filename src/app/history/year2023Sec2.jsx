@@ -1,11 +1,11 @@
-"use client";
-import { React, useState, useEffect } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+'use client';
+import { React, useState, useEffect } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
-import XX from "@/assests/history/XX.jpg";
-import XXI from "@/assests/history/XXI.png";
+import XX from '@/assests/history/XX.jpg';
+import XXI from '@/assests/history/XXI.png';
 
 const Year2023Sec2 = () => {
   const [Year2023Sec2InView, setYear2023Sec2InView] = useState(false);
@@ -13,12 +13,12 @@ const Year2023Sec2 = () => {
   const { ref: Year2023Sec2Observer } = useInView({
     threshold: 0.2,
     triggerOnce: true,
-    onChange: (inView) => setYear2023Sec2InView(inView),
+    onChange: inView => setYear2023Sec2InView(inView),
   });
   useEffect(() => {
     if (Year2023Sec2InView) {
       const interval = setInterval(() => {
-        setCount((prevCount) => {
+        setCount(prevCount => {
           const nextCount = prevCount + 5;
           if (nextCount >= 2023) {
             clearInterval(interval);
@@ -38,7 +38,7 @@ const Year2023Sec2 = () => {
       className="Year2023Sec2 sm:mt-[2vh] md:mt-[5vh] lg:mt-[10vh] flex flex-col sm:flex-col p-6"
       initial={{ opacity: 0, x: 50 }}
       animate={Year2023Sec2InView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
       whileHover={{ scale: 1.02, y: -5 }}
       data-year="2023"
     >
@@ -50,7 +50,7 @@ const Year2023Sec2 = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="leftDiv flex flex-col sm:w-full md:w-[50%] lg:w-[50%] lg:top-[40vh]  relative "
         >
-          <div className="contentDiv flex flex-col relative gap-4 bg-[#001F9C] p-12 sm:left-0 md:left-[15%] lg:left-[20%] lg:h-[60vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-blue-500/50">
+          <div className="contentDiv flex flex-col relative gap-4 bg-[#001F9C] p-12 sm:left-0 md:left-[15%] lg:left-[20%] lg:h-[80vh] transition-shadow duration-300 hover:shadow-lg hover:shadow-blue-500/50">
             {/* Year Heading */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
@@ -61,7 +61,7 @@ const Year2023Sec2 = () => {
               {count}
               <motion.div
                 initial={{ opacity: 0, width: 0 }}
-                animate={Year2023Sec2InView ? { opacity: 1, width: "90%" } : {}}
+                animate={Year2023Sec2InView ? { opacity: 1, width: '90%' } : {}}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="mt-2 h-[2px] bg-cyan-500 w-full"
               ></motion.div>

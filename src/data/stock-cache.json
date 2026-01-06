@@ -1,45 +1,45 @@
 {
   "quote_bse": {
     "data": {
-      "symbol": "NESCO.BSE",
-      "regularMarketPrice": 1246.7,
-      "regularMarketPreviousClose": 1228.65,
-      "regularMarketOpen": 1224,
-      "regularMarketDayHigh": 1251.3,
-      "regularMarketDayLow": 1223.4,
-      "regularMarketVolume": 1074,
+      "symbol": "505355.BSE",
+      "regularMarketPrice": 1253.65,
+      "regularMarketPreviousClose": 1246.7,
+      "regularMarketOpen": 1222.05,
+      "regularMarketDayHigh": 1258,
+      "regularMarketDayLow": 1222.05,
+      "regularMarketVolume": 1693,
       "fiftyTwoWeekHigh": 0,
       "fiftyTwoWeekLow": 0,
       "currency": "INR",
       "exchange": "BSE",
       "name": "NESCO Limited",
-      "datetime": "2026-01-04T23:51:12.688Z",
-      "change": 18.05,
-      "changePercent": 1.4691
+      "datetime": "2026-01-06T17:49:22.099Z",
+      "change": 6.95,
+      "changePercent": 0.5575
     },
-    "expiresAt": 1767587952688,
-    "updatedAt": 1767570672688
+    "expiresAt": 1767739042100,
+    "updatedAt": 1767721762100
   },
   "quote_nse": {
     "data": {
-      "symbol": "NESCO.BSE",
-      "regularMarketPrice": 1246.7,
-      "regularMarketPreviousClose": 1228.65,
-      "regularMarketOpen": 1224,
-      "regularMarketDayHigh": 1251.3,
-      "regularMarketDayLow": 1223.4,
-      "regularMarketVolume": 1074,
+      "symbol": "505355.BSE",
+      "regularMarketPrice": 1253.65,
+      "regularMarketPreviousClose": 1246.7,
+      "regularMarketOpen": 1222.05,
+      "regularMarketDayHigh": 1258,
+      "regularMarketDayLow": 1222.05,
+      "regularMarketVolume": 1693,
       "fiftyTwoWeekHigh": 0,
       "fiftyTwoWeekLow": 0,
       "currency": "INR",
       "exchange": "NSE",
       "name": "NESCO Limited",
-      "datetime": "2026-01-04T23:56:44.027Z",
-      "change": 18.05,
-      "changePercent": 1.4691
+      "datetime": "2026-01-06T18:06:44.521Z",
+      "change": 6.95,
+      "changePercent": 0.5575
     },
-    "expiresAt": 1767588284027,
-    "updatedAt": 1767571004027
+    "expiresAt": 1767740084522,
+    "updatedAt": 1767722804522
   },
   "chart_nse_1d": {
     "data": {

@@ -40,7 +40,7 @@ function EventProfile() {
 
             <div className="space-y-[2vh]">
               <p
-                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-left text-justify"
+                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-left "
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 Balakrishnan Balram is a seasoned leader in strategic brand
@@ -51,7 +51,7 @@ function EventProfile() {
               </p>
 
               <p
-                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-left text-justify"
+                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-left "
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 As the former Chief Business Officer at Laqshya Live
@@ -63,7 +63,7 @@ function EventProfile() {
               </p>
 
               <p
-                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-left text-justify"
+                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-left "
                 style={{ fontFamily: "BrandingMedium" }}
               >
                 His impressive portfolio includes partnerships with Bentley,

@@ -1,8 +1,8 @@
-import React from "react";
-import Icon1 from "@/assests/sustainability/65.png";
-import Icon2 from "@/assests/sustainability/64.png";
-import Icon3 from "@/assests/sustainability/63.png";
-import Image from "next/image";
+import React from 'react';
+import Icon1 from '@/assests/sustainability/65.png';
+import Icon2 from '@/assests/sustainability/64.png';
+import Icon3 from '@/assests/sustainability/63.png';
+import Image from 'next/image';
 
 function SustainabilityFeatures() {
   return (
@@ -19,8 +19,8 @@ function SustainabilityFeatures() {
           <p className="mb-8 bg-[#eeeed4] py-2 md:px-6 md:text-xl whitespace-nowrap font-bold text-gray-800 w-full pl-10">
             Fostering Stakeholder Trust
           </p>
-          <p className="text-gray-600 text-lg text-justify ml-20 mr-4">
-            {" "}
+          <p className="text-gray-600 text-lg  ml-20 mr-4">
+            {' '}
             Trust is the cornerstone of Nesco&#39;s relationships and we embrace
             ethical practices, transparency, and account ability in all our
             operations. Active en gagement with stakeholders to integrate their
@@ -39,13 +39,13 @@ function SustainabilityFeatures() {
           <p className="mb-8 bg-[#bfe9e2] py-2 md:px-4 md:text-xl whitespace-nowrap font-bold text-gray-800 w-full xl:pl-[3.2rem] pl-10">
             Driving Continuous Improvement
           </p>
-          <p className="text-gray-600 text-lg text-justify ml-20 mr-4">
-            {" "}
+          <p className="text-gray-600 text-lg  ml-20 mr-4">
+            {' '}
             Nesco sees sustainability as a catalyst for continuous improvement
-            for its businesses. We set ambitious and progressive goals
-            supported by financial and people resources to deliver improving
-            positive outcomes. We foster innovation and efficiency with a focus
-            on minimizing mizing positive impacts on society.
+            for its businesses. We set ambitious and progressive goals supported
+            by financial and people resources to deliver improving positive
+            outcomes. We foster innovation and efficiency with a focus on
+            minimizing mizing positive impacts on society.
           </p>
         </div>
         <div className="flex flex-col items-center relative">
@@ -57,10 +57,10 @@ function SustainabilityFeatures() {
             />
           </div>
           <p className="mb-8 bg-[#f1d2ef] py-2 md:px-6 md:text-xl whitespace-nowrap font-bold text-gray-800 w-full pl-10 ">
-            {" "}
+            {' '}
             Creating Long-Term Value
           </p>
-          <p className="text-gray-600 text-lg text-justify ml-20 mr-4">
+          <p className="text-gray-600 text-lg  ml-20 mr-4">
             Appreciating diverse and often conflicting stakeholder needs, Nesco
             leverages sustainable practices to deliver on its commitment to
             creating enduring value. By integrating sustainable practices into

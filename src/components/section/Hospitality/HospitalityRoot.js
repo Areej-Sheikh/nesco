@@ -16,7 +16,7 @@ function HospitalityRoot() {
           The Root
         </h2>
         <p
-          className="text-[1.2rem] sm:text-[1.8rem] md:text-[2rem] lg:text-[2.2rem] leading-relaxed text-justify"
+          className="text-[1.2rem] sm:text-[1.8rem] md:text-[2rem] lg:text-[2.2rem] leading-relaxed "
           style={{ fontFamily: "BrandingMedium" }}
         >
           The nerve centre of the entire Foods operation, the Root is a

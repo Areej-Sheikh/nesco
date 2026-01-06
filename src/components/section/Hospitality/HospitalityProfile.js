@@ -1,8 +1,8 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
 // Import profile image
-import profileImage from "@/assests/nesco-business-page/nesco-food-elements/30.jpg";
+import profileImage from '@/assests/nesco-business-page/nesco-food-elements/30.jpg';
 
 function HospitalityProfile() {
   return (
@@ -13,20 +13,20 @@ function HospitalityProfile() {
           <div className="w-full lg:w-[50%] xl:w-[45%] space-y-[2vh]">
             <h3
               className="text-[clamp(2rem,4vw,3.5rem)] font-bold leading-tight"
-              style={{ fontFamily: "BrandingSemibold" }}
+              style={{ fontFamily: 'BrandingSemibold' }}
             >
               Saurav Banerjee
             </h3>
             <p
               className="text-[clamp(1.2rem,2.5vw,1.8rem)] text-[#666]"
-              style={{ fontFamily: "BrandingMedium" }}
+              style={{ fontFamily: 'BrandingMedium' }}
             >
               Corporate Executive Chef
             </p>
 
             <p
               className="text-[clamp(1.2rem,2.5vw,1.8rem)] font-bold leading-tight"
-              style={{ fontFamily: "BrandingSemibold" }}
+              style={{ fontFamily: 'BrandingSemibold' }}
             >
               Belief: For me the team comes first and commitment to hard work is
               our tool to achieve any goal.
@@ -34,8 +34,8 @@ function HospitalityProfile() {
 
             <div className="space-y-[2vh]">
               <p
-                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-justify"
-                style={{ fontFamily: "BrandingMedium" }}
+                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed "
+                style={{ fontFamily: 'BrandingMedium' }}
               >
                 Chef Saurav Banerjee is our Corporate Executive Chef. He has a
                 rich background spanning across diverse cuisines and experience
@@ -48,8 +48,8 @@ function HospitalityProfile() {
                 life.
               </p>
               <p
-                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed text-justify"
-                style={{ fontFamily: "BrandingMedium" }}
+                className="text-[clamp(1rem,2.2vw,1.6rem)] leading-relaxed "
+                style={{ fontFamily: 'BrandingMedium' }}
               >
                 Chef Banerjee is excited to showcase high levels of creativity
                 and expertise for our guests and take our gastronomy to the next

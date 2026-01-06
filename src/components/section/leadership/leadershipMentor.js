@@ -1,7 +1,7 @@
-import React from "react";
-import MentorImage from "@/assests/Home/mentorNew/2.png";
-import backgroundImage from "@/assests/Home/mentorNew/SumanBack.jpg";
-import Image from "next/image";
+import React from 'react';
+import MentorImage from '@/assests/Home/mentorNew/2.png';
+import backgroundImage from '@/assests/Home/mentorNew/SumanBack.jpg';
+import Image from 'next/image';
 
 function LeadershipMentor() {
   return (
@@ -9,9 +9,9 @@ function LeadershipMentor() {
       className="header_white flex flex-col items-center justify-center relative w-full h-full overflow-hidden xl:h-screen min-h-[500px]"
       style={{
         backgroundImage: `url(${backgroundImage.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
       id="sumant"
     >
@@ -38,7 +38,7 @@ function LeadershipMentor() {
 
             <hr className=" bg-black border-1 border-black mb-4" />
             <div className="relative">
-              <div className="space-y-2 mt-2 text-justify">
+              <div className="space-y-2 mt-2 ">
                 <p className="font-branding-medium">
                   A fearless pioneer, Sumant Patels crystal clear vision had
                   been instrumental in shaping the Nesco Group. A mechanical
